@@ -10,6 +10,12 @@ create table CommonUser(
 	c_qq varchar2(20),
 	c_addr varchar2(100)
 )
+--管理员：编号，姓名，秘密
+create table Adm(
+	adm_id integer primary key,
+	adm_name varchar2(40),
+	adm_pwd varchar2(100)
+)
 --店铺：店铺编号，店铺类型编号，店主姓名，身份证号，店铺名称，公司名称，所在地区，详细地址，邮政编码，电话，证件照，营业执照，服务保障
 create table Store(
 	s_id integer primary key,
