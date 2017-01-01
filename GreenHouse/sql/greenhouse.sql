@@ -73,7 +73,7 @@ create table Address(
 	a_tel varchar2(40)
 )
 --评论：编号，用户编号，商品编号，评论内容
-create table comment(
+create table Comment(
 	co_id integer primary key,
 	c_id integer references CommonUser(c_id),
 	g_id integer references Good(g_id),
@@ -81,7 +81,7 @@ create table comment(
 )
 
 --通知：通知编号，主题，通知内容
-create table notice(
+create table Notice(
 	n_id integer primary key,
 	n_topic varchar2(50),
 	n_content varchar2(300)
