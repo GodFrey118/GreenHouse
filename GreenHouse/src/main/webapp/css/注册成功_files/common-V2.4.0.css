@@ -1,0 +1,230 @@
+/**footer**/
+.sn-login, .sn-quit { margin: 0 10px 0 7px; }
+.footer-wrap {width:100%;}
+.noindex-space {width:100%; height:7px; background:url(../../images/skin/2013/footer-wrapbg.jpg) repeat-x;}
+.noindexfooter {width:950px; margin:0 auto;}
+.footer { background-color: #FFFFFF; background-repeat: repeat-x; clear: both; margin: 10px auto; position: relative; text-align: center;}
+#footer { background-color: #FFFFFF; background-repeat: repeat-x; clear: both; margin: 10px auto; position: relative; text-align: center; border:none !important;}
+.shansahn-info { padding: 30px 0 20px; position: relative; text-align: left; height:130px; overflow:hidden;}
+.shansahn-info:after { clear: both; content: ""; display: block; height: 0;}
+.shansahn-info dl { border-right: 1px dotted #E6E6E6; float: left;  padding-left: 50px;  width: 139px;}
+.shansahn-info dt {font-family: 微软雅黑; font-size: 18px; font-weight: 500;  margin-bottom: 3px; padding-bottom: 4px; color:#333;}
+.shansahn-info dd {height:20px; line-height:20px;}
+.shansahn-info dd a { color:#000; font-family: 微软雅黑;}
+.shansahn-info dd a em {font-family: 宋体;}
+.shansahn-info dd a:hover { text-decoration:underline;}
+.shansahn-info dl#pay { border-left: 1px dotted #E6E6E6; margin-left: 190px;}
+.shansahn-info dl#service { border-right:none;}
+.shanshan-homeico { background:url(../../images/skin/2013/shanshan-homeico.png) no-repeat; height: 85px; left: 50%; margin-left: -45px; overflow: hidden; position: absolute; top: 28px;  width: 85px;}
+.shanshan-feedback {left: 50%;  margin-top:94px;margin-left:-50px; overflow: hidden; position: absolute; top: 28px;}
+.ss-bottom-img { padding:5px 0; width:100%; height:290px;}
+#copyright {position:relative;}
+#copyright a.letserv {background:url(../../images/skin/2013/letserv.png) no-repeat; width:62px; height:138px; position:absolute; right:100px; top:0;}
+#copyright p{padding:2px 0;color:#999; font-size:14px; /*margin-left:-180px;*/}
+#copyright p.cR-nav {padding:10px 0; height:23px; line-height:23px;}
+#copyright p a, #copyright p span { color:#333; padding:0 5px;display: inline-block;}
+#copyright p a.ssb-weibo {width:29px; height:23px;}
+#copyright p a.ssb-weibot {width:29px; height:23px;}
+#copyright p a.ssb-weixin {width:29px; height:23px; position: relative; }
+.floor .ssb-weixin .mbb-weixin, .footer .ssb-weixin .mbb-weixin{background-image: url(../../images/skin/2013/weixin-img.jpg);display: block; height: 294px;left: -110px; position: absolute; top: -297px; visibility: hidden;width: 249px;z-index: 10;}
+
+/**collectedDialog**/
+.collectd-con {width:300px; height:150px; background:#fbfbfc; border:#8f8a8a solid 1px; margin:10px;}
+#coll-toplogo {position:relative; width:300px; height:58px; background-position:0 -84px;}
+/**indexLogin**/
+.indexLogin { width:416px; height:378px;}
+.indexLogin-bg { background:#b5b5b6; width:416px; height:381px;filter:alpha(Opacity=50);-moz-opacity:0.5;opacity: 0.5; position:absolute; top: -10px;*top:0px;+top:0px; left:0px; z-index:-1;}
+.indexLogin-con {width:394px; height:358px; background:#fbfbfc; border:#8f8a8a solid 1px; margin:10px;}
+#login_submit{background:url(../images/login_btn.gif) no-repeat;}
+.iLc-toplogo, .iLc-toplogo a, .iLc-toplogo a:hover, .iLc-normalst a i, .iLc-normal-tishi i, .iLc-mobile-tishi i, .iLc-mobilest i, .indexLogin-ctou, .indexBprom-ico, .indexBprom-close {background:url(../../images/skin/2013/20130328_indexLogin.png) no-repeat;}
+.iLc-toplogo { position:relative; width:394px; height:58px; background-position:0 -84px;}
+.iLc-toplogo a { width:17px; height:17px; background-position:-20px -30px; position:absolute; top:10px; right:10px;}
+.iLc-toplogo a:hover {background-position:-20px -48px;}
+.iLc-body { overflow:hidden;}
+.iLc-left {width:50px; height:100%;}
+.iLc-bodycontent {width:252px; margin:0px auto;}
+.iLc-bodycon-mobile, .iLc-bodycon-normal{ position:relative;}
+.iLc-bodycon-mobile label, .iLc-bodycon-normal label { display:block; padding-bottom:3px; font-weight:bold; color:#666;}
+input.login-boxk{ vertical-align:middle; width:244px; height:20px; line-height:20px; border:#cbcbcb solid 1px; padding:3px; margin-bottom:5px;}
+.mobile-prom {width:250px; background:#e9f6e0; border:#cbcbcb solid 1px; margin-bottom:8px;}
+.mobile-prom p {padding:8px 12px; line-height:16px;}
+.mobile-prom p span {color:#f08300;}
+.iLc-submit { padding-top:5px; overflow:hidden; zoom:1;}
+.iLc-submit-btn {width:271px; height:36px; background-position:0px 0px; border:none; cursor:pointer;}
+.iLc-submit-btn:hover { background-position:0px -143px;}
+.iLc-register, .iLc-normalst {width:252px; line-height:30px; height:30px; text-align:right; overflow:hidden;}
+.iLc-register a { color:#3461ad;}
+.iLc-normalst a {padding-right:15px; position:relative;}
+.iLc-normalst a i{width:9px; height:12px; background-position:0px -30px; display:block; position:absolute; top:2px; right:0;}
+.iLc-normal-loname { position:relative;}
+.iLc-mobilest { position:absolute; top:0px; right:0px; padding-right:15px;}
+.iLc-mobilest i { width:9px; height:14px; background-position:-10px -30px; display:block;position:absolute; top:2px; right:0;}
+.iLc-bodycontent .blue { color:#3461ad;padding-right:0px;}
+.iLc-normal-loname .iLc-savebox { margin-right:2px; vertical-align:middle;}
+.iLc-normal-loname .iLc-savete { display:inline-block; line-height:18px; font-weight:normal; padding-right:15px;}
+.savebox-con {padding:5px 0;}
+.iLc-normal-tishi {width:250px;  line-height:26px; background:#fff; border:#ed6c00 solid 1px; margin-bottom:10px; position:relative;}
+.iLc-normal-tishi span {padding-left:0px;}
+.iLc-normal-tishi i {width:17px; height:17px; background-position:-38px -30px; position:absolute; left:4px; top:4px;}
+.iLc-mobile-tishi {width:250px;  line-height:26px; background:#fff; border:#ed6c00 solid 1px; margin-bottom:10px; position:relative;}
+.iLc-mobile-tishi span {padding-left:26px;}
+.iLc-mobile-tishi i {width:17px; height:17px; background-position:-38px -30px; position:absolute; left:4px; top:4px;}
+.iLc-normal-loname input.lonameboxk {width:60px;}
+.iLc-normal-loname .check-code-img { border: medium none; height: 30px; margin: 0; vertical-align: middle; width: 100px;}
+.iLc-normal-loname  .change-code { color: #666666; display: inline-block; line-height: 14px; margin: 0; vertical-align: middle;}
+.logincode {padding-top:5px;}
+.indexLogin-ctou {width:74px; height:54px; background-position:-56px -30px; position:absolute; top:-54px; left:50%; margin-left:-37px;}
+/**indexBrandprompt**/
+.indexBrandprompt {width:320px; height:130px;position: fixed;_position: absolute;left: 20%;top: 20%;}
+.indexBprom-bg { background:#fff; width:320px; height:130px;filter:alpha(Opacity=30);-moz-opacity:0.3;opacity: 0.3; position:absolute; top:0px; left:0px; z-index:-1;}
+.indexBprom {background:#ffffff; width:300px; height:110px; margin:10px;}
+.indexBprom p { line-height:24px; padding:30px 0 0 70px;}
+.indexBprom p a { color:#3f7091; font-family:宋体;}
+.indexBprom-ico {width:32px; height:32px; background-position:-219px -30px; position:absolute; top:45px; left:30px;}
+.indexBprom-close {width:16px; height:16px; background-position:-202px -30px; position:absolute; top:20px; right:20px;}
+.ui-position-fixed {
+_position:absolute;
+_bottom:auto;
+_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));
+_margin-bottom:50px;
+}
+/* ntalker客服样式*/
+.ntkp{cursor:pointer;}
+/* newadd keywordxiala2013.09.09 */
+.ks-suggest-container {background: none repeat scroll 0 0 white; border: 1px solid #999999; z-index: 99999;}
+.ks-suggest-container li { color: #404040; float: left; font-size: 12px; line-height: 18px; padding: 1px 0 2px;  width: 100%;}
+.ks-suggest-container li, .ks-suggest-footer { clear: both; overflow: hidden;}
+.ks-suggest-content ol li{color: #000000; height: 23px; line-height: 23px; list-style: none outside none;}	
+.ks-suggest-key {float: left; padding-left: 5px;text-align: left;}
+.ks-suggest-cate {padding-left:10px;}	
+.mall-suggest-container ol .ks-suggest-key {  padding-left: 10px;}	
+.mall-suggest-container .ks-suggest-cate {color: #7E7E7E; padding-left: 10px;}	
+.mallSearch-tip p { background: none repeat scroll 0 0 #EFECEB;font-family: 宋体; height: 30px;line-height: 30px; margin-top: 1px; padding: 0 10px;}
+.mallSearch-tip span { color: #000000; cursor: pointer; display: block;  height: 100%; overflow: hidden;}
+.mallSearch-tip b { display: inline-block; font-family: Arial;max-width: 300px;  overflow: hidden; text-overflow: ellipsis; vertical-align: middle; white-space: nowrap;}
+.mallSearch-tip em { color: #2a7721; font-weight: bold; margin: 0 5px;}
+.quickSearchTip i, .quickSearchTip em { background: url("../../images/skin/2013/quickSearchTip_bg.png") no-repeat scroll 0 0 #FFFFFF;}
+.quickSearchTip i { background-position: -40px 5px; display: block; float: left; height: 22px;  margin-left: 5px;  width: 23px;}
+.quickSearchTip em { color: #000000; display: inline-block; font-weight: bold;height: 23px; line-height: 23px; margin: 0 3px; text-align: center; width: 35px;}
+.quickSearchTip { color: #666666; height: 30px; line-height: 30px;}
+	
+/*根据屏幕大小控制样式*/
+@media screen and (max-width: 1210px){
+	/* **宽度变换** */
+	 #site-nav{min-width: 1190px;}
+	 .shanshanNav {min-width: 1190px;}
+	 .header {min-width: 1190px;}
+}
+@media \0screen\,screen\9  {
+  /* **宽度变换** */
+	 #site-nav{min-width: 1190px;}
+	 .shanshanNav {min-width: 1190px;}
+	 .header {min-width: 1190px;}
+}
+@media screen and (max-width: 990px){ 
+	body{min-width:1190px;}
+}
+@media \0screen\,screen\9  {
+  body{min-width:1190px;}
+}
+
+
+/* 2014年3月4日 2.4 山山手机样式*/
+.qr-code{
+	height: 100px;
+	width: 200px;
+}
+
+.qr-code i{
+	background: url("../../images/2013/20130330A_2.png");
+	float: left;
+	margin-left: 10px;
+	margin-top: 10px;
+	background-position: 0 -78px; 
+	width:105px; 
+	height:23px;
+	display:block;
+}
+.qr-code img{
+	float: left; 
+	margin-left: 5px; 
+	margin-top: 10px;
+}
+.qr-code-right strong{
+	color: red;
+	float: left;
+	margin-left: 15px;     
+	font-size: 14px;
+}
+.app-btn{
+	float: left;	
+	width: 200px;
+}
+.btn-app-android{
+	float: left;
+	background: url("../../images/2013/20130330A_2.png");
+	background-position: 0 -39px;
+	width:97px; 
+	height:29px;
+	margin-left: 2px;
+}
+.btn-app-apple{
+	float: left;
+	background: url("../../images/2013/20130330A_2.png");
+	background-position: 0 0;
+	width:97px; 
+	height:29px;
+}
+#shouji_yincang{
+	width:195px;
+	height:140px;
+	left:-131px;
+	display: none;
+}
+/* 2014年3月4日 2.4 山山手机样式 结束*/
+
+/* 2014年3月29日 2.4 添加购物车成功弹出框样式 开始*/
+#cart_tan{
+	display:none;
+	position:fixed; 
+	_position:absolute; 
+	top:200px; 
+	right: 35%; 
+	z-index:44; 
+	width: 370px; 
+	height: 135px; 
+	border: 1px solid #B5C7AF; 
+	background-color: #F1FFE6; 
+}
+#cart_tan_top{
+	width: 370px; 
+	height: 20px;
+}
+#cart_tan_top a{
+	width: 45px; 
+	float: right; 
+	font-size: 13px; 
+	color:#000000;
+	cursor: pointer;
+}
+#cart_tan_zhong{
+	width: 370px;
+	height: 40px;
+	margin-left: 20px;
+	font-size: 20px;
+}
+#cart_tan_zhong span{
+	width: 370px;
+}
+#cart_tan_di{
+	width: 350px;
+	margin-left: 40px;
+	line-height: 28px;
+}
+#cart_tan_di .cart_total{
+	color: #FC5B00;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* 2014年3月29日 2.4 添加购物车成功弹出框样式 开始*/
+

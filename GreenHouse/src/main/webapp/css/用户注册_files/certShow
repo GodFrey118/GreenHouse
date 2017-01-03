@@ -1,0 +1,1 @@
+ (function(){ window.pinganCert.init('shanshan360.com');  window.pinganCert.showCert("shiming","bottomimagesmall","161141105008645927408"); })(window,document);

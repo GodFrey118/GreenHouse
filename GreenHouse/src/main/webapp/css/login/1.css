@@ -1,0 +1,9 @@
+#close_btn{width:30px;position:fixed;right:110px;top:10px;cursor:pointer}
+
+#bg_div {margin:-390px auto 0px;z-index:10000;height: 400px;width:1190px;position:fixed;}
+#top_nav{height:70px}
+/*#close_btn{position:fixed;right:184px;top:10px;cursor:pointer}*/
+.pic img {width:150px;height:150px}
+.small_img img{width:45px;height:45px}
+.slide_img img{width:235px;height:470px} 
+.collect{cursor:pointer}
