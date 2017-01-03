@@ -54,8 +54,8 @@ margin-top:12px
 	-ms-transition:-ms-transform .5s ease;
 	transition:transform .5s ease
 }
-.ui-dropdown-hd .phon{margin-top:2px;margin-left:3px;background:url(../首页_files/icon-pho.gif) no-repeat; width:13px; height:22px;}
-.ui-dropdown.hover .ui-dropdown-hd .phon,.ui-dropdown:hover .ui-dropdown-hd .phon{ background:url(../首页_files/icon-pho2.jpg) no-repeat;width:13px; height:22px;}
+.ui-dropdown-hd .phon{margin-top:2px;margin-left:3px;background:url(../index_files/icon-pho.gif) no-repeat; width:13px; height:22px;}
+.ui-dropdown.hover .ui-dropdown-hd .phon,.ui-dropdown:hover .ui-dropdown-hd .phon{ background:url(../index_files/icon-pho2.jpg) no-repeat;width:13px; height:22px;}
 .ui-dropdown-hd:hover {
 	text-decoration:underline;
 	color:#318327		
@@ -279,7 +279,7 @@ position: relative;
 height: 450px;
 }
 .linka{ position:absolute;float:left;margin-left:584px;}                     
-.linka a{width:972px;height:450px; display:block; background:url(../首页_files/aa.jpg) no-repeat -9999px 0; text-indent:-9999px}
+.linka a{width:972px;height:450px; display:block; background:url(../index_files/aa.jpg) no-repeat -9999px 0; text-indent:-9999px}
 .bannerpic li img{width: 1920px;
 height: 450px;}
 
@@ -289,12 +289,12 @@ height: 450px;}
 /*数字按钮样式*/
 .banner .num { right:15px}
 .banner .num li { 
-width: 23px; height: 23px; line-height: 23px; text-align: center; font-weight: 400; font-family: Arial; color: #FFFFFF;  margin-right: 5px;  background: url(../首页_files/ad-cir.png) no-repeat;  cursor:pointer; float: left; font-size:14px;}
-.banner .num li.on { background: url(../首页_files/ad-cir2.png) no-repeat; } /*当前项*/
+width: 23px; height: 23px; line-height: 23px; text-align: center; font-weight: 400; font-family: Arial; color: #FFFFFF;  margin-right: 5px;  background: url(../index_files/ad-cir.png) no-repeat;  cursor:pointer; float: left; font-size:14px;}
+.banner .num li.on { background: url(../index_files/ad-cir2.png) no-repeat; } /*当前项*/
 
 /*上一个  下一个*/
 .banner .prev,
-.banner .next { display: none; width: 40px; height: 100px; background: url(../首页_files/btn.png) no-repeat; position: absolute; top: 135px;}
+.banner .next { display: none; width: 40px; height: 100px; background: url(../index_files/btn.png) no-repeat; position: absolute; top: 135px;}
 .banner .prev { left: 0; }
 .banner .next { right: 0; background-position: right }
 
@@ -345,18 +345,18 @@ font-weight:bold; font-size:16px;
 
 .fl-con{width:944px;margin-bottom:25px}
 .fl-con .tit{height:40px;width:944px;border-bottom:2px #666 solid; line-height:40px;}
-.circle{background:url(../首页_files/circle.jpg) no-repeat;width:24px;height:24px;color:#fff; font-family:Impact; text-align:center; line-height:24px;margin-right:12px;margin-top:9px}
+.circle{background:url(../index_files/circle.jpg) no-repeat;width:24px;height:24px;color:#fff; font-family:Impact; text-align:center; line-height:24px;margin-right:12px;margin-top:9px}
 .fl-con .tit a{margin:0 13px;color:#6b6b6b}
 .fl-con .tit a:hover{ text-decoration:underline;color:#EE460f;}
 .fl-pic{width:235px; height:469px; float:left; position:relative; border-bottom:1px #E7E7E7 solid ;overflow:hidden}
 #slides2 { display:block; width:235px; height:469px; list-style:none;  position:relative;float:left}
 #slides2 li { display:block; width:235px; height:469px;  float:left; overflow:hidden}
 .hd2{ display:block; list-style:none; position:absolute; left:70%; top:448px; z-index:9900;  padding:5px 15px 5px 0; margin:0}
-.hd2 li { display:block; list-style:none; width:11px;overflow:hidden; cursor:pointer;  height:11px; float:left; text-indent:-9999px;margin-left:6px; border-radius:5px; background:url(../首页_files/ad-c2.png) no-repeat;}
-.hd2 li.on {background:url(../首页_files/ad-c1.png) no-repeat;}
+.hd2 li { display:block; list-style:none; width:11px;overflow:hidden; cursor:pointer;  height:11px; float:left; text-indent:-9999px;margin-left:6px; border-radius:5px; background:url(../index_files/ad-c2.png) no-repeat;}
+.hd2 li.on {background:url(../index_files/ad-c1.png) no-repeat;}
 .hd3{ display:block; list-style:none; position:absolute; left:70%; top:160px; z-index:9900;  padding:5px 15px 5px 0; margin:0}
-.hd3 li { display:block; list-style:none; width:11px;overflow:hidden; cursor:pointer;  height:11px; float:left; text-indent:-9999px;margin-left:6px; border-radius:5px; background:url(../首页_files/ad-c2.png) no-repeat;}
-.hd3 li.on {background:url(../首页_files/ad-c1.png) no-repeat;}
+.hd3 li { display:block; list-style:none; width:11px;overflow:hidden; cursor:pointer;  height:11px; float:left; text-indent:-9999px;margin-left:6px; border-radius:5px; background:url(../index_files/ad-c2.png) no-repeat;}
+.hd3 li.on {background:url(../index_files/ad-c1.png) no-repeat;}
 
 
 .pro-tj {
@@ -393,8 +393,8 @@ height: 45px;
 .bd ul{ overflow:hidden; zoom:1; }
 .bd ul li{ width:205px; height:440px; float:left}
 .hd{ display:block; list-style:none; position:absolute; left:88px; top:448px; z-index:9900;  padding:5px 15px 5px 0; margin:0}
-.hd li { display:block; list-style:none; width:11px;overflow:hidden; cursor:pointer;  height:11px; float:left; text-indent:-999px;margin-left:6px; border-radius:5px; background:url(../首页_files/ad-c2.png) no-repeat;}
-.hd li.on {background:url(../首页_files/ad-c1.png) no-repeat;}
+.hd li { display:block; list-style:none; width:11px;overflow:hidden; cursor:pointer;  height:11px; float:left; text-indent:-999px;margin-left:6px; border-radius:5px; background:url(../index_files/ad-c2.png) no-repeat;}
+.hd li.on {background:url(../index_files/ad-c1.png) no-repeat;}
 
 
 .meishi-box{width:1190px;margin-bottom:57px;}
@@ -433,7 +433,7 @@ width: 950px;
 .shansahn-info dd a:hover { text-decoration:underline;}
 .shansahn-info dl#pay { border-left: 1px dotted #E6E6E6; margin-left: 190px;}
 .shansahn-info dl#service { border-right:none;}
-.shanshan-homeico { background:url(../首页_files/shanshan-homeico.png) no-repeat; height: 85px; left: 50%; margin-left: -45px; overflow: hidden; position: absolute; top: 28px;  width: 85px;}
+.shanshan-homeico { background:url(../index_files/shanshan-homeico.png) no-repeat; height: 85px; left: 50%; margin-left: -45px; overflow: hidden; position: absolute; top: 28px;  width: 85px;}
 .shanshan-feedback {left: 50%;  margin-top:94px;margin-left:-50px; overflow: hidden; position: absolute; top: 28px;}
 .ss-bottom-img { padding:5px 0; width:100%; height:290px;}
 #copyright {position:relative;}

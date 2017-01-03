@@ -1,19 +1,18 @@
-<!doctype html>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
 <head>
+<base href="/GreenHouse/">
 <meta charset="utf-8">
-<meta property="qc:admins" content="05154407570630163016066654">
-<meta http-equiv="X-UA-Compatible" content="IE=10">
-<link href="首页_files/common.css" rel="stylesheet" type="text/css">
-<link href="首页_files/index.css" rel="stylesheet" type="text/css">   
-        
-<title>商城首页</title>
-<script type="text/javascript" src="首页_files/jquery-V2.3.0.min.js" charset="utf-8"></script>
-<script type="text/javascript" src="首页_files/jquery.superslide.2.1.1.js" charset="utf-8"></script>                           
-<script charset="utf-8" type="text/javascript" src="首页_files/jquery-ui-V2.3.0.js"></script>
-<link rel="stylesheet" type="text/css" href="首页_files/jquery-ui-V2.3.0.css">
-<script type="text/javascript" src="首页_files/Seach.js"></script> 
-<link href="首页_files/index_css.css" rel="stylesheet" type="text/css">   
+<link rel="stylesheet" type="text/css"  href="css/common.css"/>
+<link rel="stylesheet" type="text/css"  href="css/index.css"/>          
+<title>商城index</title>
+<!-- <script type="text/javascript" src="js/jquery-V2.3.0.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/jquery.superslide.2.1.1.js" charset="utf-8"></script>                           
+<script charset="utf-8" type="text/javascript" src="js/jquery-ui-V2.3.0.js"></script> -->
+<link rel="stylesheet" type="text/css" href="css/jquery-ui-V2.3.0.css">
+<script type="text/javascript" src="index_files/Seach.js"></script> 
+<link href="css/index_css.css" rel="stylesheet" type="text/css">   
 
 </head>
 <body>
@@ -35,7 +34,7 @@
                  <ul>
                     <li>
                     <p>
-                    <a href="#" target="_brank"><img style="width: 118px; height: 118px;" src="./首页_files/syewmsz_0.jpg"></a></p><p class="f14 fyh tec">
+                    <a href="#" target="_brank"><img style="width: 118px; height: 118px;" src="./index_files/syewmsz_0.jpg"></a></p><p class="f14 fyh tec">
                     <a href="#" target="_brank"><font color="#5B5B5B">山山商城微信</font></a>
                     </p>
                     </li>
@@ -50,7 +49,7 @@
 <div class="index_tbar ">
       <div class=" grid ">
            <div class="fl collect" onclick="addBookmark()">
-           <img src="./首页_files/icon-star.gif">收藏山山
+           <img src="./index_files/icon-star.gif">收藏山山
            </div>
            <div class="fr">
                 <span class="fl name sn-login-info">您好！ 欢迎来山山商城购物！<a href="#" class="sn-login">请登录</a> <a href="#" class="sn-register">免费注册</a><i class="sn-separator"></i></span>
@@ -84,10 +83,10 @@
                         <ul class="unstyled fr ui-dropdown-menu weixin">
                               <li>
                                  <div class="con fl">
-                                 <div class="fl"><img src="./首页_files/erweima.jpg" width="76px" height="76px"></div>
+                                 <div class="fl"><img src="./index_files/erweima.jpg" width="76px" height="76px"></div>
                                  <div class="fl font">扫描我即刻下载<br><font color="#FF0000" class="f14 b">山山商城客户端</font></div>
                                  <div class="clear bt">
-                                 <a href="#"><img src="./首页_files/an_icon.jpg"></a> <a href="#"><img src="./首页_files/ap_icon_kf.jpg"></a>
+                                 <a href="#"><img src="./index_files/an_icon.jpg"></a> <a href="#"><img src="./index_files/ap_icon_kf.jpg"></a>
                                  </div>
                                  </div>
                               </li>
@@ -118,7 +117,7 @@
      <div class="top-con fl">
           <div class="logo fl"> 
             
-                      <a href="./首页_files/首页.html"><img width="380px" height="100px" src="./首页_files/site_logo.jpg"></a>
+                      <a href="./index_files/index.html"><img width="380px" height="100px" src="./index_files/site_logo.jpg"></a>
                       </div>
           
           <div class="fl">
@@ -140,14 +139,14 @@
             
           <div class="top_button fl">
                 <a href="#">
-                   <div class="fl top-bt"><img src="./首页_files/icon-meber.jpg">我的山山 </div>
+                   <div class="fl top-bt"><img src="./index_files/icon-meber.jpg">我的山山 </div>
                  </a>
                <div class="fl  ui-dropdown2">
                
                <a target="_blank" href="#" class="ui-dropdown-hd2">
                  <div class="top-bt fl">
                    <div class="fl buy">
-                   <img src="./首页_files/icon-buy2.png">
+                   <img src="./index_files/icon-buy2.png">
                    </div><div class="fl">购物车</div>
                    <div id="carts" class="num-bg fl">0</div>
                  </div>
@@ -156,7 +155,7 @@
                <ul class="unstyled fr ui-dropdown-menu2">
                    <li>
                      <div class="con fl hide carts_show_g">
-                        <div class="fl"><img src="./首页_files/b-y.jpg"></div>
+                        <div class="fl"><img src="./index_files/b-y.jpg"></div>
                         <div class="fl cart_show">你的购物车是空的，赶快去购物吧！</div>
                      </div>
                    
@@ -190,23 +189,23 @@
      <div class="banner" style="overflow: hidden; position: relative;">
           <ul class="bannerpic" style="width: 0px; position: relative; height: 450px;">
                <li style="opacity: 1; left: 0px; top: 0px; z-index: 6; position: absolute; width: 0px; display: none;">         
-               <div style="float:left; position:absolute"><img alt="" src="./首页_files/SHANSHAN_IMG_52_5832281.jpg"></div>
-               <div class="linka"><a target="_blank" href="#"><img alt="" src="./首页_files/SHANSHAN_IMG_52_5832281.jpg"></a></div>
+               <div style="float:left; position:absolute"><img alt="" src="./index_files/SHANSHAN_IMG_52_5832281.jpg"></div>
+               <div class="linka"><a target="_blank" href="#"><img alt="" src="./index_files/SHANSHAN_IMG_52_5832281.jpg"></a></div>
                </li>
             
                <li style="opacity: 1; left: 0px; top: 0px; z-index: 6; position: absolute; width: 0px; display: none;">         
-               <div style="float:left; position:absolute"><img alt="" src="./首页_files/SHANSHAN_IMG_48_7929873.jpg"></div>
-               <div class="linka"><a target="_blank" href="#"><img alt="" src="./首页_files/SHANSHAN_IMG_48_7929873.jpg"></a></div>
+               <div style="float:left; position:absolute"><img alt="" src="./index_files/SHANSHAN_IMG_48_7929873.jpg"></div>
+               <div class="linka"><a target="_blank" href="#"><img alt="" src="./index_files/SHANSHAN_IMG_48_7929873.jpg"></a></div>
                </li>
             
                <li style="opacity: 1; left: 0px; top: 0px; z-index: 6; position: absolute; width: 0px; display: list-item;">         
-               <div style="float:left; position:absolute"><img alt="" src="./首页_files/SHANSHAN_IMG_50_3231601.jpg"></div>
-               <div class="linka"><a target="_blank" href="#"><img alt="" src="./首页_files/SHANSHAN_IMG_50_3231601.jpg"></a></div>
+               <div style="float:left; position:absolute"><img alt="" src="./index_files/SHANSHAN_IMG_50_3231601.jpg"></div>
+               <div class="linka"><a target="_blank" href="#"><img alt="" src="./index_files/SHANSHAN_IMG_50_3231601.jpg"></a></div>
                </li>
             
                <li style="opacity: 1; left: 0px; top: 0px; z-index: 6; position: absolute; width: 0px; display: none;">         
-               <div style="float:left; position:absolute"><img alt="" src="./首页_files/SHANSHAN_IMG_51_8596581.jpg"></div>
-               <div class="linka"><a target="_blank" href="#"><img alt="" src="./首页_files/SHANSHAN_IMG_51_8596581.jpg"></a></div>
+               <div style="float:left; position:absolute"><img alt="" src="./index_files/SHANSHAN_IMG_51_8596581.jpg"></div>
+               <div class="linka"><a target="_blank" href="#"><img alt="" src="./index_files/SHANSHAN_IMG_51_8596581.jpg"></a></div>
                </li>
               
           </ul>
@@ -243,7 +242,7 @@
                              <a href="#">水产</a>|
                         </div>
 
-                        <div class="Anav-sub-ad"><a href="#"><img src="./首页_files/SHANSHAN_IMG_1452502334_7679640.jpg" width="370" height="350"></a></div>
+                        <div class="Anav-sub-ad"><a href="#"><img src="./index_files/SHANSHAN_IMG_1452502334_7679640.jpg" width="370" height="350"></a></div>
                     </div>
                 </li>
                    <li>
@@ -261,7 +260,7 @@
                            <a href="#">方便速食</a>|
                         </div>
 
-                        <div class="Anav-sub-ad"><a href="#"><img src="./首页_files/SHANSHAN_IMG_1452502203_4389324.jpg" width="370" height="350"></a></div>
+                        <div class="Anav-sub-ad"><a href="#"><img src="./index_files/SHANSHAN_IMG_1452502203_4389324.jpg" width="370" height="350"></a></div>
                     </div>
                 </li>
                                 <li>
@@ -278,7 +277,7 @@
                             <a href="#">冲调饮品</a>|
                          </div>
 
-                        <div class="Anav-sub-ad"><a href="#"><img src="./首页_files/SHANSHAN_IMG_1452502213_2757415.jpg" width="370" height="350"></a></div>
+                        <div class="Anav-sub-ad"><a href="#"><img src="./index_files/SHANSHAN_IMG_1452502213_2757415.jpg" width="370" height="350"></a></div>
                     </div>
                 </li>
                                 <li>
@@ -295,7 +294,7 @@
                             <a href="#">糖果/巧克力/奶</a>|
                         </div>
 
-                        <div class="Anav-sub-ad"><a href="#"><img src="./首页_files/SHANSHAN_IMG_1452502191_8503348.jpg" width="370" height="350"></a></div>
+                        <div class="Anav-sub-ad"><a href="#"><img src="./index_files/SHANSHAN_IMG_1452502191_8503348.jpg" width="370" height="350"></a></div>
                     </div>
                 </li>
                 <li>
@@ -310,7 +309,7 @@
                             <a href="#">饮料/乳品</a>|
                         </div>
 
-                        <div class="Anav-sub-ad"><a href="#"><img src="./首页_files/SHANSHAN_IMG_1452502320_1961974.jpg" width="370" height="350"></a></div>
+                        <div class="Anav-sub-ad"><a href="#"><img src="./index_files/SHANSHAN_IMG_1452502320_1961974.jpg" width="370" height="350"></a></div>
                     </div>
                 </li>
                 <li>
@@ -325,7 +324,7 @@
                            <a href="#">园艺</a>|
                         </div>
 
-                        <div class="Anav-sub-ad"><a href=""><img src="./首页_files/SHANSHAN_IMG_1460531908_4750571.jpg" width="370" height="350"></a></div>
+                        <div class="Anav-sub-ad"><a href=""><img src="./index_files/SHANSHAN_IMG_1460531908_4750571.jpg" width="370" height="350"></a></div>
                     </div>
                 </li>
                 
@@ -333,12 +332,12 @@
                     <div class="Anav-title"><em class="A-em8"></em>山山优选</div>
                     <div class="Anav-subB">
                         <ul class="Anav-brand">
-                            <li><a href="#"><img src="./首页_files/SHANSHAN_IMG_shanshan_1_201608231401511413.jpg" alt="景宁特产 芝麻片" width="90" height="45"></a></li>
-                            <li><a href="#"><img src="./首页_files/SHANSHAN_IMG_shanshan_1_201611111746491643.jpg" alt="农家黄米粿" width="90" height="45"></a></li>
-                            <li><a href="#"><img src="./首页_files/SHANSHAN_IMG_shanshan_1_201604071313359696.jpg" alt="禾珍米" width="90" height="45"></a></li>
-                            <li><a href="#"><img src="./首页_files/SHANSHAN_IMG_shanshan_1_201604071313359164.jpg" alt="土鸡蛋" width="90" height="45"></a></li>
-                            <li><a href="#"><img src="./首页_files/SHANSHAN_IMG_shanshan_1_201604071313352189.jpg" alt="黑面菇" width="90" height="45"></a></li>
-                            <li><a href="#"><img src="./首页_files/SHANSHAN_IMG_shanshan_1_201611031121506825.jpg" alt="畲乡地瓜面" width="90" height="45"></a></li>
+                            <li><a href="#"><img src="./index_files/SHANSHAN_IMG_shanshan_1_201608231401511413.jpg" alt="景宁特产 芝麻片" width="90" height="45"></a></li>
+                            <li><a href="#"><img src="./index_files/SHANSHAN_IMG_shanshan_1_201611111746491643.jpg" alt="农家黄米粿" width="90" height="45"></a></li>
+                            <li><a href="#"><img src="./index_files/SHANSHAN_IMG_shanshan_1_201604071313359696.jpg" alt="禾珍米" width="90" height="45"></a></li>
+                            <li><a href="#"><img src="./index_files/SHANSHAN_IMG_shanshan_1_201604071313359164.jpg" alt="土鸡蛋" width="90" height="45"></a></li>
+                            <li><a href="#"><img src="./index_files/SHANSHAN_IMG_shanshan_1_201604071313352189.jpg" alt="黑面菇" width="90" height="45"></a></li>
+                            <li><a href="#"><img src="./index_files/SHANSHAN_IMG_shanshan_1_201611031121506825.jpg" alt="畲乡地瓜面" width="90" height="45"></a></li>
                         </ul>
                     </div>
                 </li>
@@ -373,7 +372,7 @@
                   	 <li>                    
                       <p class="picb">
                         <a target="_blank" href="#">
-                          <img style="width:208px;height:208px;" alt="山东烟台红富士   栖霞山东苹果  5斤装大果 包邮" src="./首页_files/small_201611041502121525.jpg">
+                          <img style="width:208px;height:208px;" alt="山东烟台红富士   栖霞山东苹果  5斤装大果 包邮" src="./index_files/small_201611041502121525.jpg">
                         </a>
                       </p>
                       <p class="name">山东烟台红富士   栖霞山东苹果  5斤装大果 包邮<br></p>
@@ -386,7 +385,7 @@
                       <li>                    
                       <p class="picb">
                         <a target="_blank" href="#">
-                           <img style="width:208px;height:208px;" alt="河北皇冠梨酥梨香梨雪花梨新鲜水果5斤包邮" src="./首页_files/small_201606291055145047.jpg">
+                           <img style="width:208px;height:208px;" alt="河北皇冠梨酥梨香梨雪花梨新鲜水果5斤包邮" src="./index_files/small_201606291055145047.jpg">
                         </a>
                       </p>
                       <p class="name">河北皇冠梨酥梨香梨雪花梨新鲜水果5斤包邮<br></p>
@@ -398,7 +397,7 @@
                       </p>
                       </li>
                       <li>                    
-                      <p class="picb"><a target="_blank" href="#"><img style="width:208px;height:208px;" alt="野生青钱柳 原叶茶罐装50g" src="./首页_files/small_201611041142232648.jpg"></a></p>
+                      <p class="picb"><a target="_blank" href="#"><img style="width:208px;height:208px;" alt="野生青钱柳 原叶茶罐装50g" src="./index_files/small_201611041142232648.jpg"></a></p>
                       <p class="name">野生青钱柳 原叶茶罐装50g<br></p>
                       <p class="price">
                       	<font class="fyh f15">促销价：</font>
@@ -409,7 +408,7 @@
                       <li>                    
                       <p class="picb">
                       	<a target="_blank" href="#">
-                      		<img style="width:208px;height:208px;" alt="野生青钱柳 嫩叶茶罐装50g" src="./首页_files/small_201611041147398420.jpg">
+                      		<img style="width:208px;height:208px;" alt="野生青钱柳 嫩叶茶罐装50g" src="./index_files/small_201611041147398420.jpg">
                       	</a>
                       </p>
                       <p class="name">野生青钱柳 嫩叶茶罐装50g<br></p>
@@ -426,7 +425,7 @@
                   	  <li>                    
                       <p class="picb">
                       	<a target="_blank" href="#">
-                      		<img style="width:208px;height:208px;" alt="香菇 光面菇 景宁 厂家直销 江浙沪包邮 A2-250g" src="./首页_files/small_201611081456294514.jpg">
+                      		<img style="width:208px;height:208px;" alt="香菇 光面菇 景宁 厂家直销 江浙沪包邮 A2-250g" src="./index_files/small_201611081456294514.jpg">
                      	</a>
                       </p>
                       <p class="name">香菇 光面菇 景宁 厂家直销 江浙沪包邮 A2-250g<br></p>
@@ -437,7 +436,7 @@
                       </li>
                       <li>                    
                       <p class="picb">
-                        <a target="_blank" href="#"><img style="width:208px;height:208px;" alt="生态放养斑嘴野鸭 单只2-2.5斤 仅发江浙沪" src="./首页_files/small_201611041126429065.jpg"></a></p>
+                        <a target="_blank" href="#"><img style="width:208px;height:208px;" alt="生态放养斑嘴野鸭 单只2-2.5斤 仅发江浙沪" src="./index_files/small_201611041126429065.jpg"></a></p>
                       <p class="name">生态放养斑嘴野鸭 单只2-2.5斤 仅发江浙沪<br></p>
                       <p class="price">
                       	<font class="fyh f15">促销价：</font>
@@ -447,7 +446,7 @@
                       </li>
                       <li>                    
                       <p class="picb">
-                      <a target="_blank" href="#"><img style="width:208px;height:208px;" alt="食用菌 干货 白背黑木耳 绒毛 多糖 BH2 袋装250g" src="./首页_files/small_201611081513441146.jpg"></a></p>
+                      <a target="_blank" href="#"><img style="width:208px;height:208px;" alt="食用菌 干货 白背黑木耳 绒毛 多糖 BH2 袋装250g" src="./index_files/small_201611081513441146.jpg"></a></p>
                       <p class="name">食用菌 干货 白背黑木耳 绒毛 多糖 BH2 袋装250g<br></p>
                       <p class="price">
                       <font class="fyh f15">促销价：</font>
@@ -457,7 +456,7 @@
                       </li>
                       <li>                    
                       <p class="picb">
-                      <a target="_blank" href="#"><img style="width:208px;height:208px;" alt="香菇 黑面菇 景宁 厂家直销 江浙沪包邮 A2-250g" src="./首页_files/small_201611081527334897.jpg"></a></p>
+                      <a target="_blank" href="#"><img style="width:208px;height:208px;" alt="香菇 黑面菇 景宁 厂家直销 江浙沪包邮 A2-250g" src="./index_files/small_201611081527334897.jpg"></a></p>
                       <p class="name">香菇 黑面菇 景宁 厂家直销 江浙沪包邮 A2-250g<br></p>
                       <p class="price">
                       <font class="fyh f15">促销价：</font>
@@ -490,7 +489,7 @@
                <div class="bd2">
                 <div class="tempWrap" style="overflow:hidden; position:relative; width:235px">
                 <ul id="slides" style="width: 235px; left: 0px; position: relative; overflow: hidden; padding: 0px; margin: 0px;">
-                    <li style="float: left; width: 235px;"><a target="_blank" href="#"><img src="./首页_files/125.jpg" width="235" height="185"></a></li>
+                    <li style="float: left; width: 235px;"><a target="_blank" href="#"><img src="./index_files/125.jpg" width="235" height="185"></a></li>
                                                                                  
                 </ul>
                 </div>
@@ -498,12 +497,12 @@
             </div>
       </div>    
           <div class="clear ads fl">
-           <a href="#" target="_blank"><img src="./首页_files/SHANSHAN_IMG_shanshan_1_201611301617484367.jpg" alt="" border="0" width="1190" height="100"></a>
+           <a href="#" target="_blank"><img src="./index_files/SHANSHAN_IMG_shanshan_1_201611301617484367.jpg" alt="" border="0" width="1190" height="100"></a>
           </div>      
       <div>
       <div class="fl fl-con">                       
            <div class="tit fl" style="background:;">       
-                <div class="fl f14"><img src="./首页_files/small_SHANSHAN_IMG_shanshan_1_201604111047493882.jpg"></div>
+                <div class="fl f14"><img src="./index_files/small_SHANSHAN_IMG_shanshan_1_201604111047493882.jpg"></div>
                 <div class="fl fyh f22 b">生鲜食品</div>
                 <div class="fr display">
                    <a href="#" target="_blank">水果</a>|
@@ -524,7 +523,7 @@
                      <div class="tempWrap" style="overflow:hidden; position:relative; width:235px">
                      <ul id="slides2" style="width: 235px; left: 0px; position: relative; overflow: hidden; padding: 0px; margin: 0px;">                                  
                           <li style="float: left; width: 235px;">
-                             <a href="#" target="_blank"><img alt="畲葛山黄粿" src="./首页_files/SHANSHAN_IMG_shanshan_1_201611301619404198.jpg"></a>
+                             <a href="#" target="_blank"><img alt="畲葛山黄粿" src="./index_files/SHANSHAN_IMG_shanshan_1_201611301619404198.jpg"></a>
                           </li>
                      </ul>
                      </div>
@@ -537,7 +536,7 @@
                      <ul>            
                             <li>
                                <p class="pic"><a href="#" target="_blank">
-                              <img src="./首页_files/small_201507291048161158.jpg">  </a>  
+                              <img src="./index_files/small_201507291048161158.jpg">  </a>  
                                  <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(49526,49433);" spec_id="49526" goods_id="49433">加入购物车</span>                               
                                </p>
                                <p class="name"><a href="#">野生仙人掌果 仙人果 2斤装 海南水果新鲜热带水果  偏</a></p>
@@ -552,7 +551,7 @@
                              </li>
                              <li>
                                <p class="pic"><a href="#" target="_blank">
-                               <img src="./首页_files/small_201611031142157009.jpg">  </a>  
+                               <img src="./index_files/small_201611031142157009.jpg">  </a>  
                                    <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(50050,49954);" spec_id="50050" goods_id="49954">加入购物车</span>                               </p>
                                <p class="name"><a href="#">雪莲果 云南高原特产雪莲果 红泥雪莲果  9斤装</a></p>
                                <p class="price">
@@ -566,7 +565,7 @@
                              </li>
                              <li>
                                <p class="pic"><a href="#" target="_blank">
-                               <img src="./首页_files/small_201610270954245633.jpg">  </a>  
+                               <img src="./index_files/small_201610270954245633.jpg">  </a>  
                                  <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(50059,49963);" spec_id="50059" goods_id="49963">加入购物车</span>                               
                                </p>
                                <p class="name"><a href="#">黄心猕猴桃 奇异果 新鲜水果 黄心奇异果 12个装约1200</a></p>
@@ -580,7 +579,7 @@
                              </li>
                              <li>
                                <p class="pic"><a href="#" target="_blank">
-                               <img src="./首页_files/small_201609191702194594.jpg">  </a>  
+                               <img src="./index_files/small_201609191702194594.jpg">  </a>  
                                  <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(49991,49895);" spec_id="49991" goods_id="49895">加入购物车</span>                               
                                </p>
                                <p class="name"><a href="#">蟹齐阁阳澄湖大闸蟹现货礼盒装 母蟹10只 2.4-2.2两</a></p>
@@ -594,7 +593,7 @@
                              </li>
                              <li>
                                <p class="pic"><a href="#" target="_blank">
-                                 <img src="./首页_files/small_201611041429556196.jpg">  </a>  
+                                 <img src="./index_files/small_201611041429556196.jpg">  </a>  
                                  <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(50084,49988);" spec_id="50084" goods_id="49988">加入购物车</span>                               
                                </p>
                                <p class="name"><a href="#">洪湖无铅松花皮蛋农家散养鸭皮蛋 变蛋 灰包蛋皮蛋20枚</a></p>
@@ -608,7 +607,7 @@
                              </li>
                              <li>
                                <p class="pic"><a href="#" target="_blank">
-                                <img src="./首页_files/small_201610201737159391.jpg">  </a>  
+                                <img src="./index_files/small_201610201737159391.jpg">  </a>  
                                 <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(50047,49951);" spec_id="50047" goods_id="49951">加入购物车</span>                               
                                </p>
                                <p class="name"><a href="#">丽水山耕 锥栗200g</a></p>
@@ -622,7 +621,7 @@
                              </li>
                              <li>
                                <p class="pic"><a href="#" target="_blank">
-                                 <img src="./首页_files/small_201512081855188366.jpg">  </a>  
+                                 <img src="./index_files/small_201512081855188366.jpg">  </a>  
                                  <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(36552,36481);" spec_id="36552" goods_id="36481">加入购物车</span>                               
                                </p>
                                <p class="name"><a href="#">陕西特产 正宗洛川苹果 新鲜红富士24个75mm果径 脆甜</a></p>
@@ -636,7 +635,7 @@
                              </li>
                               <li>
                                <p class="pic"><a href="#" target="_blank">
-                                 <img src="./首页_files/small_201610261729404248.jpg">  </a>  
+                                 <img src="./index_files/small_201610261729404248.jpg">  </a>  
                                  <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(50052,49956);" spec_id="50052" goods_id="49956">加入购物车</span>                               
                                </p>
                                <p class="name"><a href="#">人参果 云南石林人参果 香艳梨人参果蔬菜 尖果型 长果</a></p>
@@ -667,7 +666,7 @@
                                <li style="float: left; width: 205px;">       
                                            <div class="pro fl">
                                            <div class="fl pic cur small_img">
-                                           <a target="_blank" href="#"><img src="./首页_files/small_201512081855188366.jpg"></a></div>
+                                           <a target="_blank" href="#"><img src="./index_files/small_201512081855188366.jpg"></a></div>
                                            <div class="fl con">
                                            <p class="lh18 name"> <a target="_blank" href="#">陕西特产 正宗洛川苹果 新鲜红富士24</a></p>     
                                            <p>
@@ -680,7 +679,7 @@
                                          </div>
                                           <div class="pro fl">
                                            <div class="fl pic cur small_img">
-                                           <a target="_blank" href="#"><img src="./首页_files/small_201512081900353299.jpg"></a></div>
+                                           <a target="_blank" href="#"><img src="./index_files/small_201512081900353299.jpg"></a></div>
                                            <div class="fl con">
                                            <p class="lh18 name"> <a target="_blank" href="#">河北特产 中华名果 正宗赵县雪花梨 新</a></p>     
                                            <p>
@@ -691,7 +690,7 @@
                                          </div>
                                           <div class="pro fl">
                                            <div class="fl pic cur small_img">
-                                           <a target="_blank" href="#"><img src="./首页_files/small_201610261804529920.jpg"></a></div>
+                                           <a target="_blank" href="#"><img src="./index_files/small_201610261804529920.jpg"></a></div>
                                            <div class="fl con">
                                            <p class="lh18 name"> <a target="_blank" href="#">新鲜火龙果 越南进口白心火龙果 5斤装</a></p>     
                                            <p>
@@ -704,7 +703,7 @@
                                          </div>
                                           <div class="pro fl">
                                            <div class="fl pic cur small_img">
-                                           <a target="_blank" href="#"><img src="./首页_files/small_201610270936581605.jpg"></a></div>
+                                           <a target="_blank" href="#"><img src="./index_files/small_201610270936581605.jpg"></a></div>
                                            <div class="fl con">
                                            <p class="lh18 name"> <a target="_blank" href="#">新鲜石榴 云南蒙自甜石榴  5斤装 单果</a></p>     
                                            <p>
@@ -716,7 +715,7 @@
                                          </div>
                                           <div class="pro fl">
                                            <div class="fl pic cur small_img">
-                                           <a target="_blank" href="#"><img src="./首页_files/small_201606291055145047.jpg"></a></div>
+                                           <a target="_blank" href="#"><img src="./index_files/small_201606291055145047.jpg"></a></div>
                                            <div class="fl con">
                                            <p class="lh18 name"> <a target="_blank" href="#">河北皇冠梨酥梨香梨雪花梨新鲜水果5斤</a></p>     
                                            <p><font class="f-s cff6 f16">
@@ -728,7 +727,7 @@
                                          </div>
                                           <div class="pro fl">
                                            <div class="fl pic cur small_img">
-                                           <a target="_blank" href="#"><img src="./首页_files/small_201610201837098254.jpg"></a></div>
+                                           <a target="_blank" href="#"><img src="./index_files/small_201610201837098254.jpg"></a></div>
                                            <div class="fl con">
                                            <p class="lh18 name"> <a target="_blank" href="#">丽水山耕 鱼腥草80g</a></p>     
                                            <p>
@@ -754,7 +753,7 @@
               <div>
       <div class="fl fl-con">                       
            <div class="tit fl" style="background:;">       
-                <div class="fl f14"><img src="./首页_files/small_SHANSHAN_IMG_floor_2_1_201404030214155636.jpg"></div>
+                <div class="fl f14"><img src="./index_files/small_SHANSHAN_IMG_floor_2_1_201404030214155636.jpg"></div>
                 <div class="fl fyh f22 b">粮油干货</div>
                 <div class="fr display">
                    <a href="#" target="_blank">香菇</a>|
@@ -774,7 +773,7 @@
                      <div class="tempWrap" style="overflow:hidden; position:relative; width:235px">
                      <ul id="slides2" style="width: 235px; left: 0px; position: relative; overflow: hidden; padding: 0px; margin: 0px;">                                  
                            <li style="float: left; width: 235px;">
-                             <a href="#" target="_blank"><img alt="光面菇11" src="./首页_files/SHANSHAN_IMG_shanshan_1_201611301621405047.jpg"></a>
+                             <a href="#" target="_blank"><img alt="光面菇11" src="./index_files/SHANSHAN_IMG_shanshan_1_201611301621405047.jpg"></a>
                            </li>
                        </ul>
                        </div>
@@ -787,7 +786,7 @@
                      <ul>            
                             <li>
                                <p class="pic"><a href="#" target="_blank">
-                                 <img src="./首页_files/small_201606081530082797.jpg">  </a>  
+                                 <img src="./index_files/small_201606081530082797.jpg">  </a>  
                                  <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(49858,49765);" spec_id="49858" goods_id="49765">加入购物车</span>                               
                                </p>
                                <p class="name"><a href="#">景宁特产高山 杂粮黑米黑糯米紫糯米新黑米2公斤装</a></p>
@@ -801,7 +800,7 @@
                              </li>
                                <li>
                                <p class="pic"><a href="#" target="_blank">
-                                 <img src="./首页_files/small_201606081627576462.jpg">  </a>  
+                                 <img src="./index_files/small_201606081627576462.jpg">  </a>  
                                  <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(49867,49774);" spec_id="49867" goods_id="49774">加入购物车</span>                               
                                </p>
                                <p class="name"><a href="#">金信食用菌类干景宁灰树花多糖土特产干货舞茸250g袋包</a></p>
@@ -815,7 +814,7 @@
                              </li>
                               <li>
                                <p class="pic"><a href="#" target="_blank">
-                                <img src="./首页_files/small_201606121425356293.jpg">  </a>  
+                                <img src="./index_files/small_201606121425356293.jpg">  </a>  
                                 <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(49874,49781);" spec_id="49874" goods_id="49781">加入购物车</span>                               
                                </p>
                                <p class="name"><a href="#">金信香菇干货特产食用菌 景宁土特产蘑菇 椴木冬菇100g</a></p>
@@ -830,7 +829,7 @@
                              </li>
                               <li>
                                <p class="pic"><a href="#" target="_blank">
-                                <img src="./首页_files/small_201606131146379480.jpg">  </a>  
+                                <img src="./index_files/small_201606131146379480.jpg">  </a>  
                                 <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(49889,49796);" spec_id="49889" goods_id="49796">加入购物车</span>                               
                                </p>
                                <p class="name"><a href="#">景宁特产高山农家自种黄豆15年新黄豆非转基因500g豆浆</a></p>
@@ -845,7 +844,7 @@
                              </li>
                               <li>
                                <p class="pic"><a href="#" target="_blank">
-                                <img src="./首页_files/small_201606131450468016.jpg">  </a>  
+                                <img src="./index_files/small_201606131450468016.jpg">  </a>  
                                 <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(49891,49798);" spec_id="49891" goods_id="49798">加入购物车</span>                               
                                </p>
                                <p class="name"><a href="#">【金信】山珍 菌类 灰树花 干货 多糖 土特产舞茸 HSH </a></p>
@@ -860,7 +859,7 @@
                              </li>
                               <li>
                                <p class="pic"><a href="#" target="_blank">
-                                 <img src="./首页_files/small_201606131647411793.jpg">  </a>  
+                                 <img src="./index_files/small_201606131647411793.jpg">  </a>  
                                  <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(49894,49801);" spec_id="49894" goods_id="49801">加入购物车</span>                               
                                </p>
                                <p class="name"><a href="#">景宁特产农家自晒土豆片干 土豆干干菜干货   马铃薯片</a></p>
@@ -875,7 +874,7 @@
                              </li>
                               <li>
                                <p class="pic"><a href="#" target="_blank">
-                                 <img src="./首页_files/small_201606131701434029.jpg">  </a>  
+                                 <img src="./index_files/small_201606131701434029.jpg">  </a>  
                                  <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(49896,49803);" spec_id="49896" goods_id="49803">加入购物车</span>                               
                                </p>
                                <p class="name"><a href="#">金信食用菌景宁黑木耳干货 小碗耳 原木黑木耳 素中之</a></p>
@@ -890,7 +889,7 @@
                              </li>
                               <li>
                                <p class="pic"><a href="#" target="_blank">
-                                 <img src="./首页_files/small_201511051656461041.jpg">  </a>  
+                                 <img src="./index_files/small_201511051656461041.jpg">  </a>  
                                  <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(49600,49507);" spec_id="49600" goods_id="49507">加入购物车</span>                               
                                </p>
                                <p class="name"><a href="#">景宁特产红米玄米 红糙米1000g</a></p>
@@ -921,7 +920,7 @@
                        <li style="float: left; width: 205px;">       
                             <div class="pro fl">
                                 <div class="fl pic cur small_img">
-                                   <a target="_blank" href="#"><img src="./首页_files/small_201606141335524637.jpg"></a></div>
+                                   <a target="_blank" href="#"><img src="./index_files/small_201606141335524637.jpg"></a></div>
                                    <div class="fl con">
                                    <p class="lh18 name"> <a target="_blank" href="#">茶树菇 景宁 厂家直销 250g</a></p>     
                                    <p><font class="f-s cff6 f16">
@@ -933,7 +932,7 @@
                                     </div>
                                          <div class="pro fl">
                                          <div class="fl pic cur small_img">
-                                         <a target="_blank" href="#"><img src="./首页_files/small_201606141537066948.jpg"></a></div>
+                                         <a target="_blank" href="#"><img src="./index_files/small_201606141537066948.jpg"></a></div>
                                          <div class="fl con">
                                          <p class="lh18 name"> <a target="_blank" href="#">木耳 白木耳 银耳 大朵 无硫 景宁 厂</a></p>     
                                          <p>
@@ -946,7 +945,7 @@
                                          </div>
                                            <div class="pro fl">
                                            <div class="fl pic cur small_img">
-                                           <a target="_blank" href="#"><img src="./首页_files/small_201611041210057387.jpg"></a></div>
+                                           <a target="_blank" href="#"><img src="./index_files/small_201611041210057387.jpg"></a></div>
                                            <div class="fl con">
                                            <p class="lh18 name"> <a target="_blank" href="http://www.shanshan360.com/index.php?app=goods&id=49972">乐旁黑松露酱180g原味/牛肉味两种口味</a></p>     
                                            <p>
@@ -959,7 +958,7 @@
                                          </div>
                                            <div class="pro fl">
                                            <div class="fl pic cur small_img">
-                                           <a target="_blank" href="#"><img src="./首页_files/small_201606081524177844.jpg"></a></div>
+                                           <a target="_blank" href="#"><img src="./index_files/small_201606081524177844.jpg"></a></div>
                                            <div class="fl con">
                                            <p class="lh18 name"> <a target="_blank" href="#">农家猴头菇 景宁特产 厂家直销   250g</a></p>     
                                            <p>
@@ -972,7 +971,7 @@
                                          </div>
                                            <div class="pro fl">
                                            <div class="fl pic cur small_img">
-                                           <a target="_blank" href="#"><img src="./首页_files/small_201606141111099397.jpg"></a></div>
+                                           <a target="_blank" href="#"><img src="./index_files/small_201606141111099397.jpg"></a></div>
                                            <div class="fl con">
                                            <p class="lh18 name"> <a target="_blank" href="#">金信木耳干货黑木耳春耳景宁特产黑木</a></p>     
                                            <p>
@@ -985,7 +984,7 @@
                                          </div>
                                            <div class="pro fl">
                                            <div class="fl pic cur small_img">
-                                           <a target="_blank" href="#"><img src="./首页_files/small_201606141335524637.jpg"></a></div>
+                                           <a target="_blank" href="#"><img src="./index_files/small_201606141335524637.jpg"></a></div>
                                            <div class="fl con">
                                            <p class="lh18 name"> <a target="_blank" href="#">茶树菇 景宁 厂家直销 250g</a></p>     
                                            <p>
@@ -1006,7 +1005,7 @@
               <div>
       <div class="fl fl-con">                       
            <div class="tit fl" style="background:;">       
-                <div class="fl f14"><img src="./首页_files/small_SHANSHAN_IMG_shanshan_1_201604111058182131.jpg"></div>
+                <div class="fl f14"><img src="./index_files/small_SHANSHAN_IMG_shanshan_1_201604111058182131.jpg"></div>
                 <div class="fl fyh f22 b">休闲零食</div>
                 <div class="fr display">
                     <a href="#" target="_blank">巴旦木</a>|
@@ -1025,7 +1024,7 @@
                      <div class="tempWrap" style="overflow:hidden; position:relative; width:235px">
                      <ul id="slides2" style="width: 235px; left: 0px; position: relative; overflow: hidden; padding: 0px; margin: 0px;">                                  
                              <li style="float: left; width: 235px;">
-                             <a href="#" target="_blank"><img alt="红心萝卜脆" src="./首页_files/SHANSHAN_IMG_shanshan_2_201611301620557427.jpg"></a>
+                             <a href="#" target="_blank"><img alt="红心萝卜脆" src="./index_files/SHANSHAN_IMG_shanshan_2_201611301620557427.jpg"></a>
                              </li>
                      </ul></div></div>
                      </div>
@@ -1034,7 +1033,7 @@
                      <ul>            
                             <li>
                                <p class="pic"><a href="#" target="_blank">
-                               <img src="./首页_files/small_201610201656443517.jpg">  </a>  
+                               <img src="./index_files/small_201610201656443517.jpg">  </a>  
                                 <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(50037,49941);" spec_id="50037" goods_id="49941">加入购物车</span>                               
                                </p>
                                <p class="name"><a href="#">丽水山耕 松阳香肠400g</a></p>
@@ -1048,7 +1047,7 @@
                              </li>
                               <li>
                                <p class="pic"><a href="#" target="_blank">
-                               <img src="./首页_files/small_201610201734584852.jpg">  </a>  
+                               <img src="./index_files/small_201610201734584852.jpg">  </a>  
                                  <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(50046,49950);" spec_id="50046" goods_id="49950">加入购物车</span>                               
                                </p>
                                <p class="name"><a href="#">丽水山耕 状元黑香肠 400g</a></p>
@@ -1063,7 +1062,7 @@
                              </li>
                               <li>
                                <p class="pic"><a href="#" target="_blank">
-                               <img src="./首页_files/small_201610201743213162.jpg">  </a>  
+                               <img src="./index_files/small_201610201743213162.jpg">  </a>  
                                 <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(50048,49952);" spec_id="50048" goods_id="49952">加入购物车</span>                               
                                </p>
                                <p class="name"><a href="#">丽水山耕 余叶香榧 100g</a></p>
@@ -1077,7 +1076,7 @@
                              </li>
                                <li>
                                <p class="pic"><a href="#" target="_blank">
-                                  <img src="./首页_files/small_201408141521013637.jpg">  </a>  
+                                  <img src="./index_files/small_201408141521013637.jpg">  </a>  
                                   <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(47955,47862);" spec_id="47955" goods_id="47862">加入购物车</span>
                                </p>
                                <p class="name"><a href="#">蒙歌尔品牌&nbsp;原味奶酥&nbsp;300g&nbsp;新品特价&nbsp;热卖</a></p>
@@ -1091,7 +1090,7 @@
                              </li>
                                <li>
                                 <p class="pic"><a href="#" target="_blank">
-                                  <img src="./首页_files/small_201506121515436147.jpg">  </a>  
+                                  <img src="./index_files/small_201506121515436147.jpg">  </a>  
                                   <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(40004,39933);" spec_id="40004" goods_id="39933">加入购物车</span>                               </p>
                                <p class="name"><a href="#">内蒙风味零食 风干 小吃 蒙歌尔散装原味牛肉粒250g 两</a></p>
                                <p class="price">
@@ -1105,7 +1104,7 @@
                              </li>
                               <li>
                                <p class="pic"><a href="#" target="_blank">
-                                 <img src="./首页_files/small_201309261001494559.jpg">  </a>  
+                                 <img src="./index_files/small_201309261001494559.jpg">  </a>  
                                  <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(41637,41565);" spec_id="41637" goods_id="41565">加入购物车</span>                               
                                </p>
                                <p class="name"><a href="#">内蒙古牛肉干 蒙歌尔风干手撕特价 特产零食独立真空促</a></p>
@@ -1120,7 +1119,7 @@
                              </li>
                               <li>
                                <p class="pic"><a href="#" target="_blank">
-                                 <img src="./首页_files/SHANSHAN_IMG_shanshan_1_201511161445491101.jpg">  </a>  
+                                 <img src="./index_files/SHANSHAN_IMG_shanshan_1_201511161445491101.jpg">  </a>  
                                  <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(39978,39907);" spec_id="39978" goods_id="39907">加入购物车</span>                               
                                </p>
                                <p class="name"><a href="#">内蒙古特产零食 蒙歌尔香辣牛板筋238g 4袋包邮</a></p>
@@ -1134,7 +1133,7 @@
                              </li>
                               <li>
                                <p class="pic"><a href="#" target="_blank">
-                                 <img src="./首页_files/small_201506121432376555.jpg">  </a>  
+                                 <img src="./index_files/small_201506121432376555.jpg">  </a>  
                                  <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(39922,39851);" spec_id="39922" goods_id="39851">加入购物车</span>                               
                                </p>
                                <p class="name"><a href="#">【内蒙古特产食品】蒙歌尔 好吃的零食奶酪奶干150g  1</a></p>
@@ -1163,7 +1162,7 @@
                                <li style="float: left; width: 205px;">       
                                           <div class="pro fl">
                                            <div class="fl pic cur small_img">
-                                           <a target="_blank" href="#"><img src="./首页_files/small_201309111427343801.jpg"></a></div>
+                                           <a target="_blank" href="#"><img src="./index_files/small_201309111427343801.jpg"></a></div>
                                            <div class="fl con">
                                            <p class="lh18 name"> <a target="_blank" href="#">内蒙古特产零食 正品手撕风干牛肉干 </a></p>     
                                            <p><font class="f-s cff6 f16">
@@ -1175,7 +1174,7 @@
                                          </div>
                                            <div class="pro fl">
                                            <div class="fl pic cur small_img">
-                                           <a target="_blank" href="#"><img src="./首页_files/small_201309061641337569.jpg"></a></div>
+                                           <a target="_blank" href="#"><img src="./index_files/small_201309061641337569.jpg"></a></div>
                                            <div class="fl con">
                                            <p class="lh18 name"> <a target="_blank" href="#">内蒙古正品休闲食品 蒙歌尔 特产手撕</a></p>     
                                            <p>
@@ -1188,7 +1187,7 @@
                                          </div>
                                            <div class="pro fl">
                                            <div class="fl pic cur small_img">
-                                           <a target="_blank" href="#"><img src="./首页_files/small_201309111425154174.jpg"></a></div>
+                                           <a target="_blank" href="#"><img src="./index_files/small_201309111425154174.jpg"></a></div>
                                            <div class="fl con">
                                            <p class="lh18 name"> <a target="_blank" href="#">好吃的零食牛肉干 蒙歌尔手撕风干牛肉</a></p>     
                                            <p>
@@ -1199,7 +1198,7 @@
                                          </div>
                                            <div class="pro fl">
                                            <div class="fl pic cur small_img">
-                                           <a target="_blank" href="#"><img src="./首页_files/SHANSHAN_IMG_shanshan_1_201409241154078241.jpg"></a></div>
+                                           <a target="_blank" href="#"><img src="./index_files/SHANSHAN_IMG_shanshan_1_201409241154078241.jpg"></a></div>
                                            <div class="fl con">
                                            <p class="lh18 name"> <a target="_blank" href="#">【内蒙古特产】蒙歌尔香辣牛肉238g 独</a></p>     
                                            <p><font class="f-s cff6 f16">
@@ -1211,7 +1210,7 @@
                                          </div>
                                            <div class="pro fl">
                                            <div class="fl pic cur small_img">
-                                           <a target="_blank" href="#"><img src="./首页_files/SHANSHAN_IMG_shanshan_1_201409241154077838.jpg"></a></div>
+                                           <a target="_blank" href="#"><img src="./index_files/SHANSHAN_IMG_shanshan_1_201409241154077838.jpg"></a></div>
                                            <div class="fl con">
                                            <p class="lh18 name"> <a target="_blank" href="#">内蒙古特产零食 蒙歌尔手撕风干香辣牛</a></p>     
                                            <p>
@@ -1224,7 +1223,7 @@
                                          </div>
                                            <div class="pro fl">
                                            <div class="fl pic cur small_img">
-                                           <a target="_blank" href="#"><img src="./首页_files/small_201309061640047485.jpg"></a></div>
+                                           <a target="_blank" href="#"><img src="./index_files/small_201309061640047485.jpg"></a></div>
                                            <div class="fl con">
                                            <p class="lh18 name"> <a target="_blank" href="#">内蒙古特产零食 蒙歌尔有机正品风干手</a></p>     
                                            <p>
@@ -1245,14 +1244,14 @@
       
                 
               <div class="clear ads fl">
-               <a href="#" target="_blank"><img src="./首页_files/SHANSHAN_IMG_shanshan_2_201611301617489134.jpg" alt="" border="0" width="1190" height="100"></a>
+               <a href="#" target="_blank"><img src="./index_files/SHANSHAN_IMG_shanshan_2_201611301617489134.jpg" alt="" border="0" width="1190" height="100"></a>
               </div>    
               
 
               <div>
       <div class="fl fl-con">                       
            <div class="tit fl" style="background:;">       
-                <div class="fl f14"><img src="./首页_files/small_SHANSHAN_IMG_shanshan_1_201604111058326208.jpg"></div>
+                <div class="fl f14"><img src="./index_files/small_SHANSHAN_IMG_shanshan_1_201604111058326208.jpg"></div>
                 <div class="fl fyh f22 b">酒水茶饮</div>
                 <div class="fr display">
                   <a href="#" target="_blank">啤酒</a>|
@@ -1272,7 +1271,7 @@
                      <ul id="slides2" style="width: 235px; left: 0px; position: relative; overflow: hidden; padding: 0px; margin: 0px;">                                  
                         <li style="float: left; width: 235px;">
                              <a href="http://www.shanshan360.com/product/49705.html" target="_blank">
-                             <img alt="金边玫瑰花茶" src="./首页_files/SHANSHAN_IMG_shanshan_3_201611301620171108.jpg"></a>
+                             <img alt="金边玫瑰花茶" src="./index_files/SHANSHAN_IMG_shanshan_3_201611301620171108.jpg"></a>
                              </li>
                      </ul></div>
                      </div>    
@@ -1281,7 +1280,7 @@
                      <ul>            
                             <li>
                                <p class="pic"><a href="#" target="_blank">
-                               <img src="./首页_files/small_201511061104387723.jpg">  </a>  
+                               <img src="./index_files/small_201511061104387723.jpg">  </a>  
                                 <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(49629,49536);" spec_id="49629" goods_id="49536">加入购物车</span>                               
                                </p>
                                <p class="name"><a href="#">畲茗工坊 春茶新茶有机茶绿茶茶叶景宁惠明茶特产金奖</a></p>
@@ -1295,7 +1294,7 @@
                              </li>
                                <li>
                                <p class="pic"><a href="#" target="_blank">
-                               <img src="./首页_files/small_201606081444235742.jpg">  </a>  
+                               <img src="./index_files/small_201606081444235742.jpg">  </a>  
                                   <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(49850,49757);" spec_id="49850" goods_id="49757">加入购物车</span>                               </p>
                                <p class="name"><a href="#">景宁特产山岗野花百花土蜂蜜500g</a></p>
                                <p class="price">
@@ -1309,7 +1308,7 @@
                              </li>
                                <li>
                                <p class="pic"><a href="#" target="_blank">
-                               <img src="./首页_files/small_201511061014301862.png">  </a>  
+                               <img src="./index_files/small_201511061014301862.png">  </a>  
                                 <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(49624,49531);" spec_id="49624" goods_id="49531">加入购物车</span>                               
                                </p>
                                <p class="name"><a href="#">景宁特产奇尔红茶金奖惠明茶叶红茶 茶叶盒铁罐包装50g</a></p>
@@ -1324,7 +1323,7 @@
                              </li>
                                <li>
                                <p class="pic"><a href="#" target="_blank">
-                               <img src="./首页_files/small_201610201645278406.jpg">  </a>  
+                               <img src="./index_files/small_201610201645278406.jpg">  </a>  
                                   <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(50034,49938);" spec_id="50034" goods_id="49938">加入购物车</span>                               </p>
                                <p class="name"><a href="#">丽水山耕 遂昌金银花 30g</a></p>
                                <p class="price">
@@ -1337,7 +1336,7 @@
                              </li>
                                <li>
                                <p class="pic"><a href="#" target="_blank">
-                               <img src="./首页_files/small_201606071434078754.jpg">  </a>  
+                               <img src="./index_files/small_201606071434078754.jpg">  </a>  
                                  <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(49837,49744);" spec_id="49837" goods_id="49744">加入购物车</span>                               
                                </p>
                                <p class="name"><a href="#">2016年春季新茶绿茶散装罐装白玉仙茶明前特级茶叶</a></p>
@@ -1351,7 +1350,7 @@
                              </li>
                                <li>
                                <p class="pic"><a href="#" target="_blank">
-                               <img src="./首页_files/small_201606081514398204.jpg">  </a>  
+                               <img src="./index_files/small_201606081514398204.jpg">  </a>  
                                   <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(49853,49760);" spec_id="49853" goods_id="49760">加入购物车</span>                               </p>
                                <p class="name"><a href="#">景宁绿茶 金奖惠明茶2015新茶叶一级 惠明寺50g袋装 香</a></p>
                                <p class="price">
@@ -1364,7 +1363,7 @@
                              </li>
                                <li>
                                <p class="pic"><a href="#" target="_blank">
-                               <img src="./首页_files/small_201606141410007840.jpg">  </a>  
+                               <img src="./index_files/small_201606141410007840.jpg">  </a>  
                                 <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(49913,49820);" spec_id="49913" goods_id="49820">加入购物车</span>                               
                                </p>
                                <p class="name"><a href="#">景宁绿茶 金奖惠明茶叶玉簪102g礼盒高山香浓型 产地直</a></p>
@@ -1378,7 +1377,7 @@
                              </li>
                                <li>
                                <p class="pic"><a href="#" target="_blank">
-                               <img src="./首页_files/small_201511060949405047.png">  </a>  
+                               <img src="./index_files/small_201511060949405047.png">  </a>  
                                  <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(49618,49525);" spec_id="49618" goods_id="49525">加入购物车</span>                               
                                </p>
                                <p class="name"><a href="#">岚香品正宗白毫银针景宁特产金奖惠明茶茶叶兰花香两罐</a></p>
@@ -1406,7 +1405,7 @@
                                <li style="float: left; width: 205px;">       
                                       <div class="pro fl">
                                            <div class="fl pic cur small_img">
-                                           <a target="_blank" href="#"><img src="./首页_files/small_201606121148382624.jpg"></a></div>
+                                           <a target="_blank" href="#"><img src="./index_files/small_201606121148382624.jpg"></a></div>
                                            <div class="fl con">
                                            <p class="lh18 name"> <a target="_blank" href="#">景宁绿茶 金奖惠明茶2015新茶叶三级惠</a></p>     
                                            <p>
@@ -1419,7 +1418,7 @@
                                          </div>
                                            <div class="pro fl">
                                            <div class="fl pic cur small_img">
-                                           <a target="_blank" href="#"><img src="./首页_files/SHANSHAN_IMG_shanshan_1_201409241336089562.jpg"></a></div>
+                                           <a target="_blank" href="#"><img src="./index_files/SHANSHAN_IMG_shanshan_1_201409241336089562.jpg"></a></div>
                                            <div class="fl con">
                                            <p class="lh18 name"> <a target="_blank" href="#">景宁特产畲峡谷正宗铁皮石斛花23g四年</a></p>     
                                            <p>
@@ -1432,7 +1431,7 @@
                                          </div>
                                            <div class="pro fl">
                                            <div class="fl pic cur small_img">
-                                           <a target="_blank" href="#"><img src="./首页_files/small_201511060949405047.png"></a></div>
+                                           <a target="_blank" href="#"><img src="./index_files/small_201511060949405047.png"></a></div>
                                            <div class="fl con">
                                            <p class="lh18 name"> <a target="_blank" href="#">岚香品正宗白毫银针景宁特产金奖惠明</a></p>     
                                            <p>
@@ -1446,7 +1445,7 @@
                                          </div>
                                            <div class="pro fl">
                                            <div class="fl pic cur small_img">
-                                           <a target="_blank" href="#"><img src="./首页_files/SHANSHAN_IMG_shanshan_1_201409050935475264.jpg"></a></div>
+                                           <a target="_blank" href="#"><img src="./index_files/SHANSHAN_IMG_shanshan_1_201409050935475264.jpg"></a></div>
                                            <div class="fl con">
                                            <p class="lh18 name"> <a target="_blank" href="#">2016年新茶叶绿茶 惠明茶 明前特级春</a></p>     
                                            <p>
@@ -1459,7 +1458,7 @@
                                          </div>
                                            <div class="pro fl">
                                            <div class="fl pic cur small_img">
-                                           <a target="_blank" href="#"><img src="./首页_files/small_201606071452439780.jpg"></a></div>
+                                           <a target="_blank" href="#"><img src="./index_files/small_201606071452439780.jpg"></a></div>
                                            <div class="fl con">
                                            <p class="lh18 name"> <a target="_blank" href="#">景宁红茶 惠明茶叶惠明寺150g礼盒高山</a></p>     
                                            <p>
@@ -1472,7 +1471,7 @@
                                          </div>
                                            <div class="pro fl">
                                            <div class="fl pic cur small_img">
-                                           <a target="_blank" href="#"><img src="./首页_files/small_201606131651272017.jpg"></a></div>
+                                           <a target="_blank" href="#"><img src="./index_files/small_201606131651272017.jpg"></a></div>
                                            <div class="fl con">
                                            <p class="lh18 name"> <a target="_blank" href="#">正宗景宁绿茶叶新茶 慧明红珍品礼盒奖</a></p>     
                                            <p>
@@ -1490,20 +1489,20 @@
     </div>
     </div>
       <div class="clear ads fl">
-       <a href="#" target="_blank"><img src="./首页_files/SHANSHAN_IMG_shanshan_3_201611301617482170.jpg" alt="" border="0" width="1190" height="100"></a>
+       <a href="#" target="_blank"><img src="./index_files/SHANSHAN_IMG_shanshan_3_201611301617482170.jpg" alt="" border="0" width="1190" height="100"></a>
       </div>    
          
       <div class="meishi-box clear fl">
            <div class="tit">
                <div class="fl f14">
-					<img src="./首页_files/7.jpg">
+					<img src="./index_files/7.jpg">
 				</div>
                <div class="fl fyh f22 b">美食生活</div>
            </div>
            <div class="meishi-con clear fl ovf">
                 <ul>  
                                    <li>
-                      <div> <a target="_blank" href="#"><img style="width:267px;height:230px;" alt="拥抱大米" src="./首页_files/SHANSHAN_IMG_1460355776_1484105.jpg"></a></div>
+                      <div> <a target="_blank" href="#"><img style="width:267px;height:230px;" alt="拥抱大米" src="./index_files/SHANSHAN_IMG_1460355776_1484105.jpg"></a></div>
                       <div class="con con-bg clear">
                           <span class="content fl ovf">
                                 <div class="fyh f16 c6b fl tit ">  <a target="_blank" href="#">拥抱大米</a></div>
@@ -1514,7 +1513,7 @@
                       </div>
                    </li>
                                       <li>
-                      <div> <a target="_blank" href="#"><img style="width:267px;height:230px;" alt="「你饿不饿？我煮碗面给你吃」" src="./首页_files/SHANSHAN_IMG_1452147351_7129490.jpg"></a></div>
+                      <div> <a target="_blank" href="#"><img style="width:267px;height:230px;" alt="「你饿不饿？我煮碗面给你吃」" src="./index_files/SHANSHAN_IMG_1452147351_7129490.jpg"></a></div>
                       <div class="con con-bg clear">
                           <span class="content fl ovf">
                                 <div class="fyh f16 c6b fl tit ">  <a target="_blank" href="#">「你饿不饿？我煮碗面给你吃」</a></div>
@@ -1525,7 +1524,7 @@
                       </div>
                    </li>
                                       <li>
-                      <div> <a target="_blank" href="#"><img style="width:267px;height:230px;" alt="跟我们一起下乡看直播咯！" src="./首页_files/SHANSHAN_IMG_1452147367_9096807.jpg"></a></div>
+                      <div> <a target="_blank" href="#"><img style="width:267px;height:230px;" alt="跟我们一起下乡看直播咯！" src="./index_files/SHANSHAN_IMG_1452147367_9096807.jpg"></a></div>
                       <div class="con con-bg clear">
                           <span class="content fl ovf">
                                 <div class="fyh f16 c6b fl tit ">  <a target="_blank" href="#">跟我们一起下乡看直播咯！</a></div>
@@ -1536,7 +1535,7 @@
                       </div>
                    </li>
                                       <li class="last">
-                      <div> <a target="_blank" href="#"><img style="width:267px;height:230px;" alt="we are 伐木累~" src="./首页_files/SHANSHAN_IMG_1452147380_5896665.jpg"></a></div>
+                      <div> <a target="_blank" href="#"><img style="width:267px;height:230px;" alt="we are 伐木累~" src="./index_files/SHANSHAN_IMG_1452147380_5896665.jpg"></a></div>
                       <div class="con con-bg clear">
                           <span class="content fl ovf">
                                 <div class="fyh f16 c6b fl tit ">  <a target="_blank" href="#">we are 伐木累~</a></div>
@@ -1583,7 +1582,7 @@
                           <dd><a target="_blank" href="#"><em>·</em>山山商城规则</a></dd>
                     </dl>
                         
-       <div style="float:left;overflow:hidden;_width:250px;_height:990px;"><a href="./首页_files/首页.html" class="shanshan-homeico"></a>
+       <div style="float:left;overflow:hidden;_width:250px;_height:990px;"><a href="./index_files/index.html" class="shanshan-homeico"></a>
        <span class="shanshan-feedback ntkp" onclick="openChatWindow(&#39;&#39;);">山山商城意见反馈</span></div>
    </div>
    
@@ -1595,10 +1594,10 @@
 	        	<a href="#" target="_blank">网站地图</a>
 	        			          		        
            <span>关注山山商城：</span>
-           <a target="_blank" href="#" class="ssb-weibo"><img src="./首页_files/ssb-weibo.jpg" alt=""></a>
-           <a target="_blank" href="#" class="ssb-weibot"><img src="./首页_files/ssb-weibot.jpg" alt=""></a>
-           <a href="javascript:void(0);" class="ssb-weixin" onmouseover="weixin(&#39;visible&#39;)" onmouseout="weixin(&#39;hidden&#39;)"><img src="./首页_files/ssb-weixin.jpg" alt=""><label class="mbb-weixin"></label></a>
-           <span class="ntkp ssb-weibot" onclick="openChatWindow(&#39;&#39;);"><img src="./首页_files/ssb-talk.jpg" alt="在线咨询">
+           <a target="_blank" href="#" class="ssb-weibo"><img src="./index_files/ssb-weibo.jpg" alt=""></a>
+           <a target="_blank" href="#" class="ssb-weibot"><img src="./index_files/ssb-weibot.jpg" alt=""></a>
+           <a href="javascript:void(0);" class="ssb-weixin" onmouseover="weixin(&#39;visible&#39;)" onmouseout="weixin(&#39;hidden&#39;)"><img src="./index_files/ssb-weixin.jpg" alt=""><label class="mbb-weixin"></label></a>
+           <span class="ntkp ssb-weibot" onclick="openChatWindow(&#39;&#39;);"><img src="./index_files/ssb-talk.jpg" alt="在线咨询">
            </span>
         </p>
         <p>Copyright©2011-2016shanshan360.com 浙江山山网络科技股份有限公司  版权所有<span class="statistics_code">
@@ -1609,8 +1608,8 @@
         <p>企业法人营业执照注册号：331127000009583</p>
      
 <p><a target="_blank" href="#">
-         <img src="./首页_files/gongshang.png" alt="" border="0"></a>
-        <a id="_pingansec_bottomimagelarge_shiming" href="#" target="_blank"><img src="./首页_files/bottom_small_img.png" alt="实名认证" title="实名认证"></a>
+         <img src="./index_files/gongshang.png" alt="" border="0"></a>
+        <a id="_pingansec_bottomimagelarge_shiming" href="#" target="_blank"><img src="./index_files/bottom_small_img.png" alt="实名认证" title="实名认证"></a>
 		</p>
     </div>
 </div>
@@ -1619,20 +1618,20 @@
 <div id="cart_tan">
 	<div id="cart_tan_top"><a onclick="close_cart_tan();"><b>X</b>关闭</a></div>
 	<div id="cart_tan_zhong">
-		<span><img src="./首页_files/sc_success.gif">产品已经成功加入购物车！</span>
+		<span><img src="./index_files/sc_success.gif">产品已经成功加入购物车！</span>
 	</div>
 	<div id="cart_tan_di">
 		<a target="_blank" href="#">
-			<img src="./首页_files/sc_btn.gif">
+			<img src="./index_files/sc_btn.gif">
 		</a>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<a href="./首页_files/首页.html">再逛逛</a>
+		<a href="./index_files/index.html">再逛逛</a>
 	</div>
 	<div id="cart_tan_di">
 		温馨提示：请在<a target="_blank" style="color:red;" href="#">个人资料</a>中填写QQ，方便卖家及时联系。
 	</div>
 </div>
 -->
-<script src="首页_files/tupian.js"></script>
+<script src="js/tupian.js"></script>
 </body>
 </html>

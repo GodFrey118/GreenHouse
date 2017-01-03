@@ -25,4 +25,9 @@
 			<property name="prefix" value="/"></property>
 			<property name="suffix" value=".jsp"></property>
 	</bean>
+	
+	
+	<!-- 只拦截处理handler， 其它页面不处理 -->
+	<mvc:default-servlet-handler/>
+	<mvc:annotation-driven/>
 </beans>
