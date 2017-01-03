@@ -5,13 +5,14 @@
 <base href="/GreenHouse/">
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css"  href="css/common.css"/>
-<link rel="stylesheet" type="text/css"  href="css/index.css"/>          
-<title>商城index</title>
-<script type="text/javascript" src="js/jquery-V2.3.0.min.js" charset="utf-8"></script>
-<script type="text/javascript" src="js/jquery.superslide.2.1.1.js" charset="utf-8"></script>                           
-<script charset="utf-8" type="text/javascript" src="js/jquery-ui-V2.3.0.js"></script> 
+<link rel="stylesheet" type="text/css"  href="css/index.css"/>
+<link rel="stylesheet" type="text/css"  href="css/common-V2.4.0.css"/>          
+<title>GreenHouse商城</title>
+<script type="text/javascript" src="public_js/jquery-V2.3.0.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="public_js/jquery.superslide.2.1.1.js" charset="utf-8"></script>                           
+<script charset="utf-8" type="text/javascript" src="public_js/jquery-ui-V2.3.0.js"></script> 
 <link rel="stylesheet" type="text/css" href="css/jquery-ui-V2.3.0.css">
-<script type="text/javascript" src="index_files/Seach.js"></script> 
+<script type="text/javascript" src="index_js/Seach.js"></script> 
 <link href="css/index_css.css" rel="stylesheet" type="text/css">   
 
 </head>
@@ -1632,6 +1633,6 @@
 	</div>
 </div>
 -->
-<script src="js/tupian.js"></script>
+<script type="text/javascript" src="index_js/tupian.js"></script>
 </body>
 </html>
