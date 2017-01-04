@@ -5,25 +5,25 @@
 <head>
 <base href="/GreenHouse/">
 <meta name="robots" content="nofollow" charset="UTF-8">
-<link href="css/common.css" rel="stylesheet" type="text/css">
-<link href="css/index.css" rel="stylesheet" type="text/css">   
-<link href="css/common-V2.4.0.css" rel="stylesheet" type="text/css">    
-<link href="css/login/1.css" rel="stylesheet" type="text/css">      
+<link href="css/public/common.css" rel="stylesheet" type="text/css">
+<link href="css/public/index.css" rel="stylesheet" type="text/css">   
+<link href="css/public/common-V2.4.0.css" rel="stylesheet" type="text/css">    
+<link href="css/public/login/1.css" rel="stylesheet" type="text/css">      
 <title>用户登录 - GreenHouse</title>
 <meta name="description" content="山山商城通过自媒体的方式，自己挖掘各地好的农特产，拍摄视频建立专辑，并在在每一个农特产品的原产地构架视频直播，全天直播原产地产品的生长及制作及包装过程，保证消费者买到的原滋原味的农特产品。 正品保障、 提供发票、 7天无理由退换货。">
 <meta name="keywords" content="山山商城,网上购物平台,农产品网购平台,视频直播购物平台，农产品网上购物平台,休闲零食,干果炒货,茶叶,食用菌,粮油,购物商城,我要买,我要卖,免费开店">
 
 
 <script type="text/javascript" async="" src="login_files/pixel.php"></script>
-<script type="text/javascript" async="" charset="utf-8" src="js/ntkfstat.js"></script>
+<script type="text/javascript" async="" charset="utf-8" src="js/public/ntkfstat.js"></script>
 <script charset="utf-8" src="js/v.js"></script>
 <script type="text/javascript" async="" src="login_files/saved_resource"></script>
-<script type="text/javascript" src="js/index.php"></script>
-<script type="text/javascript" src="js/jquery-V2.3.0.min.js" charset="utf-8"></script>
-<script type="text/javascript" src="js/jquery.superslide.2.1.1.js" charset="utf-8"></script>
-<script type="text/javascript" src="js/ecmall.js"></script>  
-<script type="text/javascript" src="js/ss.index-V2.4.0.js" charset="utf-8"></script>                                  
-<script charset="utf-8" type="text/javascript" src="js/chk_form.js"></script>
+<script type="text/javascript" src="js/public/index.php"></script>
+<script type="text/javascript" src="js/public/jquery-V2.3.0.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/public/jquery.superslide.2.1.1.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/public/ecmall.js"></script>  
+<script type="text/javascript" src="js/public/ss.index-V2.4.0.js" charset="utf-8"></script>                                  
+<script charset="utf-8" type="text/javascript" src="js/public/chk_form.js"></script>
 
 
 <script type="text/javascript" src="js/login/1.js"></script> 
@@ -31,11 +31,11 @@
 <script type="text/javascript" src="js/login/3.js"></script>
 <script type="text/javascript" src="js/login/4.js"></script>
 
-<script type="text/javascript" async="async" charset="utf-8" src="js/im.js" data-requiremodule="im"></script>
-<script type="text/javascript" async="async" charset="utf-8" src="js/zh_cn.js" data-requiremodule="lang"></script>
-<script type="text/javascript" async="async" charset="utf-8" src="js/chat.in.js" data-requiremodule="chatManage"></script>
-<script type="text/javascript" async="async" charset="utf-8" src="js/mqtt31.js" data-requiremodule="MQTT"></script>
-<script type="text/javascript" async="async" charset="utf-8" src="js/mqtt.chat.js" data-requiremodule="Connection"></script>
+<script type="text/javascript" async="async" charset="utf-8" src="js/public/im.js" data-requiremodule="im"></script>
+<script type="text/javascript" async="async" charset="utf-8" src="js/public/zh_cn.js" data-requiremodule="lang"></script>
+<script type="text/javascript" async="async" charset="utf-8" src="js/public/chat.in.js" data-requiremodule="chatManage"></script>
+<script type="text/javascript" async="async" charset="utf-8" src="js/public/mqtt31.js" data-requiremodule="MQTT"></script>
+<script type="text/javascript" async="async" charset="utf-8" src="js/public/mqtt.chat.js" data-requiremodule="Connection"></script>
 </head>
  
 <body>
