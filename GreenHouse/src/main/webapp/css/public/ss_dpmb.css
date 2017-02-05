@@ -1,0 +1,115 @@
+@charset "utf-8";
+/* CSS Document */
+
+.ss_model_kb {width: 950px;cursor: default;}
+.ss_model_changePic {width: 948px;height: 400px;padding: 1px;position: relative;background: #fff;}
+.bb {width: 100%;margin: 0 auto;position: relative;z-index: 2;}
+
+.ss_model_kb{width:950px; cursor:default;}
+.ss_model_changePic{width:948px;height:400px;padding:1px;position:relative;background:#fff; z-index:1;}
+.bb{ width:100%; margin:0 auto; position:relative; z-index:2;}
+
+/*切换图片*/
+.ib_qiehuan {height: 36px;position: absolute;bottom: 0;left: 750px;top: 290px;right: 0;z-index: 2;}
+.ib_qiehuan a {float: left;width: 30px;height: 25px;background: #74675f;margin: 2px 5px;display: inline;color: #fff;font-family: 微软雅黑;font-size: 16px;text-align: center;line-height: 25px;}
+.ib_qiehuan a.ibqh_cur {background: #7bb11b;}
+.ib_qiehuan a:hover {background: #7bb11b;}
+/*cnt1*/
+h2.ss_model_tit {background-position: 0 -89px !important;background-repeat: repeat-x !important;width: 930px;height: 42px;line-height: 42px;font-size: 13px;color: #fff;padding-left: 20px;}
+h2.ss_model_tit span {float: left;}
+ul.ss_model_titUl {float: right;}
+ul.ss_model_titUl li {float: left;margin: 0 5px;}
+ul.ss_model_titUl li a {color: #fff;font-weight: normal;}
+.ss_model_cnt1 {width: 948px;height: 215px;border: 1px solid #d1d0cc;background: #fff;}
+.ss_model_cnt1Pic {width: 225px;height: 168px;float: left;margin-right: 20px;}
+.ss_model_cnt1Pic_top {float: left;}
+.ss_model_cnt1Pic_bot {float: left;}
+.ss_model_cnt1Pic_bot a {float: left;}
+.ss_model_cnt1Txt {width: 123px;height: 168px;float: left;padding: 10px 0 0 10px;}
+.ss_model_cnt1_ul1 li {line-height: 28px;border: 1px solid #d1d0cc;margin-bottom: 3px;padding-left: 10px;width: 113px;background: #f2f2f2;color: #7fb22f;letter-spacing: 2px;}
+.ss_model_cnt1Link {width: 548px;height: 168px;float: left;margin-left: 10px;padding-top: 10px;}
+.ss_model_cnt1_ul2 li {line-height: 28px;height: 28px;border-bottom: 1px dashed #d1d0cc;width: 548px;margin-bottom: 4px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; }
+.ss_model_cnt1_ul2 li a {margin: 0 5px;overflow: hidden;}
+.ss_model_cnt1_ul2 li a:Hover {text-decoration: underline;}
+.ss_model_hotNewTop {position: absolute;top: -20px;left: 19px; top: -30px\9;display:none;}
+/*cnt2*/
+.ss_model_cnt2Main {width: 950px;background: #fff;}
+
+.ss_model_cntPart1 {background: none repeat scroll 0 0 #FFFFFF;width: 305px;height: 383px;padding: 5px;border: 1px solid #d1d0cc;float: left;text-align: center;margin: 0 auto;}
+.ss_model_noBor {border-left: 0;border-right: 0;}
+.ss_model_goodsTit {background-position: 0 -380px !important;width: 224px;height: 34px;padding-left: 66px;text-align: left;padding: 5px 10px 5px 66px;}
+.ss_model_goodsTit a {color: #fff !important;}
+.ss_model_p00 {text-align: left;line-height: 18px;padding: 8px 0 0;}
+.ss_model_p00 span {color: #82b333;font-size: 14px;}
+.ss_model_spanPrice {font-weight: bold;margin-left: 135px;}
+.rit_divOver {border: 1px solid #62aa18;}
+/*cnt3*/
+.ss_model_cnt3 {width: 948px;height: 220px;border: 1px solid #d1d0cc;background: #fff;padding: 15px 0;}
+.ss_model_lfArrow {width: 34px;height: 182px;padding: 20px 0;float: left;}
+.ss_model_lfArrow_nav {float: left;overflow: hidden;}
+.ss_model_lfArrow_nav a.prev {width: 18px;height: 182px;background-position: 0 -197px !important;text-indent: -9999px;display: block;}
+.ss_model_ritArrow {float: right;width: 18px;}
+.ss_model_ritArrow_nav {float: right;border-right: 0;}
+.ss_model_ritArrow_nav a.next {width: 18px;height: 182px;background-position: -19px -197px !important;text-indent: -9999px;display: block;}
+.rit_goods_image {width: 162px;height: 224px;float: left;text-align: center;margin-right: 16px;}
+.rit_img1 {width: 160px;height: 160px;border: 1px solid #dfdeda;margin-bottom: 5px;overflow: hidden;}
+.rit_goods_image p.rit_p_txt {color: #aaa;line-height: 20px;font-size: 12px;}
+.rit_goods_image p.rit_p_txt a {font-size: 15px;}
+.rit_goods_image p span {color: #81B026;font-weight: bold;}
+/*cnt4*/
+.ss_model_cnt4 {width: 946px;height: 137px;border: 2px solid #7bb11b;background: #fff;margin-bottom: 5px;}
+.ss_model_cnt4_lf {width: 399px;height: 107px;border-right: 1px solid #d1d0cc;padding: 15px 20px;float: left;}
+.ss_model_cntBy {width: 101px;height: 107px;float: left;margin-right: 20px;}
+.ss_model_cntHot {float: left;}
+p.ss_model_hotTime {font-size: 21px;font-weight: bold;color: #868686;letter-spacing: 3px;}
+p.ss_model_hotTime span {color: #82B333;}
+.ss_model_cnt4_mid {width: 115px;height: 100px;float: left;padding: 15px 0;margin-left: 5px;}
+.ss_model_cnt4_mid li {line-height: 30px;width: 99px;border: 1px solid #d1d0cc;margin-bottom: 5px;text-align: center;}
+li.ss_model_current {background: #7bb11b;}
+li.ss_model_current a {color: #fff;}
+.ss_model_cnt4_rit {width: 383px;height: 121px;float: left;padding: 7px 0;}
+.ss_model_cnt4_rit ul li {border: 1px solid #d1d0cc;width: 120px;height: 120px;float: left;margin-right: 4px;}
+.ss_model_cnt4_rit ul li a {display: inline-block;overflow: hidden;}
+/*cnt5*/
+.ss_model_cnt5 {width: 948px;height: 428px;border: 1px solid #d1d0cc;background: #fff;}
+.ss_model_cnt5_lf {width: 440px;height: 378px;padding: 25px 15px;border-right: 1px solid #d1d0cc;float: left;}
+.ss_model_cnt5_1f {width: 440px;height: 378px;padding: 25px 15px;border-right: 1px solid #d1d0cc;float: left;}
+.ss_model_cnt5_2f {width: 440px;height: 378px;padding: 25px 15px;float: left;}
+.ss_model_cnt5_top {width: 438px;height: 310px;margin-bottom: 10px;}
+.ss_model_cnt5_botLf {width: 308px;height: 308px;border: 1px solid #d1d0cc;float: left;}
+.ss_model_cnt5_bot {width: 438px;height: 50px;border: 1px solid #d1d0cc;float: left;text-align: center;}
+.ss_model_cnt5Link {width: 274px;height: 50px;border-right: 1px solid #d1d0cc;float: left;line-height: 50px;padding: 0 17px;overflow: hidden;}
+.ss_model_cnt5_botRit {width: 104px;height: 310px;float: right;margin: 0 auto;text-align: center;padding: 0 8px;}
+.ss_model_cnt5_botRit li {width: 100px;height: 100px;margin-bottom: 2px;border: 1px solid #cdcdcb;}
+.ss_model_cnt5Price {line-height: 50px;color: #82B333;font-weight: bold;font-size: 18px;
+}
+/*cnt6*/
+/*火热推荐*/
+.rit_hot_recommend {float: left;width: 698px;height: auto;padding: 25px;*padding-bottom: 34px;_padding-bottom: 39px;border: 1px solid #dfdeda;background: #fff;margin: 5px 0 0;}
+.hot_picBig {height: 230px;width: 698px;}
+.hot_lf {width: 228px;height: 228px;border: 1px solid #dfdeda;float: left;}
+.hot_rit {width: 443px;float: right;height: 228px;}
+.hot_rit h1 {background: url(../images/hot_word.gif) no-repeat;width: 322px;height: 36px;margin-bottom: 5px;color: #7CB528;font-size: 32px;text-indent: 220px;}
+.hot_rit p {line-height: 25px;font-size: 16px;}
+.hot_rit p.hot_price {line-height: 35px;font-size: 12px;margin-top: 5px;}
+.hot_rit p.hot_price label {margin-left: 200px;}
+.hot_rit p.hot_price span {color: #81B026;font-weight: bold;font-size: 17px;}
+.hot_rit p.hot_web {font-size: 12px;border: 1px solid #dfdeda;line-height: 30px;padding-left: 20px;}
+a.hot_detail {border-left: 1px solid #dfdeda;padding: 0 8px;float: right;}
+.hot_rit p.hot_web2 {border: 0;}
+.hot_rit p.hot_web3 {border: 0;}
+a.hot_btn {background: #f88101;color: #fff;padding: 5px 11px;}
+a.hot_btn2 {background: #9cb71c; }
+.hot_picSml {margin-top: 23px; 	width: 698px; 	height: 68px; }
+.hot_small {width: 64px; 	height: 64px; 	border: 1px solid #dfdeda; 	float: left; 	margin-right: 3px; 	overflow: hidden; }
+.hot_small a {display: inline-block; }
+.hot_small_mar {margin-right: 0; } 
+#fl_teadp {margin-top: 10px; 	min-height: 370px; 	height: auto; 	border-bottom: none; }
+#fl_teadp li {border-bottom: none; }
+/*碧螺春茶叶*/
+.fl_tea {width: 188px; 	height: 370px; 	*height: 379px; _height: 382px; border: 1px solid #dcdcdc; 	background: #fff; 	float: right; 	margin: 5px 0; } 
+.fl_tea li {line-height: 27px; 	*line-height: 27px; 	_line-height: 25px; 	border-bottom: 1px solid #dcdcdc; 	cursor: pointer; }
+.fl_tea li a.indent {padding-left: 20px; 	background-position: -152px -24px !important; 	display: block; 	background-repeat: no-repeat !important; }
+.fl_tea_pic {text-align: center; }
+.fl_tea_pic img { margin: 8px 0; }
+.fl_tea_price {color: #81B026; 	font-weight: bold; }
