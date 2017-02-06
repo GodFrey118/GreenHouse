@@ -1,4 +1,10 @@
-$(function(){ 		
+$(function(){ 
+
+	if( typeof imglazyload === 'function' )
+	{
+		$('img[lazy-src]').attr('src', '/includes/images/default/default-300-300.jpg').imglazyload();
+	}
+	
 	/* 购物车 */	
 		$("#opnav_carts").mouseover(function(e){
 			if(checkHover(e,this)){  
@@ -88,6 +94,29 @@ $(function(){
 		});
 });
 
+function checkHover(e, target) {  
+    if (getEvent(e).type == "mouseover") {  
+        return !contains(target, getEvent(e).relatedTarget  
+                || getEvent(e).fromElement)  
+                && !((getEvent(e).relatedTarget || getEvent(e).fromElement) === target);  
+    } else {  
+        return !contains(target, getEvent(e).relatedTarget  
+                || getEvent(e).toElement)  
+                && !((getEvent(e).relatedTarget || getEvent(e).toElement) === target);  
+    }  
+}  
+	 		  
+function contains(parentNode, childNode) {  
+    if (parentNode.contains) {  
+        return parentNode != childNode && parentNode.contains(childNode);  
+    } else {  
+        return !!(parentNode.compareDocumentPosition(childNode) & 16);  
+    }  
+}  
+//取得当前window对象的事件  
+function getEvent(e) {  
+    return e || window.event;  
+}  
 
 function showTab(obj,obj2,num,len,listyle)
 {
@@ -107,7 +136,23 @@ function showTab(obj,obj2,num,len,listyle)
  }  
 }
 
-
+function showTab_1(obj,obj2,num,len,listyle)
+{
+ for(var id = 1;id<=len;id++)
+ {
+  var ss=obj+id;
+  var ss2=obj2+id;
+  if(id==num){
+  try{
+		document.getElementById(ss2).className=listyle;
+		$("#"+ss).show()}catch(e){};
+  }else{
+  try{
+		document.getElementById(ss2).className="";
+		$("#"+ss).hide()}catch(e){};
+  }
+ }  
+}
 
 function SenFe_Code(sname,sid){
 	if(document.getElementById(sid).className=="tk_tablee"){
@@ -120,12 +165,6 @@ function SenFe_Code(sname,sid){
 		sname.innerHTML="查看订单信息";
 	}
 }
-
-
-
-
-
-
 //网银支付
 function show_send_part(index)
 {
@@ -133,9 +172,7 @@ function show_send_part(index)
     if(rb_btn.length>0)
     {
         rb_btn.attr("checked",true);
-    }
-	
-		
+    }	
 }
 //线下支付
 function show_send_part3(index)
@@ -144,9 +181,7 @@ function show_send_part3(index)
     if(rb_btn.length>0)
     {
         rb_btn.attr("checked",true);
-    }
-	
-		
+    }	
 }
 //在线支付
 function show_send_part2(index)
@@ -155,6 +190,5 @@ function show_send_part2(index)
     if(zf_btn.length>0)
     {
         zf_btn.attr("checked",true);
-    }
-		
+    }	
 }

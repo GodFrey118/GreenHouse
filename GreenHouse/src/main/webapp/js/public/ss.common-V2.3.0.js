@@ -26,8 +26,7 @@ $(function(){
 	  }).keydown(function(){
 		 $('.sSearch-con label').css('visibility','hidden');
 	  });
-      
-      
+	  
 	 /*右边浮动图标*/
 	 $(".backTop").on('mouseenter','.backTop-list',function(){
 		  $(this).addClass('bTl-curr');
@@ -49,7 +48,7 @@ $(function(){
 		 $('.backTop-con').stop(true,false).animate({opacity: 0,left:'265px'},"easeOutExpo");
 	 });
 	 
-	/*返回顶部*/ 
+	 /*返回顶部*/
 	$("#J_crollTop").click(function(){
 		$('body,html').animate({scrollTop:0},0);
 		return false;

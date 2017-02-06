@@ -1,8 +1,8 @@
 /**footer**/
 .sn-login, .sn-quit { margin: 0 10px 0 7px; }
 .footer-wrap {width:100%;}
-/* .noindex-space {width:100%; height:7px; background:url(../../images/skin/2013/footer-wrapbg.jpg) repeat-x;}
- */.noindexfooter {width:950px; margin:0 auto;}
+.noindex-space {width:100%; height:7px; background:url(../../images/skin/2013/footer-wrapbg.jpg) repeat-x;}
+.noindexfooter {width:950px; margin:0 auto;}
 .footer { background-color: #FFFFFF; background-repeat: repeat-x; clear: both; margin: 10px auto; position: relative; text-align: center;}
 #footer { background-color: #FFFFFF; background-repeat: repeat-x; clear: both; margin: 10px auto; position: relative; text-align: center; border:none !important;}
 .shansahn-info { padding: 30px 0 20px; position: relative; text-align: left; height:130px; overflow:hidden;}
@@ -15,19 +15,19 @@
 .shansahn-info dd a:hover { text-decoration:underline;}
 .shansahn-info dl#pay { border-left: 1px dotted #E6E6E6; margin-left: 190px;}
 .shansahn-info dl#service { border-right:none;}
-/* .shanshan-homeico { background:url(../../images/skin/2013/shanshan-homeico.png) no-repeat; height: 85px; left: 50%; margin-left: -45px; overflow: hidden; position: absolute; top: 28px;  width: 85px;}
- */.shanshan-feedback {left: 50%;  margin-top:94px;margin-left:-50px; overflow: hidden; position: absolute; top: 28px;}
+.shanshan-homeico { background:url(../../images/skin/2013/shanshan-homeico.png) no-repeat; height: 85px; left: 50%; margin-left: -45px; overflow: hidden; position: absolute; top: 28px;  width: 85px;}
+.shanshan-feedback {left: 50%;  margin-top:94px;margin-left:-50px; overflow: hidden; position: absolute; top: 28px;}
 .ss-bottom-img { padding:5px 0; width:100%; height:290px;}
 #copyright {position:relative;}
-/* #copyright a.letserv {background:url(../../images/skin/2013/letserv.png) no-repeat; width:62px; height:138px; position:absolute; right:100px; top:0;}
- */#copyright p{padding:2px 0;color:#999; font-size:14px; /*margin-left:-180px;*/}
+#copyright a.letserv {background:url(../../images/skin/2013/letserv.png) no-repeat; width:62px; height:138px; position:absolute; right:100px; top:0;}
+#copyright p{padding:2px 0;color:#999; font-size:14px; /*margin-left:-180px;*/}
 #copyright p.cR-nav {padding:10px 0; height:23px; line-height:23px;}
 #copyright p a, #copyright p span { color:#333; padding:0 5px;display: inline-block;}
 #copyright p a.ssb-weibo {width:29px; height:23px;}
 #copyright p a.ssb-weibot {width:29px; height:23px;}
 #copyright p a.ssb-weixin {width:29px; height:23px; position: relative; }
-/* .floor .ssb-weixin .mbb-weixin, .footer .ssb-weixin .mbb-weixin{background-image: url(../../images/skin/2013/weixin-img.jpg);display: block; height: 294px;left: -110px; position: absolute; top: -297px; visibility: hidden;width: 249px;z-index: 10;}
- */
+.floor .ssb-weixin .mbb-weixin, .footer .ssb-weixin .mbb-weixin{background-image: url(../../images/skin/2013/weixin-img.jpg);display: block; height: 294px;left: -110px; position: absolute; top: -297px; visibility: hidden;width: 249px;z-index: 10;}
+
 /**collectedDialog**/
 .collectd-con {width:300px; height:150px; background:#fbfbfc; border:#8f8a8a solid 1px; margin:10px;}
 #coll-toplogo {position:relative; width:300px; height:58px; background-position:0 -84px;}
@@ -103,7 +103,7 @@ _margin-bottom:50px;
 .mallSearch-tip span { color: #000000; cursor: pointer; display: block;  height: 100%; overflow: hidden;}
 .mallSearch-tip b { display: inline-block; font-family: Arial;max-width: 300px;  overflow: hidden; text-overflow: ellipsis; vertical-align: middle; white-space: nowrap;}
 .mallSearch-tip em { color: #2a7721; font-weight: bold; margin: 0 5px;}
-/* .quickSearchTip i, .quickSearchTip em { background: url("../../images/skin/2013/quickSearchTip_bg.png") no-repeat scroll 0 0 #FFFFFF;} */
+.quickSearchTip i, .quickSearchTip em { background: url("../../images/skin/2013/quickSearchTip_bg.png") no-repeat scroll 0 0 #FFFFFF;}
 .quickSearchTip i { background-position: -40px 5px; display: block; float: left; height: 22px;  margin-left: 5px;  width: 23px;}
 .quickSearchTip em { color: #000000; display: inline-block; font-weight: bold;height: 23px; line-height: 23px; margin: 0 3px; text-align: center; width: 35px;}
 .quickSearchTip { color: #666666; height: 30px; line-height: 30px;}
@@ -136,8 +136,8 @@ _margin-bottom:50px;
 }
 
 .qr-code i{
-/* 	background: url("../../images/2013/20130330A_2.png");
- */	float: left;
+	background: url("../../images/2013/20130330A_2.png");
+	float: left;
 	margin-left: 10px;
 	margin-top: 10px;
 	background-position: 0 -78px; 
@@ -162,16 +162,16 @@ _margin-bottom:50px;
 }
 .btn-app-android{
 	float: left;
-/* 	background: url("../../images/2013/20130330A_2.png");
- */	background-position: 0 -39px;
+	background: url("../../images/2013/20130330A_2.png");
+	background-position: 0 -39px;
 	width:97px; 
 	height:29px;
 	margin-left: 2px;
 }
 .btn-app-apple{
 	float: left;
-/* 	background: url("../../images/2013/20130330A_2.png");
- */	background-position: 0 0;
+	background: url("../../images/2013/20130330A_2.png");
+	background-position: 0 0;
 	width:97px; 
 	height:29px;
 }
