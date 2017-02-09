@@ -1,0 +1,34 @@
+/*我要入驻1*/
+.con_main { position:relative;}
+
+.ss_rz_1{float:left;width:76px;height:63px; position:absolute; right:202px; top:2px; display:block;}
+.ss_rz_nav{float:left;margin-top:50px;margin-bottom:25px;}
+.ss_rz_nav ul li{float:left;background:url(../images/ss_rz_nav_05.gif) no-repeat;width:257px;color:#fff;margin:0 20px;padding-left:20px;height:49px;line-height:49px;font-size:18px;font-weight:bold;}
+.ss_rz_nav ul li.ss_rz_current{background:url(../images/ss_rz_nav_03.gif) no-repeat;width:257px;height:49px;}
+.ss_rz_qjd{border-top:1px solid #009c01;background:#ecffeb;width:990px;height:100px;padding:15px 0;float:left;}
+.ss_rz_qjd ul li{float:left;width:120px;}
+.ss_rz_qjd ul li dl dd{color:#177807;line-height:20px;}
+.ss_rz_qjd ul li dl dd span{color:#000;}
+.ss_qjd{height:30px;padding:30px 0;font-size:18px;font-weight:bold;}
+.ss_func{font-size:12px;width:100px;text-align:right;color:#177807;padding:40px 0;}
+#ss_liuc{width:210px;line-height:20px;}
+#ss_liuc a{margin:0 7px;}
+.ss_rz_qjd ul li.ss_func_cnt{padding:17px 0;}
+.ss_rz_qjd ul li.ss_func_cnt dl dd{color:#000;}
+li#ss_anniu{text-align:right;width:150px;padding:30px 0;}
+.ss_rz_zmd{border:1px dashed #009c01;border-left:0;border-right:0;background:#fff;}
+.ss_rz_zyd{border-top:0;}
+#ss_jmls{width:570px;font-size:12px;font-weight:normal;padding-top:35px;}
+/*填写信息*/
+.ss_dpInfo{border-top:1px solid #009c01;background:#ecffeb;width:960px;height:auto;overflow:hidden;float:left;padding:10px 30px 10px 0;}
+.ss_infoCnt{width:550px;background:#fff;height:auto;overflow:hidden;float:right;padding:15px 25px;}
+.ss_line_height{height:15px;line-height:15px;overflow:hidden;}
+.ss_infoType input{width:200px;border:1px solid #999;height:20px;}
+.ss_gray{color:#9d9d9d;margin-left:5px;}
+#ss_serv input{width:13px;height:13px;border:none;}
+a#cheng{color:#FF5500;font-weight:bold;}
+.ss_immkd{display:block;margin-left:65px;}
+/*完成*/
+.ss_finished{padding:100px 0;text-align:center;line-height:30px;}
+.ss_finished h2{font-size:18px;}
+

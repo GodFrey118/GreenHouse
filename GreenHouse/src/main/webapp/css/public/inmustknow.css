@@ -1,0 +1,97 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* **红色在nav** */
+.rnav {width:100%; height:30px; background:url(../images/rnav_bg.gif) repeat-x; overflow:hidden;}
+.rnav_con {width:990px; margin:0 auto; position:relative;  z-index:999;}
+.rnav_allpro {width:200px; height:30px; background:#778476; position:relative; font-family:微软雅黑; font-size:14px; font-weight:700; text-align:center; line-height:30px; position:relative;}
+.rnav_allpro a.allpropic {float:left;width:200px; height:30px; background:url(../images/allpropic.gif) 10px 7px no-repeat;}
+.rnav_allpro a.cate_xialaico {float:left;width:21px; height:21px; display:block; background:url(../images/cate_xialaico.gif) no-repeat; position:absolute; left:171px; top:5px;}
+.rnav_conl {float:left; width:602px; height:30px; position:absolute; left:200px; top:0;}
+.rnav_conl li {float:left; width:92px; height:30px; text-align:center; position:relative; }
+.rnav_conl li a {float:left; width:92px; height:30px; line-height:30px; font-size:14px; color:#fff; }
+.rnav_conl li a.navacurrent {float:left; width:92px; height:30px; line-height:30px; font-size:14px; font-weight:700; color:#fff; background:url(../images/rnav_abg.gif) 0 0 no-repeat;}
+.rnav_conl li a:hover {float:left; width:92px; height:30px; line-height:30px; font-size:14px; color:#fff; background:url(../images/rnav_abg2.gif) 0 0 no-repeat; position:relative; padding-left:1px; margin-left:-1px; display:inline; z-index:10;}
+.inm_tel {float:right; width:236px; height:30px; line-height:30px; position:absolute; top:0; right:0; text-align:center; color:#ffcc33;}
+
+/* **** */
+
+.inmustknow {width:990px; margin:10px auto;}
+.in_banner {width:990px; height:300px; position:relative; z-index:1;}
+.in_banner_pic {width:990px; height:300px;}
+.in_banner_list {width:990px; height:50px; position:absolute; bottom:6px; left:1px;}
+.ibl_ul {width:990px; height:50px;}
+.ibl_ul li {float:left; margin:0 2px; display:inline;}
+.ibl_ul li a {float:left; _float:none;width:70px; height:48px; border:#FF3 solid 1px;}
+.ibl_ul li a:hover {width:70px; height:48px; border:#F00 solid 1px;}
+
+.in_had_settled {width:970px; height:auto; margin:0 auto;}
+.ihs_top {padding-top:18px;padding-bottom:5px;}
+.ihs_top p {font-size:20px; text-align:center; font-weight:bold;}
+.ihs_btm {width:966px;border-top:#ccc solid 1px;border-left:#ccc solid 1px;float:left;}
+.ihs_btm li {float:left; text-align: center;}
+.ihs_btm li a img{max-width:160px; height:90px;}
+.ihs_btm li a {float:left;width:160px; height:90px; border-right:#ccc solid 1px; border-bottom:#ccc solid 1px;}
+.ihs_btm li.in_more { text-align:center; line-height:90px; font-size:14px; font-family:宋体;}
+
+/*tab*/
+.in_explain {width:990px; height:230px; background:#d3f4d3; margin:10px auto; padding-top:5px;}
+.in_explainab {width:970px; height:36px; text-align:center; line-height:31px;background:url(../images/ine_tabbg.gif) repeat-x; margin:0px auto;}
+.in_explainab li {float:left; width:138px; height:36px; background:url(../images/ine_tab_li.gif)  no-repeat;cursor:pointer; margin-left:7px; display:inline;}
+.in_explainab li a{ width:138px; display:block;}
+.in_explainab li.in_explainab_current {float:left; width:138px; height:36px; background:url(../images/ine_tab_cur.gif) no-repeat;color:#fff; cursor:pointer;}
+.in_explainab li.in_explainab_current a {color:#fff;}
+.ine_content_div {width:950px; height:176px; margin:0 auto; background:#ebffeb; padding:0 10px 10px;}
+.ine_content_div p { line-height:24px;}
+
+
+.store_style {width:990px; height:auto; background:#d3f4d3; margin:10px auto; padding-top:5px;padding-bottom: 10px; color:#000;}
+.store_style_top {width:970px; height:36px; text-align:center; line-height:31px;background:url(../images/ine_tabbg.gif) repeat-x; margin:0px auto;}
+.store_style_top span {float:left; width:138px; height:36px; background:url(../images/ine_tab_cur.gif)  no-repeat;cursor:pointer; margin-left:7px; display:inline; color:#FFF; font-weight:bold; font-size:14px;}
+.store_style_btm {width:950px; height:auto; margin:0 auto; background:#ebffeb; padding:0 10px 10px;}
+.ssb_left {float:left;width:290px; border-right:#b8e2b8 dashed 1px; padding:0 10px;}
+.ssb_mid {float:left;width:290px; border-right:#b8e2b8 dashed 1px; padding:0 10px;}
+.ssb_right {float:left;width:290px;  padding:0 10px;}
+.ssb_left p.tece { text-align:center; margin:0px auto 10px; padding-top:25px}
+.ssb_left p.mt10 { margin-top:10px;}
+.ssb_left p span {float:left;}
+.ssb_left p span.w200{width:271px;}
+.ssb_left p { clear:both;}
+
+.cailiao_ssb_left {float:left; width:215px; background:#d3f4d3;}
+.t18 { font-size:18px;}
+.csl_top {padding:10px;padding-bottom:0px;}
+.in_cailiaotab {width:215px; height:auto; text-align:left; line-height:25px; margin:5px auto; text-indent:20px; font-size:14px;}
+.in_cailiaotab li {float:left; width:195px; height:25px; cursor:pointer; margin-left:7px; display:inline; border:#d3f4d3 solid 1px;}
+.in_cailiaotab li.in_cailiaotab_current {float:left; width:195px; height:25px; background:#fff; border:#b5dfb5 solid 1px; cursor:pointer;}
+.hy_yaoqiu {width:215px; height:auto; text-align:left; line-height:25px; margin:5px auto; text-indent:20px; font-size:14px;}
+.hy_yaoqiu li {float:left;}
+.hy_yaoqiu li {float:left; width:195px; height:25px; cursor:pointer; margin-left:7px; display:inline; border:#d3f4d3 solid 1px; color:#000;}
+.hy_yaoqiu li a:hover {float:left; width:195px; height:25px; background:#fff; border:#b5dfb5 solid 1px; cursor:pointer;color:#000;}
+.hy_yaoqiu li a.hyyq_cur {float:left; width:195px; height:25px; background:#fff; border:#b5dfb5 solid 1px; cursor:pointer;color:#000;}
+.hy_yaoqiu li.hyyq_cur {background: none repeat scroll 0 0 #FFFFFF; border: 1px solid #B5DFB5;cursor: pointer; float: left; height: 25px;width: 195px;}
+.cailiao_ssb_allright{float:left;width:730px; height:auto; margin-left:5px; display:inline;}
+.cailiao_ssb_right_down{margin-top:-24px;}
+.cailiao_ssb_allright p { line-height:24px; width:700px; margin:0 auto;}
+.cailiao_ssb_allright p.mt10 { margin-top:10px;}
+.cailiao_ssb_allright p.ptanhao {height:35px; background:#bbe6bb; line-height:35px; }
+.cailiao_ssb_allright p b.tanhao { padding-left:30px; background:url(../images/in_cl_tanhao.gif) 13px 4px no-repeat;}
+.cailiao_ssb_allright p.tein2 { text-indent:2em;}
+.cailiao_ssb_allright p b.fangkuai{ padding-left:15px; background:url(../images/in_cl_heikuai.gif) 0 4px no-repeat;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
