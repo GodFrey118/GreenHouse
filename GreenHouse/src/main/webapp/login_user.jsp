@@ -20,33 +20,7 @@
 <script type="text/javascript" src="js/public/ecmall.js"></script>  
 <script type="text/javascript" src="js/public/ss.index-V2.4.0.js" charset="utf-8"></script>                                  
 <script charset="utf-8" type="text/javascript" src="js/public/chk_form.js"></script>
-<script type="text/javascript">
-var timeout         = 500;
-var closetimer        = 0;
-var ddmenuitem      = 0;
-
-function nav_open()
-{    nav_canceltimer();
-    nav_close();
-    ddmenuitem = $(this).find('ul').eq(0).css('visibility', 'visible');}
-
-function nav_close()
-{if(ddmenuitem) ddmenuitem.css('visibility', 'hidden');}
-
-function nav_timer()
-{closetimer = window.setTimeout(nav_close, timeout);}
-
-function nav_canceltimer()
-{    if(closetimer)
-    {    window.clearTimeout(closetimer);
-        closetimer = null;}}
-
-$(document).ready(function()
-{    $('#nav > li').bind('mouseover', nav_open);
-    $('#nav > li').bind('mouseout',  nav_timer);});
-
-document.onclick = nav_close;
-</script> 
+<script type="text/javascript" src="js/index/Seach.js"></script> 
 <style>                 
 #close_btn{width:30px;position:fixed;right:110px;top:10px;cursor:pointer}
 #bg_div {margin:-390px auto 0px;z-index:10000;height: 400px;width:1190px;position:fixed;}
