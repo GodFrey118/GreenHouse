@@ -36,7 +36,7 @@
 .indexLogin-bg { background:#b5b5b6; width:416px; height:381px;filter:alpha(Opacity=50);-moz-opacity:0.5;opacity: 0.5; position:absolute; top: -10px;*top:0px;+top:0px; left:0px; z-index:-1;}
 .indexLogin-con {width:394px; height:358px; background:#fbfbfc; border:#8f8a8a solid 1px; margin:10px;}
 /*#login_submit{background:url(../login_user_files/login_btn.gif) no-repeat;}*/
-#login_submit{background:url(../login_user_files/login_btn.gif) no-repeat;}
+#login_submit{background:url(../../login_user_files/login_btn.gif) no-repeat;}
 .iLc-toplogo, .iLc-toplogo a, .iLc-toplogo a:hover, .iLc-normalst a i, .iLc-normal-tishi i, .iLc-mobile-tishi i, .iLc-mobilest i, .indexLogin-ctou, .indexBprom-ico, .indexBprom-close {background:url(../../images/skin/2013/20130328_indexLogin.png) no-repeat;}
 .iLc-toplogo { position:relative; width:394px; height:58px; background-position:0 -84px;}
 .iLc-toplogo a { width:17px; height:17px; background-position:-20px -30px; position:absolute; top:10px; right:10px;}
