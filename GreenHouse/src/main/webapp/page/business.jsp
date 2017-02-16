@@ -143,6 +143,7 @@ document.onclick = nav_close;
 
 <link href="css/public/common-V2.3.0.css" rel="stylesheet" type="text/css">
 <link href="css/public/canvassB.css" rel="stylesheet" type="text/css">
+
 <style>
 body nav a{
 display: block;

@@ -8,7 +8,7 @@
 <link href="css/public/topshan.css" rel="stylesheet" type="text/css">
 <link href="css/public/common.css" rel="stylesheet" type="text/css">
 <title>丽水山耕旗舰店 - 山山商城_自媒体视频直播购物平台</title>
-<script type="text/javascript" async="" charset="utf-8" src="js/public/ntkfstat.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/public/ntkfstat.js"></script>
 <script charset="utf-8" src="js/public/v.js"></script>
 <script type="text/javascript" src="js/public/jquery-1.7.1.min.js" charset="utf-8"></script>
 <script type="text/javascript" src="js/public/ss.index-V2.4.0.js" charset="utf-8"></script> 

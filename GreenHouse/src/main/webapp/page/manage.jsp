@@ -8,8 +8,8 @@
 <title>银行信用管理系统</title>
 <link type="text/css" rel="stylesheet" href="easyui/themes/icon.css">
 <link type="text/css" rel="stylesheet" href="easyui/themes/default/easyui.css">
-<link href="admin_css/main.css" rel="stylesheet" type="text/css" />
-<link href="admin_css/manage.css" rel="stylesheet" type="text/css" />
+<link href="css/admin/main.css" rel="stylesheet" type="text/css" />
+<link href="css/admin/manage.css" rel="stylesheet" type="text/css" />
 </head>
 <body class="easyui-layout" style="width: 960px; margin: 0px auto;">
 	<div data-options="region:'north'" style="height: 65px;">
@@ -91,6 +91,6 @@
 	<script type="text/javascript" src="easyui/jquery.min.js"></script>
 	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
-	<script type="text/javascript" src="admin_js/manage.js"></script>
+	<script type="text/javascript" src="js/admin/manage.js"></script>
 </body>
 </html>
