@@ -33,7 +33,7 @@ public class UserHandler {
 			return "redirect:/index.jsp";
 		}
 		map.put("errorMsg", "用户名或密码错误");
-		return "forward:/login.jsp";
+		return "forward:/login_user.jsp";
 	}
 	
 	@RequestMapping("/apply")
