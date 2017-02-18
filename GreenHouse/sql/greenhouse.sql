@@ -74,6 +74,7 @@ create table StoreType(
 select * from StoreType;
 create sequence seq_StoreType start with 1000;
 insert into StoreType values(seq_StoreType.nextval,'专卖店')
+insert into StoreType values(seq_StoreType.nextval,'旗舰店')
 delete from StoreType where st_id=1001
 --订单：订单编号，用户编号，店铺编号，商品编号，数量，金额，下单时间，状态
 create table Orders(
