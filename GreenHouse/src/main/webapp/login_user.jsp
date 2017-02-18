@@ -83,7 +83,7 @@
           </div> 
      </div>
      <div class="clear login_box">
-     	<form method="post" id="login_form" name="login_form" onsubmit="return checkLogin();">
+     	<form method="post" id="login_form" name="login_form"  action="user/login">
           <div class="login_con ovf">
                <div class="con fl">
                     <ul class="fl fl-box2"> 
@@ -96,14 +96,14 @@
                       <li class="form">
                            <div class="fl fl-txt f14"><font color="#FF0000">*</font>&nbsp;登录名：</div>
                            <div class="fl item-ifo">
-                                 <input class="input_s1 reg-pwd f14 fuhao2 highlight2" type="text" name="user_name" tabindex="1" id="user_name" size="24" value="用户名/邮箱/已验证手机">  
+                                 <input class="input_s1 reg-pwd f14 fuhao2 highlight2" type="text" name="c_name" tabindex="1" id="user_name" size="24" value="用户名/邮箱/已验证手机">  
                                  <i class="i-name"></i>
                            </div>
                       </li>
                       <li class="form">
                            <div class="fl fl-txt f14"><font color="#FF0000">*</font>&nbsp;登录密码：</div>
                            <div class="fl item-ifo">
-                                <input type="password" name="password" id="password" size="24" class="reg-pwd input_s1" tabindex="2">
+                                <input type="password" name="c_pwd" id="password" size="24" class="reg-pwd input_s1" tabindex="2">
                                  <i class="i-pass"></i>
                                   <span class="tips"><a href="#">忘记登录密码？</a></span>
                                  <input _must="0" type="hidden" name="ret_url" value="%2Findex.php%3Fapp%3Dmember">

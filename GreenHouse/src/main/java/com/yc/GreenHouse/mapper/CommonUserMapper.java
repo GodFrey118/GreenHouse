@@ -1,5 +1,7 @@
 package com.yc.GreenHouse.mapper;
 
-public interface CommonUserMapper {
+import com.yc.GreenHouse.entity.CommonUser;
 
+public interface CommonUserMapper {
+	CommonUser getcommonUser(CommonUser user);
 }

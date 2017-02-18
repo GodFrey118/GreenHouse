@@ -41,6 +41,7 @@ create table Store(
 )
 drop table Store;
 select  s_id from Store;
+select * from STORE
 delete from Store where s_id=1023
 create sequence seq_Store start with 1000;
 insert into Store values(seq_Store.nextval,1002,1002,'郭帆','430981199608061134','佳客来','帆式有限公司','湖南省衡阳市','珠晖区衡花路18号','413117','13207349871',null,null,'七天包退换','已通过');
@@ -101,7 +102,7 @@ create table Address(
 )
 select * from Address;
 create sequence seq_Address start with 1000;
-insert into Address values(seq_Address.nextval,1002,'郭帆','湖南省衡阳市','珠晖区衡花路18号','413117','13207349871')
+??insert into Address values(seq_Address.nextval,1002,'郭帆','湖南省衡阳市','珠晖区衡花路18号','413117','13207349871')
 
 
 --评论：编号，用户编号，商品编号，评论内容

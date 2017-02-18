@@ -1,5 +1,23 @@
 package com.yc.GreenHouse.service.impl;
 
-public class UserServiceImpl {
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.yc.GreenHouse.entity.CommonUser;
+import com.yc.GreenHouse.mapper.CommonUserMapper;
+import com.yc.GreenHouse.service.UserService;
+import com.yc.GreenHouse.util.Encrypt;
+
+
+
+@Service("userService")
+public class UserServiceImpl implements UserService {
+	@Autowired
+	private CommonUserMapper commonUserMapper;
+	@Override
+	public CommonUser login(CommonUser commonUser) {
+		//commonUser.setC_pwd(Encrypt.md5AndSha(commonUser.getC_pwd()));
+		return commonUserMapper.getcommonUser(commonUser);
+	}
 
 }

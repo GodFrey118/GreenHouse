@@ -1,5 +1,8 @@
 package com.yc.GreenHouse.service;
 
-public interface UserService {
+import com.yc.GreenHouse.entity.CommonUser;
 
+public interface UserService {
+	
+	CommonUser login(CommonUser user);
 }

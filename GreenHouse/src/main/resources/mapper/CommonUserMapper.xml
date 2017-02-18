@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yc.GreenHouse.entity.CommonUser">
+	<select id="getcommonUser" parameterType="CommonUser" resultType="CommonUser">
+	    select * from CommonUser where c_name=#{c_name} and  c_pwd = #{c_pwd}
+	</select>
+</mapper>
