@@ -6,9 +6,6 @@ import org.springframework.stereotype.Service;
 import com.yc.GreenHouse.entity.CommonUser;
 import com.yc.GreenHouse.mapper.CommonUserMapper;
 import com.yc.GreenHouse.service.UserService;
-import com.yc.GreenHouse.util.Encrypt;
-
-
 
 @Service("userService")
 public class UserServiceImpl implements UserService {

@@ -30,5 +30,12 @@
 		<!-- 配置mybatis与spring整合的SqlSessionFactory的对象 -->
 		<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 				<property name="dataSource"  ref="dataSource"></property>
+				<property name="typeAliasesPackage" value="com.yc.GreenHouse.entity"/>
+	   			<property name="mapperLocations" value="classpath:mapper/*Mapper.xml"/>
 		</bean>
+		
+		<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		    <property name="basePackage" value="com.yc.GreenHouse.mapper"/>
+		    <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+	    </bean>
 </beans>
