@@ -1,5 +1,7 @@
 package com.yc.GreenHouse.web.handler;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -37,9 +39,14 @@ public class UserHandler {
 	}
 	
 	@RequestMapping("/apply")
-	public String apply(Store store, ModelMap map){
+	public String apply(Store store, HttpSession session,ModelMap map){
 		store = storeService.apply(store);
 		System.out.println(store+".....");
+		if(store != null){
+			//map.put("loginUser", user);
+			return "redirect:/apply_success.jsp";
+		}
+		map.put("errorMsg", "该用户已存在,请重新命名!");
 		return "forward:/apply.jsp";
 	}
 }
