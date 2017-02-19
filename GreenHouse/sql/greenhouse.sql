@@ -39,6 +39,11 @@ create table Store(
 	s_service varchar2(100),
 	s_state varchar2(20)
 )
+alter table store modify s_ID_pic varchar2(150)
+alter table store rename column s_ID_pic to name_tmp;
+alter table store add s_ID_pic varchar2(150);
+alter table store drop column name_tmp;
+
 drop table Store;
 select  s_id from Store;
 select * from STORE
@@ -55,7 +60,8 @@ create table Good(
 	g_stock number(5),
 	g_state varchar2(20)
 )
-select g_id from Good;
+
+select * from Good;
 create sequence seq_Good start with 1000;
 insert into Good values(seq_Good.nextval,'苹果',1001,null,3.00,1000,'未上架');
 --商品类型：类型编号，类型名
@@ -103,7 +109,7 @@ create table Address(
 )
 select * from Address;
 create sequence seq_Address start with 1000;
-??insert into Address values(seq_Address.nextval,1002,'郭帆','湖南省衡阳市','珠晖区衡花路18号','413117','13207349871')
+insert into Address values(seq_Address.nextval,1002,'郭帆','湖南省衡阳市','珠晖区衡花路18号','413117','13207349871')
 
 
 --评论：编号，用户编号，商品编号，评论内容

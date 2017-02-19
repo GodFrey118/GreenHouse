@@ -1,5 +1,8 @@
 package com.yc.GreenHouse.web.handler;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,13 +30,31 @@ public class UserHandler {
 	private StoreService storeService;
 	
 	@RequestMapping("/login")
-	public String login(CommonUser user, ModelMap map){
+	public String login(CommonUser user, ModelMap map,HttpSession session){
+		String string=user.getC_name();
+		Pattern p = Pattern.compile("^((13[0-9])|(15[^4,\\D])|(18[0,5-9]))\\d{8}$");  
+		Matcher m = p.matcher(string);  
+		if (m.matches()) {
+			user.setC_tel(string);
+			user.setC_name(null);
+		}
+		
+		String regex = "\\w+(\\.\\w)*@\\w+(\\.\\w{2,3}){1,3}";
+		if (string.matches(regex)) {
+			user.setC_email(string);
+			//System.out.println(user.getC_email()+"....");
+			user.setC_name(null);
+		}
 		user = userService.login(user);
-		System.out.println(user+".....");
+		
+		session.setAttribute("user", user);
+		CommonUser user2 = (CommonUser) session.getAttribute("user");
+		System.out.println(user2.getC_name());
 		if(user != null){
 			map.put("loginUser", user);
 			return "redirect:/index.jsp";
 		}
+		
 		map.put("errorMsg", "用户名或密码错误");
 		return "forward:/login_user.jsp";
 	}
