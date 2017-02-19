@@ -4,6 +4,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yc.GreenHouse.mapper.CommonUserMapper">
 	<select id="getcommonUser" parameterType="CommonUser" resultType="CommonUser">
-	    select * from CommonUser where c_name=#{c_name} and  c_pwd = #{c_pwd}
+	    select * from CommonUser where c_pwd = #{c_pwd} 
+	    <if test="c_tel != null">
+	    	and c_tel = #{c_tel}
+	    </if>
+	    <if test="c_name != null">
+	    	and c_name = #{c_name}
+	    </if>
+	    <if test="c_email != null">
+	   		and c_email = #{c_email}
+	    </if>
 	</select>
 </mapper>     

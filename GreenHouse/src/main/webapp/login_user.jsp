@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -74,6 +75,7 @@
 </style>
 <link rel="stylesheet" type="text/css" href="css/public/common.css">
 <link rel="stylesheet" type="text/css" href="css/public/reg.css">
+<link rel="stylesheet" type="text/css" href="css/login/login.css">  
 <div style="background-color: #F2F2F2">
 <div class="reg-box ovf">
      <div class="reg-top fl">
@@ -85,6 +87,7 @@
      <div class="clear login_box">
      	<form method="post" id="login_form" name="login_form"  action="user/login">
           <div class="login_con ovf">
+          	<p><label>${errorMsg }&nbsp;</label></p><c:remove var="errorMsg" scope="session"/>
                <div class="con fl">
                     <ul class="fl fl-box2"> 
                       <li class="form">
