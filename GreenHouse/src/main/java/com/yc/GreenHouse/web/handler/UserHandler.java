@@ -1,11 +1,8 @@
 package com.yc.GreenHouse.web.handler;
 
-<<<<<<< HEAD
-=======
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
->>>>>>> 5a8bacdf6299c91974e2053bda0d9224b85c4d77
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
