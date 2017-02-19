@@ -157,92 +157,53 @@ var store_hot = "";
 		</div>
 		<div class="ss_dpInfo">
 			<div class="ss_infoCnt">
-				<form method="post" enctype="multipart/form-data" id="apply_form" novalidate="novalidate">
+				<form method="post" enctype="multipart/form-data" id="apply_form" novalidate="novalidate" action="user/apply">
 					<div class="ss_infoType">
 						<label style="position:relative">店主姓名：
 						</label> 
-						<input type="text" name="owner_name" id="owner_name" value="建议使用中文" style="color:#B6B7B9"> <label></label>
+						<input type="text" name="s_ownerName" id="s_ownerName" value="建议使用中文" style="color:#B6B7B9"> <label></label>
 					</div>
 					<div class="ss_line_height"></div>
 					<div class="ss_infoType">
 						<label style="position:relative">身份证号：
 						</label> 
-						<input type="text" name="owner_card" id="owner_card" value="输入正确的身份证号" style="color:#B6B7B9"> <label></label>
+						<input type="text" name="s_ID_card" id="s_ID_card" value="输入正确的身份证号" style="color:#B6B7B9"> <label></label>
 					</div>
 					<div class="ss_line_height"></div>
 					<div class="ss_infoType">
 						<label style="position:relative">店铺名称：
-						</label> <input type="text" name="store_name" id="store_name" value="建议【店铺名+经营范围+店铺类型】" style="color:#B6B7B9">（您刚所选店铺类型是：旗舰店） <label></label>
+						</label> <input type="text" name="s_name" id="s_name" value="建议【店铺名+店铺类型】" style="color:#B6B7B9">（您刚所选店铺类型是：旗舰店） <label></label>
 					</div>
 					<div class="ss_line_height"></div>
 					<div class="ss_infoType">
 						<label>公司名称：</label>
-						<input type="text" name="company_name" id="company_name" value="">
+						<input type="text" name="s_company" id="s_company" value="">
 						<label></label>
 					</div>
 					<div class="ss_line_height"></div>
 					<div class="ss_line_height"></div>
 					<div class="ss_infoType" id="region">
-						<label>所在地区：</label> <input type="hidden" name="region_id" value="" class="mls_ids"> <input type="hidden" name="region_name" value="" class="mls_namess">  <select name="region" class="d_inline">
+						<label>所在地区：</label> <input type="hidden" name="s_area" value="" class="mls_ids"> <input type="hidden" name="region_name" value="" class="mls_namess">  <select name="region" class="d_inline">
 							<option value="0">请选择...</option> <option value="10701">北京</option><option value="6942">天津</option><option value="6961">河北省</option><option value="7144">山西省</option><option value="7275">内蒙古</option><option value="7389">辽宁省</option><option value="7504">吉林省</option><option value="7574">黑龙江省</option><option value="7715">上海</option><option value="7736">江苏省</option><option value="7856">浙江省</option><option value="7958">安徽省</option><option value="8076">福建省</option><option value="8171">江西省</option><option value="8282">山东省</option><option value="8440">河南省</option><option value="8618">湖北省</option><option value="8732">湖南省</option><option value="8869">广东省</option><option value="9012">广西壮族自治区</option><option value="9136">海南省</option><option value="9161">重庆市</option><option value="9202">四川省</option><option value="9405">贵州省</option><option value="9503">云南省</option><option value="9649">西藏</option><option value="9730">陕西省</option><option value="9848">甘肃省</option><option value="9950">青海省</option><option value="10001">宁夏</option><option value="10029">新疆</option><option value="10144">台湾省</option><option value="10145">澳门</option><option value="10146">香港</option>						</select> <label></label>
 					</div>
 					
 					<div class="ss_line_height"></div>
 					<div class="ss_infoType">
-						<label>详细地址：</label> <input type="text" name="address" id="address" value=""> <label></label>
-					</div>
-									
-										<div class="ss_line_height"></div>
-					<div class="ss_infoType">
-						<label style="position:relative">店铺二级域名：
-						</label> 
-						<input type="text" value="大于3个字节的英文字母" style="color:#B6B7B9" name="domain" id="domain">.shanshan360.com
-						<label></label>
-					</div>
-					
+						<label>详细地址：</label> <input type="text" name="s_detail_Addr" id="s_detail_Addr" value=""> <label></label>
+					</div>													
 					<div class="ss_line_height"></div>
 					<div class="ss_infoType">
-						<label>邮政编码：</label> <input type="text" name="zipcode" id="zipcode" value="" onblur="emp();"> <label></label><span id="e">例如 :200000</span>
+						<label>邮政编码：</label> <input type="text" name="s_post" id="s_post" value="" onblur="emp();"> <label></label><span id="e">例如 :200000</span>
 					</div>
 					<div class="ss_line_height"></div>
 					<div class="ss_infoType">
-						<label>联系电话：</label> <input type="text" name="tel" id="tel" value="" onblur="emp1();"> <label></label><span id="p">例如 :0578-5097752 或 13800138000</span>
-					</div>
-					<div class="ss_line_height"></div>
-					<div class="ss_infoType">
-						<label>上传证件：</label> <input type="file" name="image_1"> <label></label><span>法人身份证 正面，必填，图片大小不能超过3M</span>
-					</div>
-						<div class="ss_line_height"></div>
-					<div class="ss_infoType">
-						    <input style="margin-left: 63px;" type="file" name="image_2"> <label></label><span>法人身份证 背面，必填，图片大小不能超过3M</span>
-					</div>
-					<div class="ss_line_height"></div>
-					<div class="ss_infoType">
-						<label>上传执照：</label> <input type="file" name="image_3"> <label></label><span>企业营业执照，必填，图片大小不能超过3M</span>
-					</div>
-					<div class="ss_line_height"></div>
-					<div class="ss_infoType">
-						<input style="margin-left: 63px;" type="file" name="image_4"> <label></label><span>组织机构代码证，必填，图片大小不能超过3M</span>
-					</div>
-					<div class="ss_line_height"></div>
-					<div class="ss_infoType">
-						<input style="margin-left: 63px;" type="file" name="image_5"> <label></label><span>企业税务登记证，必填，图片大小不能超过3M</span>
-					</div>
-					<div class="ss_line_height"></div>
-					<div class="ss_infoType">
-						<input style="margin-left: 63px;" type="file" name="image_6"> <label></label><span>商标注册证或受理书，必填，图片大小不能超过3M</span>
-					</div>
-					<div class="ss_line_height"></div>
-					<div class="ss_infoType">
-						<label>其它证件：</label> <input type="file" name="image_7"> <label></label><span>有机认证/绿色认证等，图片大小不能超过3M</span>
+						<label>联系电话：</label> <input type="text" name="s_tel" id="s_tel" value="" onblur="emp1();"> <label></label><span id="p">例如 :0578-5097752 或 13800138000</span>
 					</div>
 					<div class="ss_line_height"></div>
 					<div class="ss_infoType" id="ss_serv">
 						<label style="color: #000;">服务保障：</label> 
 						<input type="checkbox" onclick="return false" checked="checked" name="assu_goods" value="bz" id="assu_goods"> <label>正品保障</label> 
-					<!-- 	<input type="checkbox" name="compensate" value="cs" id="compensate"/> <label>假一赔五</label> -->
 						<input type="checkbox" onclick="return false" checked="checked" name="seven_back" value="th" id="seven_back"> <label>7天退换</label>
-					<!--  	<input type="checkbox" name="price_differen" value="cj" id="price_differen"/> <label>差价返还</label>
 						<input type="checkbox" name="soon_delivery" value="fh" id="soon_delivery"/> <label>闪电发货</label>-->
 						<input type="checkbox" onclick="return false" checked="checked" name="pro_invoices" value="fp" id="pro_invoices"> <label>提供发票</label>
 						<div class="ss_line_height"></div>
