@@ -232,9 +232,7 @@
         <div class="ailsa-nav">
             <ul class="ailsa-nav-ul">
                  <li>
-                    <div class="Anav-title">
-                    <em class="A-em1"></em>
-                        <a target="_blank" href="#">生鲜食品</a>
+                    <div class="Anav-title" id="0">
                     </div>
                     <div class="Anav-sub">
                         <div class="Anav-subtext">
@@ -248,10 +246,10 @@
                     </div>
                 </li>
                    <li>
-                    <div class="Anav-title">
+                    <div class="Anav-title" id="1"><!-- 
                     <em class="A-em2"></em>
-                        <a target="_blank" href="#">粮油干货</a>
-                    </div>
+                    <a target="_blank" href="#">粮油干货</a>
+                     --></div>
                     <div class="Anav-sub">
                         <div class="Anav-subtext">
 
@@ -266,8 +264,8 @@
                     </div>
                 </li>
                                 <li>
-                    <div class="Anav-title"><em class="A-em3"></em>
-                        <a target="_blank" href="#">茶叶冲饮</a>
+                    <div class="Anav-title" id="2"><!-- <em class="A-em3"></em>
+                        <a target="_blank" href="#">茶叶冲饮</a> -->
                     </div>
                     <div class="Anav-sub">
                         <div class="Anav-subtext">
@@ -283,8 +281,8 @@
                     </div>
                 </li>
                                 <li>
-                    <div class="Anav-title"><em class="A-em4"></em>
-                        <a target="_blank" href="#">休闲食品</a>
+                    <div class="Anav-title" id="3"><!-- <em class="A-em4"></em>
+                        <a target="_blank" href="#">休闲食品</a> -->
                     </div>
                     <div class="Anav-sub">
                         <div class="Anav-subtext">
@@ -300,8 +298,8 @@
                     </div>
                 </li>
                 <li>
-                    <div class="Anav-title"><em class="A-em5" style="margin: 0px 10px 0px 20px;"></em>
-                        <a target="_blank" href="#">酒水饮料</a>
+                    <div class="Anav-title" id="4"><!-- <em class="A-em5" style="margin: 0px 10px 0px 20px;"></em>
+                        <a target="_blank" href="#">酒水饮料</a> -->
                     </div>
                     <div class="Anav-sub" style="display: none;">
                         <div class="Anav-subtext">
@@ -315,8 +313,8 @@
                     </div>
                 </li>
                 <li>
-                    <div class="Anav-title"><em class="A-em6" style="margin: 0px 10px 0px 20px;"></em>
-                        <a target="_blank" href="#">山山百货</a>
+                    <div class="Anav-title" id="5"><!-- <em class="A-em6" style="margin: 0px 10px 0px 20px;"></em>
+                        <a target="_blank" href="#">山山百货</a> -->
                     </div>
                     <div class="Anav-sub" style="display: none;">
                         <div class="Anav-subtext">
@@ -331,7 +329,7 @@
                 </li>
                 
                 <li>
-                    <div class="Anav-title"><em class="A-em8"></em>山山优选</div>
+                     <div class="Anav-title" id="6"><!--<em class="A-em8"></em>山山优选--></div> 
                     <div class="Anav-subB">
                         <ul class="Anav-brand">
                             <li><a href="#"><img src="./index_files/SHANSHAN_IMG_shanshan_1_201608231401511413.jpg" alt="景宁特产 芝麻片" width="90" height="45"></a></li>
@@ -535,22 +533,7 @@
                      </div>
                 </div>
                 <div class="fl pro-tj">
-                     <ul>            
-                            <li>
-                               <p class="pic"><a href="#" target="_blank">
-                              <img src="./index_files/small_201507291048161158.jpg">  </a>  
-                                 <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(49526,49433);" spec_id="49526" goods_id="49433">加入购物车</span>                               
-                               </p>
-                               <p class="name"><a href="#">野生仙人掌果 仙人果 2斤装 海南水果新鲜热带水果  偏</a></p>
-                               <p class="price">
-                               <font class="f-s cff6 f16">
-                               <em class="tm-yen" style="font-family:楷体_GB2312;font-size:12px;">￥</em>
-                               <font class="f-s cff6 f16">39.</font><font class="f-s cff6 f14">00</font>
-                               </font>
-                               </p>
-                                 
-                      <p></p>
-                             </li>
+                     <ul id="goods">            
                              <li>
                                <p class="pic"><a href="#" target="_blank">
                                <img src="./index_files/small_201611031142157009.jpg">  </a>  
@@ -785,8 +768,8 @@
                    
                 </div>
                 <div class="fl pro-tj">
-                     <ul>            
-                            <li>
+                     <ul id="goods_1">            
+                            <!-- <li>
                                <p class="pic"><a href="#" target="_blank">
                                  <img src="./index_files/small_201606081530082797.jpg">  </a>  
                                  <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(49858,49765);" spec_id="49858" goods_id="49765">加入购物车</span>                               
@@ -813,7 +796,7 @@
                                </font>
                                </p>          
                       <p></p>
-                             </li>
+                             </li> -->
                               <li>
                                <p class="pic"><a href="#" target="_blank">
                                 <img src="./index_files/small_201606121425356293.jpg">  </a>  
@@ -1032,8 +1015,8 @@
                      </div>
                 </div>
                 <div class="fl pro-tj">
-                     <ul>            
-                            <li>
+                     <ul id="goods_2">            
+                            <!-- <li>
                                <p class="pic"><a href="#" target="_blank">
                                <img src="./index_files/small_201610201656443517.jpg">  </a>  
                                 <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(50037,49941);" spec_id="50037" goods_id="49941">加入购物车</span>                               
@@ -1046,7 +1029,7 @@
                                </font>
                                </p>    
                       <p></p>
-                             </li>
+                             </li> -->
                               <li>
                                <p class="pic"><a href="#" target="_blank">
                                <img src="./index_files/small_201610201734584852.jpg">  </a>  
@@ -1279,8 +1262,8 @@
                      </div>    
                 </div>
                 <div class="fl pro-tj">
-                     <ul>            
-                            <li>
+                     <ul id="goods_3">            
+                           <!--  <li>
                                <p class="pic"><a href="#" target="_blank">
                                <img src="./index_files/small_201511061104387723.jpg">  </a>  
                                 <span class="f15 fyh" style="cursor: pointer" onclick="add_to_cart(49629,49536);" spec_id="49629" goods_id="49536">加入购物车</span>                               
@@ -1293,7 +1276,7 @@
                                </font>
                                </p>     
                       <p></p>
-                             </li>
+                             </li> -->
                                <li>
                                <p class="pic"><a href="#" target="_blank">
                                <img src="./index_files/small_201606081444235742.jpg">  </a>  
@@ -1635,5 +1618,6 @@
 </div>
 -->
 <script type="text/javascript" src="js/index/tupian.js"></script>
+<script type="text/javascript" src="js/index/goods.js"></script>
 </body>
 </html>
