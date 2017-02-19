@@ -1,3 +1,26 @@
+function getFormData() {
+	/* dom对象转jquery : $(domObj) */
+	var formData = new FormData($("#apply_form")[0]); 
+	$.ajax({
+		url : 'user/apply',
+		type : 'POST',
+		data : formData,
+		async : false,
+		cache : false,
+		contentType : false,
+		processData : false,
+		success : function(returndata) {					
+			if (returndata) {
+				parent.closeMU();
+				$("#apply_form").datagrid("reload");//数据表格重新加载
+					alert("商店注册成功!");
+					window.location.href="http://localhost:8080/GreenHouse/index.jsp";				
+			}
+		},	
+	});
+	return false;
+}
+
 //<!CDATA[
 var SITE_URL = "http://www.shanshan360.com";
 var REAL_SITE_URL = "http://www.shanshan360.com";
