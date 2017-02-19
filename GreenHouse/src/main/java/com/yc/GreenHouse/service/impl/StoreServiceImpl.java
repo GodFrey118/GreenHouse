@@ -17,5 +17,9 @@ public class StoreServiceImpl implements StoreService{
 	public Store apply(Store store) {
 		return storeMapper.applyStore(store);
 	}
+	@Override
+	public Store getStoreInfo(int s_id) {
+		return storeMapper.selectStoreInfo(s_id);
+	}
 
 }

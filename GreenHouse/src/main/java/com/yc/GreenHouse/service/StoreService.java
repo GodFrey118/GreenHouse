@@ -8,4 +8,6 @@ public interface StoreService {
 
 	Store apply(Store store);
 
+	Store getStoreInfo(int s_id);
+
 }
