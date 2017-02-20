@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,7 +55,16 @@
            <img src="./index_files/icon-star.gif">收藏山山
            </div>
            <div class="fr">
-                <span class="fl name sn-login-info">您好！ 欢迎来山山商城购物！<a href="#" class="sn-login">请登录</a> <a href="#" class="sn-register">免费注册</a><i class="sn-separator"></i></span>
+                <c:choose>
+				<c:when test="${loginUser eq null}">
+					<span class="fl name sn-login-info">您好！ 欢迎来山山商城购物！<a href="login_user.jsp" class="sn-login">请登录</a> <a href="#" class="sn-register">免费注册</a><i class="sn-separator"></i></span>
+				</c:when>
+				<c:otherwise>
+				<span class="fl name sn-login-info" style='color:green;'>欢迎  ${loginUser } 使用本网站 &nbsp &nbsp &nbsp &nbsp<a href="#" class="sn-login">个人信息</a> <a href="#" class="sn-register">退出</a><i class="sn-separator"></i></span>
+				
+				</c:otherwise>
+			</c:choose>
+                
                 <span class="fl op">            
                 </span>
                 <ul id="nav" class="fl">
