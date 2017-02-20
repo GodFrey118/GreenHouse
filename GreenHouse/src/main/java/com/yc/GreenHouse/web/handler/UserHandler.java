@@ -46,12 +46,12 @@ public class UserHandler {
 			user.setC_name(null);
 		}
 		user = userService.login(user);
-		
+		//System.out.println(user);
 		session.setAttribute("user", user);
 		CommonUser user2 = (CommonUser) session.getAttribute("user");
-		System.out.println(user2.getC_name());
+		//System.out.println(user2.getC_name());
 		if(user != null){
-			map.put("loginUser", user);
+			map.put("loginUser", user2.getC_name());
 			return "redirect:/index.jsp";
 		}
 		
