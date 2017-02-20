@@ -3,9 +3,11 @@ package com.yc.GreenHouse.web.handler;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,6 +31,7 @@ public class UserHandler {
 	@Autowired
 	private StoreService storeService;
 	
+	
 	@RequestMapping("/login")
 	public String login(CommonUser user, ModelMap map,HttpSession session){
 		String string=user.getC_name();
@@ -51,7 +54,7 @@ public class UserHandler {
 		CommonUser user2 = (CommonUser) session.getAttribute("user");
 		System.out.println(user2.getC_name());
 		if(user != null){
-			map.put("loginUser", user);
+			map.put("loginUser", user2);
 			return "redirect:/index.jsp";
 		}
 		
@@ -60,14 +63,17 @@ public class UserHandler {
 	}
 	
 	@RequestMapping("/apply")
-	public String apply(Store store, HttpSession session,ModelMap map){
+	public String apply(Store store,ModelMap map,HttpServletRequest request){
+		CommonUser cUser=(CommonUser) request.getSession().getAttribute("loginUser");
+		store.setC_id(cUser.getC_id());
+		System.out.println(store.getC_id());
+		System.out.println(store);
 		store = storeService.apply(store);
-		System.out.println(store+".....");
 		if(store != null){
 			//map.put("loginUser", user);
-			return "redirect:/apply_success.jsp";
+			return "redirect:/index.jsp";
 		}
-		map.put("errorMsg", "该用户已存在,请重新命名!");
+		//map.put("errorMsg", "该用户已存在,请重新命名!");
 		return "forward:/apply.jsp";
 	}
 }

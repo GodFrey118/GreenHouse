@@ -2,6 +2,7 @@ package com.yc.GreenHouse.entity;
 /*
  *	s_id integer primary key,
 	st_id integer references StoreType(st_id),
+	c_id integer references CommonUser(c_id),
 	s_ownerName varchar2(40),
 	s_ID_card varchar2(100),
 	s_name varchar2(50),
@@ -18,6 +19,7 @@ package com.yc.GreenHouse.entity;
 public class Store {
 	private Integer s_id;
 	private Integer st_id;
+	private Integer c_id;
 	private String s_ownerName;
 	private String s_ID_card;
 	private String s_name;
@@ -146,24 +148,32 @@ public class Store {
 		this.s_state = s_state;
 	}
 
-	@Override
-	public String toString() {
-		return "Store [s_id=" + s_id + ", st_id=" + st_id + ", s_ownerName="
-				+ s_ownerName + ", s_ID_card=" + s_ID_card + ", s_name="
-				+ s_name + ", s_company=" + s_company + ", s_area=" + s_area
-				+ ", s_detail_Addr=" + s_detail_Addr + ", s_post=" + s_post
-				+ ", s_tel=" + s_tel + ", s_ID_pic=" + s_ID_pic
-				+ ", s_licence_pic=" + s_licence_pic + ", s_service="
-				+ s_service + ", s_state=" + s_state + "]";
+	public Integer getC_id() {
+		return c_id;
 	}
 
-	public Store(Integer s_id, Integer st_id, String s_ownerName,
+	public void setC_id(Integer c_id) {
+		this.c_id = c_id;
+	}
+
+	@Override
+	public String toString() {
+		return "Store [s_id=" + s_id + ", st_id=" + st_id + ", c_id=" + c_id
+				+ ", s_ownerName=" + s_ownerName + ", s_ID_card=" + s_ID_card
+				+ ", s_name=" + s_name + ", s_company=" + s_company
+				+ ", s_area=" + s_area + ", s_detail_Addr=" + s_detail_Addr
+				+ ", s_post=" + s_post + ", s_tel=" + s_tel + ", s_ID_pic="
+				+ s_ID_pic + ", s_licence_pic=" + s_licence_pic
+				+ ", s_service=" + s_service + ", s_state=" + s_state + "]";
+	}
+
+	public Store(Integer s_id, Integer st_id, Integer c_id, String s_ownerName,
 			String s_ID_card, String s_name, String s_company, String s_area,
 			String s_detail_Addr, String s_post, String s_tel, String s_ID_pic,
 			String s_licence_pic, String s_service, String s_state) {
-		super();
 		this.s_id = s_id;
 		this.st_id = st_id;
+		this.c_id = c_id;
 		this.s_ownerName = s_ownerName;
 		this.s_ID_card = s_ID_card;
 		this.s_name = s_name;
@@ -176,6 +186,5 @@ public class Store {
 		this.s_licence_pic = s_licence_pic;
 		this.s_service = s_service;
 		this.s_state = s_state;
-	}		
-	
+	}
 }
