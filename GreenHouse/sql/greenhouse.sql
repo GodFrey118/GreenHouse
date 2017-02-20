@@ -34,7 +34,7 @@ create table Store(
 	s_detail_Addr varchar2(150),
 	s_post varchar2(20),
 	s_tel varchar2(40),
-	s_ID_pic blob,
+	s_ID_pic varchar2(200),
 	s_licence_pic blob,
 	s_service varchar2(100),
 	s_state varchar2(20)
@@ -53,25 +53,45 @@ insert into Store values(seq_Store.nextval,1002,1002,'郭帆','43098119960806113
 --商品：商品编号，名称，类型编号，商品相片，价格，库存量，状态
 create table Good(
 	g_id integer primary key,
+	s_id integer references Store(s_id),
 	g_name varchar2(40),
 	gt_id integer references GoodType(gt_id),
-	g_pic blob,
+	g_pic varchar2(150),
 	g_price float,
 	g_stock number(5),
+	g_type varchar2(50),
 	g_state varchar2(20)
 )
 
 select * from Good;
+delete GOOD
+drop table Good
+drop sequence seq_Good
 create sequence seq_Good start with 1000;
-insert into Good values(seq_Good.nextval,'苹果',1001,null,3.00,1000,'未上架');
+insert into Good values(seq_Good.nextval,1021,'丽山耕 雪莲果',1000,null,3.00,1000,'水果','上架');
+insert into Good values(seq_Good.nextval,1021,'丽山耕 板栗',1001,null,3.00,1000,'南北干活','上架');
+insert into Good values(seq_Good.nextval,1021,'丽山耕 杂粮黑米',1001,null,3.00,1000,'杂粮主食','上架');
+insert into Good values(seq_Good.nextval,1021,'丽山耕 原味牛肉干',1003,null,3.00,1000,'肉干/肉脯','上架');
+insert into Good values(seq_Good.nextval,1021,'丽山耕 铁观音茶叶',1002,null,3.00,1002,'绿茶','上架');
+insert into Good values(seq_Good.nextval,1021,'丽山耕 葡萄酒',1004,null,3.00,1002,'葡萄酒','上架');
 --商品类型：类型编号，类型名
 create table GoodType(
 	gt_id integer primary key,
 	gt_name varchar2(20)
 )
 select * from GoodType;
+delete GoodType where gt_id=1005
+drop sequence seq_GoodType
 create sequence seq_GoodType start with 1000;
-insert into GoodType values(seq_GoodType.nextval,'水果');
+insert into GoodType values(seq_GoodType.nextval,'生鲜食品');
+insert into GoodType values(seq_GoodType.nextval,'油粮干货');
+insert into GoodType values(seq_GoodType.nextval,'茶叶冲饮');
+insert into GoodType values(seq_GoodType.nextval,'休闲食品');
+insert into GoodType values(seq_GoodType.nextval,'酒水饮料');
+insert into GoodType values(seq_GoodType.nextval,'山山百货');
+insert into GoodType values(seq_GoodType.nextval,'山山优选');
+select * from good g inner join goodType gt on g.gt_id=gt.gt_id where g_state = '上架' 
+
 --店铺类型：店铺类型编号，类型名
 create table StoreType(
 	st_id integer primary key,

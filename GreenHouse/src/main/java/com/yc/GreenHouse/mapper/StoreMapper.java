@@ -6,4 +6,6 @@ public interface StoreMapper {
 
 	Store applyStore(Store store);
 
+	Store selectStoreInfo(int s_id);
+
 }

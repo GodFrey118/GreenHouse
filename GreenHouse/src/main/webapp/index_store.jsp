@@ -14,6 +14,7 @@
 <script type="text/javascript" src="js/public/ss.index-V2.4.0.js" charset="utf-8"></script> 
 <script type="text/javascript" src="js/index_store/index_store.js"></script>
 <link href="css/public/index_stroe.css" rel="stylesheet" type="text/css">
+
 </head>
 
 <body>
@@ -151,7 +152,8 @@ var PRICE_FORMAT = '¥%s';
         <div class="sshop-nav-wrap">
             <div class="identify fR">
                 <ul>
-                                   </ul>
+                
+                </ul>
             </div>
             <div class="score fR">
             <div class="main-info">
@@ -227,18 +229,18 @@ var PRICE_FORMAT = '¥%s';
                         <ul>
                             <li>
                                 <label>掌　　柜：</label>
-                                <div class="right">
-                                    <a href="#">丽水山耕旗舰店</a>
+                                <div>
+                                    <a href="#">${storeInfo.s_name}</a>
                                 </div>
                             </li>
                            
                             <li>
                                 <label>公 司 名：</label>
-                                <div class="right" id="company_name_header">丽水山耕</div>
+                                <div id="company_name_header">${storeInfo.s_company}</div>
                             </li>
                             <li class="locus">
                                 <label>所 在 地：</label>
-                                <div class="right" id="region_name_header">浙江省	丽水市</div>
+                                <div id="region_name_header">${storeInfo.s_area}</div>
                             </li>
                         </ul>
                     </div>
@@ -253,7 +255,7 @@ var PRICE_FORMAT = '¥%s';
             </div>
             <div class="brandsale fR">
                 <div class="brand-info">
-                    <b id="store_name_2">丽水山耕旗舰店</b>
+                    <b id="store_name_2">${storeInfo.s_name}</b>
                                         <a href="#" title="品牌自营" class="icon-1red">品牌自营</a>
                                         <a href="javascript:;" title="营业执照" class="icon-2 info-trigger"></a>
                     	<a class="sstalking-11" title="点击这里给我发消息" ></a>
@@ -782,5 +784,4 @@ var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " 
 document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F5a250090ff571028094607805af27985' type='text/javascript'%3E%3C/script%3E"));
 </script><script src="js/public/h.js" type="text/javascript"></script></span>
 <script type="text/javascript" src="js/public/index(1).php" charset="utf-8"></script>
-
 </body></html>
