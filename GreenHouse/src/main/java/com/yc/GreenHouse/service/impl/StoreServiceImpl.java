@@ -14,7 +14,7 @@ public class StoreServiceImpl implements StoreService{
 	@Autowired
 	private StoreMapper storeMapper;
 	@Override
-	public Store apply(Store store) {
+	public int apply(Store store) {
 		return storeMapper.applyStore(store);
 	}
 	@Override

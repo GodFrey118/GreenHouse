@@ -167,12 +167,9 @@ public class Store {
 				+ ", s_service=" + s_service + ", s_state=" + s_state + "]";
 	}
 
-	public Store(Integer s_id, Integer st_id, Integer c_id, String s_ownerName,
+	public Store(Integer c_id, String s_ownerName,
 			String s_ID_card, String s_name, String s_company, String s_area,
-			String s_detail_Addr, String s_post, String s_tel, String s_ID_pic,
-			String s_licence_pic, String s_service, String s_state) {
-		this.s_id = s_id;
-		this.st_id = st_id;
+			String s_detail_Addr, String s_post, String s_tel) {
 		this.c_id = c_id;
 		this.s_ownerName = s_ownerName;
 		this.s_ID_card = s_ID_card;
@@ -182,9 +179,6 @@ public class Store {
 		this.s_detail_Addr = s_detail_Addr;
 		this.s_post = s_post;
 		this.s_tel = s_tel;
-		this.s_ID_pic = s_ID_pic;
-		this.s_licence_pic = s_licence_pic;
-		this.s_service = s_service;
-		this.s_state = s_state;
+	
 	}
 }

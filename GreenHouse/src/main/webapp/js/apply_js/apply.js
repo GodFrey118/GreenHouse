@@ -1,11 +1,38 @@
-$("#apply_form").form({
-	url:"user/apply",
-	success:function(data){
-		if(data.trim() == 'true'){
-			location.replace("index.jsp");
-		}
-	}
-});
+//$("#apply_form").form({
+//	url:"user/apply",
+//	success:function(data){
+//		if(data.trim() == 'true'){
+//			location.replace("index.jsp");
+//		}
+//	}
+//});
+
+/*function getFormData(){
+	alert("sdfsdf");
+	var formData = new FormData($("#apply_form")[0]);  
+	 $.ajax({  
+		  url: 'user/apply' ,  
+		  type: 'POST',  
+		  data: formData,  
+		  async: false,  
+		  contentType: false,  
+		  processData: false,  
+		  success: function (returndata) {
+			  $.messager.show({
+					title:'商店注册',
+					msg:returndata.trim() == "true" ? "商店注册成功!!!" : "商店注册失败!!!",
+					showType:'show',
+					modal:true,
+					style:{
+						left:300,
+						top:document.body.scrollTop+document.documentElement.scrollTop +500,
+					}
+				});
+		  }
+	 });  
+	 return false;
+} */
+
 
 //<!CDATA[
 var SITE_URL = "http://www.shanshan360.com";
