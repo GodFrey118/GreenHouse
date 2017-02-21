@@ -16,6 +16,7 @@
 <script charset="utf-8" type="text/javascript" src="js/public/jquery-ui-V2.3.0.js"></script> 
 <link rel="stylesheet" type="text/css" href="css/public/jquery-ui-V2.3.0.css">
 <script type="text/javascript" src="js/index/Seach.js"></script> 
+<script type="text/javascript" src="js/index/index.js"></script> 
 
 </head>
 <body>
@@ -57,10 +58,11 @@
            <div class="fr">
                 <c:choose>
 				<c:when test="${loginUser eq null}">
-					<span class="fl name sn-login-info">您好！ 欢迎来山山商城购物！<a href="login_user.jsp" class="sn-login">请登录</a> <a href="#" class="sn-register">免费注册</a><i class="sn-separator"></i></span>
+					<span id="loginForm" class="fl name sn-login-info">您好！ 欢迎来山山商城购物！<a href="login_user.jsp" class="sn-login">请登录</a> <a href="#" class="sn-register">免费注册</a><i class="sn-separator"></i></span>
 				</c:when>
 				<c:otherwise>
-				<span class="fl name sn-login-info" style='color:green;'>欢迎  ${loginUser } 使用本网站 &nbsp &nbsp &nbsp &nbsp<a href="#" class="sn-login">个人信息</a> <a href="#" class="sn-register">退出</a><i class="sn-separator"></i></span>
+				<span class="fl name sn-login-info" style='color:green;'>欢迎  ${loginUser } 使用本网站 &nbsp &nbsp &nbsp &nbsp<a href="#" class="sn-login">个人信息</a> 
+				<a href='javascript:void(0)' onclick='logout()' class="sn-register">退出</a><i class="sn-separator"></i></span>
 				
 				</c:otherwise>
 			</c:choose>

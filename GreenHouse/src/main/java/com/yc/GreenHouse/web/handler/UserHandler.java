@@ -77,4 +77,16 @@ public class UserHandler {
 		//map.put("errorMsg", "该用户已存在,请重新命名!");
 		return "forward:/apply.jsp";
 	}
+	
+	@RequestMapping("/logout")
+	public boolean logout(HttpSession session){
+		CommonUser user2 = (CommonUser) session.getAttribute("user");
+		System.out.println(user2);
+		if (user2 != null) {
+			session.removeAttribute("c_name");
+			session.invalidate();
+			return true;
+		}
+		return false;
+	}
 }
