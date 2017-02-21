@@ -376,15 +376,8 @@ var PRICE_FORMAT = '¥%s';
 <div id="_widget_849" name="best_goods" widget_type="widget" class="widget">
 <div class="clear"></div>
 <div class="p_5"></div>
-
-			<h2 class="ss_model_tit" style="margin-top:5px;">
-				<span>精品推荐</span>
-				<ul class="ss_model_titUl">
-					<li><a href="#">更多&gt;&gt;</a></li>
-				</ul>
-			</h2>
-			<div class="ss_model_cnt2Main">
-							<div class="ss_model_cntPart1  ">
+			<div class="ss_model_cnt2Main" id="goodInfos">
+				<div class="ss_model_cntPart1  ">
 					<a href="#" target="_blank"><img src="index_store_files/small_201610201837098254.jpg" alt="丽水山耕 鱼腥草80g" width="305" height="305"></a>
 					<div class="ss_model_goodsTit">
 						<a href="#" class="goodsList_1" gid="" target="_blank">丽水山耕 鱼腥草80g</a>
@@ -776,7 +769,14 @@ var PRICE_FORMAT = '¥%s';
 
     </ul>
 </div>
-
+<script type="text/javascript">
+var nidParam = location.href.substring(location.href.indexOf("?"));
+alert(nidParam);
+   $.post("store/goodinfo"+nidParam,function(data){
+	  alert(data);
+	  $("#goodInfos").empty();
+	   });
+</script>
 <script type="text/javascript" src="js/public/EmbedCS.js"></script>
 <script type="text/javascript" src="js/public/ss.common-V2.3.0.js"></script>
 <span class="statistics_code"><script type="text/javascript">

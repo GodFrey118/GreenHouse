@@ -203,5 +203,44 @@ $("#rightButton").css("right", "0px");
         }, 500);
     }
     
-   
 
+    $(function(){
+   	 $('.all_gcate').mouseover(function(e){
+   		 if(checkHover(e,this)){  
+   			$('.store_cates').show();
+   		 }	
+     	 });
+   	 $('.all_gcate').mouseout(function(e){
+     		 if(checkHover(e,this)){   
+         		 $(".store_cates").mouseover(function(e){
+          			if(checkHover(e,this)){
+         			 	$('.store_cates').show();
+          			}
+        		    });
+         		 $(".store_cates").mouseout(function(e){
+          			if(checkHover(e,this)){
+         			 	$('.store_cates').hide();
+          			}
+        		    });
+   					$('.store_cates').hide();
+     		 }	
+   	 });
+   });  
+
+    
+    $(function () {
+        $('.info-trigger').click(function (e) {
+            e.stopPropagation();e.preventDefault();
+            $(this).parents('div.brandsale').find('div.extra-info').toggle();
+        });
+        $('div.score').hover(function() {
+                $(this).find('div.extra-info').show();
+                $(this).find('i.icon-triangle').addClass('up');
+        }, function() {
+            $(this).find('div.extra-info').hide();
+            $(this).find('i.icon-triangle').removeClass('up');
+        });
+    });
+    
+   
+	

@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 /* *all background * */
-.qjd_nav_conl li a.qjd_nav_current, #qjd_nav_shoucang, .qjd_nav2_conl li .gonggao, h2.ss_model_tit, .ss_fl_kfzx, .ss_fl_sjxx, .ss_model_lfArrow_nav a.prev, .ss_model_ritArrow_nav a.next, .ss_model_goodsTit, .fl_tea li a.indent, .qjd_link, .qjd_serve_img.two, .qjd_serve_img.three, .qjd_serve_img.one, .qjd_serve_img.four, .prolist_wangwang, .prolist_wangwang_off, li.mainmenu dl dt span.expanded_ico, li.mainmenu dl dt span.collapsed_ico, .haowei, .fas_11, .goodsi_ws_ico p, .ss_dp_pj{background:url(../images/store-ind-bg.gif) repeat;}
+.qjd_nav_conl li a.qjd_nav_current, #qjd_nav_shoucang, .qjd_nav2_conl li .gonggao, h2.ss_model_tit, .ss_fl_kfzx, .ss_fl_sjxx, .ss_model_lfArrow_nav a.prev, .ss_model_ritArrow_nav a.next, .ss_model_goodsTit, .fl_tea li a.indent, .qjd_link, .qjd_serve_img.two, .qjd_serve_img.three, .qjd_serve_img.one, .qjd_serve_img.four, .prolist_wangwang, .prolist_wangwang_off, li.mainmenu dl dt span.expanded_ico, li.mainmenu dl dt span.collapsed_ico, .haowei, .fas_11, .goodsi_ws_ico p, .ss_dp_pj{background:url(../../index_store_files/store-ind-bg.gif) repeat;}
 .sub { background: none repeat scroll 0 0 #74A515; color: #FFFFFF;float: left; height: 22px; line-height: 22px; margin-left: 2px; width: 44px;cursor:pointer;border:#74A515 0px ;}
 /*header*/
 .qjd_header{height:86px;width:100%;background:url(../images/img/qjd_header.gif) repeat;}
