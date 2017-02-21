@@ -51,7 +51,7 @@ public class UserHandler {
 		//System.out.println(user);
 		session.setAttribute("user", user);
 		CommonUser user2 = (CommonUser) session.getAttribute("user");
-		//System.out.println(user2.getC_name());
+//		System.out.println(user2.getC_name());
 		if(user != null){
 			map.put("loginUser", user2);
 			map.put("loginUser", user2.getC_name());
@@ -63,8 +63,9 @@ public class UserHandler {
 	}
 	
 	@RequestMapping("/apply")
-	public String apply(Store store,ModelMap map,HttpServletRequest request){
-		CommonUser cUser=(CommonUser) request.getSession().getAttribute("loginUser");
+	public String apply(Store store,ModelMap map,HttpSession session){
+		System.out.println(session.getAttribute("user"));
+		CommonUser cUser=(CommonUser) session.getAttribute("user");
 		store.setC_id(cUser.getC_id());
 		System.out.println(store.getC_id());
 		System.out.println(store);

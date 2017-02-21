@@ -6,8 +6,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <select id="selectStoreInfo" parameterType="int" resultType="Store">
        select * from store where s_id=#{s_id}
     </select>
-	<insert id="applyStore" parameterType="Store" >
-	    insert into Store values (seq_Store.nextval,1020,#{c_id},#{s_ownerName},#{s_ID_card},#{s_name},#{s_company},#{s_area},#{s_detail_Addr},#{s_post},#{s_tel},#{s_ID_pic},#{s_licence_pic},#{s_service},'未通过')
+	<insert id="applyStore" parameterType="int" >
+	    insert into Store values (seq_Store.nextval,1020,#{c_id},#{s_ownerName},#{s_ID_card},#{s_name},#{s_company},#{s_area},#{s_detail_Addr},#{s_post},#{s_tel},null,null,null,'未通过')
 	</insert>
 	
 	

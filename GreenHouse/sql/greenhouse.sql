@@ -41,15 +41,17 @@ create table Store(
 )
 alter table store modify s_ID_pic varchar2(150)
 alter table store rename column s_ID_pic to name_tmp;
-alter table store add s_ID_pic varchar2(150);
+alter table store add s_state varchar2(20);s
 alter table store drop column name_tmp;
-
+commit
 drop table Store;
 select  s_id from Store;
 select * from STORE
 delete from Store where s_id=1023
 create sequence seq_Store start with 1000;
 insert into Store values(seq_Store.nextval,1002,1002,'郭帆','430981199608061134','佳客来','帆式有限公司','湖南省衡阳市','珠晖区衡花路18号','413117','13207349871',null,null,'七天包退换','已通过');
+insert into Store values(seq_Store.nextval,1020,1002,'郭帆','430981199608061134','佳客来','帆式有限公司','8732','益阳市','413117','13207349871',null,null,null,'未通过');
+
 --商品：商品编号，名称，类型编号，商品相片，价格，库存量，状态
 create table Good(
 	g_id integer primary key,
