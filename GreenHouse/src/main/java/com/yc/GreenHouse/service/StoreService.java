@@ -6,7 +6,7 @@ import com.yc.GreenHouse.entity.Store;
 @Component("storeService")
 public interface StoreService {
 
-	Store apply(Store store);
+	int apply(Store store);
 
 	Store getStoreInfo(int s_id);
 

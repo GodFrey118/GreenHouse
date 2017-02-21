@@ -69,12 +69,11 @@ public class UserHandler {
 		store.setC_id(cUser.getC_id());
 		System.out.println(store.getC_id());
 		System.out.println(store);
-		store = storeService.apply(store);
-		if(store != null){
-			//map.put("loginUser", user);
-			return "redirect:/index.jsp";
+		int result = storeService.apply(store);
+		if(result >0){
+			return "redirect:/apply_success.jsp";
 		}
-		//map.put("errorMsg", "该用户已存在,请重新命名!");
+		map.put("errorMsg", "商店注册失败，请重新操作！");
 		return "forward:/apply.jsp";
 	}
 	

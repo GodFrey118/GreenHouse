@@ -159,20 +159,18 @@ var store_hot = "";
 			<div class="ss_infoCnt">
 				<form method="post"  id="apply_form"  action="user/apply">
 					<div class="ss_infoType">
-						<label style="position:relative">店主姓名：
-						</label> 
+						<label style="position:relative">店主姓名：</label> 
 						<input type="text" name="s_ownerName" id="s_ownerName" value="建议使用中文" "> <label></label>
 					</div>
 					<div class="ss_line_height"></div>
 					<div class="ss_infoType">
-						<label style="position:relative">身份证号：
-						</label> 
+						<label style="position:relative">身份证号：</label> 
 						<input type="text" name="s_ID_card" id="s_ID_card" value="输入正确的身份证号""> <label></label>
 					</div>
 					<div class="ss_line_height"></div>
 					<div class="ss_infoType">
-						<label style="position:relative">店铺名称：
-						</label> <input type="text" name="s_name" id="s_name" value="建议【店铺名+店铺类型" ">（您刚所选店铺类型是：旗舰店） <label></label>
+						<label style="position:relative">店铺名称：</label> 
+						<input type="text" name="s_name" id="s_name" value="建议【店铺名+店铺类型" ">（您刚所选店铺类型是：旗舰店） <label></label>
 					</div>
 					<div class="ss_line_height"></div>
 					<div class="ss_infoType">
@@ -199,15 +197,14 @@ var store_hot = "";
 					<div class="ss_infoType">
 						<label>联系电话：</label> <input type="text" name="s_tel" id="s_tel" value="" onblur="emp1();"> <label></label><span id="p">例如 :0578-5097752 或 13800138000</span>
 					</div>
-					<!-- <div class="ss_line_height"></div>
+					<div class="ss_line_height"></div>
 					<div class="ss_infoType" id="ss_serv">
-						<label style="color: #000;">服务保障：</label> 
+						<!-- <label style="color: #000;">服务保障：</label> 
 						<input type="checkbox" onclick="return false" checked="checked" name="assu_goods" value="bz" id="assu_goods"> <label>正品保障</label> 
 						<input type="checkbox" onclick="return false" checked="checked" name="seven_back" value="th" id="seven_back"> <label>7天退换</label>
 						<input type="checkbox" name="soon_delivery" value="fh" id="soon_delivery"/> <label>闪电发货</label>
-						<input type="checkbox" onclick="return false" checked="checked" name="pro_invoices" value="fp" id="pro_invoices"> <label>提供发票</label> -->
-						<div class="ss_line_height"></div>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="checkbox" onclick="return false" checked="checked" name="pro_invoices" value="fp" id="pro_invoices"> <label>提供发票</label>  -->
+						<div class="ss_line_height"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<input type="checkbox" name="notice" value="1" id="warning"> <label for="warning">我已认真阅读并完全同意<a href="http://www.shanshan360.com/index.php?app=article&act=service_center&item=det&article_id=571" target="_blank" id="cheng">山山商城开店协议</a>中的所有条款</label>
 					</div>
 					<div class="ss_line_height"></div>
