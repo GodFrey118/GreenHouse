@@ -9,8 +9,11 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 
 import com.yc.GreenHouse.entity.CommonUser;
 import com.yc.GreenHouse.entity.Store;
@@ -78,12 +81,16 @@ public class UserHandler {
 	}
 	
 	@RequestMapping("/logout")
-	public boolean logout(HttpSession session){
+	@ResponseBody
+	public boolean  logout(HttpSession session,SessionStatus sessionStatus){
 		CommonUser user2 = (CommonUser) session.getAttribute("user");
 		System.out.println(user2);
 		if (user2 != null) {
-			session.removeAttribute("c_name");
-			session.invalidate();
+			System.out.println("nihao");
+			sessionStatus.setComplete();
+			System.out.println("nihao++");
+//			session.removeAttribute("c_name");
+//			session.invalidate();
 			return true;
 		}
 		return false;
