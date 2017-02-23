@@ -1,5 +1,7 @@
 package com.yc.GreenHouse.mapper;
 
+import java.util.List;
+
 import com.yc.GreenHouse.entity.Good;
 import com.yc.GreenHouse.entity.Store;
 
@@ -10,5 +12,7 @@ public interface StoreMapper {
 	Store selectStoreInfo(int s_id);
 	
 	Good selectgoodInfo(int g_id);
+
+	List<Good> selectGoodssaInfo(int s_id);
 
 }

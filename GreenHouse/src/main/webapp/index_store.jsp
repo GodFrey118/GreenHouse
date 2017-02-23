@@ -10,7 +10,6 @@
 <title>丽水山耕旗舰店 - 山山商城_自媒体视频直播购物平台</title>
 <script type="text/javascript" charset="utf-8" src="js/public/ntkfstat.js"></script>
 <script charset="utf-8" src="js/public/v.js"></script>
-<script type="text/javascript" src="js/public/jquery-1.7.1.min.js" charset="utf-8"></script>
 <script type="text/javascript" src="js/public/ss.index-V2.4.0.js" charset="utf-8"></script> 
 <script type="text/javascript" src="js/index_store/index_store.js"></script>
 <link href="css/public/index_stroe.css" rel="stylesheet" type="text/css">
@@ -371,23 +370,15 @@ var PRICE_FORMAT = '¥%s';
 
 	<div class="qjd_content" style="background:#ffffff;">
 		
-		<div class="cnt_main" area="store_index_content" widget_type="area" style="width:950px;">
+		<div class="cnt_main" style="width:950px;">
 		
           
-<div id="_widget_849" name="best_goods" widget_type="widget" class="widget">
+<div id="_widget_849" class="widget">
 <div class="clear"></div>
 <div class="p_5"></div>
-			<div class="ss_model_cnt2Main" id="goodInfos">
-				<div class="ss_model_cntPart1  ">
-					<a href="#" target="_blank"><img src="index_store_files/small_201610201837098254.jpg" alt="丽水山耕 鱼腥草80g" width="305" height="305"></a>
-					<div class="ss_model_goodsTit">
-						<a href="#" class="goodsList_1"  target="_blank">丽水山耕 鱼腥草80g</a>
-					</div>
-					<p class="ss_model_p00">
-						近30天已销售<span>0</span>笔<span class="ss_model_spanPrice">¥18.00</span>
-					</p>
-				</div>
-			 				<div class="ss_model_cntPart1  ss_model_noBor">
+			<div id="goodInfos" class="ss_model_cnt2Main">
+				
+			 		<div class="ss_model_cntPart1  ss_model_noBor">
 					<a href="#" target="_blank"><img src="index_store_files/small_201610201743213162.jpg" alt="丽水山耕 余叶香榧 100g" width="305" height="305"></a>
 					<div class="ss_model_goodsTit">
 						<a href="#" class="goodsList_1" target="_blank">丽水山耕 余叶香榧 100g</a>
@@ -753,29 +744,75 @@ var PRICE_FORMAT = '¥%s';
 <div id="rightButton" style="right: 0px;">
     <ul id="right_ul">  
      <li id="right_kf"></li>
-    
-        <!--<a href="http://www.shanshan360.com/consultation" target="_blank"><li id="right_kf" ></li></a>-->
         <a target="_blank" href="#"><li id="right_gw"><div class="nums">1</div></li></a>
             <li id="right_weixin" class="right_ico"></li>
       <li id="right_tip" style="margin-top:90px" class="png">
             <div class="con ovf  ">
                 <div class="fl arr" style="top:80px"><div class="fl arr_i"></div></div>
                  <ul>
-                                     <li><p><a href="" target="_brank"><img style="width: 118px; height: 118px;" src="index_store_files/syewmsz_0.jpg"></a></p><p class="f14 fyh tec"><a href="" target="_brank"><font color="#5B5B5B">山山商城微信</font></a></p></li>
+                                     <li><p><a href="#" target="_brank"><img style="width: 118px; height: 118px;" src="./index_store_files/syewmsz_0.jpg"></a></p><p class="f14 fyh tec"><a href="#" target="_brank"><font color="#5B5B5B">山山商城微信</font></a></p></li>
                                    </ul>
             </div>
         </li>
                 <li id="right_sc" onclick="addBookmark()"></li>
-        <li><div id="backToTop" style="display: none;"><a href="javascript:;" onfocus="this.blur();" class="backToTop_a png"></a></div></li>
+        <li><div id="backToTop" style="display: block;"><a href="javascript:;" onfocus="this.blur();" class="backToTop_a png"></a></div></li>
 
     </ul>
-</div>
+</div> 
+<script type="text/javascript">     
+$(document).ready(function(e) {              
+    $("#rightButton").css("right", "0px");
+    
+    var button_toggle = true;
+    $(".right_ico").live("mouseover", function(){
+        var tip_top;
+        var show= $(this).attr('show');
+        var hide= $(this).attr('hide');
+        tip_top = show == 'tel' ?  65 :  -10;
+        button_toggle = false;
+        $("#right_tip").css("top" , tip_top).show().find(".flag_"+show).show();
+        $(".flag_"+hide).hide();
+        
+    }).live("mouseout", function(){
+        button_toggle = true;
+        hideRightTip();
+    });
+    
+    
+    $("#right_tip").live("mouseover", function(){
+        button_toggle = false;
+        $(this).show();
+    }).live("mouseout", function(){
+        button_toggle = true;
+        hideRightTip();
+    });
+    
+    function hideRightTip(){
+        setTimeout(function(){        
+            if( button_toggle ) $("#right_tip").hide();
+        }, 500);
+    }
+    
+    $("#backToTop").live("click", function(){
+        var _this = $(this);
+        $('html,body').animate({scrollTop: 0}, 500 ,function(){
+            _this.hide();
+        });
+    });
 
+    $(window).scroll(function(){
+        var htmlTop = $(document).scrollTop();
+        if( htmlTop > 0){
+            $("#backToTop").fadeIn();    
+        }else{
+            $("#backToTop").fadeOut();
+        }
+    });
+});
+</script>  
+<script type="text/javascript" src="js/public/jquery-1.7.1.min.js" charset="utf-8"></script>
 <script type="text/javascript" src="js/public/EmbedCS.js"></script>
 <script type="text/javascript" src="js/public/ss.common-V2.3.0.js"></script>
-<span class="statistics_code"><script type="text/javascript">
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F5a250090ff571028094607805af27985' type='text/javascript'%3E%3C/script%3E"));
-</script><script src="js/public/h.js" type="text/javascript"></script></span>
-<script type="text/javascript" src="js/public/index(1).php" charset="utf-8"></script>
+<script src="js/public/h.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/index/index_goods.js"></script>
 </body></html>

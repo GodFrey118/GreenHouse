@@ -1,5 +1,7 @@
 package com.yc.GreenHouse.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +27,10 @@ public class StoreServiceImpl implements StoreService{
 	@Override
 	public Good getgoodInfo(int g_id) {
 		return storeMapper.selectgoodInfo(g_id);
+	}
+	@Override
+	public List<Good> getGoodssaInfo(int s_id) {
+		return storeMapper.selectGoodssaInfo(s_id);
 	}
 
 }
