@@ -50,5 +50,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <update id="updateScartNum" parameterType="ShopingCart">
        update Shopping_Cart set sc_goodNum=#{sc_goodNum} where g_id=#{g_id} and c_id=#{c_id} 
     </update>
+    
+    <delete id="DeleteCartGood" parameterType="int">
+       delete Shopping_Cart where sc_id=#{sc_id}
+    </delete>
 	
 </mapper>     

@@ -474,17 +474,19 @@ width: 950px;
 .js{width:262px; height:74px; background:#efefef;padding:20px 30px 10px 30px; text-align:center}
 .js p{width:255px;}
 .choose_btn {
-background: #45b035;
-width: 110px;
-height: 30px;
-line-height: 30px;
-border-radius: 4px;
-text-align: center;
-cursor: pointer;
-overflow: hidden;
-border: 0;
-color: white;
+	background: #45b035;
+	width: 110px;
+	height: 30px;
+	line-height: 30px;
+	border-radius: 4px;
+	text-align: center;
+	cursor: pointer;
+	overflow: hidden;
+	border: 0;
+	color: white;
+	
 }
+
 .pro-name{width:132px; overflow:hidden;margin-right:10px}
 .ui-dropdown-menu2 li .con img{margin-right:30px}
 .ui-dropdown2.hover .ui-dropdown-hd2 .top-bt,.ui-dropdown2:hover .ui-dropdown-hd2 .top-bt{ padding:0 10px;height:29px;border:1px #F0F0F0 solid;height:29px;background:#fff;margin-right:12px; border-bottom:none; line-height:29px;}

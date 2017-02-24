@@ -24,4 +24,6 @@ public interface StoreMapper {
 
 	int updateScartNum(ShopingCart sc);
 
+	int DeleteCartGood(int sc_id);
+
 }

@@ -159,4 +159,12 @@ public class UserHandler {
 		System.out.println(cNum);
 		return cNum;
 	}
+	
+	@RequestMapping("/delCartGood")
+	@ResponseBody
+	public boolean DelCartGood(@RequestParam(name="sc_id",required=false)int sc_id, HttpSession session){
+		boolean del = storeService.getDelCartGood(sc_id);
+		System.out.println(del);
+		return del;
+	}
 }
