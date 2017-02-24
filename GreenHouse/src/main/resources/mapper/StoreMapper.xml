@@ -15,6 +15,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<insert id="applyStore" parameterType="Store" >
 	    insert into Store values (seq_Store.nextval,1020,#{c_id},#{s_ownerName},#{s_ID_card},#{s_name},#{s_company},#{s_area},#{s_detail_Addr},#{s_post},#{s_tel},null,null,null,'未通过')
 	</insert>
+	<insert id="indsertCart" parameterType="Shoping_Cart">
+	    insert into Shopping_Cart values(seq_Cart.nextval,#{g_id},#{c_id})
+	</insert>
 	
 	
 </mapper>     

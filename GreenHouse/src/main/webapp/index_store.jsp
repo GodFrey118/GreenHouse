@@ -777,8 +777,7 @@ $(document).ready(function(e) {
         button_toggle = true;
         hideRightTip();
     });
-    
-    
+
     $("#right_tip").live("mouseover", function(){
         button_toggle = false;
         $(this).show();

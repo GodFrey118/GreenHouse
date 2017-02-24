@@ -94,6 +94,16 @@ insert into GoodType values(seq_GoodType.nextval,'山山百货');
 insert into GoodType values(seq_GoodType.nextval,'山山优选');
 select * from good g inner join goodType gt on g.gt_id=gt.gt_id where g_state = '上架' 
 
+--购物车表：id， 商品ID，用户id，
+create table Shopping_Cart(
+     sc_id integer primary key,
+     g_id integer,
+     c_id integer   
+)
+select * from Shopping_Cart
+create sequence seq_Cart start with 1000;
+insert into Shopping_Cart values(seq_Cart.nextval,1000,1000)
+
 --店铺类型：店铺类型编号，类型名
 create table StoreType(
 	st_id integer primary key,
