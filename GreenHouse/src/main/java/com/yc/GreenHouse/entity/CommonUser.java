@@ -32,6 +32,11 @@ public class CommonUser {
 		this.c_tel = c_tel;
 		this.c_email = c_email;
 	}
+	public CommonUser(String c_name, String c_pwd) {
+		this.c_name = c_name;
+		this.c_pwd = c_pwd;
+	}
+
 	public Integer getC_id() {
 		return c_id;
 	}

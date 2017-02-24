@@ -15,4 +15,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	   		and c_email = #{c_email}
 	    </if>
 	</select>
+	<update id="updateUser" parameterType="CommonUser">
+	    update CommonUser set c_pwd=#{c_pwd} where c_name=#{c_name}
+	</update>
 </mapper>     
