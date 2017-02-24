@@ -166,13 +166,14 @@
               
                <ul class="unstyled fr ui-dropdown-menu2">
                    <li>
-                     <div class="con fl hide carts_show_g">
+                     <div class="con fl hide carts_show_g" id="null_cart">
                         <div class="fl"><img src="./index_files/b-y.jpg"></div>
                         <div class="fl cart_show">你的购物车是空的，赶快去购物吧！</div>
                      </div>
                    
-                     <font class="fyh f14 ml5 fl show_cart">最新加入的商品</font>
-                         
+                     <font id="show_cart_1" class="fyh f14 ml5 fl show_cart">最新加入的商品</font>
+                     <div class="left1left1 clear1 pro-list1" id="pro-list">
+                     </div>    
                    </li>
                </ul>
             </div>

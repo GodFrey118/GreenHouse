@@ -105,7 +105,8 @@ create table Shopping_Cart(
      
 )
 select * from Shopping_Cart
-drop table Shopping_Cart
+drop table Shopping_Cart 
+delete Shopping_Cart where g_id=50084
 drop sequence seq_Cart
 create sequence seq_Cart start with 1000;
 insert into Shopping_Cart values(seq_Cart.nextval,1000,1000,1,'未购买','未付款')

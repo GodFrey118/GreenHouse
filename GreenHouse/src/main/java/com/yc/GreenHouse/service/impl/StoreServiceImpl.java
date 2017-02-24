@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.yc.GreenHouse.entity.Good;
-import com.yc.GreenHouse.entity.Shoping_Cart;
+import com.yc.GreenHouse.entity.ShopingCart;
 import com.yc.GreenHouse.entity.Store;
 import com.yc.GreenHouse.mapper.StoreMapper;
 import com.yc.GreenHouse.service.StoreService;
@@ -34,17 +34,19 @@ public class StoreServiceImpl implements StoreService{
 		return storeMapper.selectGoodssaInfo(s_id);
 	}
 	@Override
-	public boolean AddSCart(Shoping_Cart sCart) {
-		Shoping_Cart sc = storeMapper.selectSCartGood(sCart);
+	public boolean AddSCart(ShopingCart sCart) {
+		ShopingCart sc = storeMapper.selectSCartGood(sCart);
 		if (sc!=null) {
-			return storeMapper.updateScartNum(sCart)>0;
+			sc.setSc_goodNum(sc.getSc_goodNum()+1);
+			sc.setC_id(sCart.getC_id());
+			return storeMapper.updateScartNum(sc)>0;
 		}else{
 			return storeMapper.indsertCart(sCart)>0;
 		}
 		
 	}
 	@Override
-	public List<Shoping_Cart> getCartNum(Integer c_id) {
+	public List<ShopingCart> getCartNum(Integer c_id) {
 		return storeMapper.selectCartNum(c_id);
 	}
 }

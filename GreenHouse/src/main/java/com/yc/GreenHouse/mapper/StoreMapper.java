@@ -3,7 +3,7 @@ package com.yc.GreenHouse.mapper;
 import java.util.List;
 
 import com.yc.GreenHouse.entity.Good;
-import com.yc.GreenHouse.entity.Shoping_Cart;
+import com.yc.GreenHouse.entity.ShopingCart;
 import com.yc.GreenHouse.entity.Store;
 
 public interface StoreMapper {
@@ -16,12 +16,12 @@ public interface StoreMapper {
 
 	List<Good> selectGoodssaInfo(int s_id);
 
-	int indsertCart(Shoping_Cart sCart);
+	int indsertCart(ShopingCart sCart);
 
-	List<Shoping_Cart> selectCartNum(Integer c_id);
+	List<ShopingCart> selectCartNum(Integer c_id);
 
-	Shoping_Cart selectSCartGood(Shoping_Cart sCart);
+	ShopingCart selectSCartGood(ShopingCart sCart);
 
-	int updateScartNum(Shoping_Cart sCart);
+	int updateScartNum(ShopingCart sc);
 
 }
