@@ -108,7 +108,7 @@
                            <div class="fl item-ifo">
                                 <input type="password" name="c_pwd" id="password" size="24" class="reg-pwd input_s1" tabindex="2">
                                  <i class="i-pass"></i>
-                                  <span class="tips"><a href="#">忘记登录密码？</a></span>
+                                  <span class="tips"><a href="page/forgetPassword.jsp">忘记登录密码？</a></span>
                                  <input _must="0" type="hidden" name="ret_url" value="%2Findex.php%3Fapp%3Dmember">
                            </div>
                       </li>

@@ -1,11 +1,18 @@
 package com.yc.GreenHouse.web.handler;
 
+import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,6 +34,9 @@ public class UserHandler {
 	
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private JavaMailSender mailSender;
 	
 	@Autowired
 	private StoreService storeService;
@@ -84,13 +94,42 @@ public class UserHandler {
 		CommonUser user2 = (CommonUser) session.getAttribute("user");
 		System.out.println(user2);
 		if (user2 != null) {
-			System.out.println("nihao");
 			sessionStatus.setComplete();
-			System.out.println("nihao++");
 //			session.removeAttribute("c_name");
 //			session.invalidate();
 			return true;
 		}
 		return false;
+	}
+	
+	@RequestMapping("/forget")
+	public String forget(String username, String email, HttpServletRequest request) {
+		LogManager.getLogger().debug("请求UserHandler进行forget的操作....");
+		LogManager.getLogger().debug("请求数据username:" + username + ", email:" + email);
+		try {
+			MimeMessage message = mailSender.createMimeMessage();
+			MimeMessageHelper helper = new MimeMessageHelper(message, true, "utf-8");
+			helper.setFrom("studymail_test@163.com");
+			helper.setTo(email);
+			helper.setSubject("找回密码");
+			String hrefStr = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getServletContext().getContextPath() + "/user/getpassword?username=" + username;
+			System.out.println(hrefStr);
+			helper.setText("<a href='" + hrefStr + "'>找回密码</a><br>如果连接不可用拷贝" + hrefStr + " 到地址栏...", true);
+			mailSender.send(message);
+		} catch (MessagingException e) {
+			e.printStackTrace();
+			return "redirect:/page/forgetPassword.jsp";
+		}
+
+		return "redirect:/page/forgetSuccess.jsp";
+	}
+	@RequestMapping("/getpassword")
+	public String getpassword(String username, HttpSession session) {
+		Random rand = new Random();
+		String randPassword = rand.nextInt(900000) + 100000 + "";
+		//业务处理重置密码
+		userService.resetPassword(username, randPassword);
+		session.setAttribute("newPassword", randPassword);
+		return "redirect:/page/getpasswordSuccess.jsp";
 	}
 }

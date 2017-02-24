@@ -8,4 +8,6 @@ import com.yc.GreenHouse.entity.CommonUser;
 public interface UserService {
 	
 	CommonUser login(CommonUser user);
+
+	void resetPassword(String username, String randPassword);
 }

@@ -16,5 +16,10 @@ public class UserServiceImpl implements UserService {
 		//commonUser.setC_pwd(Encrypt.md5AndSha(commonUser.getC_pwd()));
 		return commonUserMapper.getcommonUser(commonUser);
 	}
+	@Override
+	public void resetPassword(String username, String randPassword) {
+		CommonUser user = new CommonUser(username, randPassword);
+		commonUserMapper.updateUser(user);
+	}
 
 }
