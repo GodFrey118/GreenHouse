@@ -18,4 +18,10 @@ public interface StoreMapper {
 
 	int indsertCart(Shoping_Cart sCart);
 
+	List<Shoping_Cart> selectCartNum(Integer c_id);
+
+	Shoping_Cart selectSCartGood(Shoping_Cart sCart);
+
+	int updateScartNum(Shoping_Cart sCart);
+
 }

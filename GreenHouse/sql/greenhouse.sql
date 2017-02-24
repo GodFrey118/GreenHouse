@@ -98,11 +98,17 @@ select * from good g inner join goodType gt on g.gt_id=gt.gt_id where g_state = 
 create table Shopping_Cart(
      sc_id integer primary key,
      g_id integer,
-     c_id integer   
+     c_id integer,
+     sc_goodNum integer,
+     sc_g_buy_state varchar2(50),
+     sc_g_payment varchar2(50)
+     
 )
 select * from Shopping_Cart
+drop table Shopping_Cart
+drop sequence seq_Cart
 create sequence seq_Cart start with 1000;
-insert into Shopping_Cart values(seq_Cart.nextval,1000,1000)
+insert into Shopping_Cart values(seq_Cart.nextval,1000,1000,1,'未购买','未付款')
 
 --店铺类型：店铺类型编号，类型名
 create table StoreType(

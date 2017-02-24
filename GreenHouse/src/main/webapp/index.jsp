@@ -25,7 +25,6 @@
 <div id="rightButton" style="right: 0px;">
     <ul id="right_ul">  
      <li id="right_kf" onclick="openChatWindow(&#39;&#39;);"></li>
-    
         <a target="_blank" href="#">
         <li id="right_gw">
         <div class="nums">0</div>
@@ -130,9 +129,8 @@
 <div class="grid clear ">
      <div class="top-con fl">
           <div class="logo fl"> 
-            
-                      <a href="./index_files/index.html"><img width="380px" height="100px" src="./index_files/site_logo.jpg"></a>
-                      </div>
+            <a href="./index_files/index.html"><img width="380px" height="100px" src="./index_files/site_logo.jpg"></a>
+          </div>
           
           <div class="fl">
           		<form target="_blank" method="get" id="keyword_form" action="http://search.shanshan360.com/index.php">
@@ -1611,7 +1609,7 @@
     </div>
 </div>
 </div>
-<!--
+
 <div id="cart_tan">
 	<div id="cart_tan_top"><a onclick="close_cart_tan();"><b>X</b>关闭</a></div>
 	<div id="cart_tan_zhong">

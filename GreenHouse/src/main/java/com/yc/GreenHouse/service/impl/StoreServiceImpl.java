@@ -35,6 +35,16 @@ public class StoreServiceImpl implements StoreService{
 	}
 	@Override
 	public boolean AddSCart(Shoping_Cart sCart) {
-		return storeMapper.indsertCart(sCart)>0;
+		Shoping_Cart sc = storeMapper.selectSCartGood(sCart);
+		if (sc!=null) {
+			return storeMapper.updateScartNum(sCart)>0;
+		}else{
+			return storeMapper.indsertCart(sCart)>0;
+		}
+		
+	}
+	@Override
+	public List<Shoping_Cart> getCartNum(Integer c_id) {
+		return storeMapper.selectCartNum(c_id);
 	}
 }

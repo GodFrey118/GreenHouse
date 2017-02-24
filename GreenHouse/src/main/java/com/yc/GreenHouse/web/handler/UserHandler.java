@@ -1,5 +1,6 @@
 package com.yc.GreenHouse.web.handler;
 
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -105,10 +106,19 @@ public class UserHandler {
 		
 		CommonUser user2 = (CommonUser) session.getAttribute("user");
 		sCart.setC_id(user2.getC_id());
-		sCart.setC_id(g_id);
+		sCart.setG_id(g_id);
 		boolean shopping_Cart = storeService.AddSCart(sCart);
 		System.out.println(shopping_Cart);
 		return shopping_Cart;
 		
+	}
+	
+	@RequestMapping("/cartNum")
+	@ResponseBody
+	public List<Shoping_Cart> CartNum(HttpSession session){
+		CommonUser user2 = (CommonUser) session.getAttribute("user");
+		List<Shoping_Cart> cNum = storeService.getCartNum(user2.getC_id());
+		System.out.println(cNum);
+		return cNum;
 	}
 }

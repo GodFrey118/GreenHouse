@@ -20,4 +20,6 @@ public interface StoreService {
 
 	boolean AddSCart(Shoping_Cart sCart);
 
+	List<Shoping_Cart> getCartNum(Integer c_id);
+
 }
