@@ -1,8 +1,12 @@
 package com.yc.GreenHouse.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.yc.GreenHouse.entity.Good;
+import com.yc.GreenHouse.entity.Shoping_Cart;
 import com.yc.GreenHouse.entity.Store;
 import com.yc.GreenHouse.mapper.StoreMapper;
 import com.yc.GreenHouse.service.StoreService;
@@ -21,5 +25,16 @@ public class StoreServiceImpl implements StoreService{
 	public Store getStoreInfo(int s_id) {
 		return storeMapper.selectStoreInfo(s_id);
 	}
-
+	@Override
+	public Good getgoodInfo(int g_id) {
+		return storeMapper.selectgoodInfo(g_id);
+	}
+	@Override
+	public List<Good> getGoodssaInfo(int s_id) {
+		return storeMapper.selectGoodssaInfo(s_id);
+	}
+	@Override
+	public boolean AddSCart(Shoping_Cart sCart) {
+		return storeMapper.indsertCart(sCart)>0;
+	}
 }

@@ -10,7 +10,6 @@
 <title>丽水山耕旗舰店 - 山山商城_自媒体视频直播购物平台</title>
 <script type="text/javascript" charset="utf-8" src="js/public/ntkfstat.js"></script>
 <script charset="utf-8" src="js/public/v.js"></script>
-<script type="text/javascript" src="js/public/jquery-1.7.1.min.js" charset="utf-8"></script>
 <script type="text/javascript" src="js/public/ss.index-V2.4.0.js" charset="utf-8"></script> 
 <script type="text/javascript" src="js/index_store/index_store.js"></script>
 <link href="css/public/index_stroe.css" rel="stylesheet" type="text/css">
@@ -173,6 +172,7 @@ var PRICE_FORMAT = '¥%s';
                     </a>
                 </span> <i class="icon-triangle"></i>
             </div>
+            
             <div class="extra-info" style="display: none;">
                 <div class="bd">
                     <div class="shop-rate">
@@ -370,33 +370,18 @@ var PRICE_FORMAT = '¥%s';
 
 	<div class="qjd_content" style="background:#ffffff;">
 		
-		<div class="cnt_main" area="store_index_content" widget_type="area" style="width:950px;">
+		<div class="cnt_main" style="width:950px;">
 		
           
-<div id="_widget_849" name="best_goods" widget_type="widget" class="widget">
+<div id="_widget_849" class="widget">
 <div class="clear"></div>
 <div class="p_5"></div>
-
-			<h2 class="ss_model_tit" style="margin-top:5px;">
-				<span>精品推荐</span>
-				<ul class="ss_model_titUl">
-					<li><a href="#">更多&gt;&gt;</a></li>
-				</ul>
-			</h2>
-			<div class="ss_model_cnt2Main">
-							<div class="ss_model_cntPart1  ">
-					<a href="#" target="_blank"><img src="index_store_files/small_201610201837098254.jpg" alt="丽水山耕 鱼腥草80g" width="305" height="305"></a>
-					<div class="ss_model_goodsTit">
-						<a href="#" class="goodsList_1" gid="" target="_blank">丽水山耕 鱼腥草80g</a>
-					</div>
-					<p class="ss_model_p00">
-						近30天已销售<span>0</span>笔<span class="ss_model_spanPrice">¥18.00</span>
-					</p>
-				</div>
-			 				<div class="ss_model_cntPart1  ss_model_noBor">
+			<div id="goodInfos" class="ss_model_cnt2Main">
+				
+			 		<div class="ss_model_cntPart1  ss_model_noBor">
 					<a href="#" target="_blank"><img src="index_store_files/small_201610201743213162.jpg" alt="丽水山耕 余叶香榧 100g" width="305" height="305"></a>
 					<div class="ss_model_goodsTit">
-						<a href="#" class="goodsList_1" gid="" target="_blank">丽水山耕 余叶香榧 100g</a>
+						<a href="#" class="goodsList_1" target="_blank">丽水山耕 余叶香榧 100g</a>
 					</div>
 					<p class="ss_model_p00">
 						近30天已销售<span>0</span>笔<span class="ss_model_spanPrice">¥38.00</span>
@@ -405,7 +390,7 @@ var PRICE_FORMAT = '¥%s';
 			 				<div class="ss_model_cntPart1  ">
 					<a href="#" target="_blank"><img src="index_store_files/small_201610201737159391.jpg" alt="丽水山耕 锥栗200g" width="305" height="305"></a>
 					<div class="ss_model_goodsTit">
-						<a href="#" class="goodsList_1" gid="" target="_blank">丽水山耕 锥栗200g</a>
+						<a href="#" class="goodsList_1" target="_blank">丽水山耕 锥栗200g</a>
 					</div>
 					<p class="ss_model_p00">
 						近30天已销售<span>5</span>笔<span class="ss_model_spanPrice">¥22.00</span>
@@ -414,7 +399,7 @@ var PRICE_FORMAT = '¥%s';
 			 				<div class="ss_model_cntPart1  ">
 					<a href="#" target="_blank"><img src="index_store_files/small_201610201734584852.jpg" alt="丽水山耕 状元黑香肠 400g" width="305" height="305"></a>
 					<div class="ss_model_goodsTit">
-						<a href="#" class="goodsList_1" gid="" target="_blank">丽水山耕 状元黑香肠 400g</a>
+						<a href="#" class="goodsList_1"  target="_blank">丽水山耕 状元黑香肠 400g</a>
 					</div>
 					<p class="ss_model_p00">
 						近30天已销售<span>0</span>笔<span class="ss_model_spanPrice">¥48.00</span>
@@ -423,7 +408,7 @@ var PRICE_FORMAT = '¥%s';
 			 				<div class="ss_model_cntPart1  ss_model_noBor">
 					<a href="#" target="_blank"><img src="index_store_files/small_201610201731514224.jpg" alt="丽水山耕 鱼跃酱油醋6瓶装" width="305" height="305"></a>
 					<div class="ss_model_goodsTit">
-						<a href="#" class="goodsList_1" gid="" target="_blank">丽水山耕 鱼跃酱油醋6瓶装</a>
+						<a href="#" class="goodsList_1"  target="_blank">丽水山耕 鱼跃酱油醋6瓶装</a>
 					</div>
 					<p class="ss_model_p00">
 						近30天已销售<span>0</span>笔<span class="ss_model_spanPrice">¥88.00</span>
@@ -432,7 +417,7 @@ var PRICE_FORMAT = '¥%s';
 			 				<div class="ss_model_cntPart1  ">
 					<a href="#" target="_blank"><img src="index_store_files/small_201610201722022666.jpg" alt="丽水山耕 稻鱼米 500g" width="305" height="305"></a>
 					<div class="ss_model_goodsTit">
-						<a href="#" class="goodsList_1" gid="" target="_blank">丽水山耕 稻鱼米 500g</a>
+						<a href="#" class="goodsList_1" target="_blank">丽水山耕 稻鱼米 500g</a>
 					</div>
 					<p class="ss_model_p00">
 						近30天已销售<span>0</span>笔<span class="ss_model_spanPrice">¥12.00</span>
@@ -441,7 +426,7 @@ var PRICE_FORMAT = '¥%s';
 			 				<div class="ss_model_cntPart1  ">
 					<a href="#" target="_blank"><img src="index_store_files/small_201610201719074377.jpg" alt="丽水山耕 铁皮石斛花 5g" width="305" height="305"></a>
 					<div class="ss_model_goodsTit">
-						<a href="#" class="goodsList_1" gid="" target="_blank">丽水山耕 铁皮石斛花 5g</a>
+						<a href="#" class="goodsList_1"  target="_blank">丽水山耕 铁皮石斛花 5g</a>
 					</div>
 					<p class="ss_model_p00">
 						近30天已销售<span>0</span>笔<span class="ss_model_spanPrice">¥88.00</span>
@@ -450,7 +435,7 @@ var PRICE_FORMAT = '¥%s';
 			 				<div class="ss_model_cntPart1  ss_model_noBor">
 					<a href="#" target="_blank"><img src="index_store_files/small_201610201717479575.jpg" alt="丽水山耕 笋衣100g" width="305" height="305"></a>
 					<div class="ss_model_goodsTit">
-						<a href="#" class="goodsList_1" gid="" target="_blank">丽水山耕 笋衣100g</a>
+						<a href="#" class="goodsList_1" target="_blank">丽水山耕 笋衣100g</a>
 					</div>
 					<p class="ss_model_p00">
 						近30天已销售<span>0</span>笔<span class="ss_model_spanPrice">¥20.00</span>
@@ -459,7 +444,7 @@ var PRICE_FORMAT = '¥%s';
 			 				<div class="ss_model_cntPart1  ">
 					<a href="#" target="_blank"><img src="index_store_files/small_201610201716539812.jpg" alt="丽水山耕 笋心 120g" width="305" height="305"></a>
 					<div class="ss_model_goodsTit">
-						<a href="#" class="goodsList_1" gid="" target="_blank">丽水山耕 笋心 120g</a>
+						<a href="#" class="goodsList_1" target="_blank">丽水山耕 笋心 120g</a>
 					</div>
 					<p class="ss_model_p00">
 						近30天已销售<span>0</span>笔<span class="ss_model_spanPrice">¥58.00</span>
@@ -468,7 +453,7 @@ var PRICE_FORMAT = '¥%s';
 			 				<div class="ss_model_cntPart1  ">
 					<a href="#" target="_blank"><img src="index_store_files/small_201610201715409752.jpg" alt="丽水山耕 笋尖 120g" width="305" height="305"></a>
 					<div class="ss_model_goodsTit">
-						<a href="#" class="goodsList_1" gid="" target="_blank">丽水山耕 笋尖 120g</a>
+						<a href="#" class="goodsList_1" target="_blank">丽水山耕 笋尖 120g</a>
 					</div>
 					<p class="ss_model_p00">
 						近30天已销售<span>0</span>笔<span class="ss_model_spanPrice">¥68.00</span>
@@ -477,7 +462,7 @@ var PRICE_FORMAT = '¥%s';
 			 				<div class="ss_model_cntPart1  ss_model_noBor">
 					<a href="#" target="_blank"><img src="index_store_files/small_201610201713137317.jpg" alt="丽水山耕 遂昌菊米 60g" width="305" height="305"></a>
 					<div class="ss_model_goodsTit">
-						<a href="#" class="goodsList_1" gid="" target="_blank">丽水山耕 遂昌菊米 60g</a>
+						<a href="#" class="goodsList_1"  target="_blank">丽水山耕 遂昌菊米 60g</a>
 					</div>
 					<p class="ss_model_p00">
 						近30天已销售<span>0</span>笔<span class="ss_model_spanPrice">¥45.00</span>
@@ -486,7 +471,7 @@ var PRICE_FORMAT = '¥%s';
 			 				<div class="ss_model_cntPart1  ">
 					<a href="#" target="_blank"><img src="index_store_files/small_201610201651097679.jpg" alt="丽水山耕 丽水香茶红茶100g" width="305" height="305"></a>
 					<div class="ss_model_goodsTit">
-						<a href="#" class="goodsList_1" gid="" target="_blank">丽水山耕 丽水香茶红茶100g</a>
+						<a href="#" class="goodsList_1"  target="_blank">丽水山耕 丽水香茶红茶100g</a>
 					</div>
 					<p class="ss_model_p00">
 						近30天已销售<span>0</span>笔<span class="ss_model_spanPrice">¥48.00</span>
@@ -495,7 +480,7 @@ var PRICE_FORMAT = '¥%s';
 			 				<div class="ss_model_cntPart1  ">
 					<a href="#" target="_blank"><img src="index_store_files/small_201610201656443517.jpg" alt="丽水山耕 松阳香肠400g" width="305" height="305"></a>
 					<div class="ss_model_goodsTit">
-						<a href="#" class="goodsList_1" gid="" target="_blank">丽水山耕 松阳香肠400g</a>
+						<a href="#" class="goodsList_1"  target="_blank">丽水山耕 松阳香肠400g</a>
 					</div>
 					<p class="ss_model_p00">
 						近30天已销售<span>0</span>笔<span class="ss_model_spanPrice">¥48.00</span>
@@ -504,7 +489,7 @@ var PRICE_FORMAT = '¥%s';
 			 				<div class="ss_model_cntPart1  ss_model_noBor">
 					<a href="#" target="_blank"><img src="index_store_files/small_201610201648364911.jpg" alt="丽水山耕 缙云土面 300g" width="305" height="305"></a>
 					<div class="ss_model_goodsTit">
-						<a href="#" class="goodsList_1" gid="" target="_blank">丽水山耕 缙云土面 300g</a>
+						<a href="#" class="goodsList_1"  target="_blank">丽水山耕 缙云土面 300g</a>
 					</div>
 					<p class="ss_model_p00">
 						近30天已销售<span>5</span>笔<span class="ss_model_spanPrice">¥8.00</span>
@@ -513,7 +498,7 @@ var PRICE_FORMAT = '¥%s';
 			 				<div class="ss_model_cntPart1  ">
 					<a href="#" target="_blank"><img src="index_store_files/small_201610201659013098.jpg" alt="丽水山耕  龙泉山茶油500ml" width="305" height="305"></a>
 					<div class="ss_model_goodsTit">
-						<a href="#" class="goodsList_1" gid="" target="_blank">丽水山耕  龙泉山茶油500ml</a>
+						<a href="#" class="goodsList_1"  target="_blank">丽水山耕  龙泉山茶油500ml</a>
 					</div>
 					<p class="ss_model_p00">
 						近30天已销售<span>0</span>笔<span class="ss_model_spanPrice">¥78.00</span>
@@ -522,7 +507,7 @@ var PRICE_FORMAT = '¥%s';
 			 				<div class="ss_model_cntPart1  ">
 					<a href="#" target="_blank"><img src="index_store_files/small_201610201645278406.jpg" alt="丽水山耕 遂昌金银花 30g" width="305" height="305"></a>
 					<div class="ss_model_goodsTit">
-						<a href="#" class="goodsList_1" gid="" target="_blank">丽水山耕 遂昌金银花 30g</a>
+						<a href="#" class="goodsList_1"  target="_blank">丽水山耕 遂昌金银花 30g</a>
 					</div>
 					<p class="ss_model_p00">
 						近30天已销售<span>0</span>笔<span class="ss_model_spanPrice">¥15.00</span>
@@ -531,7 +516,7 @@ var PRICE_FORMAT = '¥%s';
 			 				<div class="ss_model_cntPart1  ss_model_noBor">
 					<a href="#" target="_blank"><img src="index_store_files/small_201610201701187920.jpg" alt="丽水山耕 龙爪粟面 200g" width="305" height="305"></a>
 					<div class="ss_model_goodsTit">
-						<a href="#" class="goodsList_1" gid="" target="_blank">丽水山耕 龙爪粟面 200g</a>
+						<a href="#" class="goodsList_1"  target="_blank">丽水山耕 龙爪粟面 200g</a>
 					</div>
 					<p class="ss_model_p00">
 						近30天已销售<span>0</span>笔<span class="ss_model_spanPrice">¥8.00</span>
@@ -540,7 +525,7 @@ var PRICE_FORMAT = '¥%s';
 			 				<div class="ss_model_cntPart1  ">
 					<a href="#" target="_blank"><img src="index_store_files/small_201610201642261172.jpg" alt="丽水山耕 缙云黄花菜180g" width="305" height="305"></a>
 					<div class="ss_model_goodsTit">
-						<a href="#" class="goodsList_1" gid="" target="_blank">丽水山耕 缙云黄花菜180g</a>
+						<a href="#" class="goodsList_1"  target="_blank">丽水山耕 缙云黄花菜180g</a>
 					</div>
 					<p class="ss_model_p00">
 						近30天已销售<span>0</span>笔<span class="ss_model_spanPrice">¥20.00</span>
@@ -549,7 +534,7 @@ var PRICE_FORMAT = '¥%s';
 			 				<div class="ss_model_cntPart1  ">
 					<a href="#" target="_blank"><img src="index_store_files/small_201610201706059215.jpg" alt="绿盒 丽水特级花菇 130g" width="305" height="305"></a>
 					<div class="ss_model_goodsTit">
-						<a href="#" class="goodsList_1" gid="" target="_blank">绿盒 丽水特级花菇 130g</a>
+						<a href="#" class="goodsList_1"  target="_blank">绿盒 丽水特级花菇 130g</a>
 					</div>
 					<p class="ss_model_p00">
 						近30天已销售<span>0</span>笔<span class="ss_model_spanPrice">¥29.00</span>
@@ -558,7 +543,7 @@ var PRICE_FORMAT = '¥%s';
 			 				<div class="ss_model_cntPart1  ss_model_noBor">
 					<a href="#" target="_blank"><img src="index_store_files/small_201610201702458221.jpg" alt="丽水山耕 灵芝孢子粉200g" width="305" height="305"></a>
 					<div class="ss_model_goodsTit">
-						<a href="#" class="goodsList_1" gid="" target="_blank">丽水山耕 灵芝孢子粉200g</a>
+						<a href="#" class="goodsList_1"  target="_blank">丽水山耕 灵芝孢子粉200g</a>
 					</div>
 					<p class="ss_model_p00">
 						近30天已销售<span>0</span>笔<span class="ss_model_spanPrice">¥328.00</span>
@@ -567,7 +552,7 @@ var PRICE_FORMAT = '¥%s';
 			 				<div class="ss_model_cntPart1  ">
 					<a href="#" target="_blank"><img src="index_store_files/small_201610201708183167.jpg" alt="丽水山耕  丽水香茶（乌龙茶）100g" width="305" height="305"></a>
 					<div class="ss_model_goodsTit">
-						<a href="#" class="goodsList_1" gid="" target="_blank">丽水山耕  丽水香茶（乌龙茶）100g</a>
+						<a href="#" class="goodsList_1"  target="_blank">丽水山耕  丽水香茶（乌龙茶）100g</a>
 					</div>
 					<p class="ss_model_p00">
 						近30天已销售<span>0</span>笔<span class="ss_model_spanPrice">¥48.00</span>
@@ -576,7 +561,7 @@ var PRICE_FORMAT = '¥%s';
 			 				<div class="ss_model_cntPart1  ">
 					<a href="#" target="_blank"><img src="index_store_files/small_201610201709554203.jpg" alt="丽水山耕 黑木耳 130g" width="305" height="305"></a>
 					<div class="ss_model_goodsTit">
-						<a href="#" class="goodsList_1" gid="" target="_blank">丽水山耕 黑木耳 130g</a>
+						<a href="#" class="goodsList_1"  target="_blank">丽水山耕 黑木耳 130g</a>
 					</div>
 					<p class="ss_model_p00">
 						近30天已销售<span>0</span>笔<span class="ss_model_spanPrice">¥29.00</span>
@@ -585,7 +570,7 @@ var PRICE_FORMAT = '¥%s';
 			 				<div class="ss_model_cntPart1  ss_model_noBor">
 					<a href="#" target="_blank"><img src="index_store_files/small_201610201709374696.jpg" alt="丽水山耕 丽水香茶（绿茶） 100g" width="305" height="305"></a>
 					<div class="ss_model_goodsTit">
-						<a href="#" class="goodsList_1" gid="" target="_blank">丽水山耕 丽水香茶（绿茶） 100g</a>
+						<a href="#" class="goodsList_1"  target="_blank">丽水山耕 丽水香茶（绿茶） 100g</a>
 					</div>
 					<p class="ss_model_p00">
 						近30天已销售<span>0</span>笔<span class="ss_model_spanPrice">¥50.00</span>
@@ -594,7 +579,7 @@ var PRICE_FORMAT = '¥%s';
 			 				<div class="ss_model_cntPart1  ">
 					<a href="#" target="_blank"><img src="index_store_files/small_201610201631254625.jpg" alt="丽水山耕  高山山稻米 500g" width="305" height="305"></a>
 					<div class="ss_model_goodsTit">
-						<a href="#" class="goodsList_1" gid="" target="_blank">丽水山耕  高山山稻米 500g</a>
+						<a href="#" class="goodsList_1"  target="_blank">丽水山耕  高山山稻米 500g</a>
 					</div>
 					<p class="ss_model_p00">
 						近30天已销售<span>0</span>笔<span class="ss_model_spanPrice">¥20.00</span>
@@ -603,7 +588,7 @@ var PRICE_FORMAT = '¥%s';
 			 				<div class="ss_model_cntPart1  ">
 					<a href="#" target="_blank"><img src="index_store_files/small_201610201710102392.jpg" alt="丽水山耕 高山红米 500g" width="305" height="305"></a>
 					<div class="ss_model_goodsTit">
-						<a href="#" class="goodsList_1" gid="" target="_blank">丽水山耕 高山红米 500g</a>
+						<a href="#" class="goodsList_1"  target="_blank">丽水山耕 高山红米 500g</a>
 					</div>
 					<p class="ss_model_p00">
 						近30天已销售<span>0</span>笔<span class="ss_model_spanPrice">¥12.00</span>
@@ -612,7 +597,7 @@ var PRICE_FORMAT = '¥%s';
 			 				<div class="ss_model_cntPart1  ss_model_noBor">
 					<a href="#" target="_blank"><img src="index_store_files/small_201610201621255642.jpg" alt="丽水山耕 高山黑米 500g" width="305" height="305"></a>
 					<div class="ss_model_goodsTit">
-						<a href="#" class="goodsList_1" gid="" target="_blank">丽水山耕 高山黑米 500g</a>
+						<a href="#" class="goodsList_1"  target="_blank">丽水山耕 高山黑米 500g</a>
 					</div>
 					<p class="ss_model_p00">
 						近30天已销售<span>0</span>笔<span class="ss_model_spanPrice">¥12.00</span>
@@ -621,7 +606,7 @@ var PRICE_FORMAT = '¥%s';
 			 				<div class="ss_model_cntPart1  ">
 					<a href="#" target="_blank"><img src="index_store_files/small_201610201617418484.jpg" alt="丽水山耕 处州蜂蜜 250g" width="305" height="305"></a>
 					<div class="ss_model_goodsTit">
-						<a href="#" class="goodsList_1" gid="" target="_blank">丽水山耕 处州蜂蜜 250g</a>
+						<a href="#" class="goodsList_1"  target="_blank">丽水山耕 处州蜂蜜 250g</a>
 					</div>
 					<p class="ss_model_p00">
 						近30天已销售<span>0</span>笔<span class="ss_model_spanPrice">¥30.00</span>
@@ -630,7 +615,7 @@ var PRICE_FORMAT = '¥%s';
 			 				<div class="ss_model_cntPart1  ">
 					<a href="#" target="_blank"><img src="index_store_files/small_201610201611404238.jpg" alt="丽水山耕 仙之源 端午茶30g" width="305" height="305"></a>
 					<div class="ss_model_goodsTit">
-						<a href="#" class="goodsList_1" gid="" target="_blank">丽水山耕 仙之源 端午茶30g</a>
+						<a href="#" class="goodsList_1"  target="_blank">丽水山耕 仙之源 端午茶30g</a>
 					</div>
 					<p class="ss_model_p00">
 						近30天已销售<span>0</span>笔<span class="ss_model_spanPrice">¥15.00</span>
@@ -639,7 +624,7 @@ var PRICE_FORMAT = '¥%s';
 			 				<div class="ss_model_cntPart1  ss_model_noBor">
 					<a href="#" target="_blank"><img src="index_store_files/small_201610201607265023.jpg" alt="丽水山耕 稻荷米 500g" width="305" height="305"></a>
 					<div class="ss_model_goodsTit">
-						<a href="#" class="goodsList_1" gid="" target="_blank">丽水山耕 稻荷米 500g</a>
+						<a href="#" class="goodsList_1"  target="_blank">丽水山耕 稻荷米 500g</a>
 					</div>
 					<p class="ss_model_p00">
 						近30天已销售<span>0</span>笔<span class="ss_model_spanPrice">¥12.00</span>
@@ -759,29 +744,74 @@ var PRICE_FORMAT = '¥%s';
 <div id="rightButton" style="right: 0px;">
     <ul id="right_ul">  
      <li id="right_kf"></li>
-    
-        <!--<a href="http://www.shanshan360.com/consultation" target="_blank"><li id="right_kf" ></li></a>-->
-        <a target="_blank" href="http://www.shanshan360.com/cart"><li id="right_gw"><div class="nums">1</div></li></a>
+        <a target="_blank" href="#"><li id="right_gw"><div class="nums">1</div></li></a>
             <li id="right_weixin" class="right_ico"></li>
       <li id="right_tip" style="margin-top:90px" class="png">
             <div class="con ovf  ">
                 <div class="fl arr" style="top:80px"><div class="fl arr_i"></div></div>
                  <ul>
-                                     <li><p><a href="" target="_brank"><img style="width: 118px; height: 118px;" src="index_store_files/syewmsz_0.jpg"></a></p><p class="f14 fyh tec"><a href="" target="_brank"><font color="#5B5B5B">山山商城微信</font></a></p></li>
+                                     <li><p><a href="#" target="_brank"><img style="width: 118px; height: 118px;" src="./index_store_files/syewmsz_0.jpg"></a></p><p class="f14 fyh tec"><a href="#" target="_brank"><font color="#5B5B5B">山山商城微信</font></a></p></li>
                                    </ul>
             </div>
         </li>
                 <li id="right_sc" onclick="addBookmark()"></li>
-        <li><div id="backToTop" style="display: none;"><a href="javascript:;" onfocus="this.blur();" class="backToTop_a png"></a></div></li>
+        <li><div id="backToTop" style="display: block;"><a href="javascript:;" onfocus="this.blur();" class="backToTop_a png"></a></div></li>
 
     </ul>
-</div>
+</div> 
+<script type="text/javascript">     
+$(document).ready(function(e) {              
+    $("#rightButton").css("right", "0px");
+    
+    var button_toggle = true;
+    $(".right_ico").live("mouseover", function(){
+        var tip_top;
+        var show= $(this).attr('show');
+        var hide= $(this).attr('hide');
+        tip_top = show == 'tel' ?  65 :  -10;
+        button_toggle = false;
+        $("#right_tip").css("top" , tip_top).show().find(".flag_"+show).show();
+        $(".flag_"+hide).hide();
+        
+    }).live("mouseout", function(){
+        button_toggle = true;
+        hideRightTip();
+    });
 
+    $("#right_tip").live("mouseover", function(){
+        button_toggle = false;
+        $(this).show();
+    }).live("mouseout", function(){
+        button_toggle = true;
+        hideRightTip();
+    });
+    
+    function hideRightTip(){
+        setTimeout(function(){        
+            if( button_toggle ) $("#right_tip").hide();
+        }, 500);
+    }
+    
+    $("#backToTop").live("click", function(){
+        var _this = $(this);
+        $('html,body').animate({scrollTop: 0}, 500 ,function(){
+            _this.hide();
+        });
+    });
+
+    $(window).scroll(function(){
+        var htmlTop = $(document).scrollTop();
+        if( htmlTop > 0){
+            $("#backToTop").fadeIn();    
+        }else{
+            $("#backToTop").fadeOut();
+        }
+    });
+});
+</script>  
+<script type="text/javascript" src="js/public/jquery-1.7.1.min.js" charset="utf-8"></script>
 <script type="text/javascript" src="js/public/EmbedCS.js"></script>
 <script type="text/javascript" src="js/public/ss.common-V2.3.0.js"></script>
-<span class="statistics_code"><script type="text/javascript">
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F5a250090ff571028094607805af27985' type='text/javascript'%3E%3C/script%3E"));
-</script><script src="js/public/h.js" type="text/javascript"></script></span>
-<script type="text/javascript" src="js/public/index(1).php" charset="utf-8"></script>
+<script src="js/public/h.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/index/index_goods.js"></script>
 </body></html>

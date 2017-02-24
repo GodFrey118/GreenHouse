@@ -16,11 +16,13 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import com.yc.GreenHouse.entity.CommonUser;
+import com.yc.GreenHouse.entity.Shoping_Cart;
 import com.yc.GreenHouse.entity.Store;
 import com.yc.GreenHouse.service.StoreService;
 import com.yc.GreenHouse.service.UserService;
@@ -66,7 +68,7 @@ public class UserHandler {
 		if(user != null){
 			map.put("loginUser", user2);
 			map.put("loginUser", user2.getC_name());
-			return "redirect:/index.jsp";
+			return "redirect:/index.jsp?c_id="+user2.getC_id();
 		}
 		
 		map.put("errorMsg", "用户名或密码错误");
@@ -102,6 +104,7 @@ public class UserHandler {
 		return false;
 	}
 	
+<<<<<<< HEAD
 	@RequestMapping("/forget")
 	public String forget(String username, String email, HttpServletRequest request) {
 		LogManager.getLogger().debug("请求UserHandler进行forget的操作....");
@@ -131,5 +134,19 @@ public class UserHandler {
 		userService.resetPassword(username, randPassword);
 		session.setAttribute("newPassword", randPassword);
 		return "redirect:/page/getpasswordSuccess.jsp";
+=======
+
+	@RequestMapping("/addCart")
+	@ResponseBody
+	public boolean AddCart(Shoping_Cart sCart, @RequestParam(name="g_id",required=false)int g_id ,HttpSession session){
+		
+		CommonUser user2 = (CommonUser) session.getAttribute("user");
+		sCart.setC_id(user2.getC_id());
+		sCart.setC_id(g_id);
+		boolean shopping_Cart = storeService.AddSCart(sCart);
+		System.out.println(shopping_Cart);
+		return shopping_Cart;
+		
+>>>>>>> branch 'master' of ssh://git@github.com/Godfrey118/GreenHouse.git
 	}
 }

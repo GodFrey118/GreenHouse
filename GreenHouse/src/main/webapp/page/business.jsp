@@ -14,35 +14,7 @@
 <script charset="utf-8" src="js/public/v.js"></script>
 <script type="text/javascript" src="js/public/jquery-1.7.1.min.js" charset="utf-8"></script>
 <script type="text/javascript" src="js/public/ss.index-V2.4.0.js" charset="utf-8"></script> 
-<script type="text/javascript">
-
-var timeout         = 500;
-var closetimer		= 0;
-var ddmenuitem      = 0;
-
-function nav_open()
-{	nav_canceltimer();
-	nav_close();
-	ddmenuitem = $(this).find('ul').eq(0).css('visibility', 'visible');}
-
-function nav_close()
-{if(ddmenuitem) ddmenuitem.css('visibility', 'hidden');}
-
-function nav_timer()
-{closetimer = window.setTimeout(nav_close, timeout);}
-
-function nav_canceltimer()
-{	if(closetimer)
-	{	window.clearTimeout(closetimer);
-		closetimer = null;}}
-
-$(document).ready(function()
-{	$('#navv > li').bind('mouseover', nav_open);
-	$('#navv > li').bind('mouseout',  nav_timer);});
-
-document.onclick = nav_close;
-
-</script>
+<script type="text/javascript" src="js/index/Seach.js"></script>
 <script type="text/javascript" async="async" charset="utf-8" src="js/public/im.js" data-requiremodule="im"></script>
 <script type="text/javascript" async="async" charset="utf-8" src="js/public/zh_cn.js" data-requiremodule="lang"></script>
 <script type="text/javascript" async="async" charset="utf-8" src="js/public/chat.in.js" data-requiremodule="chatManage"></script>
