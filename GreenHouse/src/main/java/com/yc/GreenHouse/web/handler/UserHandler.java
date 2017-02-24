@@ -137,6 +137,7 @@ public class UserHandler {
 		return "redirect:/page/getpasswordSuccess.jsp";
 	}
 
+	//购物车
 	@RequestMapping("/addCart")
 	@ResponseBody
 	public boolean AddCart(Shoping_Cart sCart, @RequestParam(name="g_id",required=false)int g_id ,HttpSession session){
