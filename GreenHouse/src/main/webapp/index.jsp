@@ -14,15 +14,14 @@
 <link rel="stylesheet" type="text/css" href="css/public/jquery-ui-V2.3.0.css">
 <script type="text/javascript" src="js/index/Seach.js"></script> 
 <script type="text/javascript" src="js/index/index.js"></script> 
-<<<<<<< HEAD
+
 <script type="text/javascript" src="js/index/logout.js"></script> 
-=======
+
 <link rel="stylesheet" type="text/css"  href="css/public/common.css"/>
 <link rel="stylesheet" type="text/css"  href="css/public/index.css"/>
 <link rel="stylesheet" type="text/css"  href="css/public/common-V2.4.0.css"/> 
 <link rel="stylesheet" type="text/css"  href="css/public/index_css.css"/>  
 
->>>>>>> branch 'master' of ssh://git@github.com/Godfrey118/GreenHouse.git
 </head>
 <body>
 <div id="nTalk_post_hiddenElement" style="left: -10px; top: -10px; visibility: hidden; display: none; width: 1px; height: 1px;"></div>  

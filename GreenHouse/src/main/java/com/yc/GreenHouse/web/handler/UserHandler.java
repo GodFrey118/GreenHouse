@@ -76,10 +76,7 @@ public class UserHandler {
 		return "forward:/login_user.jsp";
 	}
 	
-	@RequestMapping("/register")
-	public String register(CommonUser commonUser){
-		return "forward:/page/register.jsp";
-	}
+	
 	
 	@RequestMapping("/apply")
 	public String apply(Store store,ModelMap map,HttpSession session){
