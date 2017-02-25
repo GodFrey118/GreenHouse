@@ -1638,7 +1638,8 @@
 		温馨提示：请在<a target="_blank" style="color:red;" href="#">个人资料</a>中填写QQ，方便卖家及时联系。
 	</div>
 </div>
--->
+
 <script type="text/javascript" src="js/index/tupian.js"></script>
+
 </body>
 </html>

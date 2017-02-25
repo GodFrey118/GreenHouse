@@ -27,6 +27,6 @@ public interface StoreMapper {
 
 	int DeleteCartGood(int sc_id);
 
-	int getStore(int c_id);
+	int getStore(Object c_id);
 
 }

@@ -53,7 +53,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
        delete Shopping_Cart where sc_id=#{sc_id}
     </delete>
 	
-	<select id="getStore" parameterType="int"  resultType="int">
+	<select id="getStore" parameterType="Object"  resultType="int">
 		select s_id from store where c_id=#{c_id}
 	</select>
 </mapper>     
