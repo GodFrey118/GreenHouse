@@ -38,6 +38,7 @@
 <script type="text/javascript" async="async" charset="utf-8" src="js/public/chat.in.js" data-requiremodule="chatManage"></script>
 <script type="text/javascript" async="async" charset="utf-8" src="js/public/mqtt31.js" data-requiremodule="MQTT"></script>
 <script type="text/javascript" async="async" charset="utf-8" src="js/public/mqtt.chat.js" data-requiremodule="Connection"></script>
+<script type="text/javascript" src="js/register.js"></script> 
 </head>
 <body><div id="nTalk_post_hiddenElement" style="left: -10px; top: -10px; visibility: hidden; display: none; width: 1px; height: 1px;"></div>  
 <div class="ui-header header">
@@ -107,9 +108,7 @@
                           <div class="zc_houl">
 							   <p id="pass" class="zc_houl1" style="display: none;"></p>
 						  </div>
-						  <div id="pass_img_div" style="margin-left:160px; display:none;"><label class="pwd-safe safe3"><span class="fl" style="margin-left:1px;">安全程度：</span><b></b></label><img style="margin-top: 6px;margin-left: -85px;" id="pass_img" src="./register_files/zc_1_03.jpg"></div>
-                          <i id="pass_tu" class="i-pass"></i>
-                          <label id="pass_succeed" class="hide succeed"></label>
+						  <div id="pass_img_div" style="margin-left:160px; display:none;">
                      </div>
                   </li>
                   <li class="form">
@@ -135,8 +134,8 @@
 						 </div>
                      	<label id="captcha_t_succeed" class="hide succeed"></label>
                      </div>
-                     <label class="code"><img style="margin-top: 10px;" id="captcha_img" src="./register_files/index(1).php"></label>
-                     <label class="code-tt">&nbsp;看不清？<a id="captcha_hh" href="javascript:change_captcha($('#captcha_img'));">换一张</a></label>
+                     <label class="code"><img style="margin-top: 10px;" id="captcha_img" src="vcode.jpg"></label>
+                     <label class="code-tt">&nbsp;看不清？<a id="captcha_hh" onclick='changevocde()'>换一张</a></label>
                  </li>  
                                   <li id="moblie_code_li" class="form hide">
                      <div class="fl fl-txt f14"><font color="#FF0000">*</font>&nbsp;短信验证码：</div>
