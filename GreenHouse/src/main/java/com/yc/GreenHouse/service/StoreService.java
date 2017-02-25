@@ -26,4 +26,6 @@ public interface StoreService {
 
 	boolean getDelCartGood(int sc_id);
 
+	int getS_id(int c_id);
+
 }

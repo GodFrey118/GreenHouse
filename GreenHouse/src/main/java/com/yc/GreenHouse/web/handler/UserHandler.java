@@ -92,6 +92,12 @@ public class UserHandler {
 		map.put("errorMsg", "商店注册失败，请重新操作！");
 		return "forward:/apply.jsp";
 	}
+	public int getStore_id(int c_id,HttpSession session){
+		CommonUser cUser2=(CommonUser) session.getAttribute("user");
+		c_id=cUser2.getC_id();
+		int result=storeService.getS_id(c_id);
+		return 0;
+	}
 	
 	
 	@RequestMapping("/logout")
