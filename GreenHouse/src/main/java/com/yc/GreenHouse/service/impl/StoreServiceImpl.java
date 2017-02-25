@@ -54,4 +54,8 @@ public class StoreServiceImpl implements StoreService{
 	public boolean getDelCartGood(int sc_id) {
 		return storeMapper.DeleteCartGood(sc_id)>0;
 	}
+	@Override
+	public boolean getDelCartGood(Shoping_Cart sCart) {
+		return storeMapper.updateScartNum(sCart)>0;
+	}
 }

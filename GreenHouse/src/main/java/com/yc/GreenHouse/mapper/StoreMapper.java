@@ -16,7 +16,6 @@ public interface StoreMapper {
 
 	List<Good> selectGoodssaInfo(int s_id);
 
-
 	int indsertCart(Shoping_Cart sCart);
 
 	List<Shoping_Cart> selectCartNum(Integer c_id);
