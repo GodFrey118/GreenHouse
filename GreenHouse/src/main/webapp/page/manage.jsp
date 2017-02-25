@@ -5,7 +5,7 @@
 <head>
 <base href="/GreenHouse/">
 <meta charset="UTF-8">
-<title>银行信用管理系统</title>
+<title>GreenHouse后台管理</title>
 <link type="text/css" rel="stylesheet" href="easyui/themes/icon.css">
 <link type="text/css" rel="stylesheet" href="easyui/themes/default/easyui.css">
 <link href="css/admin/main.css" rel="stylesheet" type="text/css" />

@@ -4,7 +4,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yc.GreenHouse.mapper.StoreMapper">
 
-    <resultMap type="ShopingCart" id="ShopingCartMap">
+    <resultMap type="Shoping_Cart" id="ShopingCartMap">
 		  <id property="sc_id" column="sc_id"/>
 		  <result property="g_id" column="g_id"/>
 		  <result property="c_id" column="c_id"/>
@@ -35,7 +35,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<insert id="applyStore" parameterType="Store" >
 	    insert into Store values (seq_Store.nextval,1041,#{c_id},#{s_ownerName},#{s_ID_card},#{s_name},#{s_company},#{s_area},#{s_detail_Addr},#{s_post},#{s_tel},null,null,null,'未通过')
 	</insert>
-	<insert id="indsertCart" parameterType="ShopingCart">
+	<insert id="indsertCart" parameterType="Shoping_Cart">
 	    insert into Shopping_Cart values(seq_Cart.nextval,#{g_id},#{c_id},1,'未购买','未付款')
 	</insert>
 	
@@ -43,11 +43,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
        select * from Shopping_Cart sc inner join good g on g.g_id=sc.g_id where c_id=#{c_id} and sc_g_buy_state='未购买' and sc_g_payment='未付款'
     </select>
     
-    <select id="selectSCartGood" parameterType="ShopingCart" resultType="ShopingCart">
+    <select id="selectSCartGood" parameterType="Shoping_Cart" resultType="Shoping_Cart">
        select * from Shopping_Cart where c_id=#{c_id} and g_id=#{g_id}
     </select>
     
-    <update id="updateScartNum" parameterType="ShopingCart">
+    <update id="updateScartNum" parameterType="Shoping_Cart">
        update Shopping_Cart set sc_goodNum=#{sc_goodNum} where g_id=#{g_id} and c_id=#{c_id} 
     </update>
     
