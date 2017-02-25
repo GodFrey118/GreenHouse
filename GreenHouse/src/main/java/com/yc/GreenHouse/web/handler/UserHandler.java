@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import com.yc.GreenHouse.entity.CommonUser;
-import com.yc.GreenHouse.entity.ShopingCart;
+import com.yc.GreenHouse.entity.Shopping_Cart;
 import com.yc.GreenHouse.entity.Store;
 import com.yc.GreenHouse.service.StoreService;
 import com.yc.GreenHouse.service.UserService;
@@ -140,7 +140,7 @@ public class UserHandler {
 	//购物车
 	@RequestMapping("/addCart")
 	@ResponseBody
-	public boolean AddCart(ShopingCart sCart, @RequestParam(name="g_id",required=false)int g_id ,HttpSession session){
+	public boolean AddCart(Shopping_Cart sCart, @RequestParam(name="g_id",required=false)int g_id ,HttpSession session){
 		
 		CommonUser user2 = (CommonUser) session.getAttribute("user");
 		sCart.setC_id(user2.getC_id());
@@ -153,10 +153,13 @@ public class UserHandler {
 	
 	@RequestMapping("/cartNum")
 	@ResponseBody
-	public List<ShopingCart> CartNum(HttpSession session){
+	public List<Shopping_Cart> CartNum(HttpSession session){
 		CommonUser user2 = (CommonUser) session.getAttribute("user");
-		List<ShopingCart> cNum = storeService.getCartNum(user2.getC_id());
-		System.out.println(cNum);
+		List<Shopping_Cart> cNum = null;
+		if (user2!=null) {
+			cNum = storeService.getCartNum(user2.getC_id());
+			System.out.println(cNum);
+		}
 		return cNum;
 	}
 	
