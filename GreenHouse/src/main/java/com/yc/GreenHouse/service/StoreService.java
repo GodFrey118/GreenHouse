@@ -22,4 +22,6 @@ public interface StoreService {
 
 	List<Shoping_Cart> getCartNum(Integer c_id);
 
+	boolean getDelCartGood(int sc_id);
+
 }

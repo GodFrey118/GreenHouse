@@ -1,3 +1,14 @@
+7drop table CommonUser 3
+3drop table Store 4
+8drop table Good 5
+9drop table GoodType 1
+1drop table Shopping_Cart 6
+4drop table StoreType 2
+2drop table Orders 7
+5drop table Address 8
+6drop table Comments 9
+
+
 --普通用户：用户编号，用户名，密码，电话，邮箱，性别，生日，qq，居住地
 create table CommonUser(
 	c_id integer primary key,
@@ -14,7 +25,7 @@ create table CommonUser(
 select * from COMMONUSER
 create sequence seq_CommonUser start with 1000;
 insert into CommonUser values(seq_CommonUser.nextval,'郭帆','男',to_date('1996-08-06','yyyy-MM-dd'),'aaaaa','13207349871','825311573@qq.com','825311573','湖南省益阳市沅江县')
---管理员：编号，姓名，秘密
+--管理员：编号，姓名，密码
 create table Adm(
 	adm_id integer primary key,
 	adm_name varchar2(40),
@@ -35,8 +46,8 @@ create table Store(
 	s_detail_Addr varchar2(150),
 	s_post varchar2(20),
 	s_tel varchar2(40),
-	s_ID_pic varchar2(200),
-	s_licence_pic blob,
+	s_ID_pic varchar2(150),
+	s_licence_pic varchar2(150),
 	s_service varchar2(100),
 	s_state varchar2(20)
 )
@@ -65,7 +76,8 @@ create table Good(
 	g_type varchar2(50),
 	g_state varchar2(20)
 )
-
+alter table good add g_type varchar2(50);
+alter table good add g_state varchar2(20);
 select * from Good;
 delete GOOD
 drop table Good
@@ -82,6 +94,7 @@ create table GoodType(
 	gt_id integer primary key,
 	gt_name varchar2(20)
 )
+drop table GoodType
 select * from GoodType;
 delete GoodType where gt_id=1005
 drop sequence seq_GoodType
@@ -106,7 +119,8 @@ create table Shopping_Cart(
      
 )
 select * from Shopping_Cart
-drop table Shopping_Cart
+drop table Shopping_Cart 
+delete Shopping_Cart where g_id=50084
 drop sequence seq_Cart
 create sequence seq_Cart start with 1000;
 insert into Shopping_Cart values(seq_Cart.nextval,1000,1000,1,'未购买','未付款')

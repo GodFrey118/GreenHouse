@@ -6,10 +6,7 @@
 <base href="/GreenHouse/">
 <meta charset="utf-8">
 
-<link rel="stylesheet" type="text/css"  href="css/public/common.css"/>
-<link rel="stylesheet" type="text/css"  href="css/public/index.css"/>
-<link rel="stylesheet" type="text/css"  href="css/public/common-V2.4.0.css"/> 
-<link rel="stylesheet" type="text/css"  href="css/public/index_css.css"/>       
+     
 <title>GreenHouse商城</title>
 <script type="text/javascript" src="js/public/jquery-V2.3.0.min.js" charset="utf-8"></script>
 <script type="text/javascript" src="js/public/jquery.superslide.2.1.1.js" charset="utf-8"></script>                           
@@ -17,7 +14,15 @@
 <link rel="stylesheet" type="text/css" href="css/public/jquery-ui-V2.3.0.css">
 <script type="text/javascript" src="js/index/Seach.js"></script> 
 <script type="text/javascript" src="js/index/index.js"></script> 
+<<<<<<< HEAD
 <script type="text/javascript" src="js/index/logout.js"></script> 
+=======
+<link rel="stylesheet" type="text/css"  href="css/public/common.css"/>
+<link rel="stylesheet" type="text/css"  href="css/public/index.css"/>
+<link rel="stylesheet" type="text/css"  href="css/public/common-V2.4.0.css"/> 
+<link rel="stylesheet" type="text/css"  href="css/public/index_css.css"/>  
+
+>>>>>>> branch 'master' of ssh://git@github.com/Godfrey118/GreenHouse.git
 </head>
 <body>
 <div id="nTalk_post_hiddenElement" style="left: -10px; top: -10px; visibility: hidden; display: none; width: 1px; height: 1px;"></div>  
@@ -26,9 +31,9 @@
     <ul id="right_ul">  
      <li id="right_kf" onclick="openChatWindow(&#39;&#39;);"></li>
         <a target="_blank" href="#">
-        <li id="right_gw">
+     <li id="right_gw">
         <div class="nums">0</div>
-        </li>
+     </li>
         </a>
          <li id="right_weixin" class="right_ico"></li>
          <li id="right_tip" style="margin-top: 90px; top: -10px; display: none;" class="png">
@@ -166,13 +171,22 @@
               
                <ul class="unstyled fr ui-dropdown-menu2">
                    <li>
-                     <div class="con fl hide carts_show_g">
+                     <div class="con fl hide carts_show_g" id="null_cart">
                         <div class="fl"><img src="./index_files/b-y.jpg"></div>
                         <div class="fl cart_show">你的购物车是空的，赶快去购物吧！</div>
                      </div>
                    
-                     <font class="fyh f14 ml5 fl show_cart">最新加入的商品</font>
-                         
+                     <font id="show_cart_1" class="fyh f14 ml5 fl show_cart">最新加入的商品</font>
+                     <div class="left1 clear1 pro-list1" id="pro-list">
+                     </div>
+                   <div id="shop" class="js1 clear1 left1">
+                   <p>共 <font class="cff6">1</font> 件商品&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 共计<font class="cff6 ">￥</font>
+                   <font class="f-s cff6 f18 t_money_0">39.</font>
+                   <font class="f13 f-s cff6 t_money_1">00</font></p>
+                   <p class="ter"><a target="_blank" href="#">
+                   <button type="button" class="choose_btn f14 fyh">去购物车结算</button>
+                   </a></p>
+                   </div>    
                    </li>
                </ul>
             </div>

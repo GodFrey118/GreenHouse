@@ -22,6 +22,8 @@ public interface StoreMapper {
 
 	Shoping_Cart selectSCartGood(Shoping_Cart sCart);
 
-	int updateScartNum(Shoping_Cart sCart);
+	int updateScartNum(Shoping_Cart sc);
+
+	int DeleteCartGood(int sc_id);
 
 }
