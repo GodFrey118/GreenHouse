@@ -76,10 +76,7 @@ public class UserHandler {
 		return "forward:/login_user.jsp";
 	}
 	
-	@RequestMapping("/register")
-	public String register(CommonUser commonUser){
-		return "forward:/page/register.jsp";
-	}
+	
 	
 	@RequestMapping("/apply")
 	public String apply(Store store,ModelMap map,HttpSession session){
@@ -146,6 +143,7 @@ public class UserHandler {
 	//购物车
 	@RequestMapping("/addCart")
 	@ResponseBody
+
 	public boolean AddCart(Shoping_Cart sCart, @RequestParam(name="g_id",required=false)int g_id ,HttpSession session){
 		
 		CommonUser user2 = (CommonUser) session.getAttribute("user");
@@ -159,10 +157,14 @@ public class UserHandler {
 	
 	@RequestMapping("/cartNum")
 	@ResponseBody
+
 	public List<Shoping_Cart> CartNum(HttpSession session){
 		CommonUser user2 = (CommonUser) session.getAttribute("user");
-		List<Shoping_Cart> cNum = storeService.getCartNum(user2.getC_id());
-		System.out.println(cNum);
+		List<Shoping_Cart> cNum = null;
+		if (user2!=null) {
+			cNum = storeService.getCartNum(user2.getC_id());
+			System.out.println(cNum);
+		}
 		return cNum;
 	}
 	

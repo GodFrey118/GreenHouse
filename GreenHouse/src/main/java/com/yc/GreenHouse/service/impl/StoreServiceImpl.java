@@ -34,6 +34,7 @@ public class StoreServiceImpl implements StoreService{
 		return storeMapper.selectGoodssaInfo(s_id);
 	}
 	@Override
+
 	public boolean AddSCart(Shoping_Cart sCart) {
 		Shoping_Cart sc = storeMapper.selectSCartGood(sCart);
 		if (sc!=null) {
