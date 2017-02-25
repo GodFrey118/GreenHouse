@@ -160,7 +160,7 @@ public class UserHandler {
 
 	public List<Shoping_Cart> CartNum(HttpSession session){
 		CommonUser user2 = (CommonUser) session.getAttribute("user");
-		List<Shopping_Cart> cNum = null;
+		List<Shoping_Cart> cNum = null;
 		if (user2!=null) {
 			cNum = storeService.getCartNum(user2.getC_id());
 			System.out.println(cNum);

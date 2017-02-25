@@ -17,13 +17,11 @@ public interface StoreMapper {
 	List<Good> selectGoodssaInfo(int s_id);
 
 
-	int indsertCart(Shopping_Cart sCart);
+	int indsertCart(Shoping_Cart sCart);
 
 	List<Shoping_Cart> selectCartNum(Integer c_id);
 
 	Shoping_Cart selectSCartGood(Shoping_Cart sCart);
-
-	int updateScartNum(Shopping_Cart sc);
 
 	int updateScartNum(Shoping_Cart sc);
 

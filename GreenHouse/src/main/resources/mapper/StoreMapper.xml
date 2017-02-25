@@ -4,7 +4,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yc.GreenHouse.mapper.StoreMapper">
 
-    <resultMap type="Shopping_Cart" id="ShopingCartMap">
+    <resultMap type="Shoping_Cart" id="ShopingCartMap">
 		  <id property="sc_id" column="sc_id"/>
 		  <result property="g_id" column="g_id"/>
 		  <result property="c_id" column="c_id"/>
@@ -30,7 +30,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
        select * from good where g_id=#{g_id}
     </select>
     <select id="selectGoodssaInfo" parameterType="int" resultType="Good">
-       select * from good where s_id=#{s_id}s
+       select * from good where s_id=#{s_id}
     </select>
 	<insert id="applyStore" parameterType="Store" >
 	    insert into Store values (seq_Store.nextval,1041,#{c_id},#{s_ownerName},#{s_ID_card},#{s_name},#{s_company},#{s_area},#{s_detail_Addr},#{s_post},#{s_tel},null,null,null,'未通过')
