@@ -93,6 +93,17 @@ public class UserHandler {
 		return "forward:/apply.jsp";
 	}
 	
+	@RequestMapping("/getSid")
+	@ResponseBody
+	public int getSid(Object c_id,HttpSession session){
+		System.out.println("0000");
+		CommonUser cUser2=(CommonUser) session.getAttribute("user");
+		c_id=cUser2.getC_id();
+		int result=storeService.getS_id(c_id);
+		session.setAttribute("s_id",result);
+		return result;
+	}
+	
 	
 	@RequestMapping("/logout")
 	@ResponseBody

@@ -58,4 +58,9 @@ public class StoreServiceImpl implements StoreService{
 	public boolean getDelCartGood(Shoping_Cart sCart) {
 		return storeMapper.updateScartNum(sCart)>0;
 	}
+	
+	public int getS_id(Object c_id) {
+		return storeMapper.getStore(c_id);
+
+	}
 }
