@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 import com.yc.GreenHouse.entity.Good;
-import com.yc.GreenHouse.entity.Shopping_Cart;
+
+import com.yc.GreenHouse.entity.Shoping_Cart;
+
 import com.yc.GreenHouse.entity.Store;
 @Component("storeService")
 public interface StoreService {
@@ -18,9 +20,9 @@ public interface StoreService {
 
 	List<Good> getGoodssaInfo(int s_id);
 
-	boolean AddSCart(Shopping_Cart sCart);
+	boolean AddSCart(Shoping_Cart sCart);
 
-	List<Shopping_Cart> getCartNum(Integer c_id);
+	List<Shoping_Cart> getCartNum(Integer c_id);
 
 	boolean getDelCartGood(int sc_id);
 

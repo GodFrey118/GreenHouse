@@ -44,7 +44,7 @@
 <div class="index_tbar ">
       <div class=" grid ">
            <div class="fr">
-                <span class="fl name sn-login-info">您好！ 欢迎来山山商城购物！<a href="#" class="sn-login">请登录</a> <a href="#" class="sn-register">免费注册</a><i class="sn-separator"></i></span>  
+                <span class="fl name sn-login-info">您好！ 欢迎来山山商城购物！<a href="login_user.jsp" class="sn-login">请登录</a> <a href="page/register" class="sn-register">免费注册</a><i class="sn-separator"></i></span>  
            </div>
       </div>
 </div>
@@ -60,12 +60,12 @@
                <div class="fl reg-font f24 fyh">欢迎注册</div>
           </div>
           <div class="clear fr">
-          我已经注册，现在就<a href="#">登录</a>
+          我已经注册，现在就<a href="login_user.jsp">登录</a>
           </div>
      </div>
      <div class="clear reg-box2" id="register_all_boder">
           <div class="fl fl-box">
-          	<form action="http://www.shanshan360.com/index.php?app=member&act=register" method="post" id="register_form" name="register_form">
+          	<form action="user/register" method="post" id="register_form" name="register_form">
                <ul>
                   <li class="form">
                      <div class="fl fl-txt f14"><font color="#FF0000">*</font>&nbsp;账号名：</div>

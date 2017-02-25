@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import com.yc.GreenHouse.entity.CommonUser;
-import com.yc.GreenHouse.entity.Shopping_Cart;
+import com.yc.GreenHouse.entity.Shoping_Cart;
 import com.yc.GreenHouse.entity.Store;
 import com.yc.GreenHouse.service.StoreService;
 import com.yc.GreenHouse.service.UserService;
@@ -76,6 +76,8 @@ public class UserHandler {
 		return "forward:/login_user.jsp";
 	}
 	
+	
+	
 	@RequestMapping("/apply")
 	public String apply(Store store,ModelMap map,HttpSession session){
 		System.out.println(session.getAttribute("user"));
@@ -90,6 +92,7 @@ public class UserHandler {
 		map.put("errorMsg", "商店注册失败，请重新操作！");
 		return "forward:/apply.jsp";
 	}
+	
 	
 	@RequestMapping("/logout")
 	@ResponseBody
@@ -140,7 +143,8 @@ public class UserHandler {
 	//购物车
 	@RequestMapping("/addCart")
 	@ResponseBody
-	public boolean AddCart(Shopping_Cart sCart, @RequestParam(name="g_id",required=false)int g_id ,HttpSession session){
+
+	public boolean AddCart(Shoping_Cart sCart, @RequestParam(name="g_id",required=false)int g_id ,HttpSession session){
 		
 		CommonUser user2 = (CommonUser) session.getAttribute("user");
 		sCart.setC_id(user2.getC_id());
@@ -153,7 +157,8 @@ public class UserHandler {
 	
 	@RequestMapping("/cartNum")
 	@ResponseBody
-	public List<Shopping_Cart> CartNum(HttpSession session){
+
+	public List<Shoping_Cart> CartNum(HttpSession session){
 		CommonUser user2 = (CommonUser) session.getAttribute("user");
 		List<Shopping_Cart> cNum = null;
 		if (user2!=null) {
