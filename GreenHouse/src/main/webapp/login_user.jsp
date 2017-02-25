@@ -116,7 +116,7 @@
                           <div class="fl fl-txt f14">&nbsp;</div>
                           <div class="fl btn">
                           <button type="submit" name="login_submit" style="background-image: ../login_user_files/login_btn.gif" id="login_submit" class="iLc-submit-btn"></button>
-                          <span class="tips gap"><a href="#">免费注册？</a></span>
+                          <span class="tips gap"><a href="page/register.jsp">免费注册？</a></span>
                          </div>
                       </li>
                       <li class="form ">
