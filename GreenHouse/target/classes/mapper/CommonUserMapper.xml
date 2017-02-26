@@ -18,7 +18,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="updateUser" parameterType="CommonUser">
 	    update CommonUser set c_pwd=#{c_pwd} where c_name=#{c_name}
 	</update>
-<<<<<<< HEAD
 	
 	<insert id="register" parameterType="CommonUser">
 		insert into CommonUser values
@@ -29,6 +28,4 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		</choose>
 		
 	</insert>
-=======
->>>>>>> branch 'master' of ssh://git@github.com/Godfrey118/GreenHouse.git
 </mapper>     

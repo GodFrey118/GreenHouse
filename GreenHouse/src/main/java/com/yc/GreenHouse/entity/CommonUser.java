@@ -36,13 +36,6 @@ public class CommonUser {
 		this.c_name = c_name;
 		this.c_pwd = c_pwd;
 	}
-	
-	public CommonUser(String c_name, String c_pwd,String c_tel) {
-		this.c_name = c_name;
-		this.c_pwd = c_pwd;
-		this.c_tel=c_tel;
-	}
-	
 
 	public Integer getC_id() {
 		return c_id;

@@ -6,6 +6,4 @@ public interface CommonUserMapper {
 	CommonUser getcommonUser(CommonUser user);
 
 	void updateUser(CommonUser user);
-
-	int register(CommonUser user);
 }
