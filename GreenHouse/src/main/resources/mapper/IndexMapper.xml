@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yc.GreenHouse.mapper.IndexMapper">
+   <resultMap type="GoodType" id="GoodTypeMap">
+		  <id property="gt_id" column="gt_id"/>
+		  <result property="gt_name" column="gt_name"/>
+		
+		<collection property="goods" ofType="Good">
+		  <id property="g_id" column="g_id" />
+		  <result property="s_id" column="s_id" />
+		  <result property="g_name" column="g_name" />
+		  <result property="gt_id" column="gt_id" />
+		  <result property="g_pic" column="g_pic" />
+		  <result property="g_price" column="g_price" />
+		  <result property="g_stock" column="g_stock" />
+		  <result property="g_type" column="g_type" />
+		  <result property="g_state" column="g_state" />
+		</collection>
+	</resultMap>
+
+	<select id="selectAllGoods" resultMap="GoodTypeMap">
+	    select * from good g left join goodType gt on g.gt_id=gt.gt_id where g_state = '上架' 
+	</select>
+	
+	<select id="selectAllGoodTypes" resultType="GoodType">
+	    select * from goodType order by gt_id asc
+	</select>
+	
+	
+</mapper>     
