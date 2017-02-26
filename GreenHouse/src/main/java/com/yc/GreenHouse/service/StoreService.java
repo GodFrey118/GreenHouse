@@ -28,4 +28,8 @@ public interface StoreService {
 
 	int getS_id(Object c_id);
 
+	List<String> selectGt_name();
+
+	int insertGood(Good good);
+
 }

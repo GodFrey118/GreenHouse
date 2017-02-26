@@ -84,17 +84,18 @@ delete GOOD
 drop table Good
 drop sequence seq_Good
 create sequence seq_Good start with 1000;
-insert into Good values(seq_Good.nextval,1021,'丽山耕 雪莲果',1000,null,3.00,1000,'水果','上架');
-insert into Good values(seq_Good.nextval,1021,'丽山耕 板栗',1001,null,3.00,1000,'南北干活','上架');
-insert into Good values(seq_Good.nextval,1021,'丽山耕 杂粮黑米',1001,null,3.00,1000,'杂粮主食','上架');
-insert into Good values(seq_Good.nextval,1021,'丽山耕 原味牛肉干',1003,null,3.00,1000,'肉干/肉脯','上架');
-insert into Good values(seq_Good.nextval,1021,'丽山耕 铁观音茶叶',1002,null,3.00,1002,'绿茶','上架');
-insert into Good values(seq_Good.nextval,1021,'丽山耕 葡萄酒',1004,null,3.00,1002,'葡萄酒','上架');
+insert into Good values(seq_Good.nextval,1100,'丽山耕 雪莲果',1021,null,3.00,1000,'水果','上架');
+insert into Good values(seq_Good.nextval,1100,'丽山耕 板栗',1021,null,3.00,1000,'南北干活','上架');
+insert into Good values(seq_Good.nextval,1100,'丽山耕 杂粮黑米',1021,null,3.00,1000,'杂粮主食','上架');
+insert into Good values(seq_Good.nextval,1100,'丽山耕 原味牛肉干',1024,null,3.00,1000,'肉干/肉脯','上架');
+insert into Good values(seq_Good.nextval,1100,'丽山耕 铁观音茶叶',1023,null,3.00,1002,'绿茶','上架');
+insert into Good values(seq_Good.nextval,1100,'丽山耕 葡萄酒',1025,null,3.00,1002,'葡萄酒','上架');
 --商品类型：类型编号，类型名
 create table GoodType(
 	gt_id integer primary key,
 	gt_name varchar2(20)
 )
+select gt_name from GoodType
 drop table GoodType
 select * from GoodType;
 delete GoodType where gt_id=1005

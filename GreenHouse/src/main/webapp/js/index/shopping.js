@@ -4,17 +4,16 @@ $.post("user/cartNum",function(data){
 			  for(var i=0;i<data.length;i++){
 				  for(var j=0;j<data[i].goods.length;j++){
 					  $("#shopping").append(
-								"<tr class='shop'>"
+								"<tbody ><tr class='shop'>"
 								+"<td colspan='2'><input type='checkbox' id='1898538' class='J_forShop J_MakePoint store_sel' onclick='store_select(this);' tag='22' checked='checked'>"
-								+"<span class='seller'> <span>店铺：</span><a href='index.jsp?s_id='"+(data[i].goods)[j].s_id+">丽水山耕旗舰店</a>"
+								+"<span class='seller'> <span>店铺：</span><a href='index_store.jsp?s_id='"+(data[i].goods)[j].s_id+">丽水山耕旗舰店</a>"
 								+"<span class='sstalking-11' style='display: inline-block;' title='点击这里给我发消息'></span></span></td>"
 								+"<td colspan='6' class='promo-info'>"
 								+"<div class='scrolling-container'>"
-								+"<ul class='scrolling-promo-hint' id='J_ScrollingPromoHint_1898538'></ul></div></td></tr>"
-								+"</tbody>"
-								+"<tbody class='J_ItemBody'>"
-								+"<tr class='selected record_list' id='cart_item_177493'>"
-								+"<td class='s-chk'><input type='checkbox' rec_id='177493' onclick='reload_cart_price(this,1898538,177493);' class='ck_item_1898538' name='cartIds' checked='checked' id='cartIds189853849951' value='49951'></td>"
+								+"<ul class='scrolling-promo-hint' id='J_ScrollingPromoHint_1898538'></ul></div></td></tr></tbody>"
+								
+								+"<tbody class='J_ItemBody'><tr class='selected record_list' id='cart_item_177493'>"
+								+"<td class='s-chk'><input type='checkbox' rec_id='177493' onclick='reload_cart(this,"+i+","+ data[i].sc_id +");' class='ck_item_1898538' name='sc_id' checked='checked' id='sc_id' value='"+ data[i].sc_id +"'></td>"
 								+"<td class='s-title'>"
 								+"<div style='width: 250px; height: 70px; position: relative;'>"
 								+"<a href='#' target='_blank'> <img src='./shopping_files/small_201610201737159391.jpg' alt='丽水山耕 锥栗200g' class='itempic '></a>"
@@ -34,7 +33,7 @@ $.post("user/cartNum",function(data){
 								+"<td class='s-del'><a class='fav' href='javascript:;' onclick='move_favorite(1898538, 177493, 49951);'>"
 								+"<font color='#000000'>收藏</font></a> <a class='del' href='javascript:void(0);' onclick='drop_cart("+data[i].sc_id+","+i+",this);'>"
 								+"<font color='#000000'>删除</font></a></td>"
-								+"</tr>");
+								+"</tr></tbody>");
 					  
 				  }
 				  total= total + parseFloat(($("#"+i).text()).substr(1, ($("#"+i).text()).length));
@@ -131,6 +130,33 @@ $.post("user/cartNum",function(data){
 		 
 		 }
 	}
-  
+	 /*submit_order(){
 		 
+	 }
+	 window.location.href="jb51.jsp?backurl="+window.location.href;		 
+		*/
+	 
+	function reload_cart(n,sc_id){
+		var chk_value =[];
+		$('input[name="sc_id"]:checked').each(function(){
+		chk_value.push($(this).val());
+		if(chk_value.length!=0){			
+			var single_price=parseFloat(($("#price").text()).substr(1, ($("#price").text()).length));
+			if($(this).val()!=0){
+				
+				var total_price_1=parseFloat(($("#a"+n).val())*single_price).toFixed(2);
+				alert(total_price_1);
+				$("#cart_amount").html("￥"+parseFloat(($("#cart_amount").text()).substr(1, ($("#cart_amount").text()).length)+total_price_1));
+			}else{
+				var total_price_1=parseFloat(($("#a"+n).val())*single_price).toFixed(2);
+				$("#cart_amount").html("￥"+parseFloat(($("#cart_amount").text()).substr(1, ($("#cart_amount").text()).length)-total_price_1));
+			}
+				
+	}else{
+		$("#cart_amount").html("￥"+ 0.00);
+	}
+		});
+		alert(chk_value.length==0 ?'你还没有选择任何内容！':chk_value); 
 		
+		
+	}

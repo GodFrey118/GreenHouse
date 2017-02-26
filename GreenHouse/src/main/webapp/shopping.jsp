@@ -250,10 +250,8 @@
 											</tr>
 										</thead>
 									</table>
-									<table cellspacing="0" cellpadding="0" class="order-table" >
-									 <tbody id="shopping">
-									 
-									 </tbody>
+									<table cellspacing="0" cellpadding="0" class="order-table" id="shopping">
+	
 									</table>
 									<div class="comb-pay clearfix fixed-bottom" id="total_pay"
 										style="box-shadow: 0; position: static; left: 0; width: 100%;">
@@ -266,9 +264,9 @@
 												presubmit="confirm(&#39;你确定要删除它吗&#39;);"
 												uri="index.php?app=cart&amp;act=piliang_drop">批量删除</a>
 											</span> <span class="total-price">商品总价(不含运费)：<strong
-												class="fontsize1" id="cart_amount">¥22.00</strong></span> <a
-												name="goods_id" class="btn J_MakePoint submit_order"
-												onclick="submit_order();" is_post="1"
+												class="fontsize1" id="cart_amount">¥0.00</strong></span> 
+												<a class="btn J_MakePoint submit_order"
+												onclick="submit_order();" 
 												uri="index.php?app=order&amp;goods=cart">结 算</a>
 										</div>
 									</div>

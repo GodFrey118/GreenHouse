@@ -63,4 +63,12 @@ public class StoreServiceImpl implements StoreService{
 		return storeMapper.getStore(c_id);
 
 	}
+	@Override
+	public List<String> selectGt_name() {
+		return storeMapper.getGt_name();
+	}
+	@Override
+	public int insertGood(Good good) {
+		return storeMapper.insertGood(good);
+	}
 }
