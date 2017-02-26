@@ -48,7 +48,7 @@ public class UserHandler {
 	@RequestMapping("/login")
 	public String login(CommonUser user, ModelMap map,HttpSession session){
 		String string=user.getC_name();
-		Pattern p = Pattern.compile("^((13[0-9])|(15[^4,\\D])|(18[0,5-9]))\\d{8}$");  
+		Pattern p = Pattern.compile("^((13[0-9])|(15[^4,\\D])|(18[0,4-9]))\\d{8}$");  
 		Matcher m = p.matcher(string);  
 		if (m.matches()) {
 			user.setC_tel(string);
@@ -74,6 +74,37 @@ public class UserHandler {
 		
 		map.put("errorMsg", "用户名或密码错误");
 		return "forward:/login_user.jsp";
+	}
+	
+	@RequestMapping("/register")
+	public String register(CommonUser user,HttpSession session,ModelMap map){
+		String string=user.getC_name();
+		System.out.println(string+"000");
+		Pattern p = Pattern.compile("^((13[0-9])|(15[^4,\\D])|(18[0,4-9]))\\d{8}$"); 
+		Matcher m = p.matcher(string);  
+		if (m.matches()) {
+			user.setC_tel(string);
+			user.setC_name(getRandomString(6));
+		}
+		
+		String regex = "\\w+(\\.\\w)*@\\w+(\\.\\w{2,3}){1,3}";
+		if (string.matches(regex)) {
+			user.setC_email(string);
+			user.setC_name(getRandomString(6));
+		}
+		int result = userService.register(user);
+		System.out.println(user);
+		
+		if (result !=0) {
+			user=userService.login(user);
+			session.setAttribute("user", user);
+			CommonUser user2 = (CommonUser) session.getAttribute("user");
+			map.put("loginUser", user2);
+			map.put("loginUser", user2.getC_name());
+			System.out.println(user+"注册成功");
+			return "redirect:/index.jsp";
+		}
+		return "forward:/page/register.jsp";
 	}
 	
 	
@@ -175,4 +206,16 @@ public class UserHandler {
 		System.out.println(del);
 		return del;
 	}
+	
+	//随机生成6位的字符串
+	public static String getRandomString(int length) { //length表示生成字符串的长度  
+	    String base = "abcdefghijklmnopqrstuvwxyz";     
+	    Random random = new Random();     
+	    StringBuffer sb = new StringBuffer();     
+	    for (int i = 0; i < length; i++) {     
+	        int number = random.nextInt(base.length());     
+	        sb.append(base.charAt(number));     
+	    }     
+	    return sb.toString();     
+	 } 
 }

@@ -10,4 +10,6 @@ public interface UserService {
 	CommonUser login(CommonUser user);
 
 	void resetPassword(String username, String randPassword);
+
+	int register(CommonUser user);
 }
