@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yc.GreenHouse.mapper.CommonUserMapper">
+	<select id="getcommonUser" parameterType="CommonUser" resultType="CommonUser">
+	    select * from CommonUser where c_pwd = #{c_pwd} 
+	    <if test="c_tel != null">
+	    	and c_tel = #{c_tel}
+	    </if>
+	    <if test="c_name != null">
+	    	and c_name = #{c_name}
+	    </if>
+	    <if test="c_email != null">
+	   		and c_email = #{c_email}
+	    </if>
+	</select>
+	<update id="updateUser" parameterType="CommonUser">
+	    update CommonUser set c_pwd=#{c_pwd} where c_name=#{c_name}
+	</update>
+	
+	<insert id="register" parameterType="CommonUser">
+		insert into CommonUser values
+		<choose>
+			<when test="c_tel != null">(seq_CommonUser.nextval,#{c_name},null,null,#{c_pwd},#{c_tel},null,null,null)</when>
+			<when test="c_email != null">(seq_CommonUser.nextval,#{c_name},null,null,#{c_pwd},null,#{c_email}null,null)</when>
+			<otherwise>(seq_CommonUser.nextval,#{c_name},null,null,#{c_pwd},null,null,null,null)</otherwise>
+		</choose>
+		
+	</insert>
+</mapper>     
