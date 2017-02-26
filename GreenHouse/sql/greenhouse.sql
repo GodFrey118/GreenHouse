@@ -21,8 +21,9 @@ create table CommonUser(
 	c_qq varchar2(20),
 	c_addr varchar2(100)
 )
-772958
+620087
 select * from COMMONUSER
+insert into CommonUser values(seq_CommonUser.nextval,'你好',null,null,null,'aaaaa','12312312312',null,null,null)
 create sequence seq_CommonUser start with 1000;
 insert into CommonUser values(seq_CommonUser.nextval,'郭帆','男',to_date('1996-08-06','yyyy-MM-dd'),'aaaaa','13207349871','825311573@qq.com','825311573','湖南省益阳市沅江县')
 --管理员：编号，姓名，密码

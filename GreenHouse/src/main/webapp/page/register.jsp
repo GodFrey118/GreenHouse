@@ -66,12 +66,12 @@
      </div>
      <div class="clear reg-box2" id="register_all_boder">
           <div class="fl fl-box">
-          	<form action="user/register" method="post" id="register_form" name="register_form">
+          	<form  method="post" id="register_form" name="register_form" action="user/register">
                <ul>
                   <li class="form">
                      <div class="fl fl-txt f14"><font color="#FF0000">*</font>&nbsp;账号名：</div>
                      <div class="fl item-ifo">
-                           <input class="input_s1 f14 fuhao2" onpaste="return false" id="user_name" name="user_name" maxlength="40" type="text" value="邮箱/用户名/手机号" autocomplete="off">  
+                           <input class="input_s1 f14 fuhao2" onpaste="return false" id="user_name" name="c_name" maxlength="40" type="text" value="邮箱/用户名/手机号" autocomplete="off">  
                            <div class="zc_houl">
 							   <p id="user" class="zc_houl1 hide">请输入用户名/邮箱/手机号。</p>
 							</div>
@@ -104,7 +104,7 @@
                   	 <div id="big_small_t" class="fl item-ifo" style="display: none;">键盘大写锁定已打开，请注意大小写</div>
                      <div class="fl fl-txt f14"><font color="#FF0000">*</font>&nbsp;请设置密码：</div>
                      <div class="fl item-ifo">
-                          <input id="password" name="password" value="" type="password" class="reg-pwd input_s1" tabindex="2">
+                          <input id="password" name="c_pwd" value="" type="password" class="reg-pwd input_s1" tabindex="2">
                           <div class="zc_houl">
 							   <p id="pass" class="zc_houl1" style="display: none;"></p>
 						  </div>
@@ -163,8 +163,9 @@
                   <li class="form">
                       <div class="fl fl-txt f14">&nbsp;</div>
                       <div class="fl item-ifo">
-                          <a id="sub" href="javascript:void(0);"><img src="./register_files/reg-btn.gif"></a>
-                      </div>
+            				<!--   <a href="javascript:void(0)" type="submit"><img src="./register_files/reg-btn.gif"/></a> -->
+			           	 <input type="submit" value="注册" >
+			           </div>
                   </li> 
                </ul>
              </form>

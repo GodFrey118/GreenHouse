@@ -21,5 +21,9 @@ public class UserServiceImpl implements UserService {
 		CommonUser user = new CommonUser(username, randPassword);
 		commonUserMapper.updateUser(user);
 	}
+	@Override
+	public int register(CommonUser user) {
+		return commonUserMapper.register(user);
+	}
 
 }
