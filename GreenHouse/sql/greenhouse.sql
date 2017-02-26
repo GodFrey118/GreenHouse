@@ -77,6 +77,7 @@ create table Good(
 	g_type varchar2(50),
 	g_state varchar2(20)
 )
+update Good set g_price=5  where g_id=1000
 alter table good add g_type varchar2(50);
 alter table good add g_state varchar2(20);
 select * from Good;

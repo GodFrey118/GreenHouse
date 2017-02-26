@@ -225,8 +225,7 @@
 										<thead>
 											<tr>
 												<th class="s-chk"><span class="select-all"> <input
-														type="checkbox" onclick="all_select(this)" class="all_sel"
-														checked="checked"> <label for="floatBarSelectAll">全选</label></span>
+														type="checkbox" id="checkAll" checked='checked' class="all_sel"> <label for="floatBarSelectAll">全选</label></span>
 													<span class="del-items mg-left" id="batchAction"
 													style="position: absolute; width: 50px; margin-left: 5px; left: 60px;">
 														<a href="javascript:;" name="id"
@@ -257,7 +256,7 @@
 										style="box-shadow: 0; position: static; left: 0; width: 100%;">
 										<div class="float-bar clearfix">
 											<span class="select-all"> <input type="checkbox"
-												onclick="all_select(this)" class="all_sel" checked="checked">
+												id="checkAll" class="all_sel" checked="checked">
 													<label for="floatBarSelectAll">全选</label></span> <span
 												class="del-items mg-left"> <a href="javascript:;"
 												name="id" onclick="drop_batch(this)"
@@ -266,7 +265,7 @@
 											</span> <span class="total-price">商品总价(不含运费)：<strong
 												class="fontsize1" id="cart_amount">¥0.00</strong></span> 
 												<a class="btn J_MakePoint submit_order"
-												onclick="submit_order();" 
+												onclick="sub_order();" 
 												uri="index.php?app=order&amp;goods=cart">结 算</a>
 										</div>
 									</div>
