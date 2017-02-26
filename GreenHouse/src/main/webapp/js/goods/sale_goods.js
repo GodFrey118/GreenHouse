@@ -14,7 +14,7 @@ function chgpic(obj){
 
 $("#openid").form({
 	url:"user/insertGood",
-	Success:function(data){
+	success:function(data){
 		alert(data);
 	}
 });

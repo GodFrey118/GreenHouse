@@ -27,11 +27,13 @@
 
 <link type="text/css" href="./sale_goods_files/index-min.css" rel="stylesheet">
 <script type="text/javascript" src="./sale_goods_files/index-min.js"></script>
-<script type="text/javascript" async="" id="tb-beacon-aplus" exparams="category=&amp;userid=390946449&amp;aplus" src="./sale_goods_files/aplus_v2.js"></script><link id="yui__dyn_0" type="text/css" charset="utf-8" rel="stylesheet" href="./sale_goods_files/tbra.css"><link href="./sale_goods_files/index-min(1).css" rel="stylesheet"><script src="./sale_goods_files/index(2).js"></script><script src="./sale_goods_files/index(3).js"></script></head>
+<script type="text/javascript" src="./sale_goods_files/aplus_v2.js"></script>
+<link id="yui__dyn_0" type="text/css" charset="utf-8" rel="stylesheet" href="./sale_goods_files/tbra.css">
+<link href="./sale_goods_files/index-min(1).css" rel="stylesheet">
+<script src="./sale_goods_files/index(2).js"></script>
+<script src="./sale_goods_files/index(3).js"></script>
+</head>
 <body>
-<script type="text/javascript">
-
-</script>
 
 <div id="seller-nav" role="navigation">
     <div id="site-nav-content">
@@ -40,9 +42,6 @@
   <a class="txt" href="javascript:void(0);" target="_blank" id="J_SellerMobile" title="新增“自动回复”功能！">卖家手机端</a>
   <s class="line-border"></s>
 </div>
-                        <!-- <div class="login-info" data-spm="a1zvp">
-            <script>TB.SellerGlobal.writeLoginInfo({"memberServer": "//member1.taobao.com", "outmemServer" : "", "loginServer": "https://login.taobao.com", redirectUrl : "", logoutUrl : ""});</script><a class="user-nick" href="https://jianghu.taobao.com/admin/home.htm?t=1487680562258" target="_top">何进钰</a>, <a id="J_Logout" href="javascript:void(0);" target="_top">退出</a><a href="javascript:void(0);" target="_top">站内信</a>
-        </div> -->
                         <!--新加入的消息dom-->
         <div id="J_Tmsg" class="tmsg" data-spm="a1zvq"><div class="J_Menu menu" data-fn-name="fn-tmsg"><div class="menu-hd J_Tmsg_Basic tmsg_basic"><span class="J_Tmsg_Logo"><span class="J_Tmsg_Logo_Loading tmsg_logo_loading" style="display: none;"></span><span class="J_Tmsg_Logo_Icon tmsg_logo_icon iconfont"></span><span class="J_Tmsg_Logo_Text tmsg_logo_text" style="padding-left:5px;">消息</span><span class="J_Tmsg_Logo_Unread tmsg_logo_unread"></span></span><b class="tmsg_basic_arrow"></b></div><div class="menu-bd"><div class="J_Tmsg_Panel_Apps tmsg_panel_apps"><div class="J_Tmsg_Panel_Head tmsg_panel_head">   <h2 class="J_Tmsg_Panel_Title tmsg_panel_title">未读新消息</h2>   <a class="J_Tmsg_Button_ReadAll tmsg_button_read-all" data-tip="ignoreAll" title="忽略所有消息" href="https://sell.taobao.com/auction/merchandise/auction_list.htm?spm=686.1000925.a1zvx.d44.uM9HxC&amp;type=1javascript:void(0);">全部设为已读</a></div><div class="J_Tmsg_Panel_AppsBody tmsg_panel_body">   <img style="display:block;margin:30px auto" width="48" height="48" src="./sale_goods_files/T1HcvHXd4nXXb6ROYh-48-48.gif"></div><div class="J_Tmsg_Panel_Foot tmsg_panel_foot">   <a class="J_Tmsg_Button_Setting tmsg_button_setting" data-tips="setting" title="消息设置" href="https://sell.taobao.com/auction/merchandise/auction_list.htm?spm=686.1000925.a1zvx.d44.uM9HxC&amp;type=1javascript:void(0);">设置</a>   <a class="J_Tmsg_Button_Feedback tmsg_button_feedback" data-tips="feedback" title="意见反馈" href="https://ur.taobao.com/survey/view.htm?spm=1.6659421.0.0.Nmaw77&amp;id=1990&amp;scm=1229.325.1.1" target="_blank">反馈</a>   <span class="J_Tmsg_Button_CheckAll_Wrap tmsg_button_check-all_wrap">       <a class="J_Tmsg_Button_CheckAll tmsg_button_check-all" href="https://sell.taobao.com/auction/merchandise/auction_list.htm?spm=686.1000925.a1zvx.d44.uM9HxC&amp;type=1javascript:void(0);" target="_blank">查看全部</a>   </span></div></div></div></div><div class="J_Tmsg_Panels tmsg_panels" style="_display:none"><div class="J_Tmsg_Panel_Detail tmsg_panel_detail"></div><div class="J_Tmsg_Panel_history tmsg_panel_history"></div><div class="J_Tmsg_Panel_Strong tmsg_panel_strong"></div><div class="J_Tmsg_Panel_Setting tmsg_panel_setting"></div></div></div>
 <script>
@@ -69,7 +68,7 @@
     }
   })(KISSY);
 </script>
-<script>
+<!-- <script>
   KISSY.ready(function(S) {
     var S= KISSY;
     S.use('core,dom', function(S,DOM) {
@@ -147,7 +146,7 @@
       }();
     });
   });
-</script>
+</script> -->
                 <ul class="quick-menu" data-spm="a1zvr">
             <li><a href="javascript:void(0);">GreenHouse网首页</a><s class="line-border"></s></li>
 <li class="mytaobao">
