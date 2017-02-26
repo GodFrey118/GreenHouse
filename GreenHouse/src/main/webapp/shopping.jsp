@@ -7,11 +7,11 @@
 <link href="css/public/topshan.css" rel="stylesheet" type="text/css">
 	<link href="css/public/common.css" rel="stylesheet" type="text/css">
 		<title>确认购物清单 - 山山商城_自媒体视频直播购物平台</title> <script
-			type="text/javascript" async="" src="js/public/mv.js"></script>
-		<script type="text/javascript" async="" src="js/public/mba.js"></script>
-		<script type="text/javascript" async="" src="js/public/mvl.js"></script>
-		<script type="text/javascript" async="" src="js/public/pixel.php"></script>
-		<script type="text/javascript" async="" charset="utf-8"
+			type="text/javascript"  src="js/public/mv.js"></script>
+		<script type="text/javascript" src="js/public/mba.js"></script>
+		<script type="text/javascript" src="js/public/mvl.js"></script>
+		<script type="text/javascript" src="js/public/pixel.php"></script>
+		<script type="text/javascript"  charset="utf-8"
 			src="js/public/ntkfstat.js"></script>
 		<script charset="utf-8" src="js/public/v.js"></script>
 		<script type="text/javascript" src="js/public/jquery-1.7.1.min.js"
@@ -29,6 +29,7 @@
 		<script type="text/javascript" async="async" charset="utf-8"
 			src="js/public/mqtt.chat.js" data-requiremodule="Connection"></script>
 		<link href="css/public/shopping.css" rel="stylesheet" type="text/css">
+	
 </head>
 <body>
 	<div id="nTalk_post_hiddenElement"
@@ -249,80 +250,10 @@
 											</tr>
 										</thead>
 									</table>
-									<table cellspacing="0" cellpadding="0" class="order-table">
-										<tbody>
-											<tr class="shop">
-												<td colspan="2"><input type="checkbox" id="1898538"
-													class="J_forShop J_MakePoint store_sel"
-													onclick="store_select(this);" tag="22" checked="checked">
-														<span class="seller"> <span>店铺：</span><a href="#">丽水山耕旗舰店</a>
-															<span class="sstalking-11" style="display: inline-block;"
-															title="点击这里给我发消息"></span>
-													</span></td>
-												<td colspan="6" class="promo-info">
-													<div class="scrolling-container">
-														<ul class="scrolling-promo-hint"
-															id="J_ScrollingPromoHint_1898538">
-														</ul>
-													</div>
-												</td>
-											</tr>
-
-										</tbody>
-										<tbody class="J_ItemBody">
-											<tr class="selected record_list" id="cart_item_177493">
-												<td class="s-chk"><input type="checkbox"
-													rec_id="177493"
-													onclick="reload_cart_price(this,1898538,177493);"
-													class="ck_item_1898538" name="cartIds" checked="checked"
-													id="cartIds189853849951" value="49951"></td>
-												<td class="s-title">
-													<div
-														style="width: 250px; height: 70px; position: relative;">
-														<a href="#" target="_blank"> <img
-															src="./shopping_files/small_201610201737159391.jpg"
-															alt="丽水山耕 锥栗200g" class="itempic "></a>
-														<div class="lookb">
-															<a
-																href="javascript:preview_theme('data/files/store_1898538/goods_35/small_201610201737159391.jpg');">查看大图</a>
-														</div>
-														<a href="#" target="_blank">丽水山耕 锥栗200g</a><br> <span>规格:锥栗
-														</span>
-															<div class="xb">
-																<span>保障: </span> <a class="xb-" target="_blank"
-																	href="#"></a>
-															</div>
-													</div>
-												</td>
-												<td class="s-point"><em><span
-														id="item177493_goods_integral" tag="22">22</span></em></td>
-												<td class="s-price "><del>¥40.00</del><em>¥22.00</em><span>省¥18.00元</span></td>
-												<td class="s-amount "><img
-													src="./shopping_files/subtract.gif"
-													onclick="decrease_quantity(177493);" width="12" height="12">
-														<input id="input_item_177493" value="1" orig="1"
-														changed="1"
-														onkeyup="change_quantity(1898538, 177493, 50047, 50097, this);"
-														class="text1 width3" type="text"> <img
-															src="./shopping_files/adding.gif"
-															onclick="add_quantity(177493);" width="12" height="12"></td>
-												<td class="s-agio"><span id="discountList_177493">
-														<span class="m-promo-item"> <a
-															href="javascript:viod(0)" active="卖家促销" ever_dif="18"
-															title="省18元：卖家促销..."><img
-																src="./shopping_files/cuxiao.png"></a>
-													</span>
-												</span></td>
-												<td class="s-total"><span class="price2"
-													id="item177493_subtotal" tag="22">¥22.00</span></td>
-												<td class="s-del"><a class="fav" href="javascript:;"
-													onclick="move_favorite(1898538, 177493, 49951);"><font
-														color="#000000">收藏</font></a> <a class="del"
-													href="javascript:;"
-													onclick="drop_cart_item(1898538, 177493);"><font
-														color="#000000">删除</font></a></td>
-											</tr>
-										</tbody>
+									<table cellspacing="0" cellpadding="0" class="order-table" >
+									 <tbody id="shopping">
+									 
+									 </tbody>
 									</table>
 									<div class="comb-pay clearfix fixed-bottom" id="total_pay"
 										style="box-shadow: 0; position: static; left: 0; width: 100%;">
@@ -512,7 +443,7 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 						</div>
 						<div id="rightButton" style="right: 0px;">
 							<ul id="right_ul">
-								<li id="right_kf" onclick="openChatWindow(&#39;&#39;);"></li>
+								<li id="right_kf"></li>
 								<a target="_blank" href="./shopping_files/shopping.jsp"><li
 									id="right_gw">
 										<div class="nums">1</div>
@@ -557,5 +488,6 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 						<script type="text/javascript" src="js/public/cart.js"
 							charset="utf-8"></script>
 						<script type="text/javascript" src="js/public/EmbedCS.js"></script>
+					    <script type="text/javascript" src="js/index/shopping.js"></script>
 </body>
 </html>

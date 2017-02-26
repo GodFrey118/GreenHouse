@@ -12,8 +12,6 @@
 <script charset="utf-8" type="text/javascript" src="js/public/jquery-ui-V2.3.0.js"></script> 
 <link rel="stylesheet" type="text/css" href="css/public/jquery-ui-V2.3.0.css">
 <script type="text/javascript" src="js/index/Seach.js"></script> 
-<script type="text/javascript" src="js/index/index.js"></script> 
-
 <script type="text/javascript" src="js/index/logout.js"></script> 
 
 <link rel="stylesheet" type="text/css"  href="css/public/common.css"/>
@@ -158,7 +156,7 @@
                  </a>
                <div class="fl  ui-dropdown2">
                
-               <a target="_blank" href="#" class="ui-dropdown-hd2">
+               <a target="_blank" href="shopping.jsp" class="ui-dropdown-hd2">
                  <div class="top-bt fl">
                    <div class="fl buy">
                    <img src="./index_files/icon-buy2.png">
@@ -167,7 +165,7 @@
                  </div>
                </a>
               
-               <ul class="unstyled fr ui-dropdown-menu2">
+               <!-- <ul class="unstyled fr ui-dropdown-menu2">
                    <li>
                      <div style="display:block;" class="con fl hide carts_show_g" id="null_cart">
                         <div class="fl"><img src="./index_files/b-y.jpg"></div>
@@ -175,7 +173,7 @@
                      </div>
                    
                      <font  style="display:none;" id="show_cart_1" class="fyh f14 ml5 fl show_cart">最新加入的商品</font>
-                     <div class="left1 clear1 pro-list1" id="pro-list">
+                     <div class="left1left1 clear1 pro-list1" id="pro-list">
                      </div>
                    <div style="display:none;" id="shop" class="js1 clear1 left1">
                    <p>共 <font class="cff6">1</font> 件商品&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 共计<font class="cff6 ">￥</font>
@@ -186,7 +184,39 @@
                    </a></p>
                    </div>    
                    </li>
-               </ul>
+               </ul> -->
+               <ul class="unstyled fr ui-dropdown-menu2">
+                   <li>
+                   <div id="null_cart" style="display:block;" class="con fl hide carts_show_g">
+                        <div class="fl"><img src="./index_files/b-y.jpg"></div>
+                        <div class="fl cart_show">你的购物车是空的，赶快去购物吧！</div>
+                   </div>
+                   
+                   <font style="display:none;" class="fyh f14 ml5 fl show_cart">最新加入的商品</font>
+                   <div class="fl clear pro-list" id="pro-list"> 
+	                   <!--<div class="left">
+			                    <div class="tit carts_177721">
+			                       <div class="left ml5">小计：￥39.00</div>
+			                   </div>
+			                   <div class="pro-con1 left1 carts_177721">
+			                       <span class="left1 img"><img style="width:50px;height:50px;" src="./index_store_files/small_201507291048161158.jpg"></span>
+			                       <span class="left1 pro-name1 lh18">野生仙人掌果 仙人果 2斤装 海南水果新鲜热带水果  偏远地区不发货</span>
+			                       <span class="left1  pri lh18"><p>
+			                       <font class="cff6 f14">￥39.00</font>*1</p>
+			                       <p class="ter">
+			                       <a href="javascript:;" cart_id="177721" class="delete_cart">删除</a></p></span>
+			                   </div> 
+	                   </div>-->
+                   </div>
+                   <div style="display:none;" id="shop" class="js clear fl">
+                   <p>共 <font class="cff6">1</font> 件商品&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 共计<font class="cff6 ">￥</font>
+                   <font class="f-s cff6 f18 t_money_0">39.</font>
+                   <font class="f13 f-s cff6 t_money_1">00</font></p>
+                   <p class="ter"><a target="_blank" href="#">
+                   <button type="button" class="choose_btn  f14 fyh">去购物车结算</button>
+                   </a></p></div>
+                   </li>
+                </ul>
             </div>
          </div>
      </div>
@@ -1638,7 +1668,8 @@
 		温馨提示：请在<a target="_blank" style="color:red;" href="#">个人资料</a>中填写QQ，方便卖家及时联系。
 	</div>
 </div>
--->
 <script type="text/javascript" src="js/index/tupian.js"></script>
+<script type="text/javascript" src="js/index/index.js"></script> 
+
 </body>
 </html>

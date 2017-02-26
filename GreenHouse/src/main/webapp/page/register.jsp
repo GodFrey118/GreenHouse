@@ -156,7 +156,7 @@
                       <div class="fl fl-txt f14">&nbsp;</div>
                       <div class="fl item-ifo ">
                            <input name="agree" type="checkbox" class="inputcheckbox" checked="checked" id="readme">
-                           <label class="xy">我已阅读并同意<a href="javascript:void(0);" id="open" is_t="0" onclick="xieyi(&#39;open&#39;);">《山山用户注册协议》</a></label>
+                           <label class="xy">我已阅读并同意<a href="javascript:void(0);" id="open" is_t="0" onclick="">《山山用户注册协议》</a></label>
                            <label id="readme_t" class="reg_error hide">请接受服务条款</label>
                       </div>
                   </li> 

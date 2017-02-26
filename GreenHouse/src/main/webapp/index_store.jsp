@@ -13,6 +13,7 @@
 <script type="text/javascript" src="js/public/ss.index-V2.4.0.js" charset="utf-8"></script> 
 <script type="text/javascript" src="js/index_store/index_store.js"></script>
 <link href="css/public/index_stroe.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/index/index.js"></script>
 
 </head>
 
@@ -113,7 +114,21 @@
                         <div class="left1">购物车中还没有商品，赶紧选购吧！</div>
                    </div>
                    
-                   <font class="fyh f14 ml5 left1 show_cart">最新加入的商品</font><div class="left1left1 clear1 pro-list1" id="pro-list"> <div class="left1"><div class="tit carts_177193"><div class="left1 ml5">小计：￥28.00</div></div><div class="pro-con1 left1 carts_177193"><span class="left1 img"><img style="width:50px;height:50px;" src="index_store_files/small_201606291055145047.jpg"></span><span class="left1 pro-name1 lh18">河北皇冠梨酥梨香梨雪花梨新鲜水果5斤包邮</span><span class="left1  pri lh18"><p><font class="cff6 f14">￥28.00</font>*1</p><p class="ter"><a href="javascript:;" cart_id="177193" class="delete_cart">删除</a></p></span></div></div></div><div class="js1 clear1 left1"><p>共 <font class="cff6">1</font> 件商品&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 共计<font class="cff6 ">￥</font><font class="f-s cff6 f18 t_money_0">28.</font><font class="f13 f-s cff6 t_money_1">00</font></p><p class="ter"><a target="_blank" href="#"><button type="button" class="choose_btn1  f14 fyh">去购物车结算</button></a></p></div>
+                   <font class="fyh f14 ml5 left1 show_cart">最新加入的商品</font>
+                   <div class="left1left1 clear1 pro-list1" id="pro-list"> 
+                   <div class="left1">
+                   <div class="tit carts_177193">
+                   <div class="left1 ml5">小计：￥28.00</div>
+                   </div>
+                   <div class="pro-con1 left1 carts_177193">
+                   <span class="left1 img">
+                   <img style="width:50px;height:50px;" src="index_store_files/small_201606291055145047.jpg"></span>
+                   <span class="left1 pro-name1 lh18">河北皇冠梨酥梨香梨雪花梨新鲜水果5斤包邮</span>
+                   <span class="left1  pri lh18">
+                   <p><font class="cff6 f14">￥28.00</font>*1</p><p class="ter"><a href="javascript:;" cart_id="177193" class="delete_cart">删除</a></p></span></div></div></div>
+                   <div class="js1 clear1 left1"><p>共 <font class="cff6">1</font> 件商品&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 共计<font class="cff6 ">￥</font>
+                   <font class="f-s cff6 f18 t_money_0">28.</font><font class="f13 f-s cff6 t_money_1">00</font></p>
+                   <p class="ter"><a target="_blank" href="#"><button type="button" class="choose_btn1  f14 fyh">去购物车结算</button></a></p></div>
                          
                    </li>
                 </ul>

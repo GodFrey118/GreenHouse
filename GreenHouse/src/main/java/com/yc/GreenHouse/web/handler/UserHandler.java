@@ -124,6 +124,17 @@ public class UserHandler {
 		return "forward:/apply.jsp";
 	}
 	
+	@RequestMapping("/getSid")
+	@ResponseBody
+	public int getSid(Object c_id,HttpSession session){
+		System.out.println("0000");
+		CommonUser cUser2=(CommonUser) session.getAttribute("user");
+		c_id=cUser2.getC_id();
+		int result=storeService.getS_id(c_id);
+		session.setAttribute("s_id",result);
+		return result;
+	}
+	
 	
 	@RequestMapping("/logout")
 	@ResponseBody
@@ -207,6 +218,7 @@ public class UserHandler {
 		return del;
 	}
 	
+
 	//随机生成6位的字符串
 	public static String getRandomString(int length) { //length表示生成字符串的长度  
 	    String base = "abcdefghijklmnopqrstuvwxyz";     
@@ -218,4 +230,16 @@ public class UserHandler {
 	    }     
 	    return sb.toString();     
 	 } 
+
+	@RequestMapping("/goodNum")
+	@ResponseBody
+	public boolean GoodNum(@RequestParam(name="g_id",required=false)int g_id,@RequestParam(name="sc_goodNum",required=false)int sc_goodNum,HttpSession session,Shoping_Cart sCart){
+		CommonUser user2 = (CommonUser) session.getAttribute("user");
+		sCart.setG_id(g_id);
+		sCart.setC_id(user2.getC_id());
+		sCart.setSc_goodNum(sc_goodNum);
+		boolean ugn = storeService.getDelCartGood(sCart);
+		System.out.println(ugn);
+		return ugn;
+	}
 }
