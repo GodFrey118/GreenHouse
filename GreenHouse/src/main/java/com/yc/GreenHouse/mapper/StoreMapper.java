@@ -29,4 +29,8 @@ public interface StoreMapper {
 
 	int getStore(Object c_id);
 
+	List<String> getGt_name();
+
+	int insertGood(Good good);
+
 }

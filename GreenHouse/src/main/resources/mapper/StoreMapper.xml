@@ -56,4 +56,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getStore" parameterType="Object"  resultType="int">
 		select s_id from store where c_id=#{c_id}
 	</select>
+	
+	<select id="getGt_name" resultType="String">
+		select gt_name from GoodType
+	</select>
+	
+	<insert id="insertGood" parameterType="Good">
+		insert into Good values(seq_Good.nextval,#{s_id},#{g_name},#{gt_id},#{g_pic},#{g_price},#{g_stock},#{g_type},#{g_state})
+	</insert>
 </mapper>     

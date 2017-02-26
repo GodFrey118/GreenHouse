@@ -1,5 +1,7 @@
 package com.yc.GreenHouse.web.handler;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 import java.util.Random;
 import java.util.regex.Matcher;
@@ -21,12 +23,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.yc.GreenHouse.entity.CommonUser;
+import com.yc.GreenHouse.entity.Good;
 import com.yc.GreenHouse.entity.Shoping_Cart;
 import com.yc.GreenHouse.entity.Store;
 import com.yc.GreenHouse.service.StoreService;
 import com.yc.GreenHouse.service.UserService;
+import com.yc.GreenHouse.service.impl.ServletUtil;
 
 
 
@@ -104,6 +109,12 @@ public class UserHandler {
 		return result;
 	}
 	
+	@RequestMapping("/get_gt_name")
+	@ResponseBody
+	public List<String> getGt_name(){
+		List<String> list=storeService.selectGt_name();
+		return list;
+	}
 	
 	@RequestMapping("/logout")
 	@ResponseBody
@@ -185,5 +196,21 @@ public class UserHandler {
 		boolean del = storeService.getDelCartGood(sc_id);
 		System.out.println(del);
 		return del;
+	}
+	
+	@RequestMapping("/insertGood")
+	@ResponseBody
+	public int modify(Good good,@RequestParam(name="g_pic",required=false)MultipartFile g_pic){
+		LogManager.getLogger().debug("请求UserHandler处理insertGood进来了"+good);
+		if (g_pic!=null&&!g_pic.isEmpty()) {
+			try {
+				g_pic.transferTo(new File(ServletUtil.UPLOAD_DIR,g_pic.getOriginalFilename()));
+				good.setG_pic("/"+ServletUtil.UPLOAD_DIR_NAME+"/"+g_pic.getOriginalFilename());
+			} catch (IllegalStateException | IOException e) {
+				LogManager.getLogger().error("上传文件操作失败",e);
+			}//上传文件
+			//return true;
+		}
+		return storeService.insertGood(good);
 	}
 }
