@@ -40,4 +40,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="updateStoreState" parameterType="int">
 		update store set s_state='通过' where s_id=#{s_id}
 	</update>
+	
+	<resultMap type="PaginationBean" id="PaginationBeanOrdersMap">
+		<collection property="rows" column="{pageSize=pageSize, currPage=currPage}" select="getOrders"/>
+		
+	</resultMap>
+	<select id="showOrderInfo" parameterType="PaginationBean"
+		resultMap="PaginationBeanOrdersMap" flushCache="false">
+		select count(1) total,ceil(count(1) / ${pageSize}) totalPage,${pageSize} pageSize, ${currPage} currPage from (select * from Orders o left join store s on s.s_id= o.s_id left join good g on o.g_id=g.g_id )
+	</select>
+	<select id="getOrders" resultType="OrderBean" flushCache="false">
+		select * from
+		(select m.*,rownum rn from 
+		(select o.o_id,o.o_ordertime,c.c_name,c.c_tel,s.s_name,s.s_company,s.s_tel,g.g_name,g.g_price,o.o_amount,o.o_sum,g.g_type,o.o_state from Orders o left join store s on s.s_id= o.s_id left join good g on o.g_id=g.g_id inner join CommonUser c on c.c_id = o.c_id order by 1 desc) m where rownum &lt;= ${currPage} * ${pageSize}) where rn &gt; (${currPage}-1) * ${pageSize}
+	</select>
+	
+	
 </mapper>     

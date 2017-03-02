@@ -159,6 +159,10 @@ create table Orders(
 	o_ordertime date,
 	o_state varchar2(20)
 )
+select * from
+		(select m.*,rownum rn from 
+		(select * from Orders o left join store s on s.s_id= o.s_id left join good g on o.g_id=g.g_id order by 1 desc) m where rownum <=1 * 3) where rn > 0
+
 drop table Orders;
 select * from Orders;
 create sequence seq_Orders start with 1000;
