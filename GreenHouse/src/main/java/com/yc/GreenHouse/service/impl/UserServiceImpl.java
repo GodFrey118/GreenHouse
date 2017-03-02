@@ -1,9 +1,13 @@
 package com.yc.GreenHouse.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.yc.GreenHouse.entity.Address;
 import com.yc.GreenHouse.entity.CommonUser;
+import com.yc.GreenHouse.entity.Orders;
 import com.yc.GreenHouse.mapper.CommonUserMapper;
 import com.yc.GreenHouse.service.UserService;
 
@@ -25,5 +29,14 @@ public class UserServiceImpl implements UserService {
 	public int register(CommonUser user) {
 		return commonUserMapper.register(user);
 	}
+	@Override
+	public CommonUser getAddr(Integer c_id) {
+		return commonUserMapper.selectAddr(c_id);
+	}
+	@Override
+	public boolean insertAddr(Address addr) {
+		return commonUserMapper.insertAddr(addr)>0;
+	}
+	
 
 }

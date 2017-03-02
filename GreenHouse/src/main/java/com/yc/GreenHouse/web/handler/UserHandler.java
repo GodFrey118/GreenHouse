@@ -12,6 +12,8 @@ import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import oracle.net.aso.c;
+
 import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -25,10 +27,13 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.yc.GreenHouse.entity.Address;
 import com.yc.GreenHouse.entity.CommonUser;
 import com.yc.GreenHouse.entity.Good;
+import com.yc.GreenHouse.entity.Orders;
 import com.yc.GreenHouse.entity.Shoping_Cart;
 import com.yc.GreenHouse.entity.Store;
+import com.yc.GreenHouse.entity.com_money;
 import com.yc.GreenHouse.service.StoreService;
 import com.yc.GreenHouse.service.UserService;
 import com.yc.GreenHouse.service.impl.ServletUtil;
@@ -268,4 +273,140 @@ public class UserHandler {
 		}
 		return storeService.insertGood(good);
 	}
+	
+	@RequestMapping("/orderInfo")
+	@ResponseBody
+	public List<Shoping_Cart> orderInfo(Shoping_Cart sCart ,@RequestParam(name="sc_id",required=false)int sc_id,HttpSession session){
+		CommonUser user2 = (CommonUser) session.getAttribute("user");
+		sCart.setG_id(sc_id);
+		sCart.setC_id(user2.getC_id());
+		System.out.println(user2.getC_id());
+		List<Shoping_Cart> uState = storeService.getOrderInfo(sCart);
+		System.out.println(uState);
+		return uState;
+	}
+	
+	@RequestMapping("/addrSelect")
+	@ResponseBody
+	public CommonUser addrSelect(HttpSession session){
+		CommonUser user2 = (CommonUser) session.getAttribute("user");
+		Integer c_id = user2.getC_id();
+		System.out.println(c_id);
+		CommonUser addr = userService.getAddr(c_id);
+		
+		return addr;
+	}
+	
+	@RequestMapping("/insertOrder")
+	@ResponseBody
+	public boolean InsertOrder(@RequestParam(name="s_id",required=false)Integer s_id,
+			@RequestParam(name="g_id",required=false)Integer g_id,
+			@RequestParam(name="sc_goodNum",required=false)Integer sc_goodNum,
+			@RequestParam(name="o_sum",required=false)Integer o_sum,
+			@RequestParam(name="sc_id",required=false)int sc_id,
+			@RequestParam(name="sum",required=false)int sum,
+			@RequestParam(name="o_state",required=false)String o_state,Shoping_Cart sCart,HttpSession session,Orders orders){
+		CommonUser user2 = (CommonUser) session.getAttribute("user");
+		Integer c_id = user2.getC_id();
+		orders.setC_id(c_id);
+		sCart.setC_id(c_id);
+		orders.setS_id(s_id);
+		orders.setG_id(g_id);
+		sCart.setG_id(g_id);
+		orders.setO_amount(sc_goodNum);
+		orders.setO_sum(o_sum);
+		orders.setO_state(o_state);
+		session.setAttribute("sum", sum);
+		System.out.println(orders);
+		session.setAttribute("o_sum", o_sum);
+		boolean flag = storeService.insertOrder(orders);
+		if (flag) {
+			boolean flag_1=storeService.updateGoodState(sCart);
+		}
+		return flag;
+	}
+	
+	@RequestMapping("/selectmoney")
+	@ResponseBody
+	public com_money selectAllMoney(com_money cMoney, HttpSession session){
+		CommonUser user2 = (CommonUser) session.getAttribute("user");
+		cMoney = storeService.selectMoney(user2.getC_id());
+		session.setAttribute("cMoney", cMoney);
+		return cMoney;
+	}
+	
+	
+	@RequestMapping("/money_1")
+	
+	public String fukuan(com_money cMoney,
+			@RequestParam(name="saleMoney",required=false)Double saleMoney,HttpSession session){
+		boolean flag =false;
+		boolean flag_1 =false;
+		com_money cMoney2 = (com_money)session.getAttribute("cMoney");
+		Double money = cMoney2.getMoney() - saleMoney;
+		CommonUser user2 = (CommonUser) session.getAttribute("user");
+		//cMoney.setC_id(user2.getC_id());
+			if(money>=0){
+				cMoney.setC_id(user2.getC_id());
+				cMoney.setMoney(money);
+				 flag = storeService.updatetOrder(cMoney);
+				 if(flag){
+					 flag_1=storeService.updatetOrderState(cMoney);
+					 if (flag_1) {
+						 return "redirect:/page/FukuanSuccess.jsp?c_id="+user2.getC_id();
+					}else{
+						session.setAttribute("errorMsg", "付款失败，请重新在试！！！");
+						return "redirect:/page/Com_payment.jsp";
+					}
+					
+				 }else {
+					 session.setAttribute("errorMsg", "付款失败，请重新在试！！！");
+					 return "redirect:/page/FukuanShibai.jsp";
+				}
+			}else {
+				session.setAttribute("errorMsg", "余额不足，请充值后在付款！！！");
+				return "redirect:/page/Com_payment.jsp";
+			}
+		
+	}
+
+	@RequestMapping("/Order")
+	@ResponseBody
+	public List<Orders> Order(HttpSession session) {
+		CommonUser user2 = (CommonUser) session.getAttribute("user");
+		System.out.println(user2.getC_id());
+		Integer c_id = user2.getC_id();
+		System.out.println(c_id);
+		System.out.println(c_id);
+		List<Orders> od = storeService.getOrders(c_id);
+		System.out.println(od);
+		return od;
+	}
+	//立即购买
+		@RequestMapping("/selectGoodsBuy")
+		@ResponseBody
+
+		public Shoping_Cart selectGoodsBuy(Shoping_Cart sCart, @RequestParam(name="g_id",required=false)int g_id ,HttpSession session){
+			
+			CommonUser user2 = (CommonUser) session.getAttribute("user");
+			sCart.setC_id(user2.getC_id());
+			sCart.setG_id(g_id);
+			Shoping_Cart shopping_Cart = storeService.SelectSCart(sCart);
+			System.out.println(shopping_Cart);
+			return shopping_Cart;
+			
+		}
+		
+		@RequestMapping("/saveAddr")
+		public String SaveAddr(Address addr,HttpSession session){
+			System.out.println(addr+"我的地址");
+			CommonUser user2 = (CommonUser) session.getAttribute("user");
+			addr.setC_id(user2.getC_id());
+			boolean flag=userService.insertAddr(addr);
+			if (flag) {
+				return "redirect:/Confirm_order.jsp";
+			}
+			return "redirect:/Confirm_order.jsp";
+		}
+
 }

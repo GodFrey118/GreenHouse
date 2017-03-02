@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,7 +30,6 @@
 <script type="text/javascript" async="async" charset="utf-8" src="js/public/chat.in.js" data-requiremodule="chatManage"></script>
 <script type="text/javascript" async="async" charset="utf-8" src="js/public/mqtt31.js" data-requiremodule="MQTT"></script>
 <script type="text/javascript" async="async" charset="utf-8" src="js/public/mqtt.chat.js" data-requiremodule="Connection"></script>
-<script type="text/javascript" src="js/index/index.js"></script>
 </head>
 <body style="position: relative;"><div id="nTalk_post_hiddenElement" style="left1: -10px; top: -10px; visibility: hidden; display: none; width: 1px; height: 1px;"></div><iframe frameborder="0" style="display: none;" src="./index_store_files/saved_resource.html"></iframe><div id="bdshare_s" style="display: block;">
 <iframe id="bdsIfr" style="position:absolute;display:none;z-index:9999;" frameborder="0" src="./index_store_files/saved_resource(9).html">
@@ -42,7 +42,20 @@
            <img src="./index_store_files/icon-star.gif">收藏山山
            </div>
            <div class="rig">
-                <span class="left1 public_name pulic_sn-login-info">您好！ 欢迎来山山商城购物！<a href="#" class="public-sn-login">请登录</a> <a href="#" class="public-sn-register">免费注册</a></span>
+           <c:choose>
+				<c:when test="${loginUser eq null}">
+					<span class="left1 public_name pulic_sn-login-info">
+                您好！ 欢迎来山山商城购物！<a href="#" class="public-sn-login">请登录</a> 
+                <a href="#" class="public-sn-register">免费注册</a>
+				</c:when>
+				<c:otherwise>
+				<span class="left1 public_name pulic_sn-login-info">
+              欢迎  ${loginUser } 使用本网站 &nbsp &nbsp &nbsp &nbsp<a href="#" class="public-sn-login">个人信息</a> 
+                <a href="login_user.jsp" onclick='logout()' class="public-sn-register">退出</a><i class="sn-separator"></i></span>
+				
+				
+				</c:otherwise>
+			</c:choose>
                 <span class="left1 op"></span> 
                 <ul id="navv" class="left1"> 
                        <li class="line">|</li>
@@ -469,7 +482,7 @@
 									<p><a href="javascript:;">送山山积分</a></p>
 								</li>
 							</ul>
-							<div class="gd-guige">
+							<div class="gd-guige" style="border: none">
 								<dl class="clear1fix" id="Nnum">
 									<dt class="gd-title">数量</dt>
 									<dd>
@@ -1150,18 +1163,13 @@ function ewm_mouse(type){
 </div>
 
 							<div class="ss_dp_btn">    
-								<a class="goods_common_status" style="" href="javascript:buynow(50048,1898538,49952);"><img alt="" src="./index_store_files/litt_10.jpg" id="buy_now"></a>
-								<a class="goods_common_status" style="" href="javascript:add_to_cart(50048,1898538,49952);"><img alt="" src="./index_store_files/litt_13.jpg" id="add_cart"></a>
-                                <a class="goods_active_status" style="display:none;" href="javascript:;"><img alt="" src="./index_store_files/litt_10.jpg" id="buy_now"></a>
+								<a href="javascript:addcart1();" ><img alt="" src="./index_store_files/litt_10.jpg" ></a>
+								<a href="javascript:addcart2(1);"><img alt="" src="./index_store_files/litt_13.jpg"></a>
 								<a class="goods_active_status" style="display: none;"><img src="./index_store_files/smwxzf.jpg"></a>
 								<a class="goods_common_status" ><img src="./index_store_files/smwxzf.jpg"></a>
 							</div>
-							 <div class="tb-btn-buy tb-btn-sku tb-btn-wanrentuan" style="display:none; position: relative">
-					            <a title="点击此按钮，到下一步确认购买信息。" data-addfastbuy="true" href="javascript:;" prefinal="" onclick="presale_buy()" id="J_LinkBuy">
-					              立刻购买 <b></b>
-					            </a>
-				          </div>
-									         						   <div class="gd-guige" style="border:none;">
+						
+								<div class="gd-guige" style="border:none;">
 								<dl class="clear1fix">									
 									<dd>
 									<div class="gd-xfBaozhang">该商品不支持7天无理由退换货</div>
@@ -1174,6 +1182,45 @@ function ewm_mouse(type){
 				  </div>  
 				<div class="clear1"></div>
 <script type="text/javascript">
+var nidParam = location.href.substring(location.href.indexOf("?"));
+
+function addcart2(){
+
+	$.post("user/addCart"+nidParam,function(data){
+		if(data){
+			alert("添加购物车成功！！！");
+			
+		}else{
+			alert("添加购物车失败，请重新添加！！！");
+		}
+	},"json");
+	
+}
+</script>
+<script type="text/javascript">
+
+function addcart1(){
+	var sc_id=0;
+	var nidParam = location.href.substring(location.href.indexOf("?"));
+	$.post("user/addCart"+nidParam,function(data){
+		if(data){
+			$.post("user/selectGoodsBuy"+nidParam,function(data){
+				alert(data.sc_id);
+				sc_id=data.sc_id;
+				
+				
+					window.location.href='Confirm_order.jsp?sc_all_id='+sc_id;
+					
+			},'json');
+			
+			
+		}else{
+			alert("添加购物车失败，请重新添加！！！")
+		}
+	},"json");
+	
+}
+
             
             $(function () {
                 $('.info-trigger').click(function (e) {
@@ -1190,7 +1237,7 @@ function ewm_mouse(type){
             });
 
             </script>			
-<div class="fl cnt_left1">
+<div class="fl cnt_left">
 	
 	<h4 class="ss_fl_sjxx">商家信息</h4>
 	<div class="ss_fl_xxmain">
@@ -1269,14 +1316,19 @@ function ewm_mouse(type){
 		</form>
 	 </div>
 	</div>
+	
+	
+		
+	
+	
 	<h4 class="ss_fl_sjxx ss_fl_kfzx">客服中心</h4>
 	<div class="ss_fl_pad ss_fl_pad2">
 		<div class="ss_fl_time">
 			<p style=" width:60px;">工作时间：</p>
-			<p style="width:78px;text-align: left1;">&nbsp;&nbsp;&nbsp;</p>
+			<p style="width:78px;text-align: left;">&nbsp;&nbsp;&nbsp;</p>
 			<div class="clr"></div>
 		</div>
-		<ul class="ss_fl_qq" style="padding-left1:15px;">
+		<ul class="ss_fl_qq" style="padding-left:15px;">
         	<li style="display:block;">
         		<span class="sstalking-11" style="display: inline-block;"></span>
         	</li>
@@ -1284,33 +1336,33 @@ function ewm_mouse(type){
 	</div>
 	<h4 class="ss_fl_sjxx ss_fl_kfzx">查看所有产品</h4>
 	<div class="ss_fl_pad ss_fl_pad2">
-		<div class="ss_fl_find clear1fix">
+		<div class="ss_fl_find clearfix">
 			<ul>
 				<li><a href="#">按销量</a></li>
 				<li><a href="#">按新品</a></li>
 				<li><a href="#">按价格</a></li>
 				<li><a href="#">按收藏</a></li>
 			</ul>
-			<div class="clear1"></div>
+			<div class="clear"></div>
 		</div>
 		
-		<div class="ss_fl_pro clear1fix">
+		<div class="ss_fl_pro clearfix">
 		  <ul>
 			        </ul>
       </div>
 	</div>
 	<h4 class="ss_fl_sjxx ss_fl_kfzx">商品排行榜</h4>
 	<div class="ss_f1_phb">
-		<div class="fl_nav ss_f1_nav clear1fix">
+		<div class="fl_nav ss_f1_nav clearfix">
 			<ul class="fl_tab">
-				<li id="fl_tabli1" class="fl_current" >热销商品排行</li>
+				<li id="fl_tabli1" class="fl_current">热销商品排行</li>
 				<li id="fl_tabli2">热门收藏排行</li>
 			</ul>
 		</div>
 		
 		<div class="fl_tab_diva" id="fl_tab_div1">
-		<div class="fl_baby_hot"><div class="fl_baby_pic ss_f1_pic"><a href="http://www.shanshan360.com/product/49940.html"><img src="./index_store_files/small_201610201648364911.jpg" alt="丽水山耕 缙云土面 300g" width="40" height="40"></a></div><div class="ss_fl_babyTxt"><p class="ph_title"><a href="http://www.shanshan360.com/product/49940.html" title="丽水山耕 缙云土面 300g" class="ss_linkColor">丽水山耕 缙云土面 300g</a></p><span class="cheng">￥8.00元</span><p><img src="./index_store_files/ss_lf_ss.gif" alt="丽水山耕 缙云土面 300g">已售出<span>5</span>笔</p></div></div><div class="fl_baby_hot"><div class="fl_baby_pic ss_f1_pic"><a href="http://www.shanshan360.com/product/49951.html"><img src="./index_store_files/small_201610201737159391.jpg" alt="丽水山耕 锥栗200g" width="40" height="40"></a></div><div class="ss_fl_babyTxt"><p class="ph_title"><a href="http://www.shanshan360.com/product/49951.html" title="丽水山耕 锥栗200g" class="ss_linkColor">丽水山耕 锥栗200g</a></p><span class="cheng">￥22.00元</span><p><img src="./index_store_files/ss_lf_ss.gif" alt="丽水山耕 锥栗200g">已售出<span>5</span>笔</p></div></div><div class="fl_baby_hot"><div class="fl_baby_pic ss_f1_pic"><a href="http://www.shanshan360.com/product/49934.html"><img src="./index_store_files/small_201610201702458221.jpg" alt="丽水山耕 灵芝孢子粉200g" width="40" height="40"></a></div><div class="ss_fl_babyTxt"><p class="ph_title"><a href="http://www.shanshan360.com/product/49934.html" title="丽水山耕 灵芝孢子粉200g" class="ss_linkColor">丽水山耕 灵芝孢子粉200g</a></p><span class="cheng">￥328.00元</span><p><img src="./index_store_files/ss_lf_ss.gif" alt="丽水山耕 灵芝孢子粉200g">已售出<span>0</span>笔</p></div></div><div class="fl_baby_hot"><div class="fl_baby_pic ss_f1_pic"><a href="http://www.shanshan360.com/product/49945.html"><img src="./index_store_files/small_201610201716539812.jpg" alt="丽水山耕 笋心 120g" width="40" height="40"></a></div><div class="ss_fl_babyTxt"><p class="ph_title"><a href="http://www.shanshan360.com/product/49945.html" title="丽水山耕 笋心 120g" class="ss_linkColor">丽水山耕 笋心 120g</a></p><span class="cheng">￥58.00元</span><p><img src="./index_store_files/ss_lf_ss.gif" alt="丽水山耕 笋心 120g">已售出<span>0</span>笔</p></div></div><div class="fl_baby_hot"><div class="fl_baby_pic ss_f1_pic"><a href="http://www.shanshan360.com/product/49935.html"><img src="./index_store_files/small_201610201706059215.jpg" alt="绿盒 丽水特级花菇 130g" width="40" height="40"></a></div><div class="ss_fl_babyTxt"><p class="ph_title"><a href="http://www.shanshan360.com/product/49935.html" title="绿盒 丽水特级花菇 130g" class="ss_linkColor">绿盒 丽水特级花菇 130g</a></p><span class="cheng">￥29.00元</span><p><img src="./index_store_files/ss_lf_ss.gif" alt="绿盒 丽水特级花菇 130g">已售出<span>0</span>笔</p></div></div><div class="fl_baby_hot"><div class="fl_baby_pic ss_f1_pic"><a href="http://www.shanshan360.com/product/49946.html"><img src="./index_store_files/small_201610201717479575.jpg" alt="丽水山耕 笋衣100g" width="40" height="40"></a></div><div class="ss_fl_babyTxt"><p class="ph_title"><a href="http://www.shanshan360.com/product/49946.html" title="丽水山耕 笋衣100g" class="ss_linkColor">丽水山耕 笋衣100g</a></p><span class="cheng">￥20.00元</span><p><img src="./index_store_files/ss_lf_ss.gif" alt="丽水山耕 笋衣100g">已售出<span>0</span>笔</p></div></div><div class="fl_baby_hot"><div class="fl_baby_pic ss_f1_pic"><a href="http://www.shanshan360.com/product/49925.html"><img src="./index_store_files/small_201610201607265023.jpg" alt="丽水山耕 稻荷米 500g" width="40" height="40"></a></div><div class="ss_fl_babyTxt"><p class="ph_title"><a href="http://www.shanshan360.com/product/49925.html" title="丽水山耕 稻荷米 500g" class="ss_linkColor">丽水山耕 稻荷米 500g</a></p><span class="cheng">￥12.00元</span><p><img src="./index_store_files/ss_lf_ss.gif" alt="丽水山耕 稻荷米 500g">已售出<span>0</span>笔</p></div></div><div class="fl_baby_hot"><div class="fl_baby_pic ss_f1_pic"><a href="http://www.shanshan360.com/product/49936.html"><img src="./index_store_files/small_201610201642261172.jpg" alt="丽水山耕 缙云黄花菜180g" width="40" height="40"></a></div><div class="ss_fl_babyTxt"><p class="ph_title"><a href="http://www.shanshan360.com/product/49936.html" title="丽水山耕 缙云黄花菜180g" class="ss_linkColor">丽水山耕 缙云黄花菜180g</a></p><span class="cheng">￥20.00元</span><p><img src="./index_store_files/ss_lf_ss.gif" alt="丽水山耕 缙云黄花菜180g">已售出<span>0</span>笔</p></div></div><div class="clear1"></div><div class="ss_fl_scBtn"><a href="http://www.shanshan360.com/index.php?app=store&amp;act=search&amp;id=1898538"><img src="./index_store_files/ss_lf_sy.gif" alt="所有商品"></a></div></div>
-		<div class="fl_tab_div" id="fl_tab_div2" style="display:none;"><div class="fl_baby_hot"><div class="fl_baby_pic ss_f1_pic"><a href="http://www.shanshan360.com/product/49934.html"><img src="./index_store_files/small_201610201702458221.jpg" alt="丽水山耕 灵芝孢子粉200g" width="40" height="40"></a></div><div class="ss_fl_babyTxt"><p class="ph_title"><a href="http://www.shanshan360.com/product/49934.html" title="丽水山耕 灵芝孢子粉200g" class="ss_linkColor">丽水山耕 灵芝孢子粉200g</a></p><span class="cheng">￥328.00元</span><p><img src="./index_store_files/ss_lf_ss.gif" alt="丽水山耕 灵芝孢子粉200g">收藏人气<span>0</span></p></div></div><div class="fl_baby_hot"><div class="fl_baby_pic ss_f1_pic"><a href="http://www.shanshan360.com/product/49945.html"><img src="./index_store_files/small_201610201716539812.jpg" alt="丽水山耕 笋心 120g" width="40" height="40"></a></div><div class="ss_fl_babyTxt"><p class="ph_title"><a href="http://www.shanshan360.com/product/49945.html" title="丽水山耕 笋心 120g" class="ss_linkColor">丽水山耕 笋心 120g</a></p><span class="cheng">￥58.00元</span><p><img src="./index_store_files/ss_lf_ss.gif" alt="丽水山耕 笋心 120g">收藏人气<span>0</span></p></div></div><div class="fl_baby_hot"><div class="fl_baby_pic ss_f1_pic"><a href="http://www.shanshan360.com/product/49935.html"><img src="./index_store_files/small_201610201706059215.jpg" alt="绿盒 丽水特级花菇 130g" width="40" height="40"></a></div><div class="ss_fl_babyTxt"><p class="ph_title"><a href="http://www.shanshan360.com/product/49935.html" title="绿盒 丽水特级花菇 130g" class="ss_linkColor">绿盒 丽水特级花菇 130g</a></p><span class="cheng">￥29.00元</span><p><img src="./index_store_files/ss_lf_ss.gif" alt="绿盒 丽水特级花菇 130g">收藏人气<span>0</span></p></div></div><div class="fl_baby_hot"><div class="fl_baby_pic ss_f1_pic"><a href="http://www.shanshan360.com/product/49946.html"><img src="./index_store_files/small_201610201717479575.jpg" alt="丽水山耕 笋衣100g" width="40" height="40"></a></div><div class="ss_fl_babyTxt"><p class="ph_title"><a href="http://www.shanshan360.com/product/49946.html" title="丽水山耕 笋衣100g" class="ss_linkColor">丽水山耕 笋衣100g</a></p><span class="cheng">￥20.00元</span><p><img src="./index_store_files/ss_lf_ss.gif" alt="丽水山耕 笋衣100g">收藏人气<span>0</span></p></div></div><div class="fl_baby_hot"><div class="fl_baby_pic ss_f1_pic"><a href="http://www.shanshan360.com/product/49925.html"><img src="./index_store_files/small_201610201607265023.jpg" alt="丽水山耕 稻荷米 500g" width="40" height="40"></a></div><div class="ss_fl_babyTxt"><p class="ph_title"><a href="http://www.shanshan360.com/product/49925.html" title="丽水山耕 稻荷米 500g" class="ss_linkColor">丽水山耕 稻荷米 500g</a></p><span class="cheng">￥12.00元</span><p><img src="./index_store_files/ss_lf_ss.gif" alt="丽水山耕 稻荷米 500g">收藏人气<span>0</span></p></div></div><div class="fl_baby_hot"><div class="fl_baby_pic ss_f1_pic"><a href="http://www.shanshan360.com/product/49936.html"><img src="./index_store_files/small_201610201642261172.jpg" alt="丽水山耕 缙云黄花菜180g" width="40" height="40"></a></div><div class="ss_fl_babyTxt"><p class="ph_title"><a href="http://www.shanshan360.com/product/49936.html" title="丽水山耕 缙云黄花菜180g" class="ss_linkColor">丽水山耕 缙云黄花菜180g</a></p><span class="cheng">￥20.00元</span><p><img src="./index_store_files/ss_lf_ss.gif" alt="丽水山耕 缙云黄花菜180g">收藏人气<span>0</span></p></div></div><div class="fl_baby_hot"><div class="fl_baby_pic ss_f1_pic"><a href="http://www.shanshan360.com/product/49947.html"><img src="./index_store_files/small_201610201719074377.jpg" alt="丽水山耕 铁皮石斛花 5g" width="40" height="40"></a></div><div class="ss_fl_babyTxt"><p class="ph_title"><a href="http://www.shanshan360.com/product/49947.html" title="丽水山耕 铁皮石斛花 5g" class="ss_linkColor">丽水山耕 铁皮石斛花 5g</a></p><span class="cheng">￥88.00元</span><p><img src="./index_store_files/ss_lf_ss.gif" alt="丽水山耕 铁皮石斛花 5g">收藏人气<span>0</span></p></div></div><div class="fl_baby_hot"><div class="fl_baby_pic ss_f1_pic"><a href="http://www.shanshan360.com/product/49926.html"><img src="./index_store_files/small_201610201611404238.jpg" alt="丽水山耕 仙之源 端午茶30g" width="40" height="40"></a></div><div class="ss_fl_babyTxt"><p class="ph_title"><a href="http://www.shanshan360.com/product/49926.html" title="丽水山耕 仙之源 端午茶30g" class="ss_linkColor">丽水山耕 仙之源 端午茶30g</a></p><span class="cheng">￥15.00元</span><p><img src="./index_store_files/ss_lf_ss.gif" alt="丽水山耕 仙之源 端午茶30g">收藏人气<span>0</span></p></div></div><div class="clear1"></div><div class="ss_fl_scBtn"><a href="javascript:collect_goods(49952);"><img src="./index_store_files/ss_lf_sc.gif" alt="收藏店铺"></a></div></div>
+		<div class="fl_baby_hot"><div class="fl_baby_pic ss_f1_pic"><a href="http://www.shanshan360.com/product/49940.html"><img src="./index_store_files/small_201610201648364911.jpg" alt="丽水山耕 缙云土面 300g" width="40" height="40"></a></div><div class="ss_fl_babyTxt"><p class="ph_title"><a href="http://www.shanshan360.com/product/49940.html" title="丽水山耕 缙云土面 300g" class="ss_linkColor">丽水山耕 缙云土面 300g</a></p><span class="cheng">￥8.00元</span><p><img src="./index_store_files/ss_lf_ss.gif" alt="丽水山耕 缙云土面 300g">已售出<span>5</span>笔</p></div></div><div class="fl_baby_hot"><div class="fl_baby_pic ss_f1_pic"><a href="http://www.shanshan360.com/product/49951.html"><img src="./index_store_files/small_201610201737159391.jpg" alt="丽水山耕 锥栗200g" width="40" height="40"></a></div><div class="ss_fl_babyTxt"><p class="ph_title"><a href="http://www.shanshan360.com/product/49951.html" title="丽水山耕 锥栗200g" class="ss_linkColor">丽水山耕 锥栗200g</a></p><span class="cheng">￥22.00元</span><p><img src="./index_store_files/ss_lf_ss.gif" alt="丽水山耕 锥栗200g">已售出<span>5</span>笔</p></div></div><div class="fl_baby_hot"><div class="fl_baby_pic ss_f1_pic"><a href="http://www.shanshan360.com/product/49934.html"><img src="./index_store_files/small_201610201702458221.jpg" alt="丽水山耕 灵芝孢子粉200g" width="40" height="40"></a></div><div class="ss_fl_babyTxt"><p class="ph_title"><a href="http://www.shanshan360.com/product/49934.html" title="丽水山耕 灵芝孢子粉200g" class="ss_linkColor">丽水山耕 灵芝孢子粉200g</a></p><span class="cheng">￥328.00元</span><p><img src="./index_store_files/ss_lf_ss.gif" alt="丽水山耕 灵芝孢子粉200g">已售出<span>0</span>笔</p></div></div><div class="fl_baby_hot"><div class="fl_baby_pic ss_f1_pic"><a href="http://www.shanshan360.com/product/49945.html"><img src="./index_store_files/small_201610201716539812.jpg" alt="丽水山耕 笋心 120g" width="40" height="40"></a></div><div class="ss_fl_babyTxt"><p class="ph_title"><a href="http://www.shanshan360.com/product/49945.html" title="丽水山耕 笋心 120g" class="ss_linkColor">丽水山耕 笋心 120g</a></p><span class="cheng">￥58.00元</span><p><img src="./index_store_files/ss_lf_ss.gif" alt="丽水山耕 笋心 120g">已售出<span>0</span>笔</p></div></div><div class="fl_baby_hot"><div class="fl_baby_pic ss_f1_pic"><a href="http://www.shanshan360.com/product/49935.html"><img src="./index_store_files/small_201610201706059215.jpg" alt="绿盒 丽水特级花菇 130g" width="40" height="40"></a></div><div class="ss_fl_babyTxt"><p class="ph_title"><a href="http://www.shanshan360.com/product/49935.html" title="绿盒 丽水特级花菇 130g" class="ss_linkColor">绿盒 丽水特级花菇 130g</a></p><span class="cheng">￥29.00元</span><p><img src="./index_store_files/ss_lf_ss.gif" alt="绿盒 丽水特级花菇 130g">已售出<span>0</span>笔</p></div></div><div class="fl_baby_hot"><div class="fl_baby_pic ss_f1_pic"><a href="http://www.shanshan360.com/product/49946.html"><img src="./index_store_files/small_201610201717479575.jpg" alt="丽水山耕 笋衣100g" width="40" height="40"></a></div><div class="ss_fl_babyTxt"><p class="ph_title"><a href="http://www.shanshan360.com/product/49946.html" title="丽水山耕 笋衣100g" class="ss_linkColor">丽水山耕 笋衣100g</a></p><span class="cheng">￥20.00元</span><p><img src="./index_store_files/ss_lf_ss.gif" alt="丽水山耕 笋衣100g">已售出<span>0</span>笔</p></div></div><div class="fl_baby_hot"><div class="fl_baby_pic ss_f1_pic"><a href="http://www.shanshan360.com/product/49925.html"><img src="./index_store_files/small_201610201607265023.jpg" alt="丽水山耕 稻荷米 500g" width="40" height="40"></a></div><div class="ss_fl_babyTxt"><p class="ph_title"><a href="http://www.shanshan360.com/product/49925.html" title="丽水山耕 稻荷米 500g" class="ss_linkColor">丽水山耕 稻荷米 500g</a></p><span class="cheng">￥12.00元</span><p><img src="./index_store_files/ss_lf_ss.gif" alt="丽水山耕 稻荷米 500g">已售出<span>0</span>笔</p></div></div><div class="fl_baby_hot"><div class="fl_baby_pic ss_f1_pic"><a href="http://www.shanshan360.com/product/49936.html"><img src="./index_store_files/small_201610201642261172.jpg" alt="丽水山耕 缙云黄花菜180g" width="40" height="40"></a></div><div class="ss_fl_babyTxt"><p class="ph_title"><a href="http://www.shanshan360.com/product/49936.html" title="丽水山耕 缙云黄花菜180g" class="ss_linkColor">丽水山耕 缙云黄花菜180g</a></p><span class="cheng">￥20.00元</span><p><img src="./index_store_files/ss_lf_ss.gif" alt="丽水山耕 缙云黄花菜180g">已售出<span>0</span>笔</p></div></div><div class="clear"></div><div class="ss_fl_scBtn"><a href="http://www.shanshan360.com/index.php?app=store&amp;act=search&amp;id=1898538"><img src="./index_store_files/ss_lf_sy.gif" alt="所有商品"></a></div></div>
+		<div class="fl_tab_div" id="fl_tab_div2" style="display:none;"><div class="fl_baby_hot"><div class="fl_baby_pic ss_f1_pic"><a href="http://www.shanshan360.com/product/49934.html"><img src="./index_store_files/small_201610201702458221.jpg" alt="丽水山耕 灵芝孢子粉200g" width="40" height="40"></a></div><div class="ss_fl_babyTxt"><p class="ph_title"><a href="http://www.shanshan360.com/product/49934.html" title="丽水山耕 灵芝孢子粉200g" class="ss_linkColor">丽水山耕 灵芝孢子粉200g</a></p><span class="cheng">￥328.00元</span><p><img src="./index_store_files/ss_lf_ss.gif" alt="丽水山耕 灵芝孢子粉200g">收藏人气<span>0</span></p></div></div><div class="fl_baby_hot"><div class="fl_baby_pic ss_f1_pic"><a href="http://www.shanshan360.com/product/49945.html"><img src="./index_store_files/small_201610201716539812.jpg" alt="丽水山耕 笋心 120g" width="40" height="40"></a></div><div class="ss_fl_babyTxt"><p class="ph_title"><a href="http://www.shanshan360.com/product/49945.html" title="丽水山耕 笋心 120g" class="ss_linkColor">丽水山耕 笋心 120g</a></p><span class="cheng">￥58.00元</span><p><img src="./index_store_files/ss_lf_ss.gif" alt="丽水山耕 笋心 120g">收藏人气<span>0</span></p></div></div><div class="fl_baby_hot"><div class="fl_baby_pic ss_f1_pic"><a href="http://www.shanshan360.com/product/49935.html"><img src="./index_store_files/small_201610201706059215.jpg" alt="绿盒 丽水特级花菇 130g" width="40" height="40"></a></div><div class="ss_fl_babyTxt"><p class="ph_title"><a href="http://www.shanshan360.com/product/49935.html" title="绿盒 丽水特级花菇 130g" class="ss_linkColor">绿盒 丽水特级花菇 130g</a></p><span class="cheng">￥29.00元</span><p><img src="./index_store_files/ss_lf_ss.gif" alt="绿盒 丽水特级花菇 130g">收藏人气<span>0</span></p></div></div><div class="fl_baby_hot"><div class="fl_baby_pic ss_f1_pic"><a href="http://www.shanshan360.com/product/49946.html"><img src="./index_store_files/small_201610201717479575.jpg" alt="丽水山耕 笋衣100g" width="40" height="40"></a></div><div class="ss_fl_babyTxt"><p class="ph_title"><a href="http://www.shanshan360.com/product/49946.html" title="丽水山耕 笋衣100g" class="ss_linkColor">丽水山耕 笋衣100g</a></p><span class="cheng">￥20.00元</span><p><img src="./index_store_files/ss_lf_ss.gif" alt="丽水山耕 笋衣100g">收藏人气<span>0</span></p></div></div><div class="fl_baby_hot"><div class="fl_baby_pic ss_f1_pic"><a href="http://www.shanshan360.com/product/49925.html"><img src="./index_store_files/small_201610201607265023.jpg" alt="丽水山耕 稻荷米 500g" width="40" height="40"></a></div><div class="ss_fl_babyTxt"><p class="ph_title"><a href="http://www.shanshan360.com/product/49925.html" title="丽水山耕 稻荷米 500g" class="ss_linkColor">丽水山耕 稻荷米 500g</a></p><span class="cheng">￥12.00元</span><p><img src="./index_store_files/ss_lf_ss.gif" alt="丽水山耕 稻荷米 500g">收藏人气<span>0</span></p></div></div><div class="fl_baby_hot"><div class="fl_baby_pic ss_f1_pic"><a href="http://www.shanshan360.com/product/49936.html"><img src="./index_store_files/small_201610201642261172.jpg" alt="丽水山耕 缙云黄花菜180g" width="40" height="40"></a></div><div class="ss_fl_babyTxt"><p class="ph_title"><a href="http://www.shanshan360.com/product/49936.html" title="丽水山耕 缙云黄花菜180g" class="ss_linkColor">丽水山耕 缙云黄花菜180g</a></p><span class="cheng">￥20.00元</span><p><img src="./index_store_files/ss_lf_ss.gif" alt="丽水山耕 缙云黄花菜180g">收藏人气<span>0</span></p></div></div><div class="fl_baby_hot"><div class="fl_baby_pic ss_f1_pic"><a href="http://www.shanshan360.com/product/49947.html"><img src="./index_store_files/small_201610201719074377.jpg" alt="丽水山耕 铁皮石斛花 5g" width="40" height="40"></a></div><div class="ss_fl_babyTxt"><p class="ph_title"><a href="http://www.shanshan360.com/product/49947.html" title="丽水山耕 铁皮石斛花 5g" class="ss_linkColor">丽水山耕 铁皮石斛花 5g</a></p><span class="cheng">￥88.00元</span><p><img src="./index_store_files/ss_lf_ss.gif" alt="丽水山耕 铁皮石斛花 5g">收藏人气<span>0</span></p></div></div><div class="fl_baby_hot"><div class="fl_baby_pic ss_f1_pic"><a href="http://www.shanshan360.com/product/49926.html"><img src="./index_store_files/small_201610201611404238.jpg" alt="丽水山耕 仙之源 端午茶30g" width="40" height="40"></a></div><div class="ss_fl_babyTxt"><p class="ph_title"><a href="http://www.shanshan360.com/product/49926.html" title="丽水山耕 仙之源 端午茶30g" class="ss_linkColor">丽水山耕 仙之源 端午茶30g</a></p><span class="cheng">￥15.00元</span><p><img src="./index_store_files/ss_lf_ss.gif" alt="丽水山耕 仙之源 端午茶30g">收藏人气<span>0</span></p></div></div><div class="clear"></div><div class="ss_fl_scBtn"><a href="javascript:collect_goods(49952);"><img src="./index_store_files/ss_lf_sc.gif" alt="收藏店铺"></a></div></div>
 		
 	</div>
 	<h4 class="ss_fl_sjxx ss_fl_kfzx">商品浏览历史</h4>
@@ -1319,7 +1371,7 @@ function ewm_mouse(type){
 
 		</div>
 	</div>
-	<div class="clear1"></div>
+	<div class="clear"></div>
 	
 </div>
 <script type="text/javascript">
@@ -1344,15 +1396,14 @@ $(function(){
 	$('.hidden').show();
 });
 </script>	
-
             <div class="fr cnt_rit">
     		<div class="cnt_ritDetails">
 					
 					<div class="ss_nav">
 						<ul class="ss_tab">
-						<li id="ss_dpTabli1" class="ss_current"  style="border-left1:none;">产 品 详 情</li>
-							<li id="ss_dpTabli2">详情评价0条</li>
-							<li id="ss_dpTabli3">成交记录(售出0件)</li>
+						<li id="ss_dpTabli1" class="ss_current"  style="border-left:none;">产 品 详 情</li>
+							<li id="ss_dpTabli2" >详情评价0条</li>
+							<li id="ss_dpTabli3" >成交记录(售出0件)</li>
 						</ul>
 					</div>
 					
@@ -1360,7 +1411,7 @@ $(function(){
 					<div class="ss_dpTab_div" id="ss_dpTab_div1">
 																																																																																																																																																																																																																																																																																																																		
 						<div class="ss_detail_div1">
-							<ul class="clear1fix">
+							<ul class="clearfix">
 																																																																																																					
 								<li>
 								<a title="无">食品添加剂：无</a>
@@ -1410,7 +1461,7 @@ $(function(){
 								<a title="是">是否为有机食品：是</a>
 								</li>					
 																																																																																							                            </ul>
-							<div class="clear1"></div>
+							<div class="clear"></div>
                             
 							<div class="">
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1419,23 +1470,21 @@ $(function(){
 						</div>
 
 						
-                                <div id="ss_tab_div1" class="ss_tab_div">
+                                                    <div id="ss_tab_div1" class="ss_tab_div">
                                    <div id="preview">
                                         <div id="float_search_bar">
                                             
                                             <input type="hidden" id="region_keyword">
-                                            <a href="javascript:;" id="search_button">   
-                                        </a></div><a href="javascript:;" id="search_button">
-                                        <div id="allmap" style="overflow: hidden; position: relative; z-index: 0; color: rgb(0, 0, 0); text-align: left1; background-color: rgb(243, 241, 236);"><div style="overflow: visible; position: absolute; z-index: 0; left: 0px; top: 0px; cursor: url(&quot;http://api0.map.bdimg.com/images/openhand.cur&quot;) 8 8, default;"><div class="BMap_mask" style="position: absolute; left1: 0px; top: 0px; z-index: 9; overflow: hidden; -webkit-user-select: none; width: 690px; height: 468px;"></div><div style="position: absolute; height: 0px; width: 0px; left1: 0px; top: 0px; z-index: 200;"><div style="position: absolute; height: 0px; width: 0px; left1: 0px; top: 0px; z-index: 800;"></div><div style="position: absolute; height: 0px; width: 0px; left1: 0px; top: 0px; z-index: 700;"><span class="BMap_Marker BMap_noprint" unselectable="on" style="position: absolute; padding: 0px; margin: 0px; border: 0px; cursor: pointer; width: 19px; height: 25px; left1: 335px; top: 209px; z-index: -5694432; background: url(&quot;http://api0.map.bdimg.com/images/blank.gif&quot;);" title=""></span></div><div style="position: absolute; height: 0px; width: 0px; left1: 0px; top: 0px; z-index: 600;"></div><div style="position: absolute; height: 0px; width: 0px; left1: 0px; top: 0px; z-index: 500;"><label class="BMapLabel" unselectable="on" style="position: absolute; display: none; cursor: inherit; border: 1px solid rgb(190, 190, 190); padding: 1px; white-space: nowrap; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: arial, sans-serif; z-index: -20000; color: rgb(190, 190, 190); background-color: rgb(190, 190, 190);">shadow</label></div><div style="position: absolute; height: 0px; width: 0px; left1: 0px; top: 0px; z-index: 400;"><span class="BMap_Marker" unselectable="on" style="position: absolute; padding: 0px; margin: 0px; border: 0px; width: 0px; height: 0px; left1: 335px; top: 209px; z-index: -5694432;"><div style="position: absolute; margin: 0px; padding: 0px; width: 19px; height: 25px; overflow: hidden;"><img src="./index_store_files/marker_red_sprite.png" style="display: block; border:none;margin-left1:0px; margin-top:0px; "></div></span></div><div style="position: absolute; height: 0px; width: 0px; left1: 0px; top: 0px; z-index: 300;"><span unselectable="on" style="position: absolute; padding: 0px; margin: 0px; border: 0px; width: 20px; height: 11px; left1: 339px; top: 223px;"><div style="position: absolute; margin: 0px; padding: 0px; width: 20px; height: 11px; overflow: hidden;"><img src="./index_store_files/marker_red_sprite.png" style="display: block; border:none;margin-left1:-19px; margin-top:-13px; "></div></span></div><div style="position: absolute; height: 0px; width: 0px; left1: 0px; top: 0px; z-index: 201;"></div><div style="position: absolute; height: 0px; width: 0px; left1: 0px; top: 0px; z-index: 200;"></div></div><div style="position: absolute; overflow: visible; top: 0px; left1: 0px; z-index: 1;"><div style="position: absolute; overflow: visible; z-index: -100; left1: 345px; top: 234px; display: block; transform: translate3d(0px, 0px, 0px);"><img src="./index_store_files/saved_resource" style="position: absolute; border: none; width: 256px; height: 256px; left1: -397px; top: -126px; max-width: none; opacity: 1;"><img src="./index_store_files/saved_resource(1)" style="position: absolute; border: none; width: 256px; height: 256px; left1: 115px; top: -126px; max-width: none; opacity: 1;"><img src="./index_store_files/saved_resource(2)" style="position: absolute; border: none; width: 256px; height: 256px; left1: -141px; top: 130px; max-width: none; opacity: 1;"><img src="./index_store_files/saved_resource(3)" style="position: absolute; border: none; width: 256px; height: 256px; left1: 115px; top: 130px; max-width: none; opacity: 1;"><img src="./index_store_files/saved_resource(4)" style="position: absolute; border: none; width: 256px; height: 256px; left1: -141px; top: -126px; max-width: none; opacity: 1;"><img src="./index_store_files/saved_resource(5)" style="position: absolute; border: none; width: 256px; height: 256px; left1: -397px; top: -382px; max-width: none; opacity: 1;"><img src="./index_store_files/saved_resource(6)" style="position: absolute; border: none; width: 256px; height: 256px; left1: 115px; top: -382px; max-width: none; opacity: 1;"><img src="./index_store_files/saved_resource(7)" style="position: absolute; border: none; width: 256px; height: 256px; left1: -141px; top: -382px; max-width: none; opacity: 1;"><img src="./index_store_files/saved_resource(8)" style="position: absolute; border: none; width: 256px; height: 256px; left1: -397px; top: 130px; max-width: none; opacity: 1;"></div></div><div style="position: absolute; overflow: visible; top: 0px; left1: 0px; z-index: 2; display: none;"><div style="position: absolute; overflow: visible; top: 0px; left1: 0px; z-index: 0; display: none;"></div><div style="position: absolute; overflow: visible; top: 0px; left1: 0px; z-index: 10; display: none;"></div></div><div style="position: absolute; overflow: visible; top: 0px; left1: 0px; z-index: 3;"></div></div><div class="pano_close" title="退出全景" style="z-index: 1201; display: none;"></div><a class="pano_pc_indoor_exit" title="退出室内景" style="z-index: 1201; display: none;"><span style="float:right;margin-right:12px;">出口</span></a><div class=" anchorBL" style="height: 32px; position: absolute; z-index: 30; bottom: 20px; right: auto; top: auto; left1: 1px;"><a title="到百度地图查看此区域" target="_blank" href="http://map.baidu.com/?sr=1" style="outline: none;"><img style="border:none;width:77px;height:32px" src="./index_store_files/copyright_logo.png"></a></div><div id="zoomer" style="position:absolute;z-index:0;top:0px;left1:0px;overflow:hidden;visibility:hidden;cursor:url(http://api0.map.bdimg.com/images/openhand.cur) 8 8,default"><div class="BMap_zoomer" style="top:0;left1:0;"></div><div class="BMap_zoomer" style="top:0;right:0;"></div><div class="BMap_zoomer" style="bottom:0;left1:0;"></div><div class="BMap_zoomer" style="bottom:0;right:0;"></div></div><div unselectable="on" class=" BMap_cpyCtrl BMap_noprint anchorBL" style="cursor: default; white-space: nowrap; color: black; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 11px; line-height: 15px; font-family: arial, sans-serif; bottom: 2px; right: auto; top: auto; left1: 2px; position: absolute; z-index: 10; background: none;"><span _cid="1" style="display: inline;"><span style="background: rgba(255, 255, 255, 0.701961);padding: 0px 1px;line-height: 16px;display: inline;height: 16px;">©&nbsp;2017 Baidu - GS(2015)2650号&nbsp;- Data © 长地万方</span></span></div></div>
-                                    </a></div><a href="javascript:;" id="search_button">
+                                            <a href="javascript:;" id="search_button" >   
+                                        </a></div><a href="javascript:;" id="search_button" >
+                                        <div id="allmap" style="overflow: hidden; position: relative; z-index: 0; color: rgb(0, 0, 0); text-align: left; background-color: rgb(243, 241, 236);"><div style="overflow: visible; position: absolute; z-index: 0; left: 0px; top: 0px; cursor: url(&quot;http://api0.map.bdimg.com/images/openhand.cur&quot;) 8 8, default;"><div class="BMap_mask" style="position: absolute; left: 0px; top: 0px; z-index: 9; overflow: hidden; -webkit-user-select: none; width: 690px; height: 468px;"></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 200;"><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 800;"></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 700;"><span class="BMap_Marker BMap_noprint" unselectable="on" style="position: absolute; padding: 0px; margin: 0px; border: 0px; cursor: pointer; width: 19px; height: 25px; left: 335px; top: 209px; z-index: -5694432; background: url(&quot;http://api0.map.bdimg.com/images/blank.gif&quot;);" title=""></span></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 600;"></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 500;"><label class="BMapLabel" unselectable="on" style="position: absolute; display: none; cursor: inherit; border: 1px solid rgb(190, 190, 190); padding: 1px; white-space: nowrap; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: arial, sans-serif; z-index: -20000; color: rgb(190, 190, 190); background-color: rgb(190, 190, 190);">shadow</label></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 400;"><span class="BMap_Marker" unselectable="on" style="position: absolute; padding: 0px; margin: 0px; border: 0px; width: 0px; height: 0px; left: 335px; top: 209px; z-index: -5694432;"><div style="position: absolute; margin: 0px; padding: 0px; width: 19px; height: 25px; overflow: hidden;"><img src="./index_store_files/marker_red_sprite.png" style="display: block; border:none;margin-left:0px; margin-top:0px; "></div></span></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 300;"><span unselectable="on" style="position: absolute; padding: 0px; margin: 0px; border: 0px; width: 20px; height: 11px; left: 339px; top: 223px;"><div style="position: absolute; margin: 0px; padding: 0px; width: 20px; height: 11px; overflow: hidden;"><img src="./index_store_files/marker_red_sprite.png" style="display: block; border:none;margin-left:-19px; margin-top:-13px; "></div></span></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 201;"></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 200;"></div></div><div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 1;"><div style="position: absolute; overflow: visible; z-index: -100; left: 345px; top: 234px; display: block; transform: translate3d(0px, 0px, 0px);"><img src="./index_store_files/saved_resource" style="position: absolute; border: none; width: 256px; height: 256px; left: -397px; top: -126px; max-width: none; opacity: 1;"><img src="./index_store_files/saved_resource(1)" style="position: absolute; border: none; width: 256px; height: 256px; left: 115px; top: -126px; max-width: none; opacity: 1;"><img src="./index_store_files/saved_resource(2)" style="position: absolute; border: none; width: 256px; height: 256px; left: -141px; top: 130px; max-width: none; opacity: 1;"><img src="./index_store_files/saved_resource(3)" style="position: absolute; border: none; width: 256px; height: 256px; left: 115px; top: 130px; max-width: none; opacity: 1;"><img src="./index_store_files/saved_resource(4)" style="position: absolute; border: none; width: 256px; height: 256px; left: -141px; top: -126px; max-width: none; opacity: 1;"><img src="./index_store_files/saved_resource(5)" style="position: absolute; border: none; width: 256px; height: 256px; left: -397px; top: -382px; max-width: none; opacity: 1;"><img src="./index_store_files/saved_resource(6)" style="position: absolute; border: none; width: 256px; height: 256px; left: 115px; top: -382px; max-width: none; opacity: 1;"><img src="./index_store_files/saved_resource(7)" style="position: absolute; border: none; width: 256px; height: 256px; left: -141px; top: -382px; max-width: none; opacity: 1;"><img src="./index_store_files/saved_resource(8)" style="position: absolute; border: none; width: 256px; height: 256px; left: -397px; top: 130px; max-width: none; opacity: 1;"></div></div><div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 2; display: none;"><div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 0; display: none;"></div><div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 10; display: none;"></div></div><div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 3;"></div></div><div class="pano_close" title="退出全景" style="z-index: 1201; display: none;"></div><a class="pano_pc_indoor_exit" title="退出室内景" style="z-index: 1201; display: none;"><span style="float:right;margin-right:12px;">出口</span></a><div class=" anchorBL" style="height: 32px; position: absolute; z-index: 30; bottom: 20px; right: auto; top: auto; left: 1px;"><a title="到百度地图查看此区域" target="_blank" href="http://map.baidu.com/?sr=1" style="outline: none;"><img style="border:none;width:77px;height:32px" src="./index_store_files/copyright_logo.png"></a></div><div id="zoomer" style="position:absolute;z-index:0;top:0px;left:0px;overflow:hidden;visibility:hidden;cursor:url(http://api0.map.bdimg.com/images/openhand.cur) 8 8,default"><div class="BMap_zoomer" style="top:0;left:0;"></div><div class="BMap_zoomer" style="top:0;right:0;"></div><div class="BMap_zoomer" style="bottom:0;left:0;"></div><div class="BMap_zoomer" style="bottom:0;right:0;"></div></div><div unselectable="on" class=" BMap_cpyCtrl BMap_noprint anchorBL" style="cursor: default; white-space: nowrap; color: black; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 11px; line-height: 15px; font-family: arial, sans-serif; bottom: 2px; right: auto; top: auto; left: 2px; position: absolute; z-index: 10; background: none;"><span _cid="1" style="display: inline;"><span style="background: rgba(255, 255, 255, 0.701961);padding: 0px 1px;line-height: 16px;display: inline;height: 16px;">©&nbsp;2017 Baidu - GS(2015)2650号&nbsp;- Data © 长地万方</span></span></div></div>
+                                    </a></div><a href="javascript:;" id="search_button" >
                                     <div id="result" style="margin-top:4px;width:690px;border:solid 0px red;">
                                         
                                         <input id="point" type="hidden" name="point">
                                         
                                     </div>
-                                </a>
-                                </div>
-                                <a href="javascript:;" id="search_button">
+                                </a></div><a href="javascript:;" id="search_button" >
                              <div id="store_pro" style="display:none;position:relative;width:100%;margin-bottom:10px;">
                             <div style="background: url(/data/system/sale-promotion/decorate.png) repeat-x 0 -69px; height: 19px;">
                                 <span style="background: url(/data/system/sale-promotion/decorate.png) no-repeat -38px -50px;; display: block; height: 19px;"><span style="background: url(/data/system/sale-promotion/decorate.png) no-repeat 0px -50px; float: right; width: 39px; height: 19px;"></span></span>
@@ -1457,11 +1506,11 @@ $(function(){
 								<p><img src="./index_store_files/201610201738424915.jpg" alt=""></p>	</div>
 						</div>
 						
-						<div class="ss_detail_div3">
+												<div class="ss_detail_div3">
 	
 						</div>
-					</a></div><a href="javascript:;" id="search_button">
-				</a></div><a href="javascript:;" id="search_button">
+					</a></div><a href="javascript:;" id="search_button" >
+				</a></div><a href="javascript:;" id="search_button" >
 				
 				               
 				<div class="ss_dpTab_div" id="ss_dpTab_div2" style="display:none;">
@@ -1474,13 +1523,13 @@ $(function(){
 				<div class="ss_dpTab_div" id="ss_dpTab_div3" style="display:none;">
 					<iframe src="./index_store_files/saleslog-49952.html" width="100%" height="1677" frameborder="0" scrolling="no"></iframe>
 				</div>
-			<div class="clear1"></div>
-		</a></div><a href="javascript:;" id="search_button">
-		<div class="clear1"></div>
-	</a></div><a href="javascript:;" id="search_button">
+			<div class="clear"></div>
+		</a></div><a href="javascript:;" id="search_button" >
+		<div class="clear"></div>
+	</a></div><a href="javascript:;" id="search_button" >
 	
-	</a></div><a href="javascript:;" id="search_button">   
-</a></div><a href="javascript:;" id="search_button">
+	</a></div><a href="javascript:;" id="search_button" >   
+</a></div><a href="javascript:;" id="search_button" >
 <script type="text/javascript">
 $(document).ready(function(){
 	var uri = location.href;
@@ -1501,16 +1550,19 @@ $(document).ready(function(){
 	}); 
 });
 </script>
- </a><div class="footer-wrap" style=" background:#fff;"><a href="javascript:;" id="search_button">
+
+ </a><div class="footer-wrap" style=" background:#fff;"><a href="javascript:;" id="search_button" >
 	<div class="noindex-space"></div>
 	</a><div class="noindexfooter"><a href="javascript:;" id="search_button" >
 		</a><div class="index-footer"><a href="javascript:;" id="search_button" >
-		    </a><div class="footer" style=" margin-bottom:0; padding-bottom:10px;"><a href="javascript:;" id="search_button">
-		         </a><div class="shansahn-info clear1fix"><a href="javascript:;" id="search_button">
+		    </a><div class="footer" style=" margin-bottom:0; padding-bottom:10px;"><a href="javascript:;" id="search_button" >
+		         </a><div class="shansahn-info clearfix"><a href="javascript:;" id="search_button" >
+		              		               	 		               	   
+		                     
 		                    </a><dl><a href="javascript:;" id="search_button" >
 					        					            
 		                      <dt>消费者保障</dt>
-		                       		                         </a><dd><a href="javascript:;" id="search_button"></a><a href="http://www.shanshan360.com/article/540.html" target="_blank"><em>·</em>保障范围</a></dd>
+		                       		                         </a><dd><a href="javascript:;" id="search_button" ></a><a href="http://www.shanshan360.com/article/540.html" target="_blank"><em>·</em>保障范围</a></dd>
 		                       		                         <dd><a href="#" target="_blank"><em>·</em>退货退款流程</a></dd>
 		                       		                         <dd><a href="#" target="_blank"><em>·</em>消费者维权中心</a></dd>
 		                       		                    </dl>
@@ -1541,7 +1593,7 @@ $(document).ready(function(){
 		                       		                    </dl>
 		                		              		               	 		               
 		              <a href="#" class="shanshan-homeico"></a>
-		              <span class="shanshan-feedback ntkp">山山商城意见反馈</span>
+		              <span class="shanshan-feedback ntkp" >山山商城意见反馈</span>
 		         </div>
 		        <div id="copyright">
 		        	<p class="cR-nav">
@@ -1553,7 +1605,7 @@ $(document).ready(function(){
 		                <span>关注山山商城：</span>
 		                <a href="http://www.weibo.com/shanshan360" class="ssb-weibo"><img src="./index_store_files/ssb-weibo.jpg" alt=""></a>
 		                <a href="http://t.qq.com/ishanshan360" class="ssb-weibot"><img src="./index_store_files/ssb-weibot.jpg" alt=""></a>
-		                <a href="javascript:void(0);" class="ssb-weixin"><img src="./index_store_files/ssb-weixin.jpg" alt=""><label class="mbb-weixin"></label></a>
+		                <a href="javascript:void(0);" class="ssb-weixin" onmouseover="weixin(&#39;visible&#39;)" onmouseout="weixin(&#39;hidden&#39;)"><img src="./index_store_files/ssb-weixin.jpg" alt=""><label class="mbb-weixin"></label></a>
 						<span class="ntkp ssb-weibot"><img src="./index_store_files/ssb-talk.jpg" alt="在线咨询"></span></p>
 		            <p>Copyright©2011-2016shanshan360.com 浙江山山网络科技股份有限公司  版权所有</p>
 		            <p>增值电信业务经营许可证：浙B2-20120027</p>
@@ -1576,7 +1628,7 @@ $(document).ready(function(){
 <div id="rightButton" style="right: 0px;">
     <ul id="right_ul">  
      <li id="right_kf"></li>
-        <a target="_blank" href="#"><li id="right_gw"><div class="nums" id="snum">1</div></li></a>
+        <a target="_blank" href="shopping.jsp"><li id="right_gw"></li></a>
             <li id="right_weixin" class="right_ico"></li>
       <li id="right_tip" style="margin-top:90px" class="png">
             <div class="con ovf  ">
@@ -1590,7 +1642,8 @@ $(document).ready(function(){
         <li><div id="backToTop" style="display: block;"><a href="javascript:;" onfocus="this.blur();" class="backToTop_a png"></a></div></li>
 
     </ul>
-</div> 
+</div>
+
 <script type="text/javascript">     
 $(document).ready(function(e) {              
     $("#rightButton").css("right", "0px");
@@ -1641,13 +1694,14 @@ $(document).ready(function(e) {
         }
     });
 });
-</script>  
+</script>    
 <script type="text/javascript" src="js/public/EmbedCS.js"></script>
 <script type="text/javascript" src="js/public/ss.common-V2.3.0.js"></script>
-<span class="statistics_code">
-<script type="text/javascript">
+<span class="statistics_code"><script type="text/javascript">
 var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
 document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F5a250090ff571028094607805af27985' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="js/public/h.js" type="text/javascript"></script></span>
+<script type="text/javascript" src="js/public/index(2).php" charset="utf-8"></script>
 </script>
 <script type="text/javascript">
     // 百度地图API功能
@@ -1664,8 +1718,4 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
     map.panTo(new_point);  
 
 </script>
-
-<script src="js/public/h.js" type="text/javascript"></script></span>
-<script type="text/javascript" src="js/public/index(2).php" charset="utf-8"></script>
-<script type="text/javascript" src="js/index/Seach.js"></script>
 <div style="display:none;" class="jqPreload0"><img src="./index_store_files/201610201743213162.jpg"></div></body></html>

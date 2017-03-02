@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,13 +44,18 @@
 					<img src="./shopping_files/icon-star.gif">收藏山山 
 				</div>
 				<div class="rig">
-					<span class="left1 public_name pulic_sn-login-info">Hi！<a
-						class="sli-item" href="#"> ssgmylrktk</a>！ <a href="#"
-						class="sli-item">积分(<em>100)</em></a> <a href="#" class="sli-item">消息<em>(0)</em></a><a
-						href="#" class="sn-quit">退出</a><i class="sn-separator"></i></span> <span
-						class="left1 op"></span>
+					<c:choose>
+				<c:when test="${loginUser eq null}">
+					<span id="loginForm" class="fl name sn-login-info">您好！ 欢迎来山山商城购物！<a href="login_user.jsp" class="sn-login">请登录</a> <a href="page/register.jsp" class="sn-register">免费注册</a><i class="sn-separator"></i></span>
+				</c:when>
+				<c:otherwise>
+				<span class="fl name sn-login-info" style='color:green;'>欢迎  ${loginUser } 使用本网站 &nbsp &nbsp &nbsp &nbsp<a href="#" class="sn-login">个人信息</a> 
+				<a href='login_user.jsp' onclick='logout()' class="sn-register">退出</a><i class="sn-separator"></i></span>
+				
+				</c:otherwise>
+			</c:choose>
 					<ul id="navv" class="left1">
-						<li class="line">|</li>
+						
 						<li class="col-conn">
 							<div class="ui-dropdown11 login-menu">
 								<a href="#">我的订单</a>
@@ -109,13 +115,7 @@
 					<a target="_blank"
 						href="./shopping_files/确认购物清单 - 山山商城_自媒体视频直播购物平台.html"
 						class="ui-dropdown-hd22">
-						<div class="top-bt1 left1">
-							<div class="left1">
-								<img src="./shopping_files/icon-buy2.png">
-							</div>
-							<div class="left1">购物车</div>
-							<div id="carts" class="num-bg left1">1</div>
-						</div>
+						
 					</a>
 					<ul class="unstyled frr ui-dropdown-menu22">
 						<li>
@@ -441,9 +441,9 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 						<div id="rightButton" style="right: 0px;">
 							<ul id="right_ul">
 								<li id="right_kf"></li>
-								<a target="_blank" href="./shopping_files/shopping.jsp"><li
+								<a target="_blank" href="shopping.jsp"><li
 									id="right_gw">
-										<div class="nums">1</div>
+										
 								</li></a>
 								<li id="right_weixin" class="right_ico"></li>
 								<li id="right_tip" style="margin-top: 90px" class="png">

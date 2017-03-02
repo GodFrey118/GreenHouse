@@ -14,5 +14,5 @@
 		<p><input type="email" name="email" required="required" placeholder="请输入找回密码邮箱"/></p>
 		<p><button>找回密码</button></p>
 	</form>
-</body>s
+</body>
 </html>

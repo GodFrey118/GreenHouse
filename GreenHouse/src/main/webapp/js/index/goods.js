@@ -7,3 +7,4 @@ $.post("store/goodinfo" + nidParam, function(data) {
 });
 
 
+

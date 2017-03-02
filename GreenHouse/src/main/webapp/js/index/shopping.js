@@ -1,13 +1,12 @@
 	var total=0;
 	var boxnum = 0;
 $.post("user/cartNum",function(data){
-		
 			  for(var i=0;i<data.length;i++){
 				  for(var j=0;j<data[i].goods.length;j++){
 					  $("#shopping").append(
 								"<tbody id='del"+i+"'><tr class='shop'>"
 								+"<td colspan='2'>"
-								+"<span class='seller'> <span>店铺：</span><a href='index_store.jsp?s_id='"+(data[i].goods)[j].s_id+">丽水山耕旗舰店</a>"
+								+"<span class='seller'> <span>店铺：</span><a href='index_store.jsp?s_id='"+(data[i].goods)[j].s_id+">佳克来</a>"
 								+"<span class='sstalking-11' style='display: inline-block;' title='点击这里给我发消息'></span></span></td>"
 								+"<td colspan='6' class='promo-info'>"
 								+"<div class='scrolling-container'>"
@@ -206,8 +205,17 @@ $.post("user/cartNum",function(data){
 		$('input[name="sc_id"]:checked').each(function(){
 		chk_value.push($(this).val());
 		}); 
-		alert(chk_value);
+		//alert(chk_value);
+		var str = chk_value;
+		//alert(str);
+		window.location.href='Confirm_order.jsp?sc_all_id='+str;
+		//location.href="Confirm_order.jsp?sc_id=
 		//循环取出值
+		/*for(var i=0;i<chk_value.length;i++){
+			$("user/checkout?sc_id="+chk_value[i],function(data){
+				alert(data);
+			},'json');
+		}*/
 		//发送请求修改购物车物品状态，形成订单
 		//跳转页面，到确认信息页面，发送请求查询订单（如果不想买了，可以取消，在已购买的物品页面可以查询的到订单，状态未付款）
 		//将数据返回页面

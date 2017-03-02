@@ -1,7 +1,7 @@
 ﻿@charset "utf-8";
-/* CSS Document */
+CSS Document
 
-/* **买家中心** */
+**买家中心**
 .buyer_center {width:990px; margin:0 auto;}
 .bc_nav {width:990px; height:30px; text-align:left; line-height:30px; margin-top:15px; border-bottom:#ddd solid 1px;  margin-bottom:10px;}
 .bc_nav_l {width:750px;}
@@ -13,7 +13,7 @@
 .bcc_wrap {float:left;width:148px; height:100%; border:#179800 solid 1px;}
 .bcc_wrap_title { width:148px; height:28px; background:url(../images/bcc_wrap_titlebg.gif) repeat-x; border-bottom:#179800 solid 1px; line-height:28px; text-indent:22px; color:#127600; font-weight:bold;}
 
-/* **下拉菜单** */
+**下拉菜单**
 .bcc_wrap ul {width: 148px;}
 li.mainmenu{width: 148px; background:#e7f7e5; overflow:hidden;}
 li.mainmenu a.mntitle{height:22px;color:#222; font-size:12px; line-height:22px; font-weight:bold;text-decoration: none;padding-left: 22px;display: block;display: inline-block;width: 126px;padding-top: 3px;padding-bottom: 3px; cursor:pointer;}
@@ -31,11 +31,11 @@ li.mainmenu dl dd.hidden {display:none;}
 .childul li a{float:left;width:148px; height:26px;color:#222; overflow:hidden;}
 .childul li a:hover{width:148px; height:26px;color:#fff; font-size:12px;color:#222;background:#fff; overflow:hidden; cursor:pointer;}
 
-/* **右边主体** */
+**右边主体**
 .bcc_main {width:830px; height:auto; color:#393939;}
 .bcc_main a {color:#393939;}
 
-/* **猜猜你喜欢** */ 
+**猜猜你喜欢** 
 .guess_youlike {width:828px; height:280px; margin:10px auto; border:#ddd solid 1px; border-top:#ddd solid 2px;overflow:hidden;}
 .gyl_title {width:828px; height:28px; line-height:28px; background:#f3f3f3;}
 .gyl_title b{padding-left:33px; background:url(../images/guess_yl.gif) 11px 0 no-repeat;}
@@ -49,7 +49,7 @@ li.mainmenu dl dd.hidden {display:none;}
 .gyl_con li p.gyl_text a:hover {color:#404040; text-decoration:underline;}
 #gongtai {overflow:hidden;}
 
-/* **已购买的商品** */ 
+**已购买的商品** 
 .bought_products {width:830px; height:auto; }
 .bp_nav {width:828px; height:32px; text-align:left; border:#bcdeb4 solid 1px; position:relative;}
 .bp_nav_inside {width:826px; height:30px; line-height:30px; border:#fff solid 1px; background:#f9fafc; text-indent:10px;}
@@ -84,10 +84,10 @@ li.mainmenu dl dd.hidden {display:none;}
 .ordertype-whole { border:#a5d29b solid 1px;border-top:none; background:#fff; text-align:center; width:86px; line-height:24px;margin-left: -4px; position:absolute; left:0px; top:25px; text-indent:-18px;}
 .ordertype-whole a:hover {color:#fff; background:#117000;}
 
-/* **全部订单** */ 
+**全部订单** 
 .bought-search .more-filter,.bought-search .less-filter,.bought-search .search-btn{background:url(http://img02.taobaocdn.com/tps/i2/T1iVCoXk8qXXXXXXXX-85-51.png) no-repeat;}.bought-search{padding:0 10px 10px;}.bought-search input{height:20px;line-height:20px;vertical-align:middle;border:1px solid #a5d29b;-moz-box-shadow:1px 1px 1px #E7EFF4 inset;-webkit-box-shadow:1px 1px 1px #E7EFF4 inset;box-shadow:1px 1px 1px #E7EFF4 inset;}.bought-search select{font-family:tahoma,arial,"\5b8b\4f53";}.bought-search .search-btn{width:68px;height:25px;margin:0 6px;padding-bottom:3px;line-height:25px;vertical-align:middle;text-indent:8px;letter-spacing:8px;background-position:-18px 0;border:none;cursor:pointer;*text-indent:0;}.bought-search .search-btn:hover{background-position:-18px -26px;}.bought-search .search-btn:focus{outline:none;}.bought-search .search-filter{display:none;}.bought-search .search-filter li{margin:10px 15px 0 0;display:inline-block;*display:inline;*zoom:1;}.bought-search .search-filter .col1{width:260px;}.bought-search .search-filter .col2,.bought-search .search-filter .col3{width:178px;}.bought-search .more-filter,.bought-search .less-filter{margin-left:5px;padding-right:10px;}.bought-search .more-filter{background-position:75px 6px; color:#3366cc;}.bought-search .less-filter{display:none;background-position:75px -8px;color:#3366cc;}.bought-search-more .search-filter{display:block;}.bought-search-more .less-filter{display:inline;}.bought-search-more .more-filter{display:none;}.rebuy-dialog{height:96px;overflow:hidden;font-size:'\5b8b\4f53';}.rebuy-dialog .msg24 .attention{background-color:transparent;border:none;color:#000;}.rebuy-dialog .detail{margin-top:-5px;padding-left:58px;}.rebuy-dialog .tm-indicator{margin-top:39px;}.no-result{height:150px;margin:30px 0 0 40px;padding:5px 0 0 120px;text-align:left;background:url(http://img03.taobaocdn.com/tps/i3/T1MQ1cXhtiXXXXXXXX-78-120.png) no-repeat;color:#404040;}.no-result .des{display:block;padding:0 0 20px;font-weight:bold;font-size:14px;}.no-result .sug li{padding-top:10px;}
  
- /* **宝贝订单** */ 
+ **宝贝订单** 
 .baobei_order {width:830px; height:auto;}
 .baobei_order_table {width:830px;}
 .baobei_order_table tr.col-name th { border-bottom: 1px solid #C4D5E0; border-top: 1px solid #C4D5E0; color: #000000; height: 33px; text-align: center; background: url(../images/col_namebg.gif) repeat-x; font-weight:normal;}
@@ -146,7 +146,7 @@ li.mainmenu dl dd.hidden {display:none;}
 .baobei_order_table .baobei .pic img {height: 50px;width: 50px;}
 .s50 img { max-height: 50px; max-width: 50px;}
 
-/* 预售新加 */
+预售新加
 .yushou-tbox {width:740px; padding:10px; position:relative;}
 .yushou-tbox span.ystb-qiantou {border-width:8px; fong-size:0; position:absolute; left:49%; top:-6px;height: 0; line-height: 0;border-style:solid; border-color:transparent transparent #e7f7e5;}
 .yushou-tbox table {width:100%; text-align:center;}
@@ -158,19 +158,11 @@ li.mainmenu dl dd.hidden {display:none;}
 .yushou-tbox table p.ys-payText { text-align:left;border: 1px solid #a4f09a; padding: 6px; background:#dcf9d9; color:#999;}
 .yushou-tbox table p.ys-payText img {padding-right:5px;}
 .yushou-tbox table p.ys-pay {margin-bottom:5px;}
-.yushou-tbox table p.ys-pay a {width:54px; height:27px; text-align:center; line-height:27px; font-weight:bold; background:url(../images/tic_1.gif) no-repeat; display:block; margin:0 auto; color:#fff;}
+.yushou-tbox table p.ys-pay a {width:54px; height:27px; text-align:center; line-height:27px; font-weight:bold; background:url(../../index_store_files/tic_1.gif) no-repeat; display:block; margin:0 auto; color:#fff;}
 .yushou-tbox .hui { color:#999;}
 .yushou-tbox .cheng { color:#ff5500;}
 
 
-.ys-pay a {width:54px; height:27px; text-align:center; line-height:27px; font-weight:bold; background:url(../images/tic_1.gif) no-repeat; display:block; margin:0 auto; color:#fff;}
-
-
-
-
-
-
-
-
+.ys-pay a {width:54px; height:27px; text-align:center; line-height:27px; font-weight:bold; background:url(../../index_store_files/tic_1.gif) no-repeat; display:block; margin:0 auto; color:#fff;}
 
 

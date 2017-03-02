@@ -138,9 +138,10 @@ $.post("user/cartNum",function(data){
 }
 cartNum();
 function deleteGood(sc_id,i){
+	alert("确定要删除？");
 	$.post("user/delCartGood?sc_id="+sc_id,function(data){
 		if(data){
-			alert("确定要删除？");
+			
 			$("#"+i+"").empty();
 			$("#carts").html($("#carts").text()-1);
 			$(".nums").html($(".nums").text()-1);
