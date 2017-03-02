@@ -11,17 +11,31 @@ function address_add(){
 var param=[];
 
 param =(Param.substr(1 , Param.length)).split(",");
+
+var a;
 for(var i=0;i<param.length;i++){
 	//alert(param[i]);
 	var total=0;
+	
 	$.post("user/orderInfo?sc_id="+param[i], function(data) {
 		//alert(data);
 		for(var i=0;i<data.length;i++){
+			
 			for(var j=0;j<data[i].goods.length;j++){
+				/*$.post("store/storeinfo_1?s_id="+(data[i].goods)[j].s_id, function(data) {
+					a = data.s_name;
+					alert(a);
+					//$("#"+i).html(data.s_name);
+				
+				},"json");*/
+				//alert((data[i].goods)[j].s_id);
+				//alert(a);
+				for(var n=0;n<((data[i].goods)[j]).stores.length;n++){
+					
 				$("#order").append("<tr style='height: 25px;'><td colspan='7'></td></tr>"
                         	+"<tr><th colspan='2' class='name'>" 
                         	+"<p class='n-st-conus clearfix'>"
-                        	+"<span>店铺：</span><a href='#' target='_blank'>丽水山耕</a>"
+                        	+"<span>店铺：</span><a href='index_store.jsp?s_id="+(data[i].goods)[j].s_id+"' target='_blank'>"+(((data[i].goods)[j]).stores[n]).s_name+"</a>"
                         	+"<span class='sstalking-11' style='display:block;' title='点击这里给我发消息'></span></p></th>"
                         	+"<th colspan='5' class='promo-info'><div class='scrolling-container'>"
                         	+"<ul class='scrolling-promo-hint' id='J_ScrollingPromoHint_75080'></ul></div>"
@@ -37,13 +51,11 @@ for(var i=0;i<param.length;i++){
                         	+"<select name='shipping_id_75080[]' id='shipping_id_75080' class='gw_kuaidi shipping_id_75080'>"
                         	+"<option shipping_id_75080='快递公司' bbb='' hs_id='Array' abc='Op快递公司' ectype='快递公司' value='快递公司' price='0'>快递公司 : ￥0.00</option></select></td>" 
                             +"</tr> "); 
+				}
 				total= total + ((data[i].goods)[j].g_price)*(data[i].sc_goodNum);
 			}
-			
-		
 			 $("#order_amount").html("￥"+total);
 		}
-		
 	},'json');
 
 }
@@ -62,6 +74,7 @@ $.post("user/addrSelect",function(data){
                     	+"</div>"
                     	+"<div class='morenaddr' id='div1' onclick='dis()' value='1' ectype='50773' type='hidden'>默认地址</div>"
                     	+"</li>");
+			
 		
 	}
 },"json");
@@ -78,9 +91,13 @@ function dis(){
     }
 };*/
 
-function savaAddr(){
-	var params=$("#addr").serialize();
-	alert(params);
+function addrsave(){
+	var str="?a_receiver="+$("#a_receiver").val()+"&a_area="+$("#a_area").val()+"&a_street="+$("#a_street").val()+"&a_post="+$("#a_post").val()+"&a_tel="+$("#a_tel").val();
+	$.post("user/saveAddr"+str,function(data){
+		if(data){
+			 window.location.reload();
+		}
+	});
 }
 
 function submit_check1(){

@@ -282,7 +282,8 @@ public class UserHandler {
 		sCart.setC_id(user2.getC_id());
 		System.out.println(user2.getC_id());
 		List<Shoping_Cart> uState = storeService.getOrderInfo(sCart);
-		System.out.println(uState);
+		System.out.println("我的购物车"+uState);
+		
 		return uState;
 	}
 	
@@ -398,15 +399,18 @@ public class UserHandler {
 		}
 		
 		@RequestMapping("/saveAddr")
-		public String SaveAddr(Address addr,HttpSession session){
+		@ResponseBody
+		public boolean SaveAddr(@RequestParam(name="a_receiver",required=false)String a_receiver,
+				@RequestParam(name="a_area",required=false)String a_area,
+				@RequestParam(name="a_street",required=false)String a_street,
+				@RequestParam(name="a_post",required=false)String a_post,
+				@RequestParam(name="a_tel",required=false)String a_tel,Address addr,HttpSession session){
 			System.out.println(addr+"我的地址");
 			CommonUser user2 = (CommonUser) session.getAttribute("user");
 			addr.setC_id(user2.getC_id());
 			boolean flag=userService.insertAddr(addr);
-			if (flag) {
-				return "redirect:/Confirm_order.jsp";
-			}
-			return "redirect:/Confirm_order.jsp";
+			return flag;
+			
 		}
 
 }

@@ -3,10 +3,11 @@
 $.post("user/cartNum",function(data){
 			  for(var i=0;i<data.length;i++){
 				  for(var j=0;j<data[i].goods.length;j++){
+					  for(var n=0;n<((data[i].goods)[j]).stores.length;n++){
 					  $("#shopping").append(
 								"<tbody id='del"+i+"'><tr class='shop'>"
 								+"<td colspan='2'>"
-								+"<span class='seller'> <span>店铺：</span><a href='index_store.jsp?s_id='"+(data[i].goods)[j].s_id+">佳克来</a>"
+								+"<span class='seller'> <span>店铺：</span><a href='index_store.jsp?s_id='"+(data[i].goods)[j].s_id+">"+(((data[i].goods)[j]).stores[n]).s_name+"</a>"
 								+"<span class='sstalking-11' style='display: inline-block;' title='点击这里给我发消息'></span></span></td>"
 								+"<td colspan='6' class='promo-info'>"
 								+"<div class='scrolling-container'>"
@@ -34,6 +35,7 @@ $.post("user/cartNum",function(data){
 								+"<font color='#000000'>收藏</font></a> <a class='del' href='javascript:void(0);' onclick='drop_cart("+data[i].sc_id+","+i+",this);'>"
 								+"<font color='#000000'>删除</font></a></td>"
 								+"</tr></tbody>");
+					  }
 					  
 				  }
 				  

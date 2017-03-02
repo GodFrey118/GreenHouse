@@ -253,10 +253,7 @@ document.onclick = nav_close;
 					<li><span class="order_none order_none2">5.评价</span></li>
 				</ul>
             </div>
-            
-            
-		
-            
+
             <div class="gw2_qrdd">
             	<div class="gw2_title">
                 	<span class="fl"><b class="t14">确认收货地址</b></span>
@@ -285,17 +282,17 @@ document.onclick = nav_close;
               
                     <div style="display:none;" class="gw2_addrcon_btm"  id="addrForm">
                     	<p><b class="cheng" style="margin-top: 10px">新增收货地址</b><label>&nbsp;&nbsp;电话号码、手机号选填一项，邮政编码可以不填，其余均为必填项</label></p>
-                         <form action="user/saveAddr" method="post" id="addr">   
+                         <form method="post" id="addrs">   
                          <p><label>收货人姓名：</label>
                             <span class="red">*</span>
-                            <input type="text" name="a_receiver" id="consignee" size="16">
+                            <input type="text" id="a_receiver"  size="16">
                             <b style="font-weight:normal;" class="field_message explain"><span class="field_notice">请填写真实姓名</span></b>
                         </p>
                         <p>
                         <label>  &nbsp;&nbsp; 所在地区：</label>
                             <span class="red">*</span>
                             <span id="region">
-                                <select name="a_area" onchange="hide_error();" id="sest">
+                                <select id="a_area" onchange="hide_error();">
                                     <option value="">请选择...</option>
                                     <option value="北京">北京</option>
                                     <option value="天津">天津</option>
@@ -336,12 +333,12 @@ document.onclick = nav_close;
                             </p>
                             <p>
                             <label style="float:left;width:81px;"><span>&nbsp;&nbsp;&nbsp;街道地址： <span class="red">*</span></span></label>
-                            <textarea class="ca_textarea" name="a_street" id="address"></textarea>
+                            <textarea class="ca_textarea" id="a_street" ></textarea>
                             </p>
                             <p>
                             <label>&nbsp;&nbsp;&nbsp;邮政编码：</label>
                             <span class="red">&nbsp;</span>
-                            <input type="text" name="a_post" id="zipcode" size="16" style="margin-left:2px;">
+                            <input type="text" id="a_post" size="16" style="margin-left:2px;">
                             <span class="field_message">
                             <span class="field_notice">邮政编码可以不填</span>
                             </span>
@@ -349,10 +346,10 @@ document.onclick = nav_close;
                             <p>
                             <label>&nbsp;&nbsp;&nbsp;手机号码：</label>
                             <span class="red">*</span>
-                            <input type="text" id="a_tel" name="a_tel" size="16">
+                            <input type="text" id="a_tel" size="16">
                             <span class="field_message explain"><span class="field_notice">手机号码必填</span></span>
                             </p>
-                        	<p><input type="submit" name="submit"  value="确定"/><input type="submit" value="取消"/></p>
+                        	<p><button type="button" onClick="addrsave()" id="addr">确定</button><input type="submit" value="取消"/></p>
                          </form>  
                     </div>
                 </div>

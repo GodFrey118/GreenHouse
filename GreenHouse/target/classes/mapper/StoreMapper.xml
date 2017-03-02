@@ -20,6 +20,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		  <result property="g_stock" column="g_stock" />
 		  <result property="g_type" column="g_type" />
 		  <result property="g_state" column="g_state" />
+		  <collection property="stores" ofType="Store">
+		   <id property="s_id" column="s_id" />
+		   <id property="s_name" column="s_name" />
+		  </collection>
 		</collection>
 	</resultMap>
     <select id="selectStoreInfo" parameterType="int" resultType="Store">
@@ -39,7 +43,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 	
 	<select id="selectCartNum" parameterType="int" resultMap="ShopingCartMap">
-       select * from Shopping_Cart sc inner join good g on g.g_id=sc.g_id where c_id=#{c_id} and sc_g_buy_state='未购买' and sc_g_payment='未付款'
+       select * from Shopping_Cart sc inner join good g on g.g_id=sc.g_id inner join store st on st.s_id=g.s_id  where c_id=#{c_id} and sc_g_buy_state='未购买' and sc_g_payment='未付款'
     </select>
     
     <select id="selectSCartGood" parameterType="Shoping_Cart" resultType="Shoping_Cart">
@@ -67,7 +71,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 	
 	<select id="selectOrderInfo" parameterType="Shoping_Cart" resultMap="ShopingCartMap">
-       select * from Shopping_Cart sc inner join good g on g.g_id=sc.g_id where c_id=#{c_id} and sc_id=#{sc_id} and sc_g_buy_state='未购买' and sc_g_payment='未付款'
+       select * from Shopping_Cart sc inner join good g on g.g_id=sc.g_id inner join store st on st.s_id=g.s_id where c_id=#{c_id} and sc_id=#{sc_id} and sc_g_buy_state='未购买' and sc_g_payment='未付款'
     </select>
     
     <insert id="insertOrder" parameterType="Orders">

@@ -1,4 +1,7 @@
 package com.yc.GreenHouse.entity;
+
+import java.util.List;
+
 /*
  *g_id integer primary key,
 	g_name varchar2(40),
@@ -18,6 +21,29 @@ public class Good {
 	private String g_stock;
 	private String g_type;
 	private String g_state;
+	private List<Store> stores;
+	
+	public Good(Integer g_id, Integer s_id, String g_name, Integer gt_id,
+			String g_pic, double g_price, String g_stock, String g_type,
+			String g_state, List<Store> stores) {
+		super();
+		this.g_id = g_id;
+		this.s_id = s_id;
+		this.g_name = g_name;
+		this.gt_id = gt_id;
+		this.g_pic = g_pic;
+		this.g_price = g_price;
+		this.g_stock = g_stock;
+		this.g_type = g_type;
+		this.g_state = g_state;
+		this.stores = stores;
+	}
+	public List<Store> getStores() {
+		return stores;
+	}
+	public void setStores(List<Store> stores) {
+		this.stores = stores;
+	}
 	public Integer getG_id() {
 		return g_id;
 	}
@@ -72,20 +98,7 @@ public class Good {
 	public void setG_state(String g_state) {
 		this.g_state = g_state;
 	}
-	public Good(Integer g_id, Integer s_id, String g_name, Integer gt_id,
-			String g_pic, double g_price, String g_stock, String g_type,
-			String g_state) {
-		super();
-		this.g_id = g_id;
-		this.s_id = s_id;
-		this.g_name = g_name;
-		this.gt_id = gt_id;
-		this.g_pic = g_pic;
-		this.g_price = g_price;
-		this.g_stock = g_stock;
-		this.g_type = g_type;
-		this.g_state = g_state;
-	}
+	
 	public Good() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -95,6 +108,6 @@ public class Good {
 		return "Good [g_id=" + g_id + ", s_id=" + s_id + ", g_name=" + g_name
 				+ ", gt_id=" + gt_id + ", g_pic=" + g_pic + ", g_price="
 				+ g_price + ", g_stock=" + g_stock + ", g_type=" + g_type
-				+ ", g_state=" + g_state + "]";
+				+ ", g_state=" + g_state + ", stores=" + stores + "]";
 	}
 }

@@ -36,6 +36,7 @@ public class Store {
 	private String s_service;
 	private String s_state;
 	
+	
 	public Store() {
 	}
 
