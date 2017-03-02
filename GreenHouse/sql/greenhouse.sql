@@ -32,6 +32,7 @@ create table Adm(
 	adm_name varchar2(40),
 	adm_pwd varchar2(100)
 )
+select * from adm
 create sequence seq_Adm start with 1000;
 insert into Adm values(seq_Adm.nextval,'admin','aaaaa');
 --店铺：店铺编号，店铺类型编号，用户编号，店主姓名，身份证号，店铺名称，公司名称，所在地区，详细地址，邮政编码，电话，证件照，营业执照，服务保障，状态
@@ -52,6 +53,8 @@ create table Store(
 	s_service varchar2(100),
 	s_state varchar2(20)
 )
+
+update store set s_state='未通过' where s_id=1100
 alter table store modify s_ID_pic varchar2(150)
 alter table store rename column s_ID_pic to name_tmp;
 alter table store add s_state varchar2(20);s
@@ -68,7 +71,7 @@ insert into Store values(seq_Store.nextval,1020,1002,'郭帆','43098119960806113
 --商品：商品编号，商店编号，名称，类型编号，商品相片，价格，库存量，状态
 create table Good(
 	g_id integer primary key,
-	s_id integer references Store(s_id),
+	s_id integer references Store(s_id),g_state
 	g_name varchar2(40),
 	gt_id integer references GoodType(gt_id),
 	g_pic varchar2(150),
@@ -81,6 +84,9 @@ update Good set g_price=5  where g_id=1000
 alter table good add g_type varchar2(50);
 alter table good add g_state varchar2(20);
 select * from Good;
+
+select count(1) total,ceil(count(1) / 10) totalPage,10 pageSize, 2 currPage from Good 
+select * from (select m.*,rownum rn from (select * from good order by 1 desc) m where rownum <= 1 * 10) where rn ＞ (1-1) * 10 
 delete GOOD
 drop table Good
 drop sequence seq_Good

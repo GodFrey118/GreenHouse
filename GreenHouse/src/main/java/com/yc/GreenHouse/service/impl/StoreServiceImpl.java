@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.yc.GreenHouse.entity.Good;
 import com.yc.GreenHouse.entity.Orders;
+import com.yc.GreenHouse.entity.GoodType;
 import com.yc.GreenHouse.entity.Shoping_Cart;
 import com.yc.GreenHouse.entity.Store;
 import com.yc.GreenHouse.entity.com_money;
@@ -67,7 +68,7 @@ public class StoreServiceImpl implements StoreService{
 
 	}
 	@Override
-	public List<String> selectGt_name() {
+	public List<GoodType> selectGt_name() {
 		return storeMapper.getGt_name();
 	}
 	@Override

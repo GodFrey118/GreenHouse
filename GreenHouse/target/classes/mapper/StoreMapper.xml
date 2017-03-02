@@ -62,8 +62,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select s_id from store where c_id=#{c_id}
 	</select>
 	
-	<select id="getGt_name" resultType="String">
-		select gt_name from GoodType
+	<select id="getGt_name" resultType="GoodType">
+		select * from GoodType
 	</select>
 	
 	<insert id="insertGood" parameterType="Good">

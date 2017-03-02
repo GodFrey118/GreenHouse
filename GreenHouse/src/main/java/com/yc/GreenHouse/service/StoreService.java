@@ -4,9 +4,9 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import com.yc.GreenHouse.entity.Address;
 import com.yc.GreenHouse.entity.Good;
 import com.yc.GreenHouse.entity.Orders;
+import com.yc.GreenHouse.entity.GoodType;
 import com.yc.GreenHouse.entity.Shoping_Cart;
 import com.yc.GreenHouse.entity.Store;
 import com.yc.GreenHouse.entity.com_money;
@@ -31,7 +31,7 @@ public interface StoreService {
 
 	int getS_id(Object c_id);
 
-	List<String> selectGt_name();
+	List<GoodType> selectGt_name();
 
 	int insertGood(Good good);
 

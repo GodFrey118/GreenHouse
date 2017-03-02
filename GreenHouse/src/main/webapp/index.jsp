@@ -73,7 +73,7 @@
                  <li class="line">|</li>
 	                    <li class="col-con">
 	                      <div class="ui-dropdown login-menu">     
-                              <a href="javascript:;" class="ui-dropdown-hd">我的订单 <b></b></a> 
+                              <a href="page/sale_goods.jsp" class="ui-dropdown-hd">我的订单 <b></b></a> 
                               <ul class="unstyled fr ui-dropdown-menu">
                                   <li><a href="user_trade.jsp">已买到的商品</a></li>
                                   <li><a href="#">已卖出的商品</a></li>
