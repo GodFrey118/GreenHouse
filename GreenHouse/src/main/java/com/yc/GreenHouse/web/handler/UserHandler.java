@@ -27,6 +27,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.yc.GreenHouse.entity.CommonUser;
 import com.yc.GreenHouse.entity.Good;
+import com.yc.GreenHouse.entity.GoodType;
 import com.yc.GreenHouse.entity.Shoping_Cart;
 import com.yc.GreenHouse.entity.Store;
 import com.yc.GreenHouse.service.StoreService;
@@ -48,6 +49,7 @@ public class UserHandler {
 	
 	@Autowired
 	private StoreService storeService;
+	
 	
 	
 	@RequestMapping("/login")
@@ -111,8 +113,8 @@ public class UserHandler {
 	
 	@RequestMapping("/get_gt_name")
 	@ResponseBody
-	public List<String> getGt_name(){
-		List<String> list=storeService.selectGt_name();
+	public List<GoodType> getGt_name(){
+		List<GoodType> list=storeService.selectGt_name();
 		return list;
 	}
 	
@@ -200,17 +202,20 @@ public class UserHandler {
 	
 	@RequestMapping("/insertGood")
 	@ResponseBody
-	public int modify(Good good,@RequestParam(name="g_pic",required=false)MultipartFile g_pic){
+	public int modify(@RequestParam(name="g_picPath",required=false)MultipartFile g_picPath,Good good){
 		LogManager.getLogger().debug("请求UserHandler处理insertGood进来了"+good);
-		if (g_pic!=null&&!g_pic.isEmpty()) {
+		System.out.println(g_picPath);
+		if (g_picPath!=null&&!g_picPath.isEmpty()) {
 			try {
-				g_pic.transferTo(new File(ServletUtil.UPLOAD_DIR,g_pic.getOriginalFilename()));
-				good.setG_pic("/"+ServletUtil.UPLOAD_DIR_NAME+"/"+g_pic.getOriginalFilename());
+				g_picPath.transferTo(new File(ServletUtil.UPLOAD_DIR,g_picPath.getOriginalFilename()));
+				good.setG_pic("/"+ServletUtil.UPLOAD_DIR_NAME+"/"+g_picPath.getOriginalFilename());
 			} catch (IllegalStateException | IOException e) {
 				LogManager.getLogger().error("上传文件操作失败",e);
 			}//上传文件
 			//return true;
 		}
+		System.out.println(good);
 		return storeService.insertGood(good);
 	}
+	
 }

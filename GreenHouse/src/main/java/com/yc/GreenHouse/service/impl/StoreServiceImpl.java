@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.yc.GreenHouse.entity.Good;
+import com.yc.GreenHouse.entity.GoodType;
 import com.yc.GreenHouse.entity.Shoping_Cart;
 import com.yc.GreenHouse.entity.Store;
 import com.yc.GreenHouse.mapper.StoreMapper;
@@ -59,7 +60,7 @@ public class StoreServiceImpl implements StoreService{
 		return storeMapper.getStore(c_id);
 	}
 	@Override
-	public List<String> selectGt_name() {
+	public List<GoodType> selectGt_name() {
 		return storeMapper.getGt_name();
 	}
 	@Override

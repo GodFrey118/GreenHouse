@@ -15,7 +15,7 @@
 	<div data-options="region:'north'" style="height: 65px;">
 		<div id="header">
 			<div id="top_login">
-				<label> 欢迎【<span>${loginUser.username}</span>】使用GreenHouse管理系统</label>
+				<label> 欢迎【<span>${user.adm_name}</span>】使用GreenHouse管理系统</label>
 			</div>
 		</div>
 	</div>
@@ -34,60 +34,52 @@
 		<div class="easyui-calendar"
 			style="width: 180px; height: 180px; border: 0px; border-bottom: 1px solid #94BAE7"></div>
 	</div>
-	<div data-options="region:'west',title:'导航栏', collapsible:false" style="width: 160px;">
-		<div id="sideNav">
-			<div title="用户管理" data-options="iconCls:'icon-mini-add'">
-				<ul class="treeNav">
-					<li><span>用户信息</span></li>
-					<li><span>用户编辑</span></li>
-					<li><span>用户添加</span></li>
-				</ul>
-			</div>
-			<div title="店铺管理" data-options="iconCls:'icon-mini-add'">
-				<ul class="treeNav">
-					<li><span>店铺信息</span></li>
-					<li><span>店铺编辑</span></li>
-					<li><span>店铺添加</span></li>
-				</ul>
-			</div>
-			<div title="订单管理" data-options="iconCls:'icon-mini-add'">
-				<ul class="treeNav">
-					<li><span>订单信息</span></li>
-					<li><span>订单编辑</span></li>
-				</ul>
-			</div>
-			<div title="商品管理" data-options="iconCls:'icon-mini-add'">
-				<ul class="treeNav">
-					<li><span>商品信息</span></li>
-					<li><span>商品编辑</span></li>
-				</ul>
-			</div>
-			<div title="商品类型管理" data-options="iconCls:'icon-mini-add'">
-				<ul class="treeNav">
-					<li><span>商品类型信息</span></li>
-					<li><span>商品类型编辑</span></li>
-					<li><span>商品类型添加</span></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<div
-		data-options="region:'center', title:'主界面', tools: [{    
-	    iconCls:'icon-full',    
-	    handler:function(){full();}    
-	  },{    
-	    iconCls:'icon-unfull',    
-	    handler:function(){unfull();}    
-	  }]   ">
-		<div id="main" style="width: 500px; height: 250px;">
-			<div title="欢迎">
-				<h1 style="width: 100%; text-align: center; margin-top: 80px">
-					<label> 欢迎【<span>${loginUser.username}</span>】使用GreenHouse管理系统
-					</label>
-				</h1>
-			</div>
-		</div>
-	</div>
+	<div data-options="region:'west',title:'菜单栏', collapsible:false" style="width:180px;" >
+  		<div id="leftSider">   
+		    <div title="用户管理" data-options="iconCls:'icon-man'"> 
+		  		<ul class="menutree">  
+		  			<li>   
+                        <span>用户信息</span>   
+                    </li>  
+                    <li>   
+                        <span>添加用户</span>   
+                    </li>   
+                    <li>   
+                        <span>编辑用户</span>   
+                   	 </li>   
+             	</ul>   
+		    </div>   
+		    <div title="商品管理" data-options="iconCls:'icon-man'">   
+		        <ul class="menutree">  
+                    <li>   
+                        <span>商品信息</span>   
+                    </li>   
+             	</ul>   
+		    </div>   
+		    <div title="标题管理" data-options="iconCls:'icon-man'">   
+		        <ul class="menutree">  
+		  			<li>   
+                        <span>标题信息</span>   
+                    </li>  
+                    <li>   
+                        <span>添加标题</span>   
+                    </li>
+                    <li>   
+                        <span>编辑标题</span>   
+                   	</li>   
+             	</ul>   
+    		</div>   
+		</div> 
+  	</div>   
+	 <div data-options="region:'center'">
+    	<div id="main">   
+		    <div title="主界面">   
+		       <h1>欢迎使用新闻后台系统</h1>
+		    </div>   
+		</div>  
+    </div> 
+    
+    
 	<script type="text/javascript" src="easyui/jquery.min.js"></script>
 	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>

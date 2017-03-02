@@ -1,98 +1,32 @@
-$("#main").tabs({
+$("#leftSider").accordion({
 	fit:true,
-	border:false,
 });
 
-$("#sideNav").accordion({
-	fit:true,
-	border:false,	
-});
+var urlJson = {"用户信息":"userInfo.jsp","店铺信息":"storeInfo.jsp","订单信息":"orderInfo.jsp","商品信息":"goodInfo.jsp","商品类型":"goodType.jsp","添加商品类型":"addGoodType.jsp"}
 
-$(".treeNav").tree({
-	onClick: function(node){  // node是指树节点， node.text是节点文本内容
-		var nodeContent = node.text;
-		if($("#main").tabs('exists', nodeContent)){
-			$("#main").tabs('close', nodeContent)
-		}
-		
-		if(nodeContent == "新闻信息"){
-			$("#main").tabs('add',{
-				title: nodeContent,
-				href:"back/news_info.jsp",
-				iconCls:"icon-mini-add",
-				closable:true,
-			});
-		}else if(nodeContent == "新闻编辑"){
-			$("#main").tabs('add',{
-				title: nodeContent,
-				href:"back/news_edit.jsp",
-				iconCls:"icon-mini-add",
-				closable:true,
-			});
+$(".menutree").tree({
+	onClick: function(node){
+		//alert(node.text);  // 当单击时弹出节点的文本值
+		var nt = node.text;
+		if($('#main').tabs('exists',nt)){  //判断面板是否存在
+			//打开显示为当前面板 
+			$('#main').tabs('select',nt);
 		}else{
-			$("#main").tabs('add',{
-				title: nodeContent,
-				content:nodeContent,
-				iconCls:"icon-mini-add",
-				closable:true,
-			});
+			alert(1);
+			//添加面板 
+			if(urlJson[nt]){
+				$('#main').tabs('add',{
+				    title:nt,
+				    href:"page/" + urlJson[nt],
+				    closable:true,
+				});
+			}else{
+				$('#main').tabs('add',{
+				    title:nt,
+				    content:'<h1>' + nt + '</h1>',
+				    closable:true,
+				});
+			}
 		}
-		
 	}
 });
-
-
-$.extend($.fn.layout.methods,{
-	full:function(jq){
-		return jq.each(function(){
-			var layout=$(this);
-			var center=layout.layout("panel","center");
-			center.panel("maximize");
-			center.parent().css("z-index",10);
-			
-			$(window).on("resize.full",function(){
-				layout.layout("unFull").layout("resize");
-			})
-		});
-	},
-	unfull:function(jq){
-		return jq.each(function(){
-			var layout=$(this);
-			var center=layout.layout("panel","center");
-			center.parent().css("z-index","inherit");
-			center.panel("restore");
-			$(window).off("resize.full");
-		});
-	}
-});
-
-function full(){
-	$("body").layout("full");
-	$("#center_content").addClass("panel-fit");
-}
-
-function unfull(){
-	$("body").layout("unfull");
-}
-/*
-//websocket
-var socket = new WebSocket('ws://' + window.location.host + '/ccs/pushmsg');
-
-
-socket.onmessage = function(message){
-	
-	
-	$.messager.alert('信用卡消息',message.data,'warning');
-
-
-}
-
-socket.onopen = function(){
-	alert("连接了");
-	//socket.send("admin is come in !!!");
-}
-
-socket.onclose = function(){
-	alert("关闭了");
-}
-*/

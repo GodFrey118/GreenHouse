@@ -3,6 +3,7 @@ package com.yc.GreenHouse.mapper;
 import java.util.List;
 
 import com.yc.GreenHouse.entity.Good;
+import com.yc.GreenHouse.entity.GoodType;
 import com.yc.GreenHouse.entity.Shoping_Cart;
 import com.yc.GreenHouse.entity.Store;
 
@@ -29,7 +30,7 @@ public interface StoreMapper {
 
 	int getStore(Object c_id);
 
-	List<String> getGt_name();
+	List<GoodType> getGt_name();
 
 	int insertGood(Good good);
 
