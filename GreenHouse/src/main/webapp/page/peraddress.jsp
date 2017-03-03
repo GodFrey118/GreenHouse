@@ -147,13 +147,8 @@
 				<div class="left1  ui-dropdown22">
 
 					<a target="_blank" href="http://www.shanshan360.com/cart"
-						class="ui-dropdown-hd22"><div class="top-bt1 left1">
-							<div class="left1">
-								<img src="css/peraddress/icon-buy2.png">
-							</div>
-							<div class="left1">购物车</div>
-							<div id="carts" class="num-bg left1">0</div>
-						</div> </a>
+						class="ui-dropdown-hd22">
+						</a>
 
 					<ul class="unstyled frr ui-dropdown-menu22">
 						<li>
@@ -281,8 +276,6 @@
 						<li class="mainmenu">
 							<dl>
 								<dt>
-
-
 									<a class="mntitle" href="shopping.jsp">我的购物车</a>
 
 								</dt>
@@ -361,8 +354,9 @@
 								<dd class="my_account" style="display: block;">
 									<ul class="childul">
 										<li><a href=page/perinfo.jsp>个人资料</a></li>
+										<li><a href="page/sale_goods.jsp">商品上架</a></li>
 										<li><a href="page/peraddress.jsp">我的地址</a></li>
-										
+										<li><a href="page/business.jsp">申请开店</a><li>
 									</ul>
 								</dd>
 							</dl>

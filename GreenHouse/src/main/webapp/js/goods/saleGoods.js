@@ -26,7 +26,7 @@ $('#tijiao1').linkbutton({
 $('#form3').form({
     url:'user/insertGood',    	   
     success:function(data){
-    	if(data.trim() == "true"){
+    	if(data){
     		alert("商品上传成功！")
     	}else{
     		$.messager.show({

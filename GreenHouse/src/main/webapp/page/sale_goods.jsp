@@ -20,7 +20,7 @@
                 <li><a href="#">帮助中心</a></li>
                 <li><span></span><a href="#">个人应用</a>
                 	<ul class="hidden1">
-                    	<li><a href="#">个人中心</a></li>
+                    	<li><a href="js/perinfo.js">个人中心</a></li>
                         <li><a href="#">我的订单</a></li>
                         <li style="cursor:pointer">注&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;销</li>
                     </ul>

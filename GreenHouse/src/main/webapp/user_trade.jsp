@@ -265,8 +265,10 @@ document.onclick = nav_close;
          <dd class="my_account" style="display:block;">
              <ul class="childul">
               <li><a href=page/perinfo.jsp>个人资料</a></li>
+              <li><a href="page/sale_goods.jsp">商品上架</a></li>
 			  <li><a href="page/peraddress.jsp">我的地址</a></li>
 			  <li><a href="page/business.jsp">申请开店</a><li>
+			  
 				
              </ul>
       </dd>

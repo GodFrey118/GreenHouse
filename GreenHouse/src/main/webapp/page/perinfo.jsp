@@ -137,13 +137,7 @@
 				<div class="left1  ui-dropdown22">
 
 					<a target="_blank" href="shopping.jsp"
-						class="ui-dropdown-hd22"><div class="top-bt1 left1">
-							<div class="left1">
-								<img src="css/perinfo/icon-buy2.png">
-							</div>
-							<div class="left1">购物车</div>
-							<div id="carts" class="num-bg left1">0</div>
-						</div> </a>
+						class="ui-dropdown-hd22"> </a>
 
 					<ul class="unstyled frr ui-dropdown-menu22">
 						<li>
@@ -302,7 +296,7 @@
 
 
 									<a class="mntitle" href="page/perinfo.jsp"
-										style="background: rgb(231, 247, 229) none repeat scroll 0% 0%;">购买过的店铺</a>
+										style="background: rgb(231, 247, 229) none repeat scroll 0% 0%;">商品管理</a>
 
 								</dt>
 							</dl>
@@ -331,6 +325,7 @@
 								<dd class="my_account" style="display: block;">
 									<ul class="childul">
 										<li><a href=page/perinfo.jsp>个人资料</a></li>
+										<li><a href="page/sale_goods.jsp">商品上架</a></li>
 										<li><a href="page/peraddress.jsp">我的地址</a></li>
 										<li><a href="page/business.jsp">申请开店</a><li>
 									</ul>
@@ -818,7 +813,7 @@ a.backToTop_a:active {
 
 			<!--<a href="http://www.shanshan360.com/consultation" target="_blank"><li id="right_kf" ></li></a>-->
 			<a target="_blank" href="http://www.shanshan360.com/cart"><li
-				id="right_gw"><div class="nums">0</div></li></a>
+				id="right_gw"></li></a>
 			<li id="right_weixin" class="right_ico"></li>
 			<li id="right_tip" style="margin-top: 90px" class="png">
 				<div class="con ovf  ">

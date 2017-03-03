@@ -34,7 +34,7 @@ $.post("index/good" , function(data){
              +"<p class='price'>"
              +"<font class='f-s cff6 f16'>"
              +"<em class='tm-yen' style='font-family:楷体_GB2312;font-size:12px;'>￥</em>"
-             +"<font class='f-s cff6 f16'>"+ (data[i].goods)[j].g_price +".</font><font class='f-s cff6 f14'>00</font>"
+             +"<font class='f-s cff6 f16'>"+ (data[i].goods)[j].g_price +"</font><font class='f-s cff6 f14'></font>"
              +" </font>"
              +"</p>"
              +"<p></p>"
@@ -58,7 +58,7 @@ $.post("index/good" , function(data){
 			   }else if((data[i].goods)[j].gt_id=="1003"){
 				   $("#goods_2").append("<li>"
 		                   +"<p class='pic'><a href='store/storeinfo?s_id="+(data[i].goods)[j].s_id+"&g_id="+(data[i].goods)[j].g_id+"' target='_blank'>"
-		                   +"<img src='."+(data[i].goods)[j].g_pic+"'>  </a>"
+		                   +"<img src='"+(data[i].goods)[j].g_pic+"'>  </a>"
 		                   +"<span class='f15 fyh' style='cursor: pointer' onclick='add_to_cart("+(data[i].goods)[j].g_id+");'>加入购物车</span>"
 		                   +"</p>"
 		                   +"<p class='name'><a href='#'>"+(data[i].goods)[j].g_name+"</a></p> "
@@ -73,7 +73,7 @@ $.post("index/good" , function(data){
 			   }else if((data[i].goods)[j].gt_id=="1002"||(data[i].goods)[j].gt_id=="1004"){
 				   $("#goods_3").append("<li>"
 		                   +"<p class='pic'><a href='store/storeinfo?s_id="+(data[i].goods)[j].s_id+"&g_id="+(data[i].goods)[j].g_id+"' target='_blank'>"
-		                   +"<img src='."+(data[i].goods)[j].g_pic+"'>  </a>"
+		                   +"<img src='"+(data[i].goods)[j].g_pic+"'>  </a>"
 		                   +"<span class='f15 fyh' style='cursor: pointer' onclick='add_to_cart("+(data[i].goods)[j].g_id+");'>加入购物车</span>"
 		                   +"</p>"
 		                   +"<p class='name'><a href='#'>"+(data[i].goods)[j].g_name+"</a></p> "

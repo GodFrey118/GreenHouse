@@ -1,7 +1,7 @@
 $("#aGoodType").form({
 	url : 'adm/addGoodType',
 	success:function(data){
-		if(data.trim() == "true"){
+		if(data){
 			$("#aGoodType").get(0).reset();
 			$("#GoodTypeInfo").datagrid("reload");//数据表格重新加载
 			$.messager.show({
