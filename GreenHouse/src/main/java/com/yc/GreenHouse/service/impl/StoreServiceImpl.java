@@ -6,8 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.yc.GreenHouse.entity.Good;
+import com.yc.GreenHouse.entity.Orders;
+import com.yc.GreenHouse.entity.GoodType;
 import com.yc.GreenHouse.entity.Shoping_Cart;
 import com.yc.GreenHouse.entity.Store;
+import com.yc.GreenHouse.entity.com_money;
 import com.yc.GreenHouse.mapper.StoreMapper;
 import com.yc.GreenHouse.service.StoreService;
 
@@ -43,8 +46,9 @@ public class StoreServiceImpl implements StoreService{
 			return storeMapper.updateScartNum(sc)>0;
 		}else{
 			return storeMapper.indsertCart(sCart)>0;
+
 		}
-		
+	
 	}
 	@Override
 	public List<Shoping_Cart> getCartNum(Integer c_id) {
@@ -63,4 +67,46 @@ public class StoreServiceImpl implements StoreService{
 		return storeMapper.getStore(c_id);
 
 	}
+	@Override
+	public List<GoodType> selectGt_name() {
+		return storeMapper.getGt_name();
+	}
+	@Override
+	public int insertGood(Good good) {
+		return storeMapper.insertGood(good);
+	}
+
+	@Override
+	public List<Shoping_Cart> getOrderInfo(Shoping_Cart sCart) {
+		return storeMapper.selectOrderInfo(sCart);
+	}
+	@Override
+	public boolean insertOrder(Orders orders) {
+		return storeMapper.insertOrder(orders)>0;
+	}
+	@Override
+	public boolean updateGoodState(Shoping_Cart sCart) {
+		return storeMapper.updateGoodState(sCart)>0;
+	}
+	@Override
+	public com_money selectMoney(Integer c_id) {
+		return storeMapper.selectMoney(c_id);
+	}
+	@Override
+	public boolean updatetOrder(com_money cMoney) {
+		return storeMapper.updatetOrder(cMoney)>0;
+	}
+	@Override
+	public boolean updatetOrderState(com_money cMoney) {
+		return storeMapper.updatetOrderState(cMoney)>0;
+	}
+	@Override
+	public List<Orders> getOrders(Integer c_id) {
+		return storeMapper.getOrders(c_id);
+	}
+	@Override
+	public Shoping_Cart SelectSCart(Shoping_Cart sCart) {
+		return storeMapper.SelectSCart(sCart);
+	}
+	
 }

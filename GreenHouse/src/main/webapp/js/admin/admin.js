@@ -98,6 +98,7 @@ function openGT(id){
 	});
 }
 
+<<<<<<< HEAD
 //function openAT(id){
 //	tid=id;
 //	$("#addGoodType").dialog({
@@ -109,4 +110,17 @@ function openGT(id){
 //	});
 //
 //}
+=======
+function openAT(id){
+	tid=id;
+	$("#addGoodType").dialog({
+		title:'addGoodType',
+		width:600,
+		height:300,
+		left:10,
+		href:'page/addGoodType.jsp'
+	});
+
+}
+>>>>>>> branch 'master' of ssh://git@github.com/Godfrey118/GreenHouse.git
 

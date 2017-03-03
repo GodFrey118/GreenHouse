@@ -21,7 +21,7 @@ create table CommonUser(
 	c_qq varchar2(20),
 	c_addr varchar2(100)
 )
-620087
+
 select * from COMMONUSER
 insert into CommonUser values(seq_CommonUser.nextval,'你好',null,null,null,'aaaaa','12312312312',null,null,null)
 create sequence seq_CommonUser start with 1000;
@@ -53,6 +53,8 @@ create table Store(
 	s_service varchar2(100),
 	s_state varchar2(20)
 )
+
+update store set s_state='未通过' where s_id=1100
 alter table store modify s_ID_pic varchar2(150)
 alter table store rename column s_ID_pic to name_tmp;
 alter table store add s_state varchar2(20);s
@@ -69,7 +71,7 @@ insert into Store values(seq_Store.nextval,1020,1002,'郭帆','43098119960806113
 --商品：商品编号，商店编号，名称，类型编号，商品相片，价格，库存量，状态
 create table Good(
 	g_id integer primary key,
-	s_id integer references Store(s_id),
+	s_id integer references Store(s_id),g_state
 	g_name varchar2(40),
 	gt_id integer references GoodType(gt_id),
 	g_pic varchar2(150),
@@ -78,26 +80,34 @@ create table Good(
 	g_type varchar2(50),
 	g_state varchar2(20)
 )
+update Good set g_price=5  where g_id=1000
 alter table good add g_type varchar2(50);
 alter table good add g_state varchar2(20);
 select * from Good;
+
+select count(1) total,ceil(count(1) / 10) totalPage,10 pageSize, 2 currPage from Good 
+select * from (select m.*,rownum rn from (select * from good order by 1 desc) m where rownum <= 1 * 10) where rn ＞ (1-1) * 10 
 delete GOOD
 drop table Good
 drop sequence seq_Good
 create sequence seq_Good start with 1000;
-insert into Good values(seq_Good.nextval,1021,'丽山耕 雪莲果',1000,null,3.00,1000,'水果','上架');
-insert into Good values(seq_Good.nextval,1021,'丽山耕 板栗',1001,null,3.00,1000,'南北干活','上架');
-insert into Good values(seq_Good.nextval,1021,'丽山耕 杂粮黑米',1001,null,3.00,1000,'杂粮主食','上架');
-insert into Good values(seq_Good.nextval,1021,'丽山耕 原味牛肉干',1003,null,3.00,1000,'肉干/肉脯','上架');
-insert into Good values(seq_Good.nextval,1021,'丽山耕 铁观音茶叶',1002,null,3.00,1002,'绿茶','上架');
-insert into Good values(seq_Good.nextval,1021,'丽山耕 葡萄酒',1004,null,3.00,1002,'葡萄酒','上架');
+insert into Good values(seq_Good.nextval,1100,'丽山耕 雪莲果',1021,null,3.00,1000,'水果','上架');
+insert into Good values(seq_Good.nextval,1100,'丽山耕 板栗',1021,null,3.00,1000,'南北干活','上架');
+insert into Good values(seq_Good.nextval,1100,'丽山耕 杂粮黑米',1021,null,3.00,1000,'杂粮主食','上架');
+insert into Good values(seq_Good.nextval,1100,'丽山耕 原味牛肉干',1024,null,3.00,1000,'肉干/肉脯','上架');
+insert into Good values(seq_Good.nextval,1100,'丽山耕 铁观音茶叶',1023,null,3.00,1002,'绿茶','上架');
+insert into Good values(seq_Good.nextval,1100,'丽山耕 葡萄酒',1025,null,3.00,1002,'葡萄酒','上架');
 --商品类型：类型编号，类型名
 create table GoodType(
 	gt_id integer primary key,
 	gt_name varchar2(20)
 )
+<<<<<<< HEAD
 
 insert into GoodType values(seq_GoodType.nextval,'海鲜')
+=======
+select gt_name from GoodType
+>>>>>>> branch 'master' of ssh://git@github.com/Godfrey118/GreenHouse.git
 drop table GoodType
 select * from GoodType;
 delete GoodType where gt_id=1005
@@ -119,15 +129,19 @@ create table Shopping_Cart(
      c_id integer,
      sc_goodNum integer,
      sc_g_buy_state varchar2(50),
-     sc_g_payment varchar2(50)
+     sc_g_payment varchar2(50)  
      
 )
+alter table Shopping_Cart add sc_state varchar2(50) default 0 增加数字字段，长整型，缺省值为0
+update Shopping_Cart set sc_g_buy_state='已购买' where c_id=1000 and g_id = 1000;
 select * from Shopping_Cart
 drop table Shopping_Cart 
-delete Shopping_Cart where g_id=50084
+delete Shopping_Cart where sc_id in (1230,1229,1232,1231)
 drop sequence seq_Cart
 create sequence seq_Cart start with 1000;
-insert into Shopping_Cart values(seq_Cart.nextval,1000,1000,1,'未购买','未付款')
+ALTER TABLE Shopping_Cart modify(sc_state number(5));
+update Shopping_Cart set sc_state=1;
+insert into Shopping_Cart values(seq_Cart.nextval,1000,1000,1,'未购买','未付款','1');
 
 --店铺类型：店铺类型编号，类型名
 create table StoreType(
@@ -150,10 +164,15 @@ create table Orders(
 	o_ordertime date,
 	o_state varchar2(20)
 )
+select * from
+		(select m.*,rownum rn from 
+		(select * from Orders o left join store s on s.s_id= o.s_id left join good g on o.g_id=g.g_id order by 1 desc) m where rownum <=1 * 3) where rn > 0
+
 drop table Orders;
 select * from Orders;
 create sequence seq_Orders start with 1000;
-insert into Orders values(seq_Orders.nextval,1002,1022,1001,10,30.00,sysdate,'未付款')
+delete orders where o_id>1260 and o_id<1290;
+insert into Orders values(seq_Orders.nextval,1000,1022,1001,10,30.00,sysdate,'未付款')
 --地址：地址编号，用户编号，收货人姓名，地区，街道，邮编，手机号码
 create table Address(
 	a_id integer primary key,
@@ -167,7 +186,7 @@ create table Address(
 select * from Address;
 create sequence seq_Address start with 1000;
 insert into Address values(seq_Address.nextval,1002,'郭帆','湖南省衡阳市','珠晖区衡花路18号','413117','13207349871')
-
+select * from CommonUser c inner join Address a on c.c_id = a.c_id 
 
 --评论：编号，用户编号，商品编号，评论内容
 create table Comments(
@@ -189,3 +208,15 @@ create table Notice(
 select * from Notice;
 create sequence seq_Notice start with 1000;
 insert into Notice values(seq_Notice.nextval,'好消息','大量新鲜水果正在待售!')
+
+
+create table COM_MONEY(
+   cm_id integer primary key,
+   c_id integer,
+   money number(30)
+)
+select * from COM_MONEY;
+create sequence seq_money start with 1000;
+alter table COM_MONEY modify money default 0.00;
+insert into COM_MONEY values(seq_money.nextval,1020,8000.00)
+insert into COM_MONEY values(seq_money.nextval,1000,8000.00)

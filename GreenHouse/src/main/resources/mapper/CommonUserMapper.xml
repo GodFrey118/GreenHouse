@@ -15,6 +15,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	   		and c_email = #{c_email}
 	    </if>
 	</select>
+	
 	<update id="updateUser" parameterType="CommonUser">
 	    update CommonUser set c_pwd=#{c_pwd} where c_name=#{c_name}
 	</update>
@@ -28,6 +29,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		</choose>
 	</insert>
 	
+<<<<<<< HEAD
 	<update id="modifyUserinfo" parameterType="CommonUser">
 	    update CommonUser set c_name=#{c_name},c_sex=#{c_sex},c_tel=#{c_tel},c_email=#{c_email},c_qq=#{c_qq},c_addr=#{c_addr} where c_id=#{c_id}
 	</update>
@@ -56,3 +58,34 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	
 </mapper>   
+=======
+	<resultMap type="CommonUser" id="AddrMap">
+		  <id property="c_id" column="c_id"/>
+		  <result property="c_name" column="c_name"/>
+		  <result property="c_sex" column="c_sex"/>
+		  <result property="c_birthday" column="c_birthday"/>
+		  <result property="c_pwd" column="c_pwd"/>
+		  <result property="c_tel" column="c_tel"/>
+		  <result property="c_email" column="c_email"/>
+		  <result property="c_qq" column="c_qq"/>
+		  <result property="c_addr" column="c_addr"/>
+		<collection property="address" ofType="Address">
+		  <id property="a_id" column="a_id" />
+		  <result property="c_id" column="c_id" />
+		  <result property="a_receiver" column="a_receiver" />
+		  <result property="a_area" column="a_area" />
+		  <result property="a_street" column="a_street" />
+		  <result property="a_post" column="a_post" />
+		  <result property="a_tel" column="a_tel" />
+		</collection>
+	</resultMap>
+	
+	<select id="selectAddr" parameterType="int" resultMap="AddrMap">
+	    select * from CommonUser c inner join Address a on c.c_id = a.c_id where c.c_id = #{c_id}
+	</select>
+	
+	<insert id="insertAddr" parameterType="Address">
+	    insert into Address values(seq_Address.nextval,#{c_id},#{a_receiver},#{a_area},#{a_street},#{a_post},#{a_tel})
+	</insert>
+</mapper>     
+>>>>>>> branch 'master' of ssh://git@github.com/Godfrey118/GreenHouse.git

@@ -1,4 +1,7 @@
 package com.yc.GreenHouse.entity;
+
+import java.util.List;
+
 /*
  *	s_id integer primary key,
 	st_id integer references StoreType(st_id),
@@ -32,6 +35,7 @@ public class Store {
 	private String s_licence_pic;
 	private String s_service;
 	private String s_state;
+	
 	
 	public Store() {
 	}

@@ -20,7 +20,14 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/vcode.jpg")
 public class VcodeServlet extends HttpServlet {
+
 	private static final long serialVersionUID = 4348904329267330103L;
+
+	
+
+	/**
+	 * 
+	 */
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 设置页面不缓存

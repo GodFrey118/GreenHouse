@@ -16,6 +16,7 @@
         
         <!-- 指定可以做为spring容器管理的对象的包 -->
         <context:property-placeholder location="classpath:data.properties"/>
+        <context:component-scan base-package="com.yc.GreenHouse"/>
         <!-- 配置数据源 -->
 		<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"> 
 				<property name="driverClassName" value="${jdbc.driverClassName}"/>

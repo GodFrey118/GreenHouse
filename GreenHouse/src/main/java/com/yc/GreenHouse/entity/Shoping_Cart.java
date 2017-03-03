@@ -21,6 +21,7 @@ public class Shoping_Cart {
 	
 	private List<Good> goods;
 	private List<CommonUser> commonUsers;
+	
 	public Integer getSc_id() {
 		return sc_id;
 	}

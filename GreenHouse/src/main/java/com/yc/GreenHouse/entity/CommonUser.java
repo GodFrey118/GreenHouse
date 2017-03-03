@@ -2,6 +2,7 @@ package com.yc.GreenHouse.entity;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 /*
  *c_id integer primary key,
@@ -24,9 +25,11 @@ public class CommonUser {
 	private String c_email;
 	private String c_qq;
 	private String c_addr;
+	private List<Address> address;
 	public CommonUser() {
 	}
 	
+<<<<<<< HEAD
 	public CommonUser(Integer c_id,String c_name, String c_sex,String c_tel,String c_email,String c_qq,String c_addr) {
 		this.c_id = c_id;
 		this.c_name = c_name;
@@ -36,6 +39,26 @@ public class CommonUser {
 		this.c_qq = c_qq;
 		this.c_addr = c_addr;
 	}
+=======
+	
+	public CommonUser(Integer c_id, String c_name, String c_sex,
+			Date c_birthday, String c_pwd, String c_tel, String c_email,
+			String c_qq, String c_addr, List<Address> address) {
+		super();
+		this.c_id = c_id;
+		this.c_name = c_name;
+		this.c_sex = c_sex;
+		this.c_birthday = c_birthday;
+		this.c_pwd = c_pwd;
+		this.c_tel = c_tel;
+		this.c_email = c_email;
+		this.c_qq = c_qq;
+		this.c_addr = c_addr;
+		this.address = address;
+	}
+
+
+>>>>>>> branch 'master' of ssh://git@github.com/Godfrey118/GreenHouse.git
 	public CommonUser(String c_name, String c_pwd,String c_tel,String c_email) {
 		this.c_name = c_name;
 		this.c_pwd = c_pwd;
@@ -46,13 +69,6 @@ public class CommonUser {
 		this.c_name = c_name;
 		this.c_pwd = c_pwd;
 	}
-	
-	public CommonUser(String c_name, String c_pwd,String c_tel) {
-		this.c_name = c_name;
-		this.c_pwd = c_pwd;
-		this.c_tel=c_tel;
-	}
-	
 
 	public Integer getC_id() {
 		return c_id;
@@ -109,11 +125,22 @@ public class CommonUser {
 	public void setC_addr(String c_addr) {
 		this.c_addr = c_addr;
 	}
+	
+	public List<Address> getAddress() {
+		return address;
+	}
+
+	public void setAddress(List<Address> address) {
+		this.address = address;
+	}
+
 	@Override
 	public String toString() {
-		return "CommonUser [c_id=" + c_id + ", c_name=" + c_name + ", c_sex=" + c_sex + ", c_birthday=" + c_birthday
-				+ ", c_pwd=" + c_pwd + ", c_tel=" + c_tel + ", c_email=" + c_email + ", c_qq=" + c_qq + ", c_addr="
-				+ c_addr + "]";
+		return "CommonUser [c_id=" + c_id + ", c_name=" + c_name + ", c_sex="
+				+ c_sex + ", c_birthday=" + c_birthday + ", c_pwd=" + c_pwd
+				+ ", c_tel=" + c_tel + ", c_email=" + c_email + ", c_qq="
+				+ c_qq + ", c_addr=" + c_addr + ", address=" + address + "]";
 	}
+	
 	
 }

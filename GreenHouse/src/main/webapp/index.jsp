@@ -26,7 +26,7 @@
 <div id="rightButton" style="right: 0px;">
     <ul id="right_ul">  
      <li id="right_kf" onclick="openChatWindow(&#39;&#39;);"></li>
-        <a target="_blank" href="#">
+        <a target="_blank" href="shopping.jsp">
      <li id="right_gw">
         <div class="nums">0</div>
      </li>
@@ -73,14 +73,14 @@
                  <li class="line">|</li>
 	                    <li class="col-con">
 	                      <div class="ui-dropdown login-menu">     
-                              <a href="javascript:;" class="ui-dropdown-hd">我的订单 <b></b></a> 
+                              <a href="page/sale_goods.jsp" class="ui-dropdown-hd">我的订单 <b></b></a> 
                               <ul class="unstyled fr ui-dropdown-menu">
-                                  <li><a href="#">已买到的商品</a></li>
+                                  <li><a href="user_trade.jsp">已买到的商品</a></li>
                                   <li><a href="#">已卖出的商品</a></li>
                               </ul>        
 	                      </div>
 	                    </li>
-                		                    <li class="line">&nbsp;&nbsp;|</li>
+                        <li class="line">&nbsp;&nbsp;|</li>
 	                    <li class="col-con">
 	                      <div class="ui-dropdown">
 	                          <a href="#" class="ui-dropdown-hd">收藏夹 <b></b></a>
@@ -212,7 +212,7 @@
                    <p>共 <font class="cff6">1</font> 件商品&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 共计<font class="cff6 ">￥</font>
                    <font class="f-s cff6 f18 t_money_0">39.</font>
                    <font class="f13 f-s cff6 t_money_1">00</font></p>
-                   <p class="ter"><a target="_blank" href="#">
+                   <p class="ter"><a target="_blank" href="shopping.jsp">
                    <button type="button" class="choose_btn  f14 fyh">去购物车结算</button>
                    </a></p></div>
                    </li>
@@ -1658,11 +1658,11 @@
 		<span><img src="./index_files/sc_success.gif">产品已经成功加入购物车！</span>
 	</div>
 	<div id="cart_tan_di">
-		<a target="_blank" href="#">
+		<a target="_blank" href="shopping.jsp">
 			<img src="./index_files/sc_btn.gif">
 		</a>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<a href="./index_files/index.html">再逛逛</a>
+		<a href="index.jsp">再逛逛</a>
 	</div>
 	<div id="cart_tan_di">
 		温馨提示：请在<a target="_blank" style="color:red;" href="#">个人资料</a>中填写QQ，方便卖家及时联系。

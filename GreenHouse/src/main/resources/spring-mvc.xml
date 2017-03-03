@@ -20,6 +20,9 @@
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
         
     <context:component-scan base-package="com.yc.GreenHouse"/>
+    
+    <!-- 处理文件上传操作 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
 	
 	
 	<!-- 配置视图处理器 -->

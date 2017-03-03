@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,13 +8,16 @@
 
 <link href="css/public/topshan.css" rel="stylesheet" type="text/css">
 <link href="css/public/common.css" rel="stylesheet" type="text/css">
+<link href="css/public/order_detail.css" rel="stylesheet" type="text/css">
+<link href="css/public/buy_ordergoods.css" rel="stylesheet" type="text/css">   
 <title>用户中心 - 我的交易</title>
 <meta name="keywords" content="山山商城,网上购物平台,农产品网购平台,视频直播购物平台，农产品网上购物平台,休闲零食,干果炒货,茶叶,食用菌,粮油,购物商城,我要买,我要卖,免费开店">
-<script type="text/javascript" async="" src="js/public/pixel.php"></script>
-<script type="text/javascript" async="" charset="utf-8" src="js/public/ntkfstat.js"></script>
+<script type="text/javascript" src="js/public/pixel.php"></script>
+<script type="text/javascript" charset="utf-8" src="js/public/ntkfstat.js"></script>
 <script charset="utf-8" src="js/public/v.js"></script>
 <script type="text/javascript" src="js/public/jquery-1.7.1.min.js" charset="utf-8"></script>
 <script type="text/javascript" src="js/public/ss.index-V2.4.0.js" charset="utf-8"></script> 
+
 <script type="text/javascript">
 
 var timeout         = 500;
@@ -57,10 +61,18 @@ document.onclick = nav_close;
            <img src="user_trade_files/icon-star.gif">收藏山山
            </div>
            <div class="rig">
-                <span class="left1 public_name pulic_sn-login-info">Hi！<a class="sli-item" href="#"> ssgmylrktk</a>！  <a href="#" class="sli-item">积分(<em>100)</em></a>  <a href="#" class="sli-item">消息<em>(0)</em></a><a href="#" class="sn-quit">退出</a><i class="sn-separator"></i></span>
-                <span class="left1 op"></span>
+                <c:choose>
+				<c:when test="${loginUser eq null}">
+					<span id="loginForm" class="fl name sn-login-info">您好！ 欢迎来山山商城购物！<a href="login_user.jsp" class="sn-login">请登录</a> <a href="page/register.jsp" class="sn-register">免费注册</a><i class="sn-separator"></i></span>
+				</c:when>
+				<c:otherwise>
+				<span class="fl name sn-login-info" style='color:green;'>欢迎  ${loginUser } 使用本网站 &nbsp &nbsp &nbsp &nbsp<a href="#" class="sn-login">个人信息</a> 
+				<a href='login_user.jsp' onclick='logout()' class="sn-register">退出</a><i class="sn-separator"></i></span>
+				
+				</c:otherwise>
+			</c:choose>
+               
                 <ul id="navv" class="left1">
-                        <li class="line">|</li>
                         <li class="col-conn">
                           <div class="ui-dropdown11 login-menu"><a href="user_trade_files/用户中心 - 我的交易.html">我的订单</a>  </div>
                         </li>
@@ -119,7 +131,7 @@ document.onclick = nav_close;
           <div class="top_button1 left1">
                 <a href="#"><div class="left1 top-bt1"><img src="user_trade_files/icon-meber.jpg">我的山山 </div></a>
                <div class="left1  ui-dropdown22">
-               <a target="_blank" href="#" class="ui-dropdown-hd22"><div class="top-bt1 left1"><div class="left1"><img src="user_trade_files/icon-buy2.png"></div><div class="left1">购物车</div><div id="carts" class="num-bg left1">0</div> </div> </a>
+               
               
                <ul class="unstyled frr ui-dropdown-menu22">
                    <li>
@@ -166,8 +178,8 @@ document.onclick = nav_close;
 		    	<li style="display: none;"><a href="#" target="_blank">商家入驻</a></li>			    			    	           				    	           				    	           	</ul>
         </div>
     </div>
-</div><link href="css/public/order_detail.css" rel="stylesheet" type="text/css">
-<link href="css/public/buy_ordergoods.css" rel="stylesheet" type="text/css">   
+</div>
+
     <div class="content">
     	<div class="con_main">        	 
              <div class="buyer_center">
@@ -201,7 +213,7 @@ document.onclick = nav_close;
       </dt>
          <dd class="my_trade" style="display:block;">
              <ul class="childul">
-                <li><a href="#" class="curitem">已经购买的商品</a></li>
+                <li><a href="user_trade.jsp" class="curitem">已经购买的商品</a></li>
                 <li><a href="#">评价管理</a></li>
                 <li><a href="#">我的团购</a></li>
              </ul>
@@ -302,7 +314,7 @@ document.onclick = nav_close;
 </div>
 
 </div>
-<div class="trade_clock">我的交易提醒：<a href="#">待付款（<em>3 </em>）</a> <a href="#">待确认收货（<em> 0 </em>）</a> <a href="#">待评价（<em> 0 </em>）</a>
+<div class="trade_clock">我的交易提醒：<a href="#">待付款（<em id="a1">3 </em>）</a> <a href="#">待确认收货（<em> 0 </em>）</a> <a href="#">待评价（<em> 0 </em>）</a>
   </div>
   <div class="bp_allorder">	
               <div class="msg ash-bin">
@@ -384,13 +396,11 @@ document.onclick = nav_close;
                                             <th class="remark">交易操作</th>
                                             <th class="other">其它操作</th>
                                         </tr>
-                                        
-                                        
                                         <tr class="sep-row">
                                         	<td colspan="9"></td>
                                         </tr>
                                         
-                                        <tr class="toolbar skin-gray">
+                                        <tr class="toolbar skin-gray" id="sep-row">
                                             <td colspan="6">
                                                 <label><input type="checkbox" class="checkall">全选</label>                          
                                                 <a class="J_MakePoint toolbtn long-toolbtn all_confirm" href="javascript:void(0);">批量确认收货</a>
@@ -399,225 +409,10 @@ document.onclick = nav_close;
                                             <td colspan="3" class="last-col">
                                             <div class="last_col_fenye">
                                             
-                                                                                          </div>
+                                            </div>
                                             </td>
-                                        </tr> 
-                                        <tr class="sep-row">
-                                        	<td colspan="9"></td>
-                                        </tr>
-                                        <tr class="order-hd">
-                                        	<td colspan="9">
-                                            	<span class="no">
-                                                    <label>
-                                                        <input type="checkbox" value="741440" name="order_list[]" class="checkitem">
-                                                         <span class="g-u">
-                                                            <a href="#"><img src="user_trade_files/prolist_index_ico.gif" alt="" border=""></a>
-                                                         </span>
-                                                       		 订单编号：<span class="order-num">1703863428</span>
-                                                    </label>
-                                                  </span>
-                                                  <span class="deal-time">成交时间：2017-02-08 09:33:47</span>
-                                                  <span class="seller">
-												 	<a href="#" class="nickname" target="_blank">丽水山耕旗舰店</a>
-					 				<span class="ww-light ww-small">
-                                    <span class="sstalking-11" style="cursor:pointer;display:inline-block;vertical-align: middle;margin-top: -4px;" title="点击这里给我发消息" onclick="openChatWindow(&#39;&#39;);"></span>
-                                              </span>
-					   							  </span>
-                                            </td>
-                                        </tr>                                                                              
-                                        <tr class="order-bd">                                       
-                                        	<td colspan="2" class="baobei">
-                                                <a class="pic s50" href="#" target="_blank"><img src="user_trade_files/small_201610201737159391.jpg" alt="查看商品详情" border="0"></a>
-                                                <span class="desc_title">
-                                                    <a href="#" target="_blank" class="baobei-name" title="丽水山耕 锥栗200g">
-                                                        丽水山耕 锥栗200g                                                    </a>	
-                                                    <div class="spec_ico">	
-                                                    规格：锥栗<br>
-                                                </div>
-                                				</span>            
-                                			</td>
-                                            <td class="price">¥22.00</td>
-                                            <td class="quantity">1</td>
-                                            <td class="after-service">
-					    	  				    <a href="javascript:void;"></a>			    	  				    
-					    	  				    <br>
-					    	  					<a href="#">投诉维权</a><br>                                          
-  											</td>
-  											    <td class="amount" rowspan="1">
-    											<strong>¥34.00</strong>
-												<p class="post-type">(含：¥12.00)</p>
-    			    						</td>
-                                            <td class="trade-status" rowspan="1">
-                                            	<a href="#" class="cheng" id="Status_1" ectype="11">待付款</a><br>
-                                                <a href="#" class="order_dt" target="_blank">订单详情<br></a>
-                                                <a href="#" target="_blank">查看物流</a>
-                                            </td>
-                                            <td class="operate" rowspan="1">                         
-                                            <a value="确认收货" class="btn1" ectype="dialog" dialog_id="buyer_order_confirm_order" dialog_width="400" dialog_title="确认收货" uri="index.php?app=buyer_order&amp;act=confirm_order&amp;order_id=741440&amp;ajax" id="order741440_action_confirm" style="display:none"><img src="user_trade_files/prolist_queren.gif" alt="" border="0"></a>
-    			    						<a href="#" target="_blank" style="display:none">查看评价</a><br>
-    			    						<!--  <a href="/index.php?app=buyer_order&amp;act=evaluate&amp;order_id=741440" target="_blank"  style="display:none">追加评价</a>-->
-    			    						<a href="#" target="_blank" style="display:none">评价</a>
-                                            <p class="ys-pay"><a href="#" target="_blank" id="order741440_action_pay" class="btn">付款</a> </p>                        
-                                                			    						<br>
-    			    						<input type="button" value="取消订单" class="btn1111" ectype="dialog" dialog_width="400" dialog_title="取消订单" dialog_id="buyer_order_cancel_order" uri="index.php?app=buyer_order&amp;act=cancel_order&amp;order_id=741440&amp;ajax" id="order741440_action_cancel" style="display:none">
-    			    						
-    			    						</td>
-                                            <td class="other" rowspan="1">
-                                            <img src="user_trade_files/remark0.gif" style="display:none">
-                                                <a title="" ectype="dialog" dialog_title="备忘" dialog_id="buyer_memorandum" uri="index.php?app=buyer_order&amp;act=memorandum&amp;order_id=741440&amp;ajax" dialog_width="780" style="cursor:pointer;">备忘</a><br>
-                                                <div class="prolist_share">
-                                                    <a class="prolist_share_ico" ectype="dialog" dialog_id="goods_share_741440" dialog_title="goods_share" uri="index.php?app=buyer_order&amp;act=share&amp;order_id=741440" dialog_width="400">分享</a>
-                                                </div>
-            								</td>
-            								</tr>                                
-                                            <tr class="sep-row">
-                                        	<td colspan="9"></td>
-                                        </tr>
-                                        <tr class="order-hd">
-                                        	<td colspan="9">
-                                            	<span class="no">
-                                                    <label>
-                                                        <input type="checkbox" value="741439" name="order_list[]" class="checkitem">
-                                                         <span class="g-u">
-                                                            <a href="#"><img src="user_trade_files/prolist_index_ico.gif" alt="" border=""></a>
-                                                         </span>
-                                                       		 订单编号：<span class="order-num">1703897296</span>
-                                                    </label>
-                                                  </span>
-                                                  <span class="deal-time">成交时间：2017-02-08 09:33:47</span>
-                                                  <span class="seller">
-												 	<a href="#" class="nickname" target="_blank">盛世汉方旗舰店</a>
-					 								<span class="ww-light ww-small">
-                                                    	<span class="sstalking-11" style="cursor:pointer;display:inline-block;vertical-align: middle;margin-top: -4px;" title="点击这里给我发消息"></span>
-                                                     	<!--                                                    --></span>
-					   							  </span>
-                                            </td>
-                                        </tr>
-                                      
-                                                                                 
-                                        <tr class="order-bd">                                       
-                                        	<td colspan="2" class="baobei">
-                                                <a class="pic s50" href="#" target="_blank"><img src="user_trade_files/small_201611031142157009.jpg" alt="查看商品详情" border="0"></a>
-                                                <span class="desc_title">
-                                                    <a href="#" target="_blank" class="baobei-name" title="雪莲果 云南高原特产雪莲果 红泥雪莲果  9斤装">
-                                                        雪莲果 云南高原特产雪莲果 红泥雪莲果  9斤装                                                    </a>	
-                                                    <div class="spec_ico">	
-                                                    规格：雪莲果9斤装<br>
-                                                 </div>
-                                				</span>            
-                                			</td>
-                                            <td class="price">¥26.80</td>
-                                            <td class="quantity">6</td>
-                                            <td class="after-service">
-                                                                                                                                        
-                                                  <!--<a href="javascript:warn_refund();"></a>-->
-					    	  				    <a href="javascript:void;"></a>
-					    	  				    
-					    	  				    <br>
-					    	  					<a href="#">投诉维权</a><br>
-  											                                            
-  											</td>
-  											    <td class="amount" rowspan="1">
-    											<strong>¥160.80</strong>
-												<p class="post-type">(含：¥0.00)</p>
-    			    						</td>
-                                            <td class="trade-status" rowspan="1">
-                                            	<a href="#" class="cheng" id="Status_2" ectype="11">待付款</a><br>
-                                                <a href="#" class="order_dt" target="_blank">订单详情<br></a>
-                                                <a href="#" target="_blank">查看物流</a>
-                                                											</td>
-                                            <td class="operate" rowspan="1">     
-											                       
-                                            <a value="确认收货" class="btn1" ectype="dialog" dialog_id="buyer_order_confirm_order" dialog_width="400" dialog_title="确认收货" uri="index.php?app=buyer_order&amp;act=confirm_order&amp;order_id=741439&amp;ajax" id="order741439_action_confirm" style="display:none"><img src="user_trade_files/prolist_queren.gif" alt="" border="0"></a>
-    			    						<a href="#" target="_blank" style="display:none">查看评价</a><br>
-    			    						<!--  <a href="/index.php?app=buyer_order&amp;act=evaluate&amp;order_id=741439" target="_blank"  style="display:none">追加评价</a>-->
-    			    						<a href="#" target="_blank" style="display:none">评价</a>
-                                            <p class="ys-pay"><a href="#" target="_blank" id="order741439_action_pay" class="btn">付款</a> </p>                        
-                                                			    						<br>
-    			    						<input type="button" value="取消订单" class="btn1111" ectype="dialog" dialog_width="400" dialog_title="取消订单" dialog_id="buyer_order_cancel_order" uri="index.php?app=buyer_order&amp;act=cancel_order&amp;order_id=741439&amp;ajax" id="order741439_action_cancel" style="display:none">
-    			    						
-    			    						</td>
-                                            <td class="other" rowspan="1">
-                                            <img src="user_trade_files/remark0.gif" style="display:none">
-                                                <a title="" ectype="dialog" dialog_title="备忘" dialog_id="buyer_memorandum" uri="index.php?app=buyer_order&amp;act=memorandum&amp;order_id=741439&amp;ajax" dialog_width="780" style="cursor:pointer;">备忘</a><br>
-                                                <div class="prolist_share">
-                                                    <a class="prolist_share_ico" ectype="dialog" dialog_id="goods_share_741439" dialog_title="goods_share" uri="index.php?app=buyer_order&amp;act=share&amp;order_id=741439" dialog_width="400">分享</a>
-                                                </div>
-            								</td>
-            								</tr>
-                                            <tr class="sep-row">
-                                        	<td colspan="9"></td>
-                                        </tr>
-                                        <tr class="order-hd">
-                                        	<td colspan="9">
-                                            	<span class="no">
-                                                    <label>
-                                                        <input type="checkbox" value="741438" name="order_list[]" class="checkitem">
-                                                         <span class="g-u">
-                                                            <a href="#"><img src="user_trade_files/prolist_index_ico.gif" alt="" border=""></a>
-                                                         </span>
-                                                       		 订单编号：<span class="order-num">1703856472</span>
-                                                    </label>
-                                                  </span>
-                                                  <span class="deal-time">成交时间：2017-02-08 09:33:46</span>
-                                                  <span class="seller">
-												 	<a href="#" class="nickname" target="_blank">顺全合美食专卖店</a>
-					 								<span class="ww-light ww-small">
-                                                    	<span class="sstalking-11" style="cursor:pointer;display:inline-block;vertical-align: middle;margin-top: -4px;" title="点击这里给我发消息"></span>
-                                                     	</span>
-					   							  </span>
-                                            </td>
-                                        </tr>
-                                      
-                                                                                 
-                                        <tr class="order-bd">                                       
-                                        	<td colspan="2" class="baobei">
-                                                <a class="pic s50" href="#" target="_blank"><img src="user_trade_files/small_201508041053016965.jpg" alt="查看商品详情" border="0"></a>
-                                                <span class="desc_title">
-                                                    <a href="#" target="_blank" class="baobei-name" title="正宗蒙自甜石榴 新鲜水果云南特产薄皮软籽净重6斤装 全国包邮（5省除外）">
-                                                        正宗蒙自甜石榴 新鲜水果云南特产薄皮软籽净重6斤装 ...                                                    </a>	
-                                                    <div class="spec_ico">	
-                                                    规格：默认<br>
-                                                   </div>
-                                				</span>            
-                                			</td>
-                                            <td class="price">¥38.90</td>
-                                            <td class="quantity">10</td>
-                                            <td class="after-service">
-                                                                                                                                        
-                                                  <!--<a href="javascript:warn_refund();"></a>-->
-					    	  				    <a href="javascript:void;"></a>
-					    	  				    
-					    	  				    <br>
-					    	  					<a href="#">投诉维权</a><br>
-  											                                            
-  											</td>
-  											    <td class="amount" rowspan="1">
-    											<strong>¥389.00</strong>
-												<p class="post-type">(含：¥0.00)</p>
-    			    						</td>
-                                            <td class="trade-status" rowspan="1">
-                                            	<a href="#" class="cheng" id="Status_3" ectype="11">待付款</a><br>
-                                                <a href="#" class="order_dt" target="_blank">订单详情<br></a>
-                                                <a href="#" target="_blank">查看物流</a>
-                                            </td>
-                                            <td class="operate" rowspan="1">     
-											                       
-                                            <a value="确认收货" class="btn1" ectype="dialog" dialog_id="buyer_order_confirm_order" dialog_width="400" dialog_title="确认收货" uri="index.php?app=buyer_order&amp;act=confirm_order&amp;order_id=741438&amp;ajax" id="order741438_action_confirm" style="display:none"><img src="user_trade_files/prolist_queren.gif" alt="" border="0"></a>
-    			    						<a href="#" target="_blank" style="display:none">查看评价</a><br>
-    			    						<a href="#" target="_blank" style="display:none">评价</a>
-                                            <p class="ys-pay"><a href="#" target="_blank" id="order741438_action_pay" class="btn">付款</a> </p>                        
-                                            <br>
-    			    						<input type="button" value="取消订单" class="btn1111" ectype="dialog" dialog_width="400" dialog_title="取消订单" dialog_id="buyer_order_cancel_order" uri="index.php?app=buyer_order&amp;act=cancel_order&amp;order_id=741438&amp;ajax" id="order741438_action_cancel" style="display:none">
-    			    						</td>
-                                            <td class="other" rowspan="1">
-                                            <img src="user_trade_files/remark0.gif" style="display:none">
-                                                <a title="" ectype="dialog" dialog_title="备忘" dialog_id="buyer_memorandum" uri="index.php?app=buyer_order&amp;act=memorandum&amp;order_id=741438&amp;ajax" dialog_width="780" style="cursor:pointer;">备忘</a><br>
-                                                <div class="prolist_share">
-                                                    <a class="prolist_share_ico" ectype="dialog" dialog_id="goods_share_741438" dialog_title="goods_share" uri="index.php?app=buyer_order&amp;act=share&amp;order_id=741438" dialog_width="400">分享</a>
-                                                </div>
-            								</td>
-            								</tr>
+                                        </tr > 
+                          
                                         <tr class="sep-row">
                                         	<td colspan="9"></td>
                                         </tr>
@@ -635,46 +430,11 @@ document.onclick = nav_close;
                                     </tbody></table>
                                     </form>
                                 </div>
-                                
-                                
                             </div>
                         </div>
                         
                         <div class="clear"></div>
-                        
-                         <div class="guess_youlike">
-                        	<div class="gyl_title"><b>猜猜您喜欢</b></div>  
-						<div id="gongtai">
-							<ul class="gyl_con" style="margin-top: 10px; margin-bottom: 10px;">                                  		                                  
-                            <li>
-                               <p class="gyl_pic"><a href="#" target="_blank"><img src="user_trade_files/small_201611041204584187.jpg" width="160" height="160" alt="" border="0"></a></p>
-                               <p class="gyl_price">￥<b class="cheng">35.00</b></p>
-                               <p class="gyl_text"><a href="#" target="_blank">云南新鲜水果雪山红泥沙雪莲果5kg装 净重4....</a></p>
-                            </li>
-                            <li>
-                               <p class="gyl_pic"><a href="#" target="_blank"><img src="user_trade_files/small_201508041053016965.jpg" width="160" height="160" alt="" border="0"></a></p>
-                               <p class="gyl_price">￥<b class="cheng">38.90</b></p>
-                               <p class="gyl_text"><a href="#" target="_blank">正宗蒙自甜石榴 新鲜水果云南特产薄皮软籽...</a></p>
-                            </li>
-                            <li>
-                               <p class="gyl_pic"><a href="#" target="_blank"><img src="user_trade_files/small_201611031142157009.jpg" width="160" height="160" alt="" border="0"></a></p>
-                               <p class="gyl_price">￥<b class="cheng">26.80</b></p>
-                               <p class="gyl_text"><a href="#" target="_blank">雪莲果 云南高原特产雪莲果 红泥雪莲果  9...</a></p>
-                            </li>
-                            <li>
-                               <p class="gyl_pic"><a href="#" target="_blank"><img src="user_trade_files/small_201610201737159391.jpg" width="160" height="160" alt="" border="0"></a></p>
-                               <p class="gyl_price">￥<b class="cheng">22.00</b></p>
-                               <p class="gyl_text"><a href="#" target="_blank">丽水山耕 锥栗200g</a></p>
-                            </li>
-                            <li>
-                               <p class="gyl_pic"><a href="#" target="_blank"><img src="user_trade_files/small_201611031142157009.jpg" width="160" height="160" alt="" border="0"></a></p>
-                               <p class="gyl_price">￥<b class="cheng">19.80</b></p>
-                               <p class="gyl_text"><a href="#" target="_blank">雪莲果 云南高原特产雪莲果 红泥雪莲果  5...</a></p>
-                            </li>
-                            </ul>
-						</div>
-						<div class="clear"></div>
-                        </div>   
+                         
                     </div>       
                 </div>       
              </div>      
@@ -784,7 +544,7 @@ border-color:transparent transparent  transparent #fff  ;
 <div id="rightButton" style="right: 0px;">
     <ul id="right_ul">  
      <li id="right_kf"></li>
-        <a target="_blank" href="#"><li id="right_gw"><div class="nums">0</div></li></a>
+        <a target="_blank" href="shopping.jsp"><li id="right_gw"></li></a>
             <li id="right_weixin" class="right_ico"></li>
       <li id="right_tip" style="margin-top:90px" class="png">
             <div class="con ovf  ">
@@ -865,4 +625,7 @@ $(function(){
     $('#add_time_to').datepicker({dateFormat: 'yy-mm-dd'});
 });
 </script>
-<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all ui-helper-hidden-accessible"></div></body></html>
+<script type="text/javascript" src="js/index/user_trade.js"></script>
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all ui-helper-hidden-accessible"></div>
+
+</body></html>

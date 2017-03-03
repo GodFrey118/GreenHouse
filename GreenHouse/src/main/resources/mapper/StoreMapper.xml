@@ -20,6 +20,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		  <result property="g_stock" column="g_stock" />
 		  <result property="g_type" column="g_type" />
 		  <result property="g_state" column="g_state" />
+		  <collection property="stores" ofType="Store">
+		   <id property="s_id" column="s_id" />
+		   <id property="s_name" column="s_name" />
+		  </collection>
 		</collection>
 	</resultMap>
     <select id="selectStoreInfo" parameterType="int" resultType="Store">
@@ -39,11 +43,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 	
 	<select id="selectCartNum" parameterType="int" resultMap="ShopingCartMap">
-       select * from Shopping_Cart sc inner join good g on g.g_id=sc.g_id where c_id=#{c_id} and sc_g_buy_state='未购买' and sc_g_payment='未付款'
+       select * from Shopping_Cart sc inner join good g on g.g_id=sc.g_id inner join store st on st.s_id=g.s_id  where c_id=#{c_id} and sc_g_buy_state='未购买' and sc_g_payment='未付款'
     </select>
     
     <select id="selectSCartGood" parameterType="Shoping_Cart" resultType="Shoping_Cart">
-       select * from Shopping_Cart where c_id=#{c_id} and g_id=#{g_id}
+       select * from Shopping_Cart where g_id=#{g_id} and c_id=#{c_id}
     </select>
     
     <update id="updateScartNum" parameterType="Shoping_Cart">
@@ -57,5 +61,81 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getStore" parameterType="Object"  resultType="int">
 		select s_id from store where c_id=#{c_id}
 	</select>
-
+	
+	<select id="getGt_name" resultType="GoodType">
+		select * from GoodType
+	</select>
+	
+	<insert id="insertGood" parameterType="Good">
+		insert into Good values(seq_Good.nextval,#{s_id},#{g_name},#{gt_id},#{g_pic},#{g_price},#{g_stock},#{g_type},#{g_state})
+	</insert>
+	
+	<select id="selectOrderInfo" parameterType="Shoping_Cart" resultMap="ShopingCartMap">
+       select * from Shopping_Cart sc inner join good g on g.g_id=sc.g_id inner join store st on st.s_id=g.s_id where c_id=#{c_id} and sc_id=#{sc_id} and sc_g_buy_state='未购买' and sc_g_payment='未付款'
+    </select>
+    
+    <insert id="insertOrder" parameterType="Orders">
+       insert into Orders values(seq_Orders.nextval,#{c_id},#{s_id},#{g_id},#{o_amount},#{o_sum},sysdate,#{o_state})
+    </insert>
+    
+    <delete id="updateGoodState" parameterType="Shoping_Cart">
+       delete Shopping_Cart where c_id=#{c_id}  and  sc_id = #{sc_id}
+    </delete>
+    
+    <update id="updatetOrder" parameterType="com_money">
+       update com_money set money=#{money} where c_id=#{c_id}
+    </update>
+    
+    <select id="selectMoney" parameterType="int" resultType="com_money">
+       select * from com_money where c_id=#{c_id}
+    </select>
+    
+    <update id="updatetOrderState" parameterType="com_money">
+      update Orders set o_state='已付款' where c_id=#{c_id}
+    </update>
+    <resultMap type="Orders" id="OrderMap">
+		  <id property="o_id" column="o_id"/>
+		  <result property="c_id" column="c_id"/>
+		  <result property="s_id" column="s_id"/>
+		  <result property="g_id" column="g_id"/>
+		  <result property="o_amount" column="o_amount"/>
+		  <result property="o_sum" column="o_sum"/>
+		  <result property="o_ordertime" column="o_ordertime"/>
+		  <result property="o_state" column="o_state"/>
+		<collection property="stores" ofType="Store">
+		  <id property="s_id" column="s_id" />
+		  <result property="st_id" column="st_id" />
+		  <result property="c_id" column="c_id" />
+		  <result property="s_ownerName" column="s_ownerName" />
+		  <result property="s_ID_card" column="s_ID_card" />
+		  <result property="s_name" column="s_name" />
+		  <result property="s_company" column="s_company" />
+		  <result property="s_area" column="s_area" />
+		  <result property="s_detail_Addr" column="s_detail_Addr" />
+		  <result property="s_post" column="s_post" />
+		  <result property="s_tel" column="s_tel" />
+		  <result property="s_ID_pic" column="s_ID_pic" />
+		  <result property="s_licence_pic" column="s_licence_pic" />
+		  <result property="s_service" column="s_service" />
+		  <result property="s_state" column="s_state" />
+		</collection>
+		<collection property="goods" ofType="Good">
+		  <id property="g_id" column="g_id" />
+		  <result property="s_id" column="s_id" />
+		  <result property="g_name" column="g_name" />
+		  <result property="gt_id" column="gt_id" />
+		  <result property="g_pic" column="g_pic" />
+		  <result property="g_price" column="g_price" />
+		  <result property="g_stock" column="g_stock" />
+		  <result property="g_type" column="g_type" />
+		  <result property="g_state" column="g_state" />
+		</collection>
+	</resultMap>
+	
+    <select id="getOrders" parameterType="int" resultMap="OrderMap">
+       select * from Orders o left join store s on s.s_id= o.s_id left join good g on o.g_id=g.g_id where o.c_id=#{c_id}
+    </select>
+    <select id="SelectSCart" parameterType="Shoping_Cart" resultType="Shoping_Cart">
+        select sc_id from Shopping_Cart where c_id=#{c_id} and g_id=#{g_id}
+    </select>
 </mapper>     

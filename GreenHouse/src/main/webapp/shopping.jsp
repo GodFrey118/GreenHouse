@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,13 +44,18 @@
 					<img src="./shopping_files/icon-star.gif">收藏山山 
 				</div>
 				<div class="rig">
-					<span class="left1 public_name pulic_sn-login-info">Hi！<a
-						class="sli-item" href="#"> ssgmylrktk</a>！ <a href="#"
-						class="sli-item">积分(<em>100)</em></a> <a href="#" class="sli-item">消息<em>(0)</em></a><a
-						href="#" class="sn-quit">退出</a><i class="sn-separator"></i></span> <span
-						class="left1 op"></span>
+					<c:choose>
+				<c:when test="${loginUser eq null}">
+					<span id="loginForm" class="fl name sn-login-info">您好！ 欢迎来山山商城购物！<a href="login_user.jsp" class="sn-login">请登录</a> <a href="page/register.jsp" class="sn-register">免费注册</a><i class="sn-separator"></i></span>
+				</c:when>
+				<c:otherwise>
+				<span class="fl name sn-login-info" style='color:green;'>欢迎  ${loginUser } 使用本网站 &nbsp &nbsp &nbsp &nbsp<a href="#" class="sn-login">个人信息</a> 
+				<a href='login_user.jsp' onclick='logout()' class="sn-register">退出</a><i class="sn-separator"></i></span>
+				
+				</c:otherwise>
+			</c:choose>
 					<ul id="navv" class="left1">
-						<li class="line">|</li>
+						
 						<li class="col-conn">
 							<div class="ui-dropdown11 login-menu">
 								<a href="#">我的订单</a>
@@ -109,13 +115,7 @@
 					<a target="_blank"
 						href="./shopping_files/确认购物清单 - 山山商城_自媒体视频直播购物平台.html"
 						class="ui-dropdown-hd22">
-						<div class="top-bt1 left1">
-							<div class="left1">
-								<img src="./shopping_files/icon-buy2.png">
-							</div>
-							<div class="left1">购物车</div>
-							<div id="carts" class="num-bg left1">1</div>
-						</div>
+						
 					</a>
 					<ul class="unstyled frr ui-dropdown-menu22">
 						<li>
@@ -225,8 +225,7 @@
 										<thead>
 											<tr>
 												<th class="s-chk"><span class="select-all"> <input
-														type="checkbox" onclick="all_select(this)" class="all_sel"
-														checked="checked"> <label for="floatBarSelectAll">全选</label></span>
+														type="checkbox" id="checkAll" checked='checked' class="all_sel"> <label for="floatBarSelectAll">全选</label></span>
 													<span class="del-items mg-left" id="batchAction"
 													style="position: absolute; width: 50px; margin-left: 5px; left: 60px;">
 														<a href="javascript:;" name="id"
@@ -250,25 +249,23 @@
 											</tr>
 										</thead>
 									</table>
-									<table cellspacing="0" cellpadding="0" class="order-table" >
-									 <tbody id="shopping">
-									 
-									 </tbody>
+									<table cellspacing="0" cellpadding="0" class="order-table" id="shopping">
+	
 									</table>
 									<div class="comb-pay clearfix fixed-bottom" id="total_pay"
 										style="box-shadow: 0; position: static; left: 0; width: 100%;">
 										<div class="float-bar clearfix">
 											<span class="select-all"> <input type="checkbox"
-												onclick="all_select(this)" class="all_sel" checked="checked">
+												id="checkAll" class="all_sel" checked="checked">
 													<label for="floatBarSelectAll">全选</label></span> <span
 												class="del-items mg-left"> <a href="javascript:;"
 												name="id" onclick="drop_batch(this)"
 												presubmit="confirm(&#39;你确定要删除它吗&#39;);"
 												uri="index.php?app=cart&amp;act=piliang_drop">批量删除</a>
 											</span> <span class="total-price">商品总价(不含运费)：<strong
-												class="fontsize1" id="cart_amount">¥22.00</strong></span> <a
-												name="goods_id" class="btn J_MakePoint submit_order"
-												onclick="submit_order();" is_post="1"
+												class="fontsize1" id="cart_amount">¥0.00</strong></span> 
+												<a class="btn J_MakePoint submit_order"
+												onclick="sub_order();" 
 												uri="index.php?app=order&amp;goods=cart">结 算</a>
 										</div>
 									</div>
@@ -444,9 +441,9 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 						<div id="rightButton" style="right: 0px;">
 							<ul id="right_ul">
 								<li id="right_kf"></li>
-								<a target="_blank" href="./shopping_files/shopping.jsp"><li
+								<a target="_blank" href="shopping.jsp"><li
 									id="right_gw">
-										<div class="nums">1</div>
+										
 								</li></a>
 								<li id="right_weixin" class="right_ico"></li>
 								<li id="right_tip" style="margin-top: 90px" class="png">

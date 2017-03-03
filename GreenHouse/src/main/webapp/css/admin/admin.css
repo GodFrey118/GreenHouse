@@ -7,7 +7,11 @@
 
 body ,body#layoutBody{
 	font: 12px/20px Tahoma;
+<<<<<<< HEAD
 	width:960px;
+=======
+	width:1050px;
+>>>>>>> branch 'master' of ssh://git@github.com/Godfrey118/GreenHouse.git
 	margin:0px auto;
 }
 
