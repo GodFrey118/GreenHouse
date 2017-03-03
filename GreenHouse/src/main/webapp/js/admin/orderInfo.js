@@ -82,25 +82,23 @@ $('#orderList').datagrid({
 		width : 150,
 		align : 'center',
 		formatter: function(value,row,index){
-			var oprStr ='<a class="modifyBtn" href="javascript:void(0)" onclick="openUpdate('+ row.s_id +')">查看详情</a>'+ 
+			var oprStr ='<a class="modifyBtn" href="javascript:void(0)" onclick="openUpdate('+ row.o_id +')">查看详情</a>'+ 
 			'<script>$(".modifyBtn").linkbutton({iconCls: "icon-edit"})</script>'
 			return oprStr;
 		}
 	}, ] ]
 });
 function openUpdate(id){
-	openDN(id);
-}
-function openDN(id){
+	parent.openDT(id);
 	
-
+}
+function openDT(id){
 	$("#orderdetail").dialog({
 		title:'Order',
 		width:300,
 		height:400,
-		left:10,
 		modal:true,
-		href:'orderdetail.jsp',
+		href:'page/orderdetail.jsp',
 	});
 }
 
@@ -149,7 +147,7 @@ $('.closeBth').linkbutton({
     	$('#modifyForm').submit();
     }
 });*/
-
+/*
 function openUpdate(s_id){
 	//var row = $('#userList').datagrid('getRows')[index];
 		   $.get("adm/storeApply?s_id=" + s_id ,function(data){
@@ -167,7 +165,7 @@ function openUpdate(s_id){
 					}
 				});
 		   },"json");
-}
+}*/
 function chgpic(obj){
 	$("#pic").attr("src",window.URL.createObjectURL(obj.files[0]));
 }
