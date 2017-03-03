@@ -8,5 +8,6 @@
 </head>
 <body>
 商店注册成功！
+<a href="index.jsp">点此返回主页</a>
 </body>
 </html>

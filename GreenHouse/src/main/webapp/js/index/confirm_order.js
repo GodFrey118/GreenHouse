@@ -15,21 +15,14 @@ param =(Param.substr(1 , Param.length)).split(",");
 var a;
 for(var i=0;i<param.length;i++){
 	//alert(param[i]);
-	var total=0;
+	var total=0.0;
 	
 	$.post("user/orderInfo?sc_id="+param[i], function(data) {
 		//alert(data);
 		for(var i=0;i<data.length;i++){
 			
 			for(var j=0;j<data[i].goods.length;j++){
-				/*$.post("store/storeinfo_1?s_id="+(data[i].goods)[j].s_id, function(data) {
-					a = data.s_name;
-					alert(a);
-					//$("#"+i).html(data.s_name);
 				
-				},"json");*/
-				//alert((data[i].goods)[j].s_id);
-				//alert(a);
 				for(var n=0;n<((data[i].goods)[j]).stores.length;n++){
 					
 				$("#order").append("<tr style='height: 25px;'><td colspan='7'></td></tr>"
@@ -40,7 +33,7 @@ for(var i=0;i<param.length;i++){
                         	+"<th colspan='5' class='promo-info'><div class='scrolling-container'>"
                         	+"<ul class='scrolling-promo-hint' id='J_ScrollingPromoHint_75080'></ul></div>"
                         	+"</th></tr><tr><td style='width:350px;'><span class='fl gw2_xpic'>"
-                        	+"<a href='#' target='_blank'><img src='./index_store_files/small_201508041053016965.jpg' alt='"+(data[i].goods)[j].g_name+"' border='0' style='width:50px; height:50px;'></a></span>"
+                        	+"<a href='#' target='_blank'><img src='" + (data[i].goods)[j].g_pic + "' alt='"+(data[i].goods)[j].g_name+"' border='0' style='width:50px; height:50px;'></a></span>"
                             +"<a href='#' class='fl gw2_xtext' target='_blank'>"+(data[i].goods)[j].g_name+"<br>规格：默认</a>"
                             +"<br></td><td style='text-align: center;width:100px;'><font style='text-decoration: line-through;'>￥158.00</font><br>￥"+(data[i].goods)[j].g_price+"</td>"
                             +"<td style='width:100px;' align='center'>"

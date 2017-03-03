@@ -407,11 +407,11 @@
 								<div class="dt-logoCon"><em id="Brand">${storeInfo.s_name }</em></div>
 							</div>
 							<p class="big_pic">
-                                <a href="javascript:;"><span class="jqzoom"><img alt="" src="./index_store_files/small_201610201743213162.jpg" width="360" height="360" jqimg="./index_store_files/201610201743213162.jpg"></span></a>
+                                <a href="javascript:;"><span class="jqzoom"><img alt="" src="${goodInfo.g_pic }" width="360" height="360" jqimg="${goodInfo.g_pic }"></span></a>
 							</p>
 							<div class="ware_boxx">
 				                <ul class="clear1fix">
-				                   <li id="ware_pic_hover" bigimg="/data/files/store_1898538/goods_1/201610201743213162.jpg"><img alt="" src="./index_store_files/small_201610201743213162.jpg" width="60" height="60"></li>
+				                   <li id="ware_pic_hover" bigimg="/data/files/store_1898538/goods_1/201610201743213162.jpg"><img alt="" src="${goodInfo.g_pic }" width="60" height="60"></li>
 				                </ul>
 				            </div>
 							
@@ -424,7 +424,7 @@
 									<a class="bds_renren" title="分享到人人网" href="#"></a>
 								</div>
 								<div style="float:left1; margin-top:8px;">
-									<span style="color:#999;"><span><img src="./index_store_files/ss_dp_share6.gif" alt="" style="float:left1;margin-left1:30px;vertical-align: middle; padding-right:8px;cursor:pointer;" onclick="collect_goods(49952)" ;=""></span><a href="javascript:;" style="color:#000;" onclick="collect_goods(49952)" ;="">收藏该商品</a><span id="goods_collects">（收藏人数0）</span></span>
+									<span style="color:#999;"><span><img src="./index_store_files/ss_dp_share6.gif" alt="" style="float:left1;margin-left1:30px;vertical-align: middle; padding-right:8px;cursor:pointer;" onclick="collect_goods(49952)" ></span><a href="javascript:;" style="color:#000;" onclick="collect_goods(49952)" ;="">收藏该商品</a><span id="goods_collects">（收藏人数0）</span></span>
 								</div>
 								<div style="clear1:both;"></div>
 								<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=482440" src="js/public/bds_s_v2.js"></script>

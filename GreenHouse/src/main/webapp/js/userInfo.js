@@ -20,11 +20,6 @@ $('#userInfo').datagrid({
 		width : 20,
 		align:'center'
 	}, {
-		field : 'c_birthday',
-		title : '生日',
-		width : 50,
-		align:'center'
-	}, {
 		field : 'c_tel',
 		title : '手机号',
 		width : 50,

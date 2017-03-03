@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,8 +31,16 @@
            <img src="./business_files/icon-star.gif">收藏山山
            </div>
            <div class="rig">
-                <span class="left1 public_name pulic_sn-login-info">Hi！<a class="sli-item" href="#"> ssgmylrktk</a>！  <a href="#" class="sli-item">积分(<em>100)</em></a>  <a href="#" class="sli-item">消息<em>(0)</em></a><a href="#" class="sn-quit">退出</a><i class="sn-separator"></i></span>
-                <span class="left1 op"></span>
+                 <c:choose>
+				<c:when test="${loginUser eq null}">
+					<span id="loginForm" class="fl name sn-login-info">您好！ 欢迎来山山商城购物！<a href="login_user.jsp" class="sn-login">请登录</a> <a href="page/register.jsp" class="sn-register">免费注册</a><i class="sn-separator"></i></span>
+				</c:when>
+				<c:otherwise>
+				<span class="fl name sn-login-info" style='color:green;'>欢迎  ${loginUser } 使用本网站 &nbsp &nbsp &nbsp &nbsp<a href="#" class="sn-login">个人信息</a> 
+				<a href='login_user.jsp' onclick='logout()' class="sn-register">退出</a><i class="sn-separator"></i></span>
+				
+				</c:otherwise>
+			</c:choose>
                 <ul id="navv" class="left1">
                         <li class="line">|</li>
                         <li class="col-conn">
@@ -190,7 +199,7 @@ padding: 0 20px;
     </div>
     <div class="BBmain">
           <a href="javascript:;">了解入驻咨询</a>
-          <a href="#">提交入驻申请</a>
+          <a href="page/apply.jsp">提交入驻申请</a>
     </div>
 </div>
 <div class="Bmain">

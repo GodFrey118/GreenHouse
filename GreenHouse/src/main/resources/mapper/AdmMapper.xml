@@ -79,15 +79,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 
 
-	<select id="admLogin" parameterType="Adm" resultType="Adm">
-		select * from Adm where adm_name=#{adm_name} and adm_pwd=#{adm_pwd}
-	</select>
-	
-	<!-- 使用嵌套查询方式，处理分页 -->
+	<!-- 使用嵌套查询方式，处理分页 
 	<resultMap type="PaginationBean" id="PaginationBeanMap">
 		<collection property="rows" column="{pageSize=pageSize, currPage=currPage}" select="getGoods"/>
 	</resultMap>
-	<!-- #是采用占位符 ？  $是直接取值 -->
+	#是采用占位符 ？  $是直接取值
 	<select id="showGoodInfo" parameterType="PaginationBean"
 		resultMap="PaginationBeanMap" flushCache="false">
 		select count(1) total,ceil(count(1) / ${pageSize}) totalPage,${pageSize} pageSize, ${currPage} currPage from Good
@@ -96,7 +92,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from
 		(select m.*,rownum rn from 
 		(select * from good order by 1 desc) m where rownum &lt;= ${currPage} * ${pageSize}) where rn &gt; (${currPage}-1) * ${pageSize}
-	</select>
+	</select> -->
 	
 	<resultMap type="PaginationBean" id="PaginationBeanStoreMap">
 		<collection property="rows" column="{pageSize=pageSize, currPage=currPage}" select="getStores"/>
@@ -130,40 +126,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		(select o.o_id,o.o_ordertime,c.c_name,c.c_tel,s.s_name,s.s_company,s.s_tel,g.g_name,g.g_price,o.o_amount,o.o_sum,g.g_type,o.o_state from Orders o left join store s on s.s_id= o.s_id left join good g on o.g_id=g.g_id inner join CommonUser c on c.c_id = o.c_id order by 1 desc) m where rownum &lt;= ${currPage} * ${pageSize}) where rn &gt; (${currPage}-1) * ${pageSize}
 	</select>
 
-	<select id="admLogin" parameterType="Adm" resultType="Adm">
+<!-- 	<select id="admLogin" parameterType="Adm" resultType="Adm">
 		select * from Adm where adm_name=#{adm_name} and adm_pwd=#{adm_pwd}
-	</select>
-	
-	<!-- 使用嵌套查询方式，处理分页 -->
-	<resultMap type="PaginationBean" id="PaginationBeanMap">
-		<collection property="rows" column="{pageSize=pageSize, currPage=currPage}" select="getGoods"/>
-	</resultMap>
-	<!-- #是采用占位符 ？  $是直接取值 -->
-	<select id="showGoodInfo" parameterType="PaginationBean"
-		resultMap="PaginationBeanMap" flushCache="false">
-		select count(1) total,ceil(count(1) / ${pageSize}) totalPage,${pageSize} pageSize, ${currPage} currPage from Good
-	</select>
-	<select id="getGoods" resultType="Good" flushCache="false">
-		select * from
-		(select m.*,rownum rn from 
-		(select * from good order by 1 desc) m where rownum &lt;= ${currPage} * ${pageSize}) where rn &gt; (${currPage}-1) * ${pageSize}
-	</select>
-	
-	<resultMap type="PaginationBean" id="PaginationBeanStoreMap">
-		<collection property="rows" column="{pageSize=pageSize, currPage=currPage}" select="getStores"/>
-	</resultMap>
-	<!-- #是采用占位符 ？  $是直接取值 -->
-	<select id="showStoreInfo" parameterType="PaginationBean"
-		resultMap="PaginationBeanStoreMap" flushCache="false">
-		select count(1) total,ceil(count(1) / ${pageSize}) totalPage,${pageSize} pageSize, ${currPage} currPage from Store
-	</select>
-	<select id="getStores" resultType="Store" flushCache="false">
-		select * from
-		(select m.*,rownum rn from 
-		(select * from Store order by 1 desc) m where rownum &lt;= ${currPage} * ${pageSize}) where rn &gt; (${currPage}-1) * ${pageSize}
 	</select>
 	
 	<update id="updateStoreState" parameterType="int">
 		update store set s_state='通过' where s_id=#{s_id}
-	</update>
+	</update> -->
 </mapper>     

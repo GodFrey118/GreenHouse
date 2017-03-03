@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.yc.GreenHouse.entity.Adm;
-
 import com.yc.GreenHouse.entity.CommonUser;
 import com.yc.GreenHouse.entity.Good;
 import com.yc.GreenHouse.entity.GoodType;
@@ -54,6 +53,50 @@ public class AdmServiceImpl implements AdmService {
 	@Override
 	public boolean storeApply(Store store) {
 		return admMapper.updateStoreState(store)>0;
+	}
+	@Override
+	public PaginationBean<Orders> listPartOrder(String currPage, String pageSize) {
+		PaginationBean<Store> userBean = new PaginationBean<Store>();
+		if (currPage != null) {
+			userBean.setCurrPage(Integer.parseInt(currPage));
+		}
+		
+		if (pageSize != null) {
+			userBean.setPageSize(Integer.parseInt(pageSize));
+			
+		}
+		return admMapper.showOrderInfo(userBean);
+	}
+
+	@Override
+	public PaginationBean<CommonUser> listUserInfo(String currPage, String pageSize) {
+		PaginationBean<CommonUser> userBean=new PaginationBean<CommonUser>();
+		if (currPage != null) {
+			userBean.setCurrPage(Integer.parseInt(currPage));
+		}
+		if (pageSize != null) {
+			userBean.setPageSize(Integer.parseInt(pageSize));
+		}
+		return admMapper.showUserInfo(userBean);
+	}
+	@Override
+	public PaginationBean<GoodType> listGoodType(String currPage, String pageSize) {
+		PaginationBean<GoodType> userBean=new PaginationBean<GoodType>();
+		if (currPage != null) {
+			userBean.setCurrPage(Integer.parseInt(currPage));
+		}
+		if (pageSize != null) {
+			userBean.setPageSize(Integer.parseInt(pageSize));
+		}
+		return admMapper.showGoodType(userBean);
+	}
+	@Override
+	public GoodType checkGoodType(GoodType goodType) {
+		return admMapper.checkGoodType(goodType);
+	}
+	@Override
+	public int addGoodType(GoodType goodType) {
+		return admMapper.addGoodType(goodType);
 	}
 
 }

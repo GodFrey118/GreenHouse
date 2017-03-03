@@ -407,7 +407,7 @@ public class UserHandler {
 			@RequestParam(name="sc_goodNum",required=false)Integer sc_goodNum,
 			@RequestParam(name="o_sum",required=false)Integer o_sum,
 			@RequestParam(name="sc_id",required=false)int sc_id,
-			@RequestParam(name="sum",required=false)int sum,
+			@RequestParam(name="sum",required=false)Double sum,
 			@RequestParam(name="o_state",required=false)String o_state,Shoping_Cart sCart,HttpSession session,Orders orders){
 		CommonUser user2 = (CommonUser) session.getAttribute("user");
 		Integer c_id = user2.getC_id();

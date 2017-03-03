@@ -53,7 +53,8 @@ create table Store(
 	s_service varchar2(100),
 	s_state varchar2(20)
 )
-
+select * from storeType
+insert into storeType values()
 update store set s_state='未通过' where s_id=1100
 alter table store modify s_ID_pic varchar2(150)
 alter table store rename column s_ID_pic to name_tmp;

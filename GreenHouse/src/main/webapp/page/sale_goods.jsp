@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <html>
 <head>
@@ -24,7 +25,7 @@
                         <li style="cursor:pointer">注&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;销</li>
                     </ul>
                 </li>
-                <li>HI~请[<a href="login.html">登录</a>]&nbsp;&nbsp;<a href="register.html" style="color:#FD843D">[免费注册]</a></li>
+                <li>HI~请[<a href="login_user.jsp">登录</a>]&nbsp;&nbsp;<a href="register.html" style="color:#FD843D">[免费注册]</a></li>
             </ul>
         </div>
     

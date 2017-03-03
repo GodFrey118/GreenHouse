@@ -22,13 +22,12 @@ $.post("index/goodtype",function(data){
 },"json"); 
 
 $.post("index/good" , function(data){
-	alert("sd");
 	   for(var i=0; i<data.length; i++){
 		   for(var j=0; j<(data[i].goods).length; j++){
 			   if((data[i].goods)[j].gt_id=="1000"){
 				   $("#goods").append("<li>"
              +"<p class='pic'><a href='store/storeinfo?s_id="+(data[i].goods)[j].s_id+"&g_id="+(data[i].goods)[j].g_id+"' target='_blank'>"
-             +"<img src='./index_files/small_201507291048161158.jpg'>  </a>"
+             +"<img src='"+(data[i].goods)[j].g_pic+"'>  </a>"
              +"<span class='f15 fyh' style='cursor: pointer' onclick='add_to_cart("+(data[i].goods)[j].g_id+");'>加入购物车</span>"
              +"</p>"
              +"<p class='name'><a href='#'>"+(data[i].goods)[j].g_name+"</a></p> "
@@ -44,7 +43,7 @@ $.post("index/good" , function(data){
 			   }else if((data[i].goods)[j].gt_id=="1001"){
 				   $("#goods_1").append("<li>"
 		                   +"<p class='pic'><a href='store/storeinfo?s_id="+(data[i].goods)[j].s_id+"&g_id="+(data[i].goods)[j].g_id+"' target='_blank'>"
-		                   +"<img src='./index_files/small_201606081530082797.jpg'>  </a>"
+		                   +"<img src='"+(data[i].goods)[j].g_pic+"'>  </a>"
 		                   +"<span class='f15 fyh' style='cursor: pointer' onclick='add_to_cart("+(data[i].goods)[j].g_id+");'>加入购物车</span>"
 		                   +"</p>"
 		                   +"<p class='name'><a href='#'>"+(data[i].goods)[j].g_name+"</a></p> "
@@ -59,7 +58,7 @@ $.post("index/good" , function(data){
 			   }else if((data[i].goods)[j].gt_id=="1003"){
 				   $("#goods_2").append("<li>"
 		                   +"<p class='pic'><a href='store/storeinfo?s_id="+(data[i].goods)[j].s_id+"&g_id="+(data[i].goods)[j].g_id+"' target='_blank'>"
-		                   +"<img src='./index_files/small_201610201656443517.jpg'>  </a>"
+		                   +"<img src='."+(data[i].goods)[j].g_pic+"'>  </a>"
 		                   +"<span class='f15 fyh' style='cursor: pointer' onclick='add_to_cart("+(data[i].goods)[j].g_id+");'>加入购物车</span>"
 		                   +"</p>"
 		                   +"<p class='name'><a href='#'>"+(data[i].goods)[j].g_name+"</a></p> "
@@ -74,7 +73,7 @@ $.post("index/good" , function(data){
 			   }else if((data[i].goods)[j].gt_id=="1002"||(data[i].goods)[j].gt_id=="1004"){
 				   $("#goods_3").append("<li>"
 		                   +"<p class='pic'><a href='store/storeinfo?s_id="+(data[i].goods)[j].s_id+"&g_id="+(data[i].goods)[j].g_id+"' target='_blank'>"
-		                   +"<img src='./index_files/small_201511061104387723.jpg'>  </a>"
+		                   +"<img src='."+(data[i].goods)[j].g_pic+"'>  </a>"
 		                   +"<span class='f15 fyh' style='cursor: pointer' onclick='add_to_cart("+(data[i].goods)[j].g_id+");'>加入购物车</span>"
 		                   +"</p>"
 		                   +"<p class='name'><a href='#'>"+(data[i].goods)[j].g_name+"</a></p> "
@@ -125,7 +124,7 @@ $.post("user/cartNum",function(data){
                 +"</div>"
                 +"<div class='pro-con left carts_177721'>"
                 +"<span class='left img'>" 
-                +"<img style='width:50px;height:50px;' src='./index_store_files/small_201507291048161158.jpg'></span>"
+                +"<img style='width:50px;height:50px;' src='."+good_data.g_pic+"'></span>"
                 +"<span class='left pro-name1 lh18'>" + good_data.g_name + "</span>"
                 +"<span class='left  pri lh18'><p>"
                 +"<font class='cff6 f14'>￥" + good_data.g_price + "</font>*"+data[i].sc_goodNum+"</p>"

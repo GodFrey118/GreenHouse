@@ -33,7 +33,7 @@ $.post("user/Order",function(data){
 				$("#"+i).after("<tr class='order-bd'> "
 		                  +"<td colspan='2' class='baobei'>"
 		                  +"<a class='pic s50' href='#' target='_blank'>" +
-		                  		"<img src='user_trade_files/small_201610201737159391.jpg' alt='查看商品详情' border='0'></a>"
+		                  		"<img src='"+data[i].goods[n].g_pic+"' alt='查看商品详情' border='0'></a>"
 		                  +"<span class='desc_title'>"
 		                  +"<a href='#' target='_blank' class='baobei-name' title='"+data[i].goods[n].g_name+"'> "+data[i].goods[n].g_name+"</a>	"
 		                  +"<div class='spec_ico'>规格："+data[i].goods[n].g_name+"<br/></div>"
@@ -74,7 +74,7 @@ $.post("user/Order",function(data){
 				$("#"+i).after("<tr class='order-bd'> "
 		                  +"<td colspan='2' class='baobei'>"
 		                  +"<a class='pic s50' href='#' target='_blank'>" +
-		                  		"<img src='user_trade_files/small_201610201737159391.jpg' alt='查看商品详情' border='0'></a>"
+		                  		"<img src='"+data[i].goods[n].g_pic+"' alt='查看商品详情' border='0'></a>"
 		                  +"<span class='desc_title'>"
 		                  +"<a href='#' target='_blank' class='baobei-name' title='"+data[i].goods[n].g_name+"'> "+data[i].goods[n].g_name+"</a>	"
 		                  +"<div class='spec_ico'>规格："+data[i].goods[n].g_name+"<br/></div>"

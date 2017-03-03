@@ -214,8 +214,6 @@ document.onclick = nav_close;
          <dd class="my_trade" style="display:block;">
              <ul class="childul">
                 <li><a href="user_trade.jsp" class="curitem">已经购买的商品</a></li>
-                <li><a href="#">评价管理</a></li>
-                <li><a href="#">我的团购</a></li>
              </ul>
       </dd>
         </dl>
@@ -244,20 +242,6 @@ document.onclick = nav_close;
     <li class="mainmenu">
     <dl>
       <dt>
-         <a class="mntitle" href="#">我的积分</a>
-      </dt>
-       </dl>
-  </li>
-    <li class="mainmenu">
-    <dl>
-      <dt>
-        <a class="mntitle" href="#">我的优惠券</a>    	
-      </dt>
-       </dl>
-  </li>
-    <li class="mainmenu">
-    <dl>
-      <dt>
          <span class="collapsed_ico"></span>
          <a class="mntitle" href="#">安全中心</a>	
       </dt>
@@ -280,29 +264,15 @@ document.onclick = nav_close;
       </dt>
          <dd class="my_account" style="display:block;">
              <ul class="childul">
-                <li><a href="#">个人资料</a></li>
-                <li><a href="#">充值</a></li>
-                <li><a href="#">我的地址</a></li>
-                <li><a href="#">短消息</a></li>
-                <li><a href="#">好友</a></li>
+              <li><a href=page/perinfo.jsp>个人资料</a></li>
+			  <li><a href="page/peraddress.jsp">我的地址</a></li>
+			  <li><a href="page/business.jsp">申请开店</a><li>
+				
              </ul>
       </dd>
         </dl>
   </li>
-    <li class="mainmenu">
-    <dl>
-      <dt>
-         <span class="collapsed_ico"></span>
-         <a class="mntitle" href="javascript:;">退款维权</a>    	
-      </dt>
-         <dd class="refund_rights" style="display:none;">
-             <ul class="childul">
-                 <li><a href="#">退款管理</a></li>
-                 <li><a href="#">维权管理</a></li>
-             </ul>
-      </dd>
-        </dl>
-  </li>
+    
   </ul>
   </div>
       <div class="fr bcc_main">            	

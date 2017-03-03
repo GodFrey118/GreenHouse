@@ -12,12 +12,11 @@ $.post("user/cartNum",function(data){
 								+"<td colspan='6' class='promo-info'>"
 								+"<div class='scrolling-container'>"
 								+"<ul class='scrolling-promo-hint' id='J_ScrollingPromoHint_1898538'></ul></div></td></tr></tbody>"
-								
 								+"<tbody class='J_ItemBody'><tr class='selected record_list' id='cart_item_177493'>"
 								+"<td class='s-chk'><input type='checkbox' checked='checked' rec_id='177493' class='ck_item_1898538' name='sc_id' id='sc_id' value='"+ data[i].sc_id +"'></td>"
 								+"<td class='s-title'>"
 								+"<div style='width: 250px; height: 70px; position: relative;'>"
-								+"<a href='#' target='_blank'> <img src='./shopping_files/small_201610201737159391.jpg' alt='丽水山耕 锥栗200g' class='itempic '></a>"
+								+"<a href='#' target='_blank'> <img src='" + (data[i].goods)[j].g_pic + "' alt='丽水山耕 锥栗200g' class='itempic '></a>"
 								+"<div class='lookb'>"
 								+"<a href='javascript:preview_theme('data/files/store_1898538/goods_35/small_201610201737159391.jpg');'>查看大图</a></div>"
 								+"<a href='#' target='_blank'>" + (data[i].goods)[j].g_name + "</a><br> <span>规格:" + (data[i].goods)[j].g_name + " </span>"

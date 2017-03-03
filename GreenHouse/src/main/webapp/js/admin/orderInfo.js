@@ -76,16 +76,6 @@ $('#orderList').datagrid({
 		width : 100,
 		align : 'center'
 		
-	}, {
-		field : ' handle',
-		title : '操作',
-		width : 150,
-		align : 'center',
-		formatter: function(value,row,index){
-			var oprStr ='<a class="modifyBtn" href="javascript:void(0)" onclick="openUpdate('+ row.o_id +')">查看详情</a>'+ 
-			'<script>$(".modifyBtn").linkbutton({iconCls: "icon-edit"})</script>'
-			return oprStr;
-		}
 	}, ] ]
 });
 function openUpdate(id){

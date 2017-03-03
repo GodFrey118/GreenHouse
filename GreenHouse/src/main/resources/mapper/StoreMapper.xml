@@ -36,7 +36,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
        select * from good where s_id=#{s_id}
     </select>
 	<insert id="applyStore" parameterType="Store" >
-	    insert into Store values (seq_Store.nextval,1041,#{c_id},#{s_ownerName},#{s_ID_card},#{s_name},#{s_company},#{s_area},#{s_detail_Addr},#{s_post},#{s_tel},null,null,null,'未通过')
+	    insert into Store values (seq_Store.nextval,1040,#{c_id},#{s_ownerName},#{s_ID_card},#{s_name},#{s_company},#{s_area},#{s_detail_Addr},#{s_post},#{s_tel},null,null,null,'未通过')
 	</insert>
 	<insert id="indsertCart" parameterType="Shoping_Cart">
 	    insert into Shopping_Cart values(seq_Cart.nextval,#{g_id},#{c_id},1,'未购买','未付款')

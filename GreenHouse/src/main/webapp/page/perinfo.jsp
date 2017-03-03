@@ -268,7 +268,7 @@
 								</dt>
 								<dd class="my_trade" style="display: block;">
 									<ul class="childul">
-										<li><a href="page/business.jsp">已经购买的商品</a></li>
+										<li><a href="user_trade.jsp">已经购买的商品</a></li>
 
 									</ul>
 								</dd>
@@ -332,6 +332,7 @@
 									<ul class="childul">
 										<li><a href=page/perinfo.jsp>个人资料</a></li>
 										<li><a href="page/peraddress.jsp">我的地址</a></li>
+										<li><a href="page/business.jsp">申请开店</a><li>
 									</ul>
 								</dd>
 							</dl>
@@ -349,14 +350,15 @@
 						<div class="my_accountup" id="con_grxx0_1" style="display: block;">
 							<form method="post" id="profile_form" action="user/perinfo">
 								<ul>
-								<li><span class="fl pink">*</span><span class="fl">
+								   <li><span class="fl pink">*</span><span class="fl">
 											&nbsp;用户编号：</span>
 										<p class="fl">
 											<input name="c_id" id="ca_id" class="my_accounts" value="${user.c_id}" 
 											type="text" disabled="true " > 
 											<input name="c_id" id="ca_id" class="my_accounts" value="${user.c_id}" 
 											type="hidden" ><span class="realname_err"></span>
-										</p></li>
+										</p>
+								    </li>
 									<li><span class="fl pink">*</span><span class="fl">
 											&nbsp;用户名：</span>
 										<p class="fl">
@@ -373,13 +375,6 @@
 												id="RadioGroup1_1" type="radio"> 女
 											</label>
 										</p></li>
-									<%-- <li><span class="fl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-										class="fl pink">*</span><span class="fl">&nbsp;生日：</span>
-										<p class="fl nyrdata">
-											<input name=c_birthday id="c_birthday" class="my_accounts"  value="${user.c_birthday}"
-											 type="text"> <span
-												class="realname_err">&nbsp;&nbsp;&nbsp;&nbsp;格式：yyyy-MM-dd</span>
-										</p></li> --%>
 										<li><span class="fl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email：</span>
 										<p class="fl">
 											<input name="c_email" id="c_email" class="my_accounts" value="${user.c_email}"
