@@ -30,8 +30,8 @@ import org.springframework.web.multipart.MultipartFile;
 import com.yc.GreenHouse.entity.Address;
 import com.yc.GreenHouse.entity.CommonUser;
 import com.yc.GreenHouse.entity.Good;
-import com.yc.GreenHouse.entity.Orders;
 import com.yc.GreenHouse.entity.GoodType;
+import com.yc.GreenHouse.entity.Orders;
 import com.yc.GreenHouse.entity.Shoping_Cart;
 import com.yc.GreenHouse.entity.Store;
 import com.yc.GreenHouse.entity.com_money;
@@ -54,6 +54,7 @@ public class UserHandler {
 	
 	@Autowired
 	private StoreService storeService;
+	
 	
 	
 	
@@ -373,7 +374,7 @@ public class UserHandler {
 		System.out.println(good);
 		return storeService.insertGood(good);
 	}
-	
+
 
 	@RequestMapping("/orderInfo")
 	@ResponseBody
@@ -515,4 +516,5 @@ public class UserHandler {
 		}
 
 }
+
 

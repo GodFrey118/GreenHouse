@@ -55,18 +55,5 @@ public class AdmServiceImpl implements AdmService {
 	public boolean storeApply(Store store) {
 		return admMapper.updateStoreState(store)>0;
 	}
-	@Override
-	public PaginationBean<Orders> listPartorder(String currPage, String pageSize) {
-		PaginationBean<Orders> userBean = new PaginationBean<Orders>();
-		if (currPage != null) {
-			userBean.setCurrPage(Integer.parseInt(currPage));
-		}
-		
-		if (pageSize != null) {
-			userBean.setPageSize(Integer.parseInt(pageSize));
-			
-		}
-		return admMapper.showOrderInfo(userBean);
-	}
 
 }

@@ -1,6 +1,7 @@
 package com.yc.GreenHouse.entity;
 
 
+
 import java.util.List;
 /**
  * 通用分页bean
@@ -10,6 +11,8 @@ import java.util.List;
  */
 
 import java.io.Serializable;
+import java.io.Serializable;
+import java.util.List;
 
 /**
  * 通用分页Bean

@@ -21,7 +21,7 @@ import com.yc.GreenHouse.entity.Store;
 @RequestMapping("/adm")
 @SessionAttributes("user")
 public class AdmHandler {
-
+	
 	@Autowired
 	private AdmService admService;
 	
@@ -63,15 +63,4 @@ public class AdmHandler {
 		return admService.storeApply(store);
 		
 	}
-	
-	@RequestMapping("/orderlist")
-	@ResponseBody
-	public PaginationBean<Orders> orderlist(String page,String rows){
-	//public PaginationBean<Good> list(String currPage,String pageSize){
-		//System.out.println(currPage + "," + pageSize);
-		LogManager.getLogger().debug("请求AmdHandler处理listGood进来了");
-		PaginationBean<Orders> userBean =  admService.listPartorder(page,rows);
-		return userBean;
-	}
-	
 }

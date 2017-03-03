@@ -12,4 +12,3 @@
 	<script type="text/javascript" src="js/goodType.js"></script>
 </body>
 </html>
-
