@@ -19,286 +19,7 @@
 <script type="text/javascript" src="css/perinfo/jquery-1.js"
 	charset="utf-8"></script>
 <script type="text/javascript" src="css/perinfo/ss.js" charset="utf-8"></script>
-<!-- 
-<script type="text/javascript">
-	var SITE_URL = "http://www.shanshan360.com";
-	var PRICE_FORMAT = '¥%s';
-	var gods_hot = "黑面菇";
-	var store_hot = "";
-	var gh_sk_url = "http://www.shanshan360.com/product/49734.html";
-	function fuzhi_key() {
-		var sgk = $("#keyword").attr("value");
-		var gd_hk = "黑面菇";
-		var gh_s = "黑面菇";
-		var gh_sk_url = "http://www.shanshan360.com/product/49734.html";
-		if (sgk == gh_s) {
-			if (gh_sk_url != "") {
-				window.open(gh_sk_url);
-				return false;
-			} else {
-				$("#keyword").attr("value", gd_hk);
-			}
-		} else {
-			if (sgk) {
-				$("#keyword").attr("value", sgk);
-			} else {
-				if (gh_sk_url != "") {
-					window.open(gh_sk_url);
-					return false;
-				} else {
-					$("#keyword").attr("value", gd_hk);
-				}
-			}
-		}
-	}
-	var timeout = 500;
-	var closetimer = 0;
-	var ddmenuitem = 0;
 
-	function nav_open() {
-		nav_canceltimer();
-		nav_close();
-		ddmenuitem = $(this).find('ul').eq(0).css('visibility', 'visible');
-	}
-
-	function nav_close() {
-		if (ddmenuitem)
-			ddmenuitem.css('visibility', 'hidden');
-	}
-
-	function nav_timer() {
-		closetimer = window.setTimeout(nav_close, timeout);
-	}
-
-	function nav_canceltimer() {
-		if (closetimer) {
-			window.clearTimeout(closetimer);
-			closetimer = null;
-		}
-	}
-
-	$(document).ready(function() {
-		$('#navv > li').bind('mouseover', nav_open);
-		$('#navv > li').bind('mouseout', nav_timer);
-	});
-
-	document.onclick = nav_close;
-
-	$(document)
-			.ready(
-					function() {
-						/*头部用户状态*/
-						$
-								.ajax({
-									url : "http://www.shanshan360.com/index.php?app=cart&act=ajax_get_visitor&jsoncallback=?",
-									dataType : "json",
-									success : function(data) {
-										if (data.done) {
-											/*用户登录时的状态*/
-											if (data.msg.user_id > 0) {
-												$("#collect_folder")
-														.html(
-																"<a href='/my_favorite' class='mS-mtit'>收藏夹<b></b></a><div class='mS-mcon' style='display:none;'><div class='mS-mcon-panel'><a href='/my_favorite'>收藏的商品</a><a href='/my_favorite/store'>收藏的店铺</a></div></div>");
-												$('.pulic_sn-login-info')
-														.html(
-																"Hi！<a class='sli-item' href='/member' > "
-																		+ data.msg.user_name
-																				.substring(
-																						0,
-																						60)
-																		+ "</a>！  <a href='/index.php?app=my_points' class='sli-item' >积分(<em>"
-																		+ data.msg.jifen
-																		+ ")</em></a>  <a href='/message/newpm' class='sli-item' >消息<em>("
-																		+ data.msg.new_message
-																		+ ")</em></a><a href='/member/logout' class='sn-quit'>退出</a><i class='sn-separator'></i>");
-												/*判断登录后会员是否卖家*/
-												if (data.msg.store_id != null) {
-													$('.login-menu')
-															.html(
-																	'<a href="/seller_order">我的订单</a> ');
-												} else {
-													$('.login-menu')
-															.html(
-																	'<a href="/buyer_order">我的订单</a>  ');
-													$('#carts')
-															.html(
-																	data.msg.cart_goods_kinds);
-													if (data.msg.cart_goods_kinds > 0) {
-														var str = '<Div class="left1left1 clear1 pro-list1" id="pro-list"> <Div class="left1">';
-														$
-																.each(
-																		data.msg.cart_items,
-																		function(
-																				index,
-																				value) {
-																			str += '<div class="tit carts_'+value.rec_id+'">';
-																			if (value.has_discount == 1) {
-																				str += ' <Div class="bz left1">满减</Div><div class="left1 mr20"  style="width:130px;overflow:hidden">'
-																						+ value.sales_promotion_detail[0]
-																						+ '</div>';
-																			}
-																			str += '<Div class="left1 ml5">小计：￥'
-																					+ value.to_money
-																					+ '</Div></Div>';
-																			str += '<Div class="pro-con1 left1 carts_'+value.rec_id+'"><span class="left1 img"><img style="width:50px;height:50px;" src="/'+value.goods_image+'" /></span>'
-																					+ '<span class="left1 pro-name1 lh18">'
-																					+ value.goods_name
-																					+ '</span><span class="left1  pri lh18">'
-																					+ '<P><font class="cff6 f14">￥'
-																					+ value.discount_price
-																					+ '</font>*'
-																					+ value.quantity
-																					+ '</P><p class="ter"><a href="javascript:;" cart_id='+value.rec_id+' class="delete_cart">删除</a></p>'
-																					+ '</span></Div>';
-																		});
-														str += '</Div></Div><Div class="js1 clear1 left1"><P>共 <font class="cff6">'
-																+ data.msg.num
-																+ '</font> 件商品&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
-																+ ' 共计<Font class="cff6 ">￥</Font><font class="f-s cff6 f18 t_money_0">'
-																+ data.msg.t_money[0]
-																+ '.</font><Font class="f13 f-s cff6 t_money_1">'
-																+ data.msg.t_money[1]
-																+ '</Font></P>'
-																+ '<p  class="ter"><a  target="_blank" href="/cart"><button type="button" class="choose_btn1  f14 fyh" >去购物车结算</button></a></p></Div>';
-														$('.show_cart').after(
-																str);
-													} else {
-														$('#carts')
-																.html(
-																		data.msg.cart_goods_kinds);
-														$('.show_cart').hide();
-														$('.carts_show_g')
-																.removeClass(
-																		'hide');
-														$(".cart_show")
-																.html(
-																		'购物车中还没有商品，赶紧选购吧！');
-													}
-												}
-											} else /*未登录时的状态*/
-											{
-												$('.pulic_sn-login-info')
-														.html(
-																"您好！ "
-																		+ data.msg.user_name
-																		+ "！<a href='/index.php?app=member&amp;act=login&amp;ret_url=' class='public-sn-login'>请登录</a> <a href='/index.php?app=member&amp;act=register&amp;ret_url=' class='public-sn-register'>免费注册</a>");
-												$("[ectype='seller']").hide();
-												$("[ectype='buyers']").show();
-												$('#carts')
-														.html(
-																data.msg.cart_goods_kinds);
-												if (data.msg.cart_goods_kinds > 0) {
-													$('.carts_show_g')
-															.addClass('hide');
-													var str = '<Div class="left1left1 clear1 pro-list1" id="pro-list"> <Div class="left1">';
-													$
-															.each(
-																	data.msg.cart_items,
-																	function(
-																			index,
-																			value) {
-																		str += '<div class="tit carts_'+value.rec_id+'">';
-																		if (value.has_discount == 1) {
-																			str += ' <Div class="bz left1">满减</Div><div class="left1 mr20" style="width:130px;overflow:hidden">'
-																					+ value.sales_promotion_detail[0]
-																					+ '</div>';
-																		}
-																		str += '<Div class="left1 ml5">小计：￥'
-																				+ value.to_money
-																				+ '</Div></Div>';
-																		str += '<Div class="pro-con1 left1 carts_'+value.rec_id+'"><span class="left1 img"><img style="width:50px;height:50px;" src="/'+value.goods_image+'" /></span>'
-																				+ '<span class="left1 pro-name1 lh18">'
-																				+ value.goods_name
-																				+ '</span><span class="left1  pri lh18">'
-																				+ '<P><font class="cff6 f14">￥'
-																				+ value.discount_price
-																				+ '</font>*'
-																				+ value.quantity
-																				+ '</P><p class="ter"><a href="javascript:;" cart_id='+value.rec_id+' class="delete_cart">删除</a></p>'
-																				+ '</span></Div>';
-																	});
-													str += '</Div></Div><Div class="js1 clear1 left1"><P>共 <font class="cff6">'
-															+ data.msg.num
-															+ '</font> 件商品&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
-															+ ' 共计<Font class="cff6 ">￥</Font><font class="f-s cff6 f18 t_money_0">'
-															+ data.msg.t_money[0]
-															+ '.</font><Font class="f13 f-s cff6 t_money_1">'
-															+ data.msg.t_money[1]
-															+ '</Font></P>'
-															+ '<p  class="ter"><a  target="_blank" href="/cart"><button type="button" class="choose_btn1  f14 fyh" >去购物车结算</button></a></p></Div>';
-													$('.show_cart').after(str);
-												} else {
-													$(".cart_show").html(
-															'你的购物车是空的，赶快去购物吧！');
-												}
-											}
-										}
-									}
-								});
-					});
-	$('.delete_cart')
-			.live(
-					'click',
-					function() {
-						if (confirm('你确定要删除它吗？')) {
-							var rec_id = $(this).attr('cart_id');
-							var tr = $('.carts_' + rec_id);
-							$
-									.getJSON(
-											'index.php?app=cart&act=drop&rec_id='
-													+ rec_id,
-											function(result) {
-												if (result.done) {
-													//删除成功
-													if (result.retval.cart.quantity == 0) {
-														tr.remove(); //移除					
-														$('.con').removeClass(
-																'hide')
-																.siblings()
-																.hide();
-														$('#carts')
-																.html(
-																		result.retval.cart.kinds);
-														$('.num-bg')
-																.html(
-																		result.retval.cart.kinds);
-														$('.nums')
-																.html(
-																		result.retval.cart.kinds);
-														$(".cart_show")
-																.html(
-																		'你的购物车是空的，赶快去购物吧！');
-													} else {
-														var t_money = '';
-														t_money = ''
-																+ number_format(
-																		result.retval.cart.amount,
-																		2);
-														var money = new Array();
-														tr.remove(); //移除
-														$('#carts')
-																.html(
-																		result.retval.cart.kinds);
-														$('.num-bg')
-																.html(
-																		result.retval.cart.kinds);
-														$('.nums')
-																.html(
-																		result.retval.cart.kinds);
-														var money = t_money
-																.split('.');
-														$('.t_money_0').html(
-																money[0] + '.');
-														$('.t_money_1').html(
-																money[1]);
-													}
-												}
-											});
-						} else {
-							return;
-						}
-					});
-</script>-->
 <script type="text/javascript" async="async" charset="utf-8"
 	src="css/perinfo/zh_cn.js" data-requiremodule="lang"></script>
 <script type="text/javascript" async="async" charset="utf-8"
@@ -349,26 +70,7 @@
 								</ul>
 							</div>
 						</li>
-						<!--  <li class="line1">|</li>
-                   <Li class="col-conn2">
-                       <div class="ui-dropdown11">
-                        <a  href="?act=xiazai&filename=shanshan.apk" class="ui-dropdown-hd11">
-                        	<span  class="left1">手机山山</span>
-                        	<span class=" phon left1"></span>
-                        </a>
-                        <ul class="unstyled frr ui-dropdown-menu11 weixin">
-                              <li>
-                                 <Div class="con ">
-                                 <Div class="left1"><img src="/data/siteflash/erweima.jpg"  width="85px" height="85px"/></Div>
-                                 	<Div class="left1 font fyh">扫二维码<br>
-										触屏版<br>
-										惊喜专项
-									</Div>
-                                 </Div>
-                              </li>
-                          </ul>
-                       </div>   
-                  </Li>  -->
+						
 						<li class="line1">|</li>
 						<li class="col-conn">
 							<div class="ui-dropdown11">
@@ -479,29 +181,12 @@
 		src="css/perinfo/jquery.js"></script>
 	<script charset="utf-8" type="text/javascript"
 		src="css/perinfo/mlselection.js"></script>
-	<!--  <script type="text/javascript">
-		//<!CDATA[
-		var SITE_URL = "http://www.shanshan360.com";
-		var PRICE_FORMAT = '¥%s';
-		var gods_hot = "黑面菇";
-		var store_hot = "";
-		function fuzhi_key() {
-			var sgk = $("#ghsk").attr("value");
-			var gd_hk = "黑面菇";
-			if (sgk) {
-				$("#ghsk").attr("value", sgk);
-			} else {
-				$("#ghsk").attr("value", gd_hk);
-			}
-		}
-		//]]>
-	</script>-->
 
 	<div class="shanshanNav">
 		<div class="shanshanNav-con">
 			<div class="clearfix">
 				<ul class="ssNavcon-main">
-					<li><a class="" href="http://www.shanshan360.com/">首页</a></li>
+					<li><a class="" href="index.jsp">首页</a></li>
 					<li><a href="http://ssmss.shanshan360.com/" target="_blank">山山美食馆</a></li>
 					<li><a
 						href="http://www.shanshan360.com/index.php?app=store&amp;id=1896664"
@@ -662,200 +347,65 @@
 					</div>
 					<div class="gerenxxnext">
 						<div class="my_accountup" id="con_grxx0_1" style="display: block;">
-							<form method="post" enctype="multipart/form-data"
-								id="profile_form">
+							<form method="post" id="profile_form" action="user/perinfo">
 								<ul>
-									<li><span class="fl pink">*</span><span class="fl">
-											&nbsp;昵称：</span>
+								<li><span class="fl pink">*</span><span class="fl">
+											&nbsp;用户编号：</span>
 										<p class="fl">
-											<input name="nick_name" id="nick_name" class="my_accounts"
-												value="nihaovovol" type="text"> <span
-												class="realname_err"></span>
+											<input name="c_id" id="ca_id" class="my_accounts" value="${user.c_id}" 
+											type="text" disabled="true " > 
+											<input name="c_id" id="ca_id" class="my_accounts" value="${user.c_id}" 
+											type="hidden" ><span class="realname_err"></span>
+										</p></li>
+									<li><span class="fl pink">*</span><span class="fl">
+											&nbsp;用户名：</span>
+										<p class="fl">
+											<input name="c_name" id="c_name" class="my_accounts" value="${user.c_name}"
+											 type="text"> <span id="changename" class="realname_err"></span>
 										</p></li>
 									<li><span class="fl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-										<p class="fl">
-											<span class="fl pink">*</span> &nbsp;性别：
+										<p class="fl"> &nbsp;性别：
 										</p>
 										<p>
-											<label> <input name="gender" checked="checked"
+											<label> <input name="c_sex" checked="checked" value="男"
 												id="RadioGroup1_0" type="radio"> 男
-											</label> <label> <input name="gender" value="2"
+											</label> <label> <input name="c_sex" value="女"
 												id="RadioGroup1_1" type="radio"> 女
 											</label>
 										</p></li>
-									<li><span class="fl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+									<%-- <li><span class="fl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
 										class="fl pink">*</span><span class="fl">&nbsp;生日：</span>
 										<p class="fl nyrdata">
-											<select name="SYear" id="SYear">
-												<option value="2017" selected="selected">2017</option>
-												<option value="2016">2016</option>
-												<option value="2015">2015</option>
-												<option value="2014">2014</option>
-												<option value="2013">2013</option>
-												<option value="2012">2012</option>
-												<option value="2011">2011</option>
-												<option value="2010">2010</option>
-												<option value="2009">2009</option>
-												<option value="2008">2008</option>
-												<option value="2007">2007</option>
-												<option value="2006">2006</option>
-												<option value="2005">2005</option>
-												<option value="2004">2004</option>
-												<option value="2003">2003</option>
-												<option value="2002">2002</option>
-												<option value="2001">2001</option>
-												<option value="2000">2000</option>
-												<option value="1999">1999</option>
-												<option value="1998">1998</option>
-												<option value="1997">1997</option>
-												<option value="1996">1996</option>
-												<option value="1995">1995</option>
-												<option value="1994">1994</option>
-												<option value="1993">1993</option>
-												<option value="1992">1992</option>
-												<option value="1991">1991</option>
-												<option value="1990">1990</option>
-												<option value="1989">1989</option>
-												<option value="1988">1988</option>
-												<option value="1987">1987</option>
-											</select>&nbsp;年 <select id="SMonth" name="SMonth">
-												<option value="1">1</option>
-												<option value="2" selected="selected">2</option>
-												<option value="3">3</option>
-												<option value="4">4</option>
-												<option value="5">5</option>
-												<option value="6">6</option>
-												<option value="7">7</option>
-												<option value="8">8</option>
-												<option value="9">9</option>
-												<option value="10">10</option>
-												<option value="11">11</option>
-												<option value="12">12</option>
-											</select>&nbsp;月 <select id="SDay" name="SDay">
-												<option value="1">1</option>
-												<option value="2">2</option>
-												<option value="3">3</option>
-												<option value="4">4</option>
-												<option value="5">5</option>
-												<option value="6">6</option>
-												<option value="7">7</option>
-												<option value="8">8</option>
-												<option value="9">9</option>
-												<option value="10">10</option>
-												<option value="11">11</option>
-												<option value="12">12</option>
-												<option value="13">13</option>
-												<option value="14">14</option>
-												<option value="15">15</option>
-												<option value="16">16</option>
-												<option value="17">17</option>
-												<option value="18">18</option>
-												<option value="19">19</option>
-												<option value="20">20</option>
-												<option value="21">21</option>
-												<option value="22">22</option>
-												<option value="23">23</option>
-												<option selected="selected" value="24">24</option>
-												<option value="25">25</option>
-												<option value="26">26</option>
-												<option value="27">27</option>
-												<option value="28">28</option>
-											</select>&nbsp;日
+											<input name=c_birthday id="c_birthday" class="my_accounts"  value="${user.c_birthday}"
+											 type="text"> <span
+												class="realname_err">&nbsp;&nbsp;&nbsp;&nbsp;格式：yyyy-MM-dd</span>
+										</p></li> --%>
+										<li><span class="fl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email：</span>
+										<p class="fl">
+											<input name="c_email" id="c_email" class="my_accounts" value="${user.c_email}"
+												style="width: 150px;" type="text">&nbsp;&nbsp; <span id="changeemail"></span>
+										</p></li>
+										<li><span class="fl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;电话：</span>
+										<p class="fl">
+											<input name="c_tel" id="c_tel" class="my_accounts" value="${user.c_tel}"
+												style="width: 150px;" type="text">&nbsp;&nbsp;<span id="changetel" ></span>
 										</p></li>
 									<li><span class="fl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QQ：</span>
 										<p class="fl">
-											<input name="im_qq" id="_fm.d._0.po" class="my_accounts"
+											<input name="c_qq" id="_fm.d._0.po" class="my_accounts" value="${user.c_qq}"
 												style="width: 150px;" type="text">&nbsp;&nbsp;仅作为买卖双方的沟通工具，山山商城不会主动泄露买家个人资料。
 
 										</p></li>
 									<li><span class="fl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;居住地：</span>
 										<p class="fl" id="region">
-											<input name="region_name" value="" class="mls_names"
-												type="hidden"> <select onchange="hide_error();">
-												<option selected="selected">请选择...</option>
-												<option value="10701">北京</option>
-												<option value="6942">天津</option>
-												<option value="6961">河北省</option>
-												<option value="7144">山西省</option>
-												<option value="7275">内蒙古</option>
-												<option value="7389">辽宁省</option>
-												<option value="7504">吉林省</option>
-												<option value="7574">黑龙江省</option>
-												<option value="7715">上海</option>
-												<option value="7736">江苏省</option>
-												<option value="7856">浙江省</option>
-												<option value="7958">安徽省</option>
-												<option value="8076">福建省</option>
-												<option value="8171">江西省</option>
-												<option value="8282">山东省</option>
-												<option value="8440">河南省</option>
-												<option value="8618">湖北省</option>
-												<option value="8732">湖南省</option>
-												<option value="8869">广东省</option>
-												<option value="9012">广西壮族自治区</option>
-												<option value="9136">海南省</option>
-												<option value="9161">重庆市</option>
-												<option value="9202">四川省</option>
-												<option value="9405">贵州省</option>
-												<option value="9503">云南省</option>
-												<option value="9649">西藏</option>
-												<option value="9730">陕西省</option>
-												<option value="9848">甘肃省</option>
-												<option value="9950">青海省</option>
-												<option value="10001">宁夏</option>
-												<option value="10029">新疆</option>
-												<option value="10144">台湾省</option>
-												<option value="10145">澳门</option>
-												<option value="10146">香港</option>
-											</select>
+											<input name="c_addr" id="_fm.d._0.po" class="my_accounts" value="${user.c_addr}"
+												style="width: 150px;" type="text">
 
 										</p></li>
 
-									<li><span class="fl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;家乡：</span>
-										<p class="fl" id="region_1">
-											<input name="con_region_name" value="" class="mls_namess"
-												type="hidden"> <select onchange="hide_error();">
-												<option selected="selected">请选择...</option>
-												<option value="10701">北京</option>
-												<option value="6942">天津</option>
-												<option value="6961">河北省</option>
-												<option value="7144">山西省</option>
-												<option value="7275">内蒙古</option>
-												<option value="7389">辽宁省</option>
-												<option value="7504">吉林省</option>
-												<option value="7574">黑龙江省</option>
-												<option value="7715">上海</option>
-												<option value="7736">江苏省</option>
-												<option value="7856">浙江省</option>
-												<option value="7958">安徽省</option>
-												<option value="8076">福建省</option>
-												<option value="8171">江西省</option>
-												<option value="8282">山东省</option>
-												<option value="8440">河南省</option>
-												<option value="8618">湖北省</option>
-												<option value="8732">湖南省</option>
-												<option value="8869">广东省</option>
-												<option value="9012">广西壮族自治区</option>
-												<option value="9136">海南省</option>
-												<option value="9161">重庆市</option>
-												<option value="9202">四川省</option>
-												<option value="9405">贵州省</option>
-												<option value="9503">云南省</option>
-												<option value="9649">西藏</option>
-												<option value="9730">陕西省</option>
-												<option value="9848">甘肃省</option>
-												<option value="9950">青海省</option>
-												<option value="10001">宁夏</option>
-												<option value="10029">新疆</option>
-												<option value="10144">台湾省</option>
-												<option value="10145">澳门</option>
-												<option value="10146">香港</option>
-											</select>
-
-										</p></li>
-									<li><input id="_submit"
+									<li><input
 										style="margin-left: 120px; height: 27px; width: 97px; border: 0px; background: url(http://www.shanshan360.com/themes/mall/default/styles/default/images/ss_n_btn.png) no-repeat -6px -93px; cursor: pointer;"
-										type="button"> <span
+										type="submit"> <span
 										style="height: 22px; background: #fff2f2; border: #ff8080 solid 1px; display: none; padding: 3px 10px 3px 25px; height: 22px; line-height: 22px; margin: 1px 2px;"
 										id="warning"></span></li>
 								</ul>
@@ -1669,5 +1219,6 @@ function openChatWindow(id){
 			}, 4000)
 		}
 	</script>
+	<script type="text/javascript" src="js/perinfo.js"></script> 
 </body>
 </html>

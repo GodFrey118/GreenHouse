@@ -19,7 +19,8 @@
 <script type="text/javascript" src="js/public/jquery.superslide.2.1.1.js" charset="utf-8"></script>
 <script type="text/javascript" src="js/public/ecmall.js"></script>  
 <script type="text/javascript" src="js/public/ss.index-V2.4.0.js" charset="utf-8"></script>                                  
-<script charset="utf-8" type="text/javascript" src="js/public/jquery-ui-1.10.0.js"></script><script src="./register_files/jquery-ui-1.10.0(1).js" type="text/javascript"></script>
+<script charset="utf-8" type="text/javascript" src="js/public/jquery-ui-1.10.0.js"></script>
+<script src="./register_files/jquery-ui-1.10.0(1).js" type="text/javascript"></script>
 <script charset="utf-8" type="text/javascript" src="js/public/chk_form.js"></script>
 <link rel="stylesheet" type="text/css" href="css/public/jquery-ui.css">
 <script type="text/javascript" src="js/index/Seach.js"></script> 
@@ -38,7 +39,6 @@
 <script type="text/javascript" async="async" charset="utf-8" src="js/public/chat.in.js" data-requiremodule="chatManage"></script>
 <script type="text/javascript" async="async" charset="utf-8" src="js/public/mqtt31.js" data-requiremodule="MQTT"></script>
 <script type="text/javascript" async="async" charset="utf-8" src="js/public/mqtt.chat.js" data-requiremodule="Connection"></script>
-<script type="text/javascript" src="js/register.js"></script> 
 </head>
 <body><div id="nTalk_post_hiddenElement" style="left: -10px; top: -10px; visibility: hidden; display: none; width: 1px; height: 1px;"></div>  
 <div class="ui-header header">
@@ -127,7 +127,7 @@
                                                                        <li id="captcha_li" class="form">
                      <div class="fl fl-txt f14"><font color="#FF0000">*</font>&nbsp;验证码：</div>
                       <div class="fl  code-t">
-                     	<input type="text" class="code_s1" name="captcha" id="captcha" tabindex="2">
+                     	<input type="text" class="code_s1" name="vcode" id="captcha" tabindex="2">
                      	<div class="zc_houl" style="margin-left: 270px; position: absolute;">
 	                     
 							<p id="captcha_t" class="zc_houl1" style="display: none;"></p>
@@ -297,5 +297,7 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 	</div>
 </div>
 </div>
+<script type="text/javascript" src="js/regcheck.js"></script> 
 <script type="text/javascript" src="js/public/register.js"></script>
+<script type="text/javascript" src="js/register.js"></script> 
 </body></html>

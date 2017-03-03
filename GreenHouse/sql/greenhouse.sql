@@ -32,6 +32,7 @@ create table Adm(
 	adm_name varchar2(40),
 	adm_pwd varchar2(100)
 )
+select * from adm
 create sequence seq_Adm start with 1000;
 insert into Adm values(seq_Adm.nextval,'admin','aaaaa');
 --店铺：店铺编号，店铺类型编号，用户编号，店主姓名，身份证号，店铺名称，公司名称，所在地区，详细地址，邮政编码，电话，证件照，营业执照，服务保障，状态
@@ -95,6 +96,8 @@ create table GoodType(
 	gt_id integer primary key,
 	gt_name varchar2(20)
 )
+
+insert into GoodType values(seq_GoodType.nextval,'海鲜')
 drop table GoodType
 select * from GoodType;
 delete GoodType where gt_id=1005
