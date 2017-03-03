@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<<<<<<< HEAD
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,15 +29,4 @@
 	</script>
 </body>
 </html>
-=======
-<!doctype html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title</title>
-</head>
 
-<body>
-</body>
-</html>
->>>>>>> branch 'master' of ssh://git@github.com/Godfrey118/GreenHouse.git

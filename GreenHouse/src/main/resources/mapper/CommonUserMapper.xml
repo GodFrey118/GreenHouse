@@ -28,8 +28,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			<otherwise>(seq_CommonUser.nextval,#{c_name},null,null,#{c_pwd},null,null,null,null)</otherwise>
 		</choose>
 	</insert>
-	
-<<<<<<< HEAD
+
 	<update id="modifyUserinfo" parameterType="CommonUser">
 	    update CommonUser set c_name=#{c_name},c_sex=#{c_sex},c_tel=#{c_tel},c_email=#{c_email},c_qq=#{c_qq},c_addr=#{c_addr} where c_id=#{c_id}
 	</update>
@@ -54,11 +53,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	    <if test="c_email != null">
 	   		c_email = #{c_email}
 	    </if>
-	</select>
-	
-	
-</mapper>   
-=======
+	</select> 
+
 	<resultMap type="CommonUser" id="AddrMap">
 		  <id property="c_id" column="c_id"/>
 		  <result property="c_name" column="c_name"/>
@@ -88,4 +84,3 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	    insert into Address values(seq_Address.nextval,#{c_id},#{a_receiver},#{a_area},#{a_street},#{a_post},#{a_tel})
 	</insert>
 </mapper>     
->>>>>>> branch 'master' of ssh://git@github.com/Godfrey118/GreenHouse.git

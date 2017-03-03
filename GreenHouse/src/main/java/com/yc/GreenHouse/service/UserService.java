@@ -17,7 +17,6 @@ public interface UserService {
 
 	int register(CommonUser user);
 
-<<<<<<< HEAD
 	int modifyUserinfo(CommonUser user);
 
 	int addPeraddress(Address address);
@@ -28,11 +27,9 @@ public interface UserService {
 
 	boolean checkName(CommonUser user);
 
-=======
 	CommonUser getAddr(Integer c_id);
 
 	boolean insertAddr(Address addr);
 
 	
->>>>>>> branch 'master' of ssh://git@github.com/Godfrey118/GreenHouse.git
 }

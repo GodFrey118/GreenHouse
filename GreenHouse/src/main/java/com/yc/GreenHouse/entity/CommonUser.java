@@ -29,17 +29,7 @@ public class CommonUser {
 	public CommonUser() {
 	}
 	
-<<<<<<< HEAD
-	public CommonUser(Integer c_id,String c_name, String c_sex,String c_tel,String c_email,String c_qq,String c_addr) {
-		this.c_id = c_id;
-		this.c_name = c_name;
-		this.c_sex = c_sex;
-		this.c_tel = c_tel;
-		this.c_email = c_email;
-		this.c_qq = c_qq;
-		this.c_addr = c_addr;
-	}
-=======
+
 	
 	public CommonUser(Integer c_id, String c_name, String c_sex,
 			Date c_birthday, String c_pwd, String c_tel, String c_email,
@@ -58,7 +48,6 @@ public class CommonUser {
 	}
 
 
->>>>>>> branch 'master' of ssh://git@github.com/Godfrey118/GreenHouse.git
 	public CommonUser(String c_name, String c_pwd,String c_tel,String c_email) {
 		this.c_name = c_name;
 		this.c_pwd = c_pwd;

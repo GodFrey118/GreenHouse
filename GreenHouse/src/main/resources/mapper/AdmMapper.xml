@@ -3,7 +3,7 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yc.GreenHouse.mapper.AdmMapper">
-<<<<<<< HEAD
+
 	<select id="admLogin" parameterType="Adm" resultType="Adm">
 		select * from Adm where adm_name=#{adm_name} and adm_pwd=#{adm_pwd}
 	</select>
@@ -76,7 +76,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<insert id="addGoodType" parameterType="GoodType">
 		insert into GoodType values (seq_GoodType.nextval,#{gt_name})
 	</insert>
-=======
+
 
 	<select id="admLogin" parameterType="Adm" resultType="Adm">
 		select * from Adm where adm_name=#{adm_name} and adm_pwd=#{adm_pwd}
@@ -128,7 +128,4 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		(select m.*,rownum rn from 
 		(select o.o_id,o.o_ordertime,c.c_name,c.c_tel,s.s_name,s.s_company,s.s_tel,g.g_name,g.g_price,o.o_amount,o.o_sum,g.g_type,o.o_state from Orders o left join store s on s.s_id= o.s_id left join good g on o.g_id=g.g_id inner join CommonUser c on c.c_id = o.c_id order by 1 desc) m where rownum &lt;= ${currPage} * ${pageSize}) where rn &gt; (${currPage}-1) * ${pageSize}
 	</select>
-	
-	
->>>>>>> branch 'master' of ssh://git@github.com/Godfrey118/GreenHouse.git
 </mapper>     

@@ -15,10 +15,12 @@ import javax.servlet.http.HttpSession;
 import org.apache.logging.log4j.LogManager;
 
 
-@WebFilter("/user/register")
-public class VcodeFilter extends AbstractFilter{
+/**
+ *  过滤验证码
+ */
+@WebFilter("/user/AdmLogin")
+public class VcodeFilter1 extends AbstractFilter{
    
-	@Override
 	public void init(FilterConfig fConfig) throws ServletException {
 		LogManager.getLogger().debug("初始验证码验证的过滤器VcodeFilter.....");
 	}
@@ -34,8 +36,7 @@ public class VcodeFilter extends AbstractFilter{
 		}else{
 			LogManager.getLogger().debug("过滤器VcodeFilter验证验证码失败.....");
 			session.setAttribute("errorMsg", "验证码错误！！！");
-			((HttpServletResponse) response).sendRedirect("/page/register.jsp");
-
+			((HttpServletResponse) response).sendRedirect("/GreenHouse/manage_login.jsp");
 		}
 	}
 }

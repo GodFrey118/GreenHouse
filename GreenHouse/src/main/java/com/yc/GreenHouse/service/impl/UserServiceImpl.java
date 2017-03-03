@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService {
 		return commonUserMapper.register(user);
 	}
 	@Override
-<<<<<<< HEAD
+
 	public int modifyUserinfo(CommonUser user) {
 		return commonUserMapper.modifyUserinfo(user);
 	}
@@ -50,7 +50,7 @@ public class UserServiceImpl implements UserService {
 	public boolean checkName(CommonUser user) {
 		return commonUserMapper.checkName(user) != null;
 	}
-=======
+
 	public CommonUser getAddr(Integer c_id) {
 		return commonUserMapper.selectAddr(c_id);
 	}
@@ -59,6 +59,5 @@ public class UserServiceImpl implements UserService {
 		return commonUserMapper.insertAddr(addr)>0;
 	}
 	
->>>>>>> branch 'master' of ssh://git@github.com/Godfrey118/GreenHouse.git
 
 }
