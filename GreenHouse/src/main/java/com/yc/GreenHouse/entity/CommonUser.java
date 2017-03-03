@@ -1,5 +1,6 @@
 package com.yc.GreenHouse.entity;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -28,6 +29,7 @@ public class CommonUser {
 	public CommonUser() {
 	}
 	
+
 	
 	public CommonUser(Integer c_id, String c_name, String c_sex,
 			Date c_birthday, String c_pwd, String c_tel, String c_email,
@@ -79,7 +81,8 @@ public class CommonUser {
 		return c_birthday;
 	}
 	public void setC_birthday(Date c_birthday) {
-		this.c_birthday = c_birthday;
+		this.c_birthday=c_birthday;
+		//this.c_birthday = new SimpleDateFormat("yyyy-MM-dd").format(c_birthday);
 	}
 	public String getC_pwd() {
 		return c_pwd;

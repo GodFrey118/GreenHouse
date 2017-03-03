@@ -30,6 +30,27 @@ public class UserServiceImpl implements UserService {
 		return commonUserMapper.register(user);
 	}
 	@Override
+
+	public int modifyUserinfo(CommonUser user) {
+		return commonUserMapper.modifyUserinfo(user);
+	}
+	@Override
+	public int addPeraddress(Address address) {
+		return commonUserMapper.addPeraddress(address);
+	}
+	@Override
+	public List<Address> getAddress(Integer c_id) {
+		return commonUserMapper.selecAddress(c_id);
+	}
+	@Override
+	public boolean getDelPeraddress(int a_id) {
+		return commonUserMapper.delPeraddress(a_id)>0;
+	}
+	@Override
+	public boolean checkName(CommonUser user) {
+		return commonUserMapper.checkName(user) != null;
+	}
+
 	public CommonUser getAddr(Integer c_id) {
 		return commonUserMapper.selectAddr(c_id);
 	}

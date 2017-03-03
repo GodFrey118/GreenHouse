@@ -4,12 +4,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.yc.GreenHouse.entity.Adm;
+
+import com.yc.GreenHouse.entity.CommonUser;
 import com.yc.GreenHouse.entity.Good;
-import com.yc.GreenHouse.entity.Orders;
+import com.yc.GreenHouse.entity.GoodType;
 import com.yc.GreenHouse.entity.PaginationBean;
-import com.yc.GreenHouse.entity.Store;
 import com.yc.GreenHouse.mapper.AdmMapper;
 import com.yc.GreenHouse.service.AdmService;
+
+
+import com.yc.GreenHouse.entity.Orders;
+import com.yc.GreenHouse.entity.Store;
 
 @Service("admService")
 public class AdmServiceImpl implements AdmService {
@@ -49,19 +54,6 @@ public class AdmServiceImpl implements AdmService {
 	@Override
 	public boolean storeApply(Store store) {
 		return admMapper.updateStoreState(store)>0;
-	}
-	@Override
-	public PaginationBean<Orders> listPartorder(String currPage, String pageSize) {
-		PaginationBean<Orders> userBean = new PaginationBean<Orders>();
-		if (currPage != null) {
-			userBean.setCurrPage(Integer.parseInt(currPage));
-		}
-		
-		if (pageSize != null) {
-			userBean.setPageSize(Integer.parseInt(pageSize));
-			
-		}
-		return admMapper.showOrderInfo(userBean);
 	}
 
 }

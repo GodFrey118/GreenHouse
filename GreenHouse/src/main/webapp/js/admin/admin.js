@@ -98,6 +98,7 @@ function openGT(id){
 	});
 }
 
+
 function openAT(id){
 	tid=id;
 	$("#addGoodType").dialog({

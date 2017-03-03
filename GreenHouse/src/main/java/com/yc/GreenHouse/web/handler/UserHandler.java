@@ -30,8 +30,8 @@ import org.springframework.web.multipart.MultipartFile;
 import com.yc.GreenHouse.entity.Address;
 import com.yc.GreenHouse.entity.CommonUser;
 import com.yc.GreenHouse.entity.Good;
-import com.yc.GreenHouse.entity.Orders;
 import com.yc.GreenHouse.entity.GoodType;
+import com.yc.GreenHouse.entity.Orders;
 import com.yc.GreenHouse.entity.Shoping_Cart;
 import com.yc.GreenHouse.entity.Store;
 import com.yc.GreenHouse.entity.com_money;
@@ -57,8 +57,10 @@ public class UserHandler {
 	
 	
 	
+	
 	@RequestMapping("/login")
 	public String login(CommonUser user, ModelMap map,HttpSession session){
+		System.out.println(user+"登陆");
 		String string=user.getC_name();
 		Pattern p = Pattern.compile("^((13[0-9])|(15[^4,\\D])|(18[0,4-9]))\\d{8}$");  
 		Matcher m = p.matcher(string);  
@@ -74,7 +76,6 @@ public class UserHandler {
 			user.setC_name(null);
 		}
 		user = userService.login(user);
-		//System.out.println(user);
 		session.setAttribute("user", user);
 		CommonUser user2 = (CommonUser) session.getAttribute("user");
 //		System.out.println(user2.getC_name());
@@ -88,10 +89,60 @@ public class UserHandler {
 		return "forward:/login_user.jsp";
 	}
 	
+	
+	@RequestMapping("/checkname")
+	@ResponseBody
+	public boolean checkName(CommonUser user){
+		String string=user.getC_name();
+		Pattern p = Pattern.compile("^((13[0-9])|(15[^4,\\D])|(18[0,4-9]))\\d{8}$");  
+		Matcher m = p.matcher(string);  
+		if (m.matches()) {
+			user.setC_tel(string);
+			user.setC_name(null);
+		}
+		
+		String regex = "\\w+(\\.\\w)*@\\w+(\\.\\w{2,3}){1,3}";
+		if (string.matches(regex)) {
+			user.setC_email(string);
+			user.setC_name(null);
+		}
+		System.out.println(user);
+		boolean isSuccess = userService.checkName(user);
+		return isSuccess;
+	}
+	
+	@RequestMapping("/changename")
+	@ResponseBody
+	public boolean changeName(CommonUser user){
+		String string=user.getC_name();
+		System.out.println(string);
+		boolean isSuccess = userService.checkName(user);
+		return isSuccess;
+	}
+	
+	@RequestMapping("/changeemail")
+	@ResponseBody
+	public boolean changeEmail(CommonUser user){
+		user.setC_name(null);
+		user.setC_tel(null);
+		System.out.println(user);
+		boolean isSuccess = userService.checkName(user);
+		return isSuccess;
+	}
+	
+	@RequestMapping("/changetel")
+	@ResponseBody
+	public boolean changeTel(CommonUser user){
+		user.setC_email(null);
+		user.setC_name(null);
+		System.out.println(user);
+		boolean isSuccess = userService.checkName(user);
+		return isSuccess;
+	}
+	
 	@RequestMapping("/register")
 	public String register(CommonUser user,HttpSession session,ModelMap map){
 		String string=user.getC_name();
-		System.out.println(string+"000");
 		Pattern p = Pattern.compile("^((13[0-9])|(15[^4,\\D])|(18[0,4-9]))\\d{8}$"); 
 		Matcher m = p.matcher(string);  
 		if (m.matches()) {
@@ -119,11 +170,58 @@ public class UserHandler {
 		return "forward:/page/register.jsp";
 	}
 	
+	@RequestMapping("/perinfo")
+	public String modifyUserInfo(CommonUser user,ModelMap map,HttpSession session){
+		System.out.println(user+"nihao");
+		int result =userService.modifyUserinfo(user);
+		if (result!=0) {
+			session.setAttribute("user", user);
+			map.put("loginUser",user.getC_name());
+			return "redirect:/page/perinfo.jsp";
+		}
+		return "forward:/page/perinfo.jsp";
+	}
 	
+	@RequestMapping("/addperaddress")
+	public String perAddress(Address address,HttpSession session){
+		System.out.println(address);
+		CommonUser user2 = (CommonUser) session.getAttribute("user");
+		address.setC_id(user2.getC_id());
+		//System.out.println(address+"0");
+		int result = userService.addPeraddress(address);
+		
+		System.out.println(address+"1");
+		if (result != 0) {
+			return "redirect:/page/peraddress.jsp";
+		}
+		return "forward:/page/peraddress.jsp";
+	}
+	
+	
+	@RequestMapping("/getperaddress")
+	@ResponseBody
+	public List<Address> getAddress(HttpSession session){
+		CommonUser user2 = (CommonUser) session.getAttribute("user");
+		List<Address> address = null;
+		if (user2!=null) {
+			address = userService.getAddress(user2.getC_id());
+			System.out.println(address+"所有地址");
+		}
+		return address;
+	}
+	
+	//TODO 
+	@RequestMapping("/delperaddress")
+	@ResponseBody
+	public boolean DelPeraddress(@RequestParam(name="a_id",required=false)int a_id){
+		boolean del = userService.getDelPeraddress(a_id);
+		System.out.println(del+"删除啦");
+		return del;
+	}
 	
 	@RequestMapping("/apply")
 	public String apply(Store store,ModelMap map,HttpSession session){
-		System.out.println(session.getAttribute("user"));
+		//System.out.println(session.getAttribute("user"));
 		CommonUser cUser=(CommonUser) session.getAttribute("user");
 		store.setC_id(cUser.getC_id());
 		System.out.println(store.getC_id());
@@ -136,6 +234,7 @@ public class UserHandler {
 		return "forward:/apply.jsp";
 	}
 	
+	
 	@RequestMapping("/getSid")
 	@ResponseBody
 	public int getSid(Object c_id,HttpSession session){
@@ -146,6 +245,7 @@ public class UserHandler {
 		session.setAttribute("s_id",result);
 		return result;
 	}
+	
 	
 	@RequestMapping("/get_gt_name")
 	@ResponseBody
@@ -203,9 +303,7 @@ public class UserHandler {
 	//购物车
 	@RequestMapping("/addCart")
 	@ResponseBody
-
 	public boolean AddCart(Shoping_Cart sCart, @RequestParam(name="g_id",required=false)int g_id ,HttpSession session){
-		
 		CommonUser user2 = (CommonUser) session.getAttribute("user");
 		sCart.setC_id(user2.getC_id());
 		sCart.setG_id(g_id);
@@ -217,7 +315,6 @@ public class UserHandler {
 	
 	@RequestMapping("/cartNum")
 	@ResponseBody
-
 	public List<Shoping_Cart> CartNum(HttpSession session){
 		CommonUser user2 = (CommonUser) session.getAttribute("user");
 		List<Shoping_Cart> cNum = null;
@@ -277,7 +374,7 @@ public class UserHandler {
 		System.out.println(good);
 		return storeService.insertGood(good);
 	}
-	
+
 
 	@RequestMapping("/orderInfo")
 	@ResponseBody
@@ -419,4 +516,5 @@ public class UserHandler {
 		}
 
 }
+
 

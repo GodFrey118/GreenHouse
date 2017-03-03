@@ -17,6 +17,16 @@ public interface UserService {
 
 	int register(CommonUser user);
 
+	int modifyUserinfo(CommonUser user);
+
+	int addPeraddress(Address address);
+
+	List<Address> getAddress(Integer c_id);
+
+	boolean getDelPeraddress(int a_id);
+
+	boolean checkName(CommonUser user);
+
 	CommonUser getAddr(Integer c_id);
 
 	boolean insertAddr(Address addr);

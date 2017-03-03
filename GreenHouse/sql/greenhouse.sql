@@ -102,7 +102,12 @@ create table GoodType(
 	gt_id integer primary key,
 	gt_name varchar2(20)
 )
+<<<<<<< HEAD
+
+insert into GoodType values(seq_GoodType.nextval,'海鲜')
+=======
 select gt_name from GoodType
+>>>>>>> branch 'master' of ssh://git@github.com/Godfrey118/GreenHouse.git
 drop table GoodType
 select * from GoodType;
 delete GoodType where gt_id=1005

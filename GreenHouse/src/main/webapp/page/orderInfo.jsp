@@ -6,7 +6,6 @@
 <base href="/GreenHouse/">
 <title>订单信息</title>
 </head>
-
 <body>
 	<table width="100%"  id="orderList"></table>
 	<script type="text/javascript" src="js/admin/orderInfo.js"></script>

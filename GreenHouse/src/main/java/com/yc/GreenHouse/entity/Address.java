@@ -13,12 +13,15 @@ import java.util.List;
  */
 public class Address {
 	private Integer a_id;
-	private Integer c_id;
+    private Integer c_id;
 	private String a_receiver;
 	private String a_area;
 	private String a_street;
 	private String a_post;
 	private String a_tel;
+	private List<Address> address;
+	public Address() {	}
+	
 	public Integer getA_id() {
 		return a_id;
 	}
@@ -61,29 +64,16 @@ public class Address {
 	public void setA_tel(String a_tel) {
 		this.a_tel = a_tel;
 	}
+	public List<Address> getAddress() {
+		return address;
+	}
+	public void setAddress(List<Address> address) {
+		this.address = address;
+	}
 	@Override
 	public String toString() {
-		return "Address [a_id=" + a_id + ", c_id=" + c_id + ", a_receiver="
-				+ a_receiver + ", a_area=" + a_area + ", a_street=" + a_street
-				+ ", a_post=" + a_post + ", a_tel=" + a_tel + "]";
+		return "Address [a_id=" + a_id + ", c_id=" + c_id + ", a_receiver=" + a_receiver + ", a_area=" + a_area
+				+ ", a_street=" + a_street + ", a_post=" + a_post + ", a_tel=" + a_tel + ", address=" + address + "]";
 	}
-	public Address(Integer a_id, Integer c_id, String a_receiver,
-			String a_area, String a_street, String a_post, String a_tel) {
-		super();
-		this.a_id = a_id;
-		this.c_id = c_id;
-		this.a_receiver = a_receiver;
-		this.a_area = a_area;
-		this.a_street = a_street;
-		this.a_post = a_post;
-		this.a_tel = a_tel;
-	}
-	public Address() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	
-	
-	
-	
+
 }

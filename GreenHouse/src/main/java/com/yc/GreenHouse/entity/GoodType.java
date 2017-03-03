@@ -51,4 +51,9 @@ public class GoodType {
 		this.gt_name = gt_name;
 	}
 	
+	public GoodType(String gt_name) {
+		super();
+		this.gt_name = gt_name;
+	}
+	
 }

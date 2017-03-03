@@ -1,5 +1,16 @@
 package com.yc.GreenHouse.entity;
 
+
+
+import java.util.List;
+/**
+ * 通用分页bean
+ * @author 忽尔今夏
+ *
+ * @param <T>
+ */
+
+import java.io.Serializable;
 import java.io.Serializable;
 import java.util.List;
 
